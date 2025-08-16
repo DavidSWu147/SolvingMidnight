@@ -62,7 +62,7 @@ public class SolvingMidnight {
 
         writeToFile();
 
-        for (int condition = 0; condition <= 25; condition++) {
+        for (int condition = 25; condition <= 44; condition++) {
             if (condition == 1 || condition == 2) {
                 continue;
             }
@@ -107,7 +107,7 @@ public class SolvingMidnight {
     private void populateWithStates() {
         //1 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2 || condition > 25) {
+            if (condition == 1 || condition == 2 || condition > 44) {
                 continue;
             }
 
@@ -159,7 +159,7 @@ public class SolvingMidnight {
 
         //2 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2 || condition > 25) {
+            if (condition == 1 || condition == 2 || condition > 44) {
                 continue;
             }
 
@@ -218,7 +218,7 @@ public class SolvingMidnight {
 
         //3 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2 || condition > 25) {
+            if (condition == 1 || condition == 2 || condition > 44) {
                 continue;
             }
 
@@ -285,7 +285,7 @@ public class SolvingMidnight {
 
         //4 dice
         for (int condition = 0; condition <= CAPACITY; condition++) {
-            if (condition == 1 || condition == 2 || condition > 25) {
+            if (condition == 1 || condition == 2 || condition > 44) {
                 continue;
             }
 
@@ -357,7 +357,7 @@ public class SolvingMidnight {
 
         //5 dice
         for (int condition = 0; condition <= CAPACITY; condition++) {
-            if (condition == 1 || condition == 2 || condition > 25) {
+            if (condition == 1 || condition == 2 || condition > 44) {
                 continue;
             }
 
@@ -415,7 +415,7 @@ public class SolvingMidnight {
 
         //6 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2 || condition > 25) {
+            if (condition == 1 || condition == 2 || condition > 44) {
                 continue;
             }
 
@@ -441,7 +441,7 @@ public class SolvingMidnight {
 
     private void calculateInitialRunThrough() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2 || condition > 25) {
+            if (condition == 1 || condition == 2 || condition > 44) {
                 continue;
             }
 
@@ -473,38 +473,38 @@ public class SolvingMidnight {
 
     private void calculateAllStateEquitiesRecursively() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2 || condition > 25) {
+            if (condition < 25 || condition > 44) {
                 continue;
             }
             System.out.println(condition);
 
             for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
-                solveStateEquityRecursively(midnightState);
+                solveStateEquityRecursively(midnightState, condition >= 25);
             }
             System.out.println("1 done");
 
             for (MidnightState midnightState : mapsFor2LiveDice.get(condition).values()) {
-                solveStateEquityRecursively(midnightState);
+                solveStateEquityRecursively(midnightState, condition >= 25);
             }
             System.out.println("2 done");
 
             for (MidnightState midnightState : mapsFor3LiveDice.get(condition).values()) {
-                solveStateEquityRecursively(midnightState);
+                solveStateEquityRecursively(midnightState, condition >= 25);
             }
             System.out.println("3 done");
 
             for (MidnightState midnightState : mapsFor4LiveDice.get(condition).values()) {
-                solveStateEquityRecursively(midnightState);
+                solveStateEquityRecursively(midnightState, condition >= 25);
             }
             System.out.println("4 done");
 
             for (MidnightState midnightState : mapsFor5LiveDice.get(condition).values()) {
-                solveStateEquityRecursively(midnightState);
+                solveStateEquityRecursively(midnightState, condition >= 25);
             }
             System.out.println("5 done");
 
             for (MidnightState midnightState : mapsFor6LiveDice.get(condition).values()) {
-                solveStateEquityRecursively(midnightState);
+                solveStateEquityRecursively(midnightState, condition >= 25);
             }
             System.out.println("6 done");
         }
@@ -512,32 +512,32 @@ public class SolvingMidnight {
 
     private void calculateAllStateEquitiesRecursively(int condition) {
         for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState);
+            solveStateEquityRecursively(midnightState, condition >= 25);
         }
         System.out.println("1 done");
 
         for (MidnightState midnightState : mapsFor2LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState);
+            solveStateEquityRecursively(midnightState, condition >= 25);
         }
         System.out.println("2 done");
 
         for (MidnightState midnightState : mapsFor3LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState);
+            solveStateEquityRecursively(midnightState, condition >= 25);
         }
         System.out.println("3 done");
 
         for (MidnightState midnightState : mapsFor4LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState);
+            solveStateEquityRecursively(midnightState, condition >= 25);
         }
         System.out.println("4 done");
 
         for (MidnightState midnightState : mapsFor5LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState);
+            solveStateEquityRecursively(midnightState, condition >= 25);
         }
         System.out.println("5 done");
 
         for (MidnightState midnightState : mapsFor6LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState);
+            solveStateEquityRecursively(midnightState, condition >= 25);
         }
         System.out.println("6 done");
     }
@@ -548,7 +548,7 @@ public class SolvingMidnight {
         }
 
         for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState);
+            solveStateEquityRecursively(midnightState, condition >= 25);
         }
         System.out.println("1 done");
         if (maxLiveDice == 1) {
@@ -556,7 +556,7 @@ public class SolvingMidnight {
         }
 
         for (MidnightState midnightState : mapsFor2LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState);
+            solveStateEquityRecursively(midnightState, condition >= 25);
         }
         System.out.println("2 done");
         if (maxLiveDice == 2) {
@@ -564,7 +564,7 @@ public class SolvingMidnight {
         }
 
         for (MidnightState midnightState : mapsFor3LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState);
+            solveStateEquityRecursively(midnightState, condition >= 25);
         }
         System.out.println("3 done");
         if (maxLiveDice == 3) {
@@ -572,7 +572,7 @@ public class SolvingMidnight {
         }
 
         for (MidnightState midnightState : mapsFor4LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState);
+            solveStateEquityRecursively(midnightState, condition >= 25);
         }
         System.out.println("4 done");
         if (maxLiveDice == 4) {
@@ -580,7 +580,7 @@ public class SolvingMidnight {
         }
 
         for (MidnightState midnightState : mapsFor5LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState);
+            solveStateEquityRecursively(midnightState, condition >= 25);
         }
         System.out.println("5 done");
         if (maxLiveDice == 5) {
@@ -588,14 +588,14 @@ public class SolvingMidnight {
         }
 
         for (MidnightState midnightState : mapsFor6LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState);
+            solveStateEquityRecursively(midnightState, condition >= 25);
         }
         System.out.println("6 done");
     }
 
     //Assumes calculateEquityIfKeptAllDice() has been run for the current state, and
     //solveStateEquityRecursively() has been run for the branching states one level simpler
-    private void solveStateEquityRecursively(MidnightState midnightState) {
+    private void solveStateEquityRecursively(MidnightState midnightState, boolean mergeSuccessesAndEquity) {
         if (midnightState.getNumLiveDice() <= 1) {  //the base case is already done
             return;
         }
@@ -798,16 +798,30 @@ public class SolvingMidnight {
                 }
 
                 boolean updateFlag = false;
-                if (contendingSuccessNum > successNum) {
-                    updateFlag = true;
-                } else if (contendingSuccessNum == successNum) {
-                    if (contendingEquityGivenSuccess > equityGivenSuccess) {
+                if (mergeSuccessesAndEquity) {
+                    double mergedEquity = equityGivenSuccess * successNum / successDenom;
+                    double contendingMergedEquity = contendingEquityGivenSuccess *
+                            contendingSuccessNum / contendingSuccessDenom;
+                    if (contendingMergedEquity > mergedEquity) {
                         updateFlag = true;
-                    } else if (contendingEquityGivenSuccess == equityGivenSuccess) {
+                    } else if (contendingMergedEquity == mergedEquity) {
                         if (contendingEquityGivenFailure > equityGivenFailure) {
                             updateFlag = true;
                         }
                         //if everything is equal, don't update which means prefer the solution that keeps more dice
+                    }
+                } else {
+                    if (contendingSuccessNum > successNum) {
+                        updateFlag = true;
+                    } else if (contendingSuccessNum == successNum) {
+                        if (contendingEquityGivenSuccess > equityGivenSuccess) {
+                            updateFlag = true;
+                        } else if (contendingEquityGivenSuccess == equityGivenSuccess) {
+                            if (contendingEquityGivenFailure > equityGivenFailure) {
+                                updateFlag = true;
+                            }
+                            //if everything is equal, don't update which means prefer the solution that keeps more dice
+                        }
                     }
                 }
                 if (updateFlag) {
@@ -827,9 +841,12 @@ public class SolvingMidnight {
         midnightState.setEquityGivenFailure(equityGivenFailure);
     }
 
+    //TODO need alternate solve() function that prioritizes successNum * equityGivenSuccess (instead of just successNum)
+
+
     private void printResults() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2 || condition > 25) {
+            if (condition == 1 || condition == 2 || condition > 44) {
                 continue;
             }
 
@@ -1007,7 +1024,7 @@ public class SolvingMidnight {
 
     private void writeToFile() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2 || condition > 25) {
+            if (condition == 1 || condition == 2 || condition > 44) {
                 continue;
             }
 

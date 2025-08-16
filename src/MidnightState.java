@@ -110,13 +110,38 @@ public class MidnightState {
                 optimalPolicyHigh = numLiveDice - optimalPolicyQual;
 
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
-                successNum = successDenom;
-                equityGivenSuccess = EQUITIES[calculateScoreIfKeptAllDice()];
+                if (calculateScoreIfKeptAllDice() == 0) {
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES[calculateScoreIfKeptAllDice()]; //0.0
+                } else {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES[calculateScoreIfKeptAllDice()];
+                }
 
                 break;
             case 26: case 27: case 28: case 29: case 30: case 31: case 32:
             case 33: case 34: case 35: case 36: case 37: case 38: case 39: case 40:
-            case 41: case 42: case 43: case 44: case 45:
+            case 41: case 42: case 43: case 44:
+                optimalPolicyQual = 0;
+                if (canKeepLowQualifier()) {
+                    optimalPolicyQual++;
+                }
+                if (canKeepHighQualifier()) {
+                    optimalPolicyQual++;
+                }
+                optimalPolicyHigh = numLiveDice - optimalPolicyQual;
+
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > condition - 22) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES[calculateScoreIfKeptAllDice()];
+                } else {
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES[calculateScoreIfKeptAllDice()];
+                }
+
+                break;
+            case 45:
                 throw new UnsupportedOperationException("Not yet: " + condition);
             default:
                 throw new IllegalArgumentException("Invalid condition: " + condition);

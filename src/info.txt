@@ -136,8 +136,128 @@ Percentage: 9.998965917946808615
 EquityGivenSuccess: 24.0000000000
 EquityGivenFailure: 12.0658532987
 
-Condition: 25
+Condition: 25OLD
 RunningTotal: 21936950640377856
 Percentage: 100.0
-EquityGivenSuccess: 0.4917908441 //This is P1's (or in 3P, P2's) win percentage
+EquityGivenSuccess: 0.4917908441 //This is P1's (or in 3P, if P1 scored zero, P2's) win percentage
 EquityGivenFailure: N/A
+
+Condition: 25
+RunningTotal: 18924751800249521
+Percentage: 86.268835220042000468
+EquityGivenSuccess: 0.5700677919
+EquityGivenFailure: 0.0
+
+Condition: 26
+RunningTotal: 18924751767645942
+Percentage: 86.268835071417975486
+EquityGivenSuccess: 0.5700677928
+EquityGivenFailure: 5E-10
+
+Condition: 27
+RunningTotal: 18924750923149240
+Percentage: 86.268831221763956365
+EquityGivenSuccess: 0.5700678163
+EquityGivenFailure: 1.26E-8
+
+Condition: 28
+RunningTotal: 18924741623911868
+Percentage: 86.268788831016379610
+EquityGivenSuccess: 0.5700680752
+EquityGivenFailure: 1.462E-7
+
+Condition: 29
+RunningTotal: 18924679720797368
+Percentage: 86.268506644510539280
+EquityGivenSuccess: 0.5700697973
+EquityGivenFailure: 0.0000010355
+
+Condition: 30
+RunningTotal: 18924381886779531
+Percentage: 86.267148962566865682
+EquityGivenSuccess: 0.5700780671
+EquityGivenFailure: 0.0000053137
+
+Condition: 31
+RunningTotal: 18923184256171683
+Percentage: 86.261689541029746468
+EquityGivenSuccess: 0.5701111333
+EquityGivenFailure: 0.0000225143
+
+Condition: 32
+RunningTotal: 18917902980483441
+Percentage: 86.237614746976460346
+EquityGivenSuccess: 0.5702583333
+EquityGivenFailure: 0.0000983292
+
+Condition: 33
+RunningTotal: 18902291409697958
+Percentage: 86.166449109411739562
+EquityGivenSuccess: 0.5706926589
+EquityGivenFailure: 0.0003225626
+
+Condition: 34
+RunningTotal: 18861977004949861
+Percentage: 85.982675140964671027
+EquityGivenSuccess: 0.5718153775
+EquityGivenFailure: 0.0009056861
+
+Condition: 35
+RunningTotal: 18776988880715622
+Percentage: 85.595255186261362680
+EquityGivenSuccess: 0.5741740605
+EquityGivenFailure: 0.0021785028
+
+Condition: 36
+RunningTotal: 18588889078403387
+Percentage: 84.737798717512180824
+EquityGivenSuccess: 0.5794093326
+EquityGivenFailure: 0.0052513752
+
+Condition: 37
+RunningTotal: 18221952570204878
+Percentage: 83.065111778411748713
+EquityGivenSuccess: 0.5895267164
+EquityGivenFailure: 0.0123478378
+
+Condition: 38
+RunningTotal: 17599947128517751
+Percentage: 80.229688332902217392
+EquityGivenSuccess: 0.6063077703
+EquityGivenFailure: 0.0270324166
+
+Condition: 39
+RunningTotal: 16457446759128008
+Percentage: 75.021579019446316548
+EquityGivenSuccess: 0.6385375028
+EquityGivenFailure: 0.0474498515
+
+Condition: 40
+RunningTotal: 14876988814966068
+Percentage: 67.817031905897643374
+EquityGivenSuccess: 0.6789042112
+EquityGivenFailure: 0.0941989759
+
+Condition: 41
+RunningTotal: 13464467251843826
+Percentage: 61.378025927909483806
+EquityGivenSuccess: 0.6987019865
+EquityGivenFailure: 0.1374020493
+
+Condition: 42
+RunningTotal: 10611591291882738
+Percentage: 48.373137478600613734
+EquityGivenSuccess: 0.7794733481
+EquityGivenFailure: 0.1925224514
+
+Condition: 43
+RunningTotal: 7511338646489736
+Percentage: 34.240577779594055386
+EquityGivenSuccess: 0.8662141153
+EquityGivenFailure: 0.2312495013
+
+Condition: 44
+RunningTotal: 4760607607065850
+Percentage: 21.701318861990429608
+EquityGivenSuccess: 0.9404425282
+EquityGivenFailure: 0.2619432906

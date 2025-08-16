@@ -1,5 +1,5 @@
 /*
- *If you roll 4 sixes and no qualifiers, should you keep 3 or 4 sixes?
+ * For condition 24: if you roll 4 sixes and no qualifiers, should you keep 3 or 4 sixes?
  * Keeping 4 is obviously 30/216 == 5/36 chance
  * If you keep 3:
  * 6/216 chance of winning outright (146/164/416/461/614/641)
@@ -7,6 +7,14 @@
  * 111/216 chance of a 5/36
  * 27/216 chance of losing outright (no 1s, 4s, or 6s)
  * This calculates out to 401/2592 ~= 15.4707% which is actually better than the 13.8889% you get from keeping four!
+ *
+ * Strategy for P1:
+ * On initial roll:
+ * 1. Keep 146666, 145666, 144666, 145566, 144566, 145556, 144556, 145555 (i.e. scores of 20+ without 2/3 except 144466)
+ * 2. Else, keep 14666
+ * 3. Else, keep 14566
+ * 4. Else, keep 1466
+ * 5. Else, keep a single dice with the following priority: 6>4>1>5>3>2
  */
 // 99998668
 //999847659
