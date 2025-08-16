@@ -841,9 +841,6 @@ public class SolvingMidnight {
         midnightState.setEquityGivenFailure(equityGivenFailure);
     }
 
-    //TODO need alternate solve() function that prioritizes successNum * equityGivenSuccess (instead of just successNum)
-
-
     private void printResults() {
         for (int condition = 0; condition < CAPACITY; condition++) {
             if (condition == 1 || condition == 2 || condition > 44) {

@@ -70,13 +70,13 @@ public class Midnight24 {
                         } else {
                             hasHighQualifier = true;
                             diceLeftToRoll--;
-                            continue;
+                            
                         }
                     } else {
                         if (contains(diceRolled, LOW_QUALIFIER)) {
                             hasLowQualifier = true;
                             diceLeftToRoll--;
-                            continue;
+                            
                         } else {
                             return false;
                         }
@@ -94,13 +94,13 @@ public class Midnight24 {
                             } else {
                                 numSixesKept++;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             }
                         } else {
                             if (contains(diceRolled, LOW_QUALIFIER)) {
                                 hasLowQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else {
                                 return false;
                             }
@@ -114,13 +114,13 @@ public class Midnight24 {
                             } else {
                                 numSixesKept++;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             }
                         } else {
                             if (contains(diceRolled, HIGH_QUALIFIER)) {
                                 hasHighQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else {
                                 return false;
                             }
@@ -134,18 +134,18 @@ public class Midnight24 {
                                     numSixesKept++;
                                     hasHighQualifier = true;
                                     diceLeftToRoll -= 2;
-                                    continue;
+                                    
                                 }
                             } else {
                                 if (contains(diceRolled, LOW_QUALIFIER)) {
                                     numSixesKept++;
                                     hasLowQualifier = true;
                                     diceLeftToRoll -= 2;
-                                    continue;
+                                    
                                 } else {
                                     numSixesKept++;
                                     diceLeftToRoll --;
-                                    continue;
+                                    
                                 }
                             }
                         } else {
@@ -154,17 +154,17 @@ public class Midnight24 {
                                     hasHighQualifier = true;
                                     hasLowQualifier = true;
                                     diceLeftToRoll -= 2;
-                                    continue;
+                                    
                                 } else {
                                     hasHighQualifier = true;
                                     diceLeftToRoll--;
-                                    continue;
+                                    
                                 }
                             } else {
                                 if (contains(diceRolled, LOW_QUALIFIER)) {
                                     hasLowQualifier = true;
                                     diceLeftToRoll--;
-                                    continue;
+                                    
                                 } else {
                                     return false;
                                 }
@@ -181,7 +181,7 @@ public class Midnight24 {
                         } else if (contains(diceRolled, SIX)) {
                             numSixesKept++;
                             diceLeftToRoll--;
-                            continue;
+                            
                         } else {
                             return false;
                         }
@@ -192,24 +192,24 @@ public class Midnight24 {
                             } else {
                                 numSixesKept += 2;
                                 diceLeftToRoll -= 2;
-                                continue;
+                                
                             }
                         } else if (contains(diceRolled, SIX)) {
                             if (contains(diceRolled, LOW_QUALIFIER)) {
                                 numSixesKept++;
                                 hasLowQualifier = true;
                                 diceLeftToRoll -= 2;
-                                continue;
+                                
                             } else {
                                 numSixesKept++;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             }
                         } else {
                             if (contains(diceRolled, LOW_QUALIFIER)) {
                                 hasLowQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else {
                                 return false;
                             }
@@ -223,24 +223,24 @@ public class Midnight24 {
                             } else {
                                 numSixesKept += 2;
                                 diceLeftToRoll -= 2;
-                                continue;
+                                
                             }
                         } else if (contains(diceRolled, SIX)) {
                             if (contains(diceRolled, HIGH_QUALIFIER)) {
                                 numSixesKept++;
                                 hasHighQualifier = true;
                                 diceLeftToRoll -= 2;
-                                continue;
+                                
                             } else {
                                 numSixesKept++;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             }
                         } else {
                             if (contains(diceRolled, HIGH_QUALIFIER)) {
                                 hasHighQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else {
                                 return false;
                             }
@@ -254,18 +254,18 @@ public class Midnight24 {
                                     numSixesKept += 2;
                                     hasHighQualifier = true;
                                     diceLeftToRoll -= 3;
-                                    continue;
+                                    
                                 }
                             } else {
                                 if (contains(diceRolled, LOW_QUALIFIER)) {
                                     numSixesKept += 2;
                                     hasLowQualifier = true;
                                     diceLeftToRoll -= 3;
-                                    continue;
+                                    
                                 } else {
                                     numSixesKept++; //this is the exception to max 6s!
                                     diceLeftToRoll--;
-                                    continue;
+                                    
                                 }
                             }
                         } else if (contains(diceRolled, SIX)) {
@@ -274,21 +274,21 @@ public class Midnight24 {
                                 hasHighQualifier = true;
                                 hasLowQualifier = true;
                                 diceLeftToRoll -= 3;
-                                continue;
+                                
                             } else { //this is also an exception
                                 numSixesKept++;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             }
                         } else {
                             if (contains(diceRolled, HIGH_QUALIFIER)) {
                                 hasHighQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else if (contains(diceRolled, LOW_QUALIFIER)) {
                                 hasLowQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else {
                                 return false;
                             }
@@ -304,11 +304,11 @@ public class Midnight24 {
                         } else if (containsHowMany(diceRolled, SIX) == 2) {
                             numSixesKept += 2;
                             diceLeftToRoll -= 2;
-                            continue;
+                            
                         } else if (contains(diceRolled, SIX)) {
                             numSixesKept++;
                             diceLeftToRoll--;
-                            continue;
+                            
                         } else {
                             return false;
                         }
@@ -319,28 +319,28 @@ public class Midnight24 {
                             } else {
                                 numSixesKept += 3;
                                 diceLeftToRoll -= 3;
-                                continue;
+                                
                             }
                         } else if (containsHowMany(diceRolled, SIX) == 2) {
                             if (contains(diceRolled, LOW_QUALIFIER)) {
                                 numSixesKept += 2;
                                 hasLowQualifier = true;
                                 diceLeftToRoll -= 3;
-                                continue;
+                                
                             } else {
                                 numSixesKept += 2;
                                 diceLeftToRoll -= 2;
-                                continue;
+                                
                             }
                         } else if (contains(diceRolled, SIX)) {
                             numSixesKept++;
                             diceLeftToRoll--;
-                            continue;
+                            
                         } else {
                             if (contains(diceRolled, LOW_QUALIFIER)) {
                                 hasLowQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else {
                                 return false;
                             }
@@ -354,28 +354,28 @@ public class Midnight24 {
                             } else {
                                 numSixesKept += 3;
                                 diceLeftToRoll -= 3;
-                                continue;
+                                
                             }
                         } else if (containsHowMany(diceRolled, SIX) == 2) {
                             if (contains(diceRolled, HIGH_QUALIFIER)) {
                                 numSixesKept += 2;
                                 hasHighQualifier = true;
                                 diceLeftToRoll -= 3;
-                                continue;
+                                
                             } else {
                                 numSixesKept += 2;
                                 diceLeftToRoll -= 2;
-                                continue;
+                                
                             }
                         } else if (contains(diceRolled, SIX)) {
                             numSixesKept++;
                             diceLeftToRoll--;
-                            continue;
+                            
                         } else {
                             if (contains(diceRolled, HIGH_QUALIFIER)) {
                                 hasHighQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else {
                                 return false;
                             }
@@ -389,18 +389,18 @@ public class Midnight24 {
                                     numSixesKept += 3;
                                     hasHighQualifier = true;
                                     diceLeftToRoll -= 4;
-                                    continue;
+                                    
                                 }
                             } else {
                                 if (contains(diceRolled, LOW_QUALIFIER)) {
                                     numSixesKept += 3;
                                     hasLowQualifier = true;
                                     diceLeftToRoll -= 4;
-                                    continue;
+                                    
                                 } else {
                                     numSixesKept += 2; //this is the exception to max 6s!
                                     diceLeftToRoll -= 2;
-                                    continue;
+                                    
                                 }
                             }
                         } else if (containsHowMany(diceRolled, SIX) == 2) {
@@ -409,25 +409,25 @@ public class Midnight24 {
                                 hasHighQualifier = true;
                                 hasLowQualifier = true;
                                 diceLeftToRoll -= 4;
-                                continue;
+                                
                             } else {
                                 numSixesKept += 2; //this is also an exception
                                 diceLeftToRoll -= 2;
-                                continue;
+                                
                             }
                         } else if (contains(diceRolled, SIX)) {
                             numSixesKept++;
                             diceLeftToRoll--;
-                            continue;
+                            
                         } else {
                             if (contains(diceRolled, HIGH_QUALIFIER)) {
                                 hasHighQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else if (contains(diceRolled, LOW_QUALIFIER)) {
                                 hasLowQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else {
                                 return false;
                             }
@@ -443,15 +443,15 @@ public class Midnight24 {
                         } else if (containsHowMany(diceRolled, SIX) >= 3) {
                             numSixesKept += 3;
                             diceLeftToRoll -= 3;
-                            continue;
+                            
                         } else if (containsHowMany(diceRolled, SIX) == 2) {
                             numSixesKept += 2;
                             diceLeftToRoll -= 2;
-                            continue;
+                            
                         } else if (contains(diceRolled, SIX)) {
                             numSixesKept++;
                             diceLeftToRoll--;
-                            continue;
+                            
                         } else {
                             return false;
                         }
@@ -462,32 +462,32 @@ public class Midnight24 {
                             } else {
                                 numSixesKept += 4;
                                 diceLeftToRoll -= 4;
-                                continue;
+                                
                             }
                         } else if (containsHowMany(diceRolled, SIX) >= 3) {
                             if (contains(diceRolled, LOW_QUALIFIER)) {
                                 numSixesKept += 3;
                                 hasLowQualifier = true;
                                 diceLeftToRoll -= 4;
-                                continue;
+                                
                             } else {
                                 numSixesKept += 3;
                                 diceLeftToRoll -= 3;
-                                continue;
+                                
                             }
                         } else if (containsHowMany(diceRolled, SIX) == 2) {
                             numSixesKept += 2;
                             diceLeftToRoll -= 2;
-                            continue;
+                            
                         } else if (contains(diceRolled, SIX)) {
                             numSixesKept++;
                             diceLeftToRoll--;
-                            continue;
+                            
                         } else {
                             if (contains(diceRolled, LOW_QUALIFIER)) {
                                 hasLowQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else {
                                 return false;
                             }
@@ -501,32 +501,32 @@ public class Midnight24 {
                             } else {
                                 numSixesKept += 4;
                                 diceLeftToRoll -= 4;
-                                continue;
+                                
                             }
                         } else if (containsHowMany(diceRolled, SIX) >= 3) {
                             if (contains(diceRolled, HIGH_QUALIFIER)) {
                                 numSixesKept += 3;
                                 hasHighQualifier = true;
                                 diceLeftToRoll -= 4;
-                                continue;
+                                
                             } else {
                                 numSixesKept += 3;
                                 diceLeftToRoll -= 3;
-                                continue;
+                                
                             }
                         } else if (containsHowMany(diceRolled, SIX) == 2) {
                             numSixesKept += 2;
                             diceLeftToRoll -= 2;
-                            continue;
+                            
                         } else if (contains(diceRolled, SIX)) {
                             numSixesKept++;
                             diceLeftToRoll--;
-                            continue;
+                            
                         } else {
                             if (contains(diceRolled, HIGH_QUALIFIER)) {
                                 hasHighQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else {
                                 return false;
                             }
@@ -540,18 +540,18 @@ public class Midnight24 {
                                     numSixesKept += 4;
                                     hasHighQualifier = true;
                                     diceLeftToRoll -= 5;
-                                    continue;
+                                    
                                 }
                             } else {
                                 if (contains(diceRolled, LOW_QUALIFIER)) {
                                     numSixesKept += 4;
                                     hasLowQualifier = true;
                                     diceLeftToRoll -= 5;
-                                    continue;
+                                    
                                 } else {
                                     numSixesKept += 3;  //this is the exception to max 6s!
                                     diceLeftToRoll -= 3;
-                                    continue;
+                                    
                                 }
                             }
                         } else if (containsHowMany(diceRolled, SIX) >= 3) {
@@ -560,29 +560,29 @@ public class Midnight24 {
                                 hasHighQualifier = true;
                                 hasLowQualifier = true;
                                 diceLeftToRoll -= 5;
-                                continue;
+                                
                             } else {
                                 numSixesKept += 3;
                                 diceLeftToRoll -= 3;
-                                continue;
+                                
                             }
                         } else if (containsHowMany(diceRolled, SIX) == 2) {
                             numSixesKept += 2;
                             diceLeftToRoll -= 2;
-                            continue;
+                            
                         } else if (contains(diceRolled, SIX)) {
                             numSixesKept++;
                             diceLeftToRoll--;
-                            continue;
+                            
                         } else {
                             if (contains(diceRolled, HIGH_QUALIFIER)) {
                                 hasHighQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else if (contains(diceRolled, LOW_QUALIFIER)) {
                                 hasLowQualifier = true;
                                 diceLeftToRoll--;
-                                continue;
+                                
                             } else {
                                 return false;
                             }
