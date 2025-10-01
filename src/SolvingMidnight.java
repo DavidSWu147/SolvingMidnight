@@ -13,12 +13,25 @@ public class SolvingMidnight {
     public static final int LOW_QUALIFIER = 1;
     public static final int HIGH_QUALIFIER = 4;
     public static final int CAPACITY = 46;
+
+    //If I were to redo this, I think I would make ArrayList<ArrayList<HashMap<String, MidnightState>> and
+    //use the CONDITION first as the major axis, before the # of live dice as the minor axis
     ArrayList<HashMap<String, MidnightState>> mapsFor1LiveDice;
     ArrayList<HashMap<String, MidnightState>> mapsFor2LiveDice;
     ArrayList<HashMap<String, MidnightState>> mapsFor3LiveDice;
     ArrayList<HashMap<String, MidnightState>> mapsFor4LiveDice;
     ArrayList<HashMap<String, MidnightState>> mapsFor5LiveDice;
     ArrayList<HashMap<String, MidnightState>> mapsFor6LiveDice;
+
+    //The inner ArrayList is like an Array with length 25 for the scores of 0~24
+    //Scores of 1, 2, and 3 are impossible so those indices always contain 0
+    ArrayList<HashMap<String, long[]>> distributionsFor1LiveDice;
+    ArrayList<HashMap<String, long[]>> distributionsFor2LiveDice;
+    ArrayList<HashMap<String, long[]>> distributionsFor3LiveDice;
+    ArrayList<HashMap<String, long[]>> distributionsFor4LiveDice;
+    ArrayList<HashMap<String, long[]>> distributionsFor5LiveDice;
+    ArrayList<HashMap<String, long[]>> distributionsFor6LiveDice;
+
     public SolvingMidnight() {
         mapsFor1LiveDice = new ArrayList<>();
         mapsFor2LiveDice = new ArrayList<>();
@@ -35,6 +48,22 @@ public class SolvingMidnight {
             mapsFor5LiveDice.add(new HashMap<>());
             mapsFor6LiveDice.add(new HashMap<>());
         }
+
+        distributionsFor1LiveDice = new ArrayList<>();
+        distributionsFor2LiveDice = new ArrayList<>();
+        distributionsFor3LiveDice = new ArrayList<>();
+        distributionsFor4LiveDice = new ArrayList<>();
+        distributionsFor5LiveDice = new ArrayList<>();
+        distributionsFor6LiveDice = new ArrayList<>();
+
+        for (int i = 0; i < CAPACITY; i++) {
+            distributionsFor1LiveDice.add(new HashMap<>());
+            distributionsFor2LiveDice.add(new HashMap<>());
+            distributionsFor3LiveDice.add(new HashMap<>());
+            distributionsFor4LiveDice.add(new HashMap<>());
+            distributionsFor5LiveDice.add(new HashMap<>());
+            distributionsFor6LiveDice.add(new HashMap<>());
+        }
     }
 
     public static void main(String[] args) {
@@ -47,16 +76,12 @@ public class SolvingMidnight {
 
         calculateInitialRunThrough();
 
-        calculateAllStateEquitiesRecursively(0);
-        calculateAllStateEquitiesRecursively(3);
         calculateAllStateEquitiesRecursively(45);
 
-        writeToFile(0);
-        writeToFile(3);
-        writeToFile(45);
+        //writeToFile(45);
 
         for (int condition = 0; condition <= 45; condition++) {
-            if (condition != 0 && condition != 3 && condition != 45) {
+            if (condition != 45) {
                 continue;
             }
 
@@ -78,7 +103,7 @@ public class SolvingMidnight {
             BigDecimal overallOppositeRatio = BigDecimal.ONE.subtract(overallRatio);
             BigDecimal percentage = overallRatio.multiply(BigDecimal.valueOf(100));
             if (condition < 10) {
-                System.out.println("Condition: 0" + condition);
+                System.out.println("Condition: " + condition);
             } else {
                 System.out.println("Condition: " + condition);
             }
@@ -94,15 +119,57 @@ public class SolvingMidnight {
             }
             System.out.println();
         }
+
+        populateDistributions();
+        calculateDistributions();
+        for (int i = 0; i < 10; i++) {
+            System.out.println();
+        }
+        long[] arr = distributionsFor6LiveDice.get(45).get("00__");
+        for (int i = 0; i < arr.length; i++) {
+            if (i < 10) {
+                System.out.println(" " + i + ": " + arr[i] + " ");
+            } else {
+                System.out.println(i + ": " + arr[i] + " ");
+            }
+        }
+        System.out.println();
+        for (int i = 0; i < arr.length; i++) {
+            if (i < 10) {
+                System.out.println(" " + i + ": " + arr[i] / Math.pow(6, 21) + " ");
+            } else {
+                System.out.println(i + ": " + arr[i] / Math.pow(6, 21) + " ");
+            }
+        }
+
+        System.out.println();
+        double cumSum = 0.0;
+        for (int i = 0; i < arr.length; i++) {
+            cumSum += arr[i];
+            if (i < 10) {
+                System.out.println(" " + i + ": " + cumSum / Math.pow(6, 21));
+            } else {
+                System.out.println(i + ": " + cumSum / Math.pow(6, 21));
+            }
+        }
+        System.out.println();
+        double cumSum1 = 0.0;
+        for (int i = 0; i < arr.length; i++) {
+            cumSum1 += arr[i] / 2.0;
+            if (i < 10) {
+                System.out.println(" " + i + ": " + cumSum1 / Math.pow(6, 21));
+            } else {
+                System.out.println(i + ": " + cumSum1 / Math.pow(6, 21));
+            }
+            cumSum1 += arr[i] / 2.0;
+        }
     }
 
-    //don't care too much about unreachable states for now
+    //don't care about unreachable states, since they could be reachable under different qualifiers (such as 2-4-24)
     private void populateWithStates() {
         //1 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2) {
-                continue;
-            }
+            
 
             //in this case you have no qualifiers and 1 dice left, so you lost for sure
             for (int pointsBanked = 5; pointsBanked <= 30; pointsBanked++) {
@@ -152,9 +219,7 @@ public class SolvingMidnight {
 
         //2 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2) {
-                continue;
-            }
+            
 
             for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
                 for (int dice1 = 1; dice1 <= 6; dice1++) {
@@ -211,9 +276,7 @@ public class SolvingMidnight {
 
         //3 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2) {
-                continue;
-            }
+            
 
             for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
                 for (int dice1 = 1; dice1 <= 6; dice1++) {
@@ -278,9 +341,7 @@ public class SolvingMidnight {
 
         //4 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2) {
-                continue;
-            }
+            
 
             for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
                 for (int dice1 = 1; dice1 <= 6; dice1++) {
@@ -350,9 +411,7 @@ public class SolvingMidnight {
 
         //5 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2) {
-                continue;
-            }
+            
 
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 for (int dice1 = 1; dice1 <= 6; dice1++) {
@@ -408,9 +467,7 @@ public class SolvingMidnight {
 
         //6 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2) {
-                continue;
-            }
+            
 
             for (int dice1 = 1; dice1 <= 6; dice1++) {
                 for (int dice2 = 1; dice2 <= 6; dice2++) {
@@ -434,9 +491,7 @@ public class SolvingMidnight {
 
     private void calculateInitialRunThrough() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2) {
-                continue;
-            }
+            
 
             for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
                 midnightState.calculateEquityIfKeptAllDice();
@@ -466,9 +521,7 @@ public class SolvingMidnight {
 
     private void calculateAllStateEquitiesRecursively() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition < 25) {
-                continue;
-            }
+            
             System.out.println(condition);
 
             for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
@@ -836,9 +889,7 @@ public class SolvingMidnight {
 
     private void printResults() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2) {
-                continue;
-            }
+            
 
             for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
                 if (ABRIDGED_RESULTS) {
@@ -1014,9 +1065,7 @@ public class SolvingMidnight {
 
     private void writeToFile() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 1 || condition == 2) {
-                continue;
-            }
+            
 
             String modifiedPathway = condition < 10 ? PATHWAY + "0" : PATHWAY;
             try (PrintWriter pw = new PrintWriter(modifiedPathway + condition + ".txt")) {
@@ -2006,5 +2055,794 @@ public class SolvingMidnight {
             System.err.println("File not found: " + modifiedPathway + condition + ".txt");
             System.exit(1);
         }
+    }
+
+    //don't care about unreachable states, since they could be reachable under different qualifiers (such as 2-4-24)
+    private void populateDistributions() {
+        //1 dice
+        for (int condition = 0; condition < CAPACITY; condition++) {
+            
+
+            //in this case you have no qualifiers and 1 dice left, so you lost for sure
+            for (int pointsBanked = 5; pointsBanked <= 30; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                distributionsFor1LiveDice.get(condition).put(distKey, new long[25]);
+            }
+
+            for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "_L";
+                distributionsFor1LiveDice.get(condition).put(distKey, new long[25]);
+            }
+
+            for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "H_";
+                distributionsFor1LiveDice.get(condition).put(distKey, new long[25]);
+            }
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "HL";
+                distributionsFor1LiveDice.get(condition).put(distKey, new long[25]);
+            }
+        }
+
+        //2 dice
+        for (int condition = 0; condition < CAPACITY; condition++) {
+            
+
+            for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                distributionsFor2LiveDice.get(condition).put(distKey, new long[25]);
+            }
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "_L";
+                distributionsFor2LiveDice.get(condition).put(distKey, new long[25]);
+            }
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "H_";
+                distributionsFor2LiveDice.get(condition).put(distKey, new long[25]);
+            }
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "HL";
+                distributionsFor2LiveDice.get(condition).put(distKey, new long[25]);
+            }
+        }
+
+        //3 dice
+        for (int condition = 0; condition < CAPACITY; condition++) {
+            
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                distributionsFor3LiveDice.get(condition).put(distKey, new long[25]);
+            }
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "_L";
+                distributionsFor3LiveDice.get(condition).put(distKey, new long[25]);
+            }
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "H_";
+                distributionsFor3LiveDice.get(condition).put(distKey, new long[25]);
+            }
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String distKey = "0" + pointsBanked + "HL";
+                distributionsFor3LiveDice.get(condition).put(distKey, new long[25]);
+            }
+        }
+
+        //4 dice
+        for (int condition = 0; condition < CAPACITY; condition++) {
+            
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                distributionsFor4LiveDice.get(condition).put(distKey, new long[25]);
+            }
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String distKey = "0" + pointsBanked + "_L";
+                distributionsFor4LiveDice.get(condition).put(distKey, new long[25]);
+            }
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String distKey = "0" + pointsBanked + "H_";
+                distributionsFor4LiveDice.get(condition).put(distKey, new long[25]);
+            }
+
+            distributionsFor4LiveDice.get(condition).put("00HL", new long[25]);
+        }
+
+        //5 dice
+        for (int condition = 0; condition < CAPACITY; condition++) {
+            
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String distKey = "0" + pointsBanked + "__";
+                distributionsFor5LiveDice.get(condition).put(distKey, new long[25]);
+            }
+
+            distributionsFor5LiveDice.get(condition).put("00_L", new long[25]);
+
+            distributionsFor5LiveDice.get(condition).put("00H_", new long[25]);
+        }
+
+        //6 dice
+        for (int condition = 0; condition < CAPACITY; condition++) {
+            
+            distributionsFor6LiveDice.get(condition).put("00__", new long[25]);
+        }
+    }
+
+    private void calculateDistributions() {
+        //1 dice
+        for (int condition = 0; condition < CAPACITY; condition++) {
+            
+
+            //in this case you have no qualifiers and 1 dice left, so you lost for sure
+            for (int pointsBanked = 5; pointsBanked <= 30; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    String key = distKey + "|" + dice1;
+                    MidnightState midnightState = mapsFor1LiveDice.get(condition).get(key);
+                    int score = midnightState.calculateScoreIfKeptAllDice();
+                    distributionsFor1LiveDice.get(condition).get(distKey)[score] += 1L;
+                }
+            }
+
+            for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "_L";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    String key = distKey + "|" + dice1;
+                    MidnightState midnightState = mapsFor1LiveDice.get(condition).get(key);
+                    int score = midnightState.calculateScoreIfKeptAllDice();
+                    distributionsFor1LiveDice.get(condition).get(distKey)[score] += 1L;
+                }
+            }
+
+            for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "H_";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    String key = distKey + "|" + dice1;
+                    MidnightState midnightState = mapsFor1LiveDice.get(condition).get(key);
+                    int score = midnightState.calculateScoreIfKeptAllDice();
+                    distributionsFor1LiveDice.get(condition).get(distKey)[score] += 1L;
+                }
+            }
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "HL";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    String key = distKey + "|" + dice1;
+                    MidnightState midnightState = mapsFor1LiveDice.get(condition).get(key);
+                    int score = midnightState.calculateScoreIfKeptAllDice();
+                    distributionsFor1LiveDice.get(condition).get(distKey)[score] += 1L;
+                }
+            }
+        }
+
+        //2 dice
+        for (int condition = 0; condition < CAPACITY; condition++) {
+            
+
+            for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        String key = distKey + "|" + dice1 + dice2;
+                        MidnightState midnightState = mapsFor2LiveDice.get(condition).get(key);
+                        if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 2) { // == 2
+                            int score = midnightState.calculateScoreIfKeptAllDice();
+                            distributionsFor2LiveDice.get(condition).get(distKey)[score] += 6L;
+                        } else { // == 1
+                            String lowerDistKey = deriveLowerDistKey(key, condition);
+                            long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                            for (int i = 0; i < lowerDist.length; i++) {
+                                distributionsFor2LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "_L";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        String key = distKey + "|" + dice1 + dice2;
+                        MidnightState midnightState = mapsFor2LiveDice.get(condition).get(key);
+                        if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 2) { // == 2
+                            int score = midnightState.calculateScoreIfKeptAllDice();
+                            distributionsFor2LiveDice.get(condition).get(distKey)[score] += 6L;
+                        } else { // == 1
+                            String lowerDistKey = deriveLowerDistKey(key, condition);
+                            long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                            for (int i = 0; i < lowerDist.length; i++) {
+                                distributionsFor2LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "H_";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        String key = distKey + "|" + dice1 + dice2;
+                        MidnightState midnightState = mapsFor2LiveDice.get(condition).get(key);
+                        if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 2) { // == 2
+                            int score = midnightState.calculateScoreIfKeptAllDice();
+                            distributionsFor2LiveDice.get(condition).get(distKey)[score] += 6L;
+                        } else { // == 1
+                            String lowerDistKey = deriveLowerDistKey(key, condition);
+                            long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                            for (int i = 0; i < lowerDist.length; i++) {
+                                distributionsFor2LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "HL";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        String key = distKey + "|" + dice1 + dice2;
+                        MidnightState midnightState = mapsFor2LiveDice.get(condition).get(key);
+                        if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 2) { // == 2
+                            int score = midnightState.calculateScoreIfKeptAllDice();
+                            distributionsFor2LiveDice.get(condition).get(distKey)[score] += 6L;
+                        } else { // == 1
+                            String lowerDistKey = deriveLowerDistKey(key, condition);
+                            long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                            for (int i = 0; i < lowerDist.length; i++) {
+                                distributionsFor2LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //3 dice
+        for (int condition = 0; condition < CAPACITY; condition++) {
+            
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            String key = distKey + "|" + dice1 + dice2 + dice3;
+                            MidnightState midnightState = mapsFor3LiveDice.get(condition).get(key);
+                            if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 3) { // == 3
+                                int score = midnightState.calculateScoreIfKeptAllDice();
+                                distributionsFor3LiveDice.get(condition).get(distKey)[score] += 216L;
+                            } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 2) {
+                                String lowerDistKey = deriveLowerDistKey(key, condition);
+                                long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    distributionsFor3LiveDice.get(condition).get(distKey)[i] += 36L * lowerDist[i];
+                                }
+                            } else { // == 1
+                                String lowerDistKey = deriveLowerDistKey(key, condition);
+                                long[] lowerDist = distributionsFor2LiveDice.get(condition).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    distributionsFor3LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "_L";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            String key = distKey + "|" + dice1 + dice2 + dice3;
+                            MidnightState midnightState = mapsFor3LiveDice.get(condition).get(key);
+                            if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 3) { // == 3
+                                int score = midnightState.calculateScoreIfKeptAllDice();
+                                distributionsFor3LiveDice.get(condition).get(distKey)[score] += 216L;
+                            } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 2) {
+                                String lowerDistKey = deriveLowerDistKey(key, condition);
+                                long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    distributionsFor3LiveDice.get(condition).get(distKey)[i] += 36L * lowerDist[i];
+                                }
+                            } else { // == 1
+                                String lowerDistKey = deriveLowerDistKey(key, condition);
+                                long[] lowerDist = distributionsFor2LiveDice.get(condition).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    distributionsFor3LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "H_";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            String key = distKey + "|" + dice1 + dice2 + dice3;
+                            MidnightState midnightState = mapsFor3LiveDice.get(condition).get(key);
+                            if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 3) { // == 3
+                                int score = midnightState.calculateScoreIfKeptAllDice();
+                                distributionsFor3LiveDice.get(condition).get(distKey)[score] += 216L;
+                            } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 2) {
+                                String lowerDistKey = deriveLowerDistKey(key, condition);
+                                long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    distributionsFor3LiveDice.get(condition).get(distKey)[i] += 36L * lowerDist[i];
+                                }
+                            } else { // == 1
+                                String lowerDistKey = deriveLowerDistKey(key, condition);
+                                long[] lowerDist = distributionsFor2LiveDice.get(condition).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    distributionsFor3LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String distKey = "0" + pointsBanked + "HL";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            String key = distKey + "|" + dice1 + dice2 + dice3;
+                            MidnightState midnightState = mapsFor3LiveDice.get(condition).get(key);
+                            if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 3) { // == 3
+                                int score = midnightState.calculateScoreIfKeptAllDice();
+                                distributionsFor3LiveDice.get(condition).get(distKey)[score] += 216L;
+                            } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 2) {
+                                String lowerDistKey = deriveLowerDistKey(key, condition);
+                                long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    distributionsFor3LiveDice.get(condition).get(distKey)[i] += 36L * lowerDist[i];
+                                }
+                            } else { // == 1
+                                String lowerDistKey = deriveLowerDistKey(key, condition);
+                                long[] lowerDist = distributionsFor2LiveDice.get(condition).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    distributionsFor3LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //4 dice
+        for (int condition = 0; condition < CAPACITY; condition++) {
+            
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            for (int dice4 = 1; dice4 <= 6; dice4++) {
+                                String key = distKey + "|" + dice1 + dice2 + dice3 + dice4;
+                                MidnightState midnightState = mapsFor4LiveDice.get(condition).get(key);
+                                if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 4) { // == 4
+                                    int score = midnightState.calculateScoreIfKeptAllDice();
+                                    distributionsFor4LiveDice.get(condition).get(distKey)[score] += 46656L;
+                                } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 3) {
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor4LiveDice.get(condition).get(distKey)[i] += 7776L * lowerDist[i];
+                                    }
+                                } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 2) {
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor2LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor4LiveDice.get(condition).get(distKey)[i] += 216L * lowerDist[i];
+                                    }
+                                } else { // == 1
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor3LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor4LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String distKey = "0" + pointsBanked + "_L";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            for (int dice4 = 1; dice4 <= 6; dice4++) {
+                                String key = distKey + "|" + dice1 + dice2 + dice3 + dice4;
+                                MidnightState midnightState = mapsFor4LiveDice.get(condition).get(key);
+                                if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 4) { // == 4
+                                    int score = midnightState.calculateScoreIfKeptAllDice();
+                                    distributionsFor4LiveDice.get(condition).get(distKey)[score] += 46656L;
+                                } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 3) {
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor4LiveDice.get(condition).get(distKey)[i] += 7776L * lowerDist[i];
+                                    }
+                                } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 2) {
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor2LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor4LiveDice.get(condition).get(distKey)[i] += 216L * lowerDist[i];
+                                    }
+                                } else { // == 1
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor3LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor4LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String distKey = "0" + pointsBanked + "H_";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            for (int dice4 = 1; dice4 <= 6; dice4++) {
+                                String key = distKey + "|" + dice1 + dice2 + dice3 + dice4;
+                                MidnightState midnightState = mapsFor4LiveDice.get(condition).get(key);
+                                if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 4) { // == 4
+                                    int score = midnightState.calculateScoreIfKeptAllDice();
+                                    distributionsFor4LiveDice.get(condition).get(distKey)[score] += 46656L;
+                                } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 3) {
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor4LiveDice.get(condition).get(distKey)[i] += 7776L * lowerDist[i];
+                                    }
+                                } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 2) {
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor2LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor4LiveDice.get(condition).get(distKey)[i] += 216L * lowerDist[i];
+                                    }
+                                } else { // == 1
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor3LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor4LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            String distKey = "00HL";
+            for (int dice1 = 1; dice1 <= 6; dice1++) {
+                for (int dice2 = 1; dice2 <= 6; dice2++) {
+                    for (int dice3 = 1; dice3 <= 6; dice3++) {
+                        for (int dice4 = 1; dice4 <= 6; dice4++) {
+                            String key = distKey + "|" + dice1 + dice2 + dice3 + dice4;
+                            MidnightState midnightState = mapsFor4LiveDice.get(condition).get(key);
+                            if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 4) { // == 4
+                                int score = midnightState.calculateScoreIfKeptAllDice();
+                                distributionsFor4LiveDice.get(condition).get(distKey)[score] += 46656L;
+                            } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 3) {
+                                String lowerDistKey = deriveLowerDistKey(key, condition);
+                                long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    distributionsFor4LiveDice.get(condition).get(distKey)[i] += 7776L * lowerDist[i];
+                                }
+                            } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 2) {
+                                String lowerDistKey = deriveLowerDistKey(key, condition);
+                                long[] lowerDist = distributionsFor2LiveDice.get(condition).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    distributionsFor4LiveDice.get(condition).get(distKey)[i] += 216L * lowerDist[i];
+                                }
+                            } else { // == 1
+                                String lowerDistKey = deriveLowerDistKey(key, condition);
+                                long[] lowerDist = distributionsFor3LiveDice.get(condition).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    distributionsFor4LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //5 dice
+        for (int condition = 0; condition < CAPACITY; condition++) {
+            
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String distKey = "0" + pointsBanked + "__";
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            for (int dice4 = 1; dice4 <= 6; dice4++) {
+                                for (int dice5 = 1; dice5 <= 6; dice5++) {
+                                    String key = distKey + "|" + dice1 + dice2 + dice3 + dice4 + dice5;
+                                    MidnightState midnightState = mapsFor5LiveDice.get(condition).get(key);
+                                    if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 5) { // == 5
+                                        int score = midnightState.calculateScoreIfKeptAllDice();
+                                        distributionsFor5LiveDice.get(condition).get(distKey)[score] += 60466176L;
+                                    } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 4) {
+                                        String lowerDistKey = deriveLowerDistKey(key, condition);
+                                        long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            distributionsFor5LiveDice.get(condition).get(distKey)[i] += 10077696L * lowerDist[i];
+                                        }
+                                    } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 3) {
+                                        String lowerDistKey = deriveLowerDistKey(key, condition);
+                                        long[] lowerDist = distributionsFor2LiveDice.get(condition).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            distributionsFor5LiveDice.get(condition).get(distKey)[i] += 279936L * lowerDist[i];
+                                        }
+                                    } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 2) {
+                                        String lowerDistKey = deriveLowerDistKey(key, condition);
+                                        long[] lowerDist = distributionsFor3LiveDice.get(condition).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            distributionsFor5LiveDice.get(condition).get(distKey)[i] += 1296L * lowerDist[i];
+                                        }
+                                    } else { // == 1
+                                        String lowerDistKey = deriveLowerDistKey(key, condition);
+                                        long[] lowerDist = distributionsFor4LiveDice.get(condition).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            distributionsFor5LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            String distKey = "00_L";
+            for (int dice1 = 1; dice1 <= 6; dice1++) {
+                for (int dice2 = 1; dice2 <= 6; dice2++) {
+                    for (int dice3 = 1; dice3 <= 6; dice3++) {
+                        for (int dice4 = 1; dice4 <= 6; dice4++) {
+                            for (int dice5 = 1; dice5 <= 6; dice5++) {
+                                String key = distKey + "|" + dice1 + dice2 + dice3 + dice4 + dice5;
+                                MidnightState midnightState = mapsFor5LiveDice.get(condition).get(key);
+                                if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 5) { // == 5
+                                    int score = midnightState.calculateScoreIfKeptAllDice();
+                                    distributionsFor5LiveDice.get(condition).get(distKey)[score] += 60466176L;
+                                } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 4) {
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor5LiveDice.get(condition).get(distKey)[i] += 10077696L * lowerDist[i];
+                                    }
+                                } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 3) {
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor2LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor5LiveDice.get(condition).get(distKey)[i] += 279936L * lowerDist[i];
+                                    }
+                                } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 2) {
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor3LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor5LiveDice.get(condition).get(distKey)[i] += 1296L * lowerDist[i];
+                                    }
+                                } else { // == 1
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor4LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor5LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            distKey = "00H_";
+            for (int dice1 = 1; dice1 <= 6; dice1++) {
+                for (int dice2 = 1; dice2 <= 6; dice2++) {
+                    for (int dice3 = 1; dice3 <= 6; dice3++) {
+                        for (int dice4 = 1; dice4 <= 6; dice4++) {
+                            for (int dice5 = 1; dice5 <= 6; dice5++) {
+                                String key = distKey + "|" + dice1 + dice2 + dice3 + dice4 + dice5;
+                                MidnightState midnightState = mapsFor5LiveDice.get(condition).get(key);
+                                if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 5) { // == 5
+                                    int score = midnightState.calculateScoreIfKeptAllDice();
+                                    distributionsFor5LiveDice.get(condition).get(distKey)[score] += 60466176L;
+                                } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 4) {
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor5LiveDice.get(condition).get(distKey)[i] += 10077696L * lowerDist[i];
+                                    }
+                                } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 3) {
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor2LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor5LiveDice.get(condition).get(distKey)[i] += 279936L * lowerDist[i];
+                                    }
+                                } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 2) {
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor3LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor5LiveDice.get(condition).get(distKey)[i] += 1296L * lowerDist[i];
+                                    }
+                                } else { // == 1
+                                    String lowerDistKey = deriveLowerDistKey(key, condition);
+                                    long[] lowerDist = distributionsFor4LiveDice.get(condition).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        distributionsFor5LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //6 dice
+        for (int condition = 0; condition < CAPACITY; condition++) {
+            
+
+            String distKey = "00__";
+            for (int dice1 = 1; dice1 <= 6; dice1++) {
+                for (int dice2 = 1; dice2 <= 6; dice2++) {
+                    for (int dice3 = 1; dice3 <= 6; dice3++) {
+                        for (int dice4 = 1; dice4 <= 6; dice4++) {
+                            for (int dice5 = 1; dice5 <= 6; dice5++) {
+                                for (int dice6 = 1; dice6 <= 6; dice6++) {
+                                    String key = distKey + "|" + dice1 + dice2 + dice3 + dice4 + dice5 + dice6;
+                                    MidnightState midnightState = mapsFor6LiveDice.get(condition).get(key);
+                                    if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= 6) { // == 6
+                                        int score = midnightState.calculateScoreIfKeptAllDice();
+                                        distributionsFor6LiveDice.get(condition).get(distKey)[score] += 470184984576L;
+                                    } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 5) {
+                                        String lowerDistKey = deriveLowerDistKey(key, condition);
+                                        long[] lowerDist = distributionsFor1LiveDice.get(condition).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            distributionsFor6LiveDice.get(condition).get(distKey)[i] += 78364164096L * lowerDist[i];
+                                        }
+                                    } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 4) {
+                                        String lowerDistKey = deriveLowerDistKey(key, condition);
+                                        long[] lowerDist = distributionsFor2LiveDice.get(condition).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            distributionsFor6LiveDice.get(condition).get(distKey)[i] += 2176782336L * lowerDist[i];
+                                        }
+                                    } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 3) {
+                                        String lowerDistKey = deriveLowerDistKey(key, condition);
+                                        long[] lowerDist = distributionsFor3LiveDice.get(condition).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            distributionsFor6LiveDice.get(condition).get(distKey)[i] += 10077696L * lowerDist[i];
+                                        }
+                                    } else if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() == 2) {
+                                        String lowerDistKey = deriveLowerDistKey(key, condition);
+                                        long[] lowerDist = distributionsFor4LiveDice.get(condition).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            distributionsFor6LiveDice.get(condition).get(distKey)[i] += 7776L * lowerDist[i];
+                                        }
+                                    } else { // == 1
+                                        String lowerDistKey = deriveLowerDistKey(key, condition);
+                                        long[] lowerDist = distributionsFor5LiveDice.get(condition).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            distributionsFor6LiveDice.get(condition).get(distKey)[i] += lowerDist[i];
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private String deriveLowerDistKey(String key, int condition) {
+        //return null if all live dice get kept, which is always the case if 1 live dice left
+        //if so then it shouldn't have (needed to) called this in the first place
+        //ALSO, there's a slight blemish in not being able to distinguish e.g. 12HL with 1 live dice and 2 live dice
+        //when it comes to handling originally 3 or more live dice, so the calling method must handle that
+
+        int numLiveDice = key.length() - 5; //00HL|000000
+        MidnightState midnightState =
+        switch (numLiveDice) {
+            case 1 -> mapsFor1LiveDice.get(condition).get(key);
+            case 2 -> mapsFor2LiveDice.get(condition).get(key);
+            case 3 -> mapsFor3LiveDice.get(condition).get(key);
+            case 4 -> mapsFor4LiveDice.get(condition).get(key);
+            case 5 -> mapsFor5LiveDice.get(condition).get(key);
+            case 6 -> mapsFor6LiveDice.get(condition).get(key);
+            default -> throw new IllegalArgumentException("Invalid oldKey: " + key);
+        };
+        if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= numLiveDice) { // == num...
+            return null;
+        }
+
+        int[] newDiceArray = new int[midnightState.getNumLiveDice() - midnightState.getOptimalPolicyQual()];
+        boolean keepLowQualifier = false;
+        boolean keepHighQualifier = false;
+        if (midnightState.getOptimalPolicyQual() == 2) {
+            keepLowQualifier = true;
+            keepHighQualifier = true;
+        } else if (midnightState.getOptimalPolicyQual() == 1) {
+            if (midnightState.canKeepHighQualifier()) {
+                keepHighQualifier = true;
+            } else {
+                keepLowQualifier = true;
+            }
+        } // else qual == 0 and no action needed
+        boolean lowQualifierFlag = false;
+        boolean highQualifierFlag = false;
+        int ind = 0;
+        for (int dice : midnightState.getLiveDice()) {
+            if (dice == LOW_QUALIFIER && keepLowQualifier && !lowQualifierFlag) {
+                lowQualifierFlag = true;
+            } else if (dice == HIGH_QUALIFIER && keepHighQualifier && !highQualifierFlag) {
+                highQualifierFlag = true;
+            } else {
+                newDiceArray[ind] = dice;
+                ind++;
+            }
+        }
+        Arrays.sort(newDiceArray);
+        int newPointsBanked = midnightState.getPointsBanked();
+        for (int i = 0; i < midnightState.getOptimalPolicyHigh(); i++) {
+            newPointsBanked += newDiceArray[newDiceArray.length - 1 - i];   //hate that Arrays has no rev()
+        }
+        String points = newPointsBanked < 10 ? "0" + newPointsBanked : "" + newPointsBanked;
+        String H = midnightState.hasHighQualifier() || keepHighQualifier ? "H" : "_";
+        String L = midnightState.hasLowQualifier() || keepLowQualifier ? "L" : "_";
+
+        return points + H + L;
     }
 }

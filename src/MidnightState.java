@@ -37,11 +37,34 @@ public class MidnightState {
             (1.0-0.09998965917946808615) * (1.0-0.09998965917946808615),
             1.0};
 
+    public static final double[] EQUITIES_COND2 = {0.043272936401100234,
+            0.043272936401100234, 0.043272936401100234, 0.043272936401100234, //indices 1, 2, 3 same
+            0.043272941642608725, 0.043273081510634650, 0.043274668006369706,
+            0.043285507491790180, 0.043338179784174110, 0.043543638153175045,
+            0.044229007314734500, 0.046183274290945400, 0.050934557873779400,
+            0.060894050594582310, 0.079756974761451550, 0.111726436012404120,
+            0.160827489528609120, 0.238157528628643760, 0.345789776046534700,
+            0.475071789657585000, 0.623137730242535800, 0.775980839482896400,
+            0.902561036549910300, 0.975332551046523800, 1.0
+    };
+
+    public static final double[] EQUITIES_COND1 = {0.021636468200550117,
+            0.043272936401100234, 0.043272936401100234, 0.043272936401100234, //indices 1, 2, 3 same
+            0.043272939021854480, 0.043273011576621690, 0.043273874758502180,
+            0.043280087749079940, 0.043311843637982150, 0.043440908968674580,
+            0.043886322733954780, 0.045206140802839950, 0.048558916082362400,
+            0.055914304234180850, 0.070325512678016930, 0.095741705386927830,
+            0.136276962770506630, 0.199492509078626450, 0.291973652337589260,
+            0.410430782852059900, 0.549104759950060500, 0.699559284862716100,
+            0.839270938016403400, 0.938946793798217000, 0.987666275523261900
+    };
+
     //0 means highest average score, with failure to qualify counting as 0 (but everything considered "pass" here)
-    //btw it seems that condition 0 is equivalent to condition 4
-    //1 means highest average equity for P1 vs a most conservative P2 (condition 4+) but P1 loses ties
+    //btw it seems that condition 0 is equivalent to condition 4, so will change to
+    //0 means highest average equity for P1 vs a most conservative P2 (condition 4+) but P1 loses ties
+    //1 means highest average equity for P1 vs a most conservative P2 (condition 4+) and ties are ties
     //2 means highest average equity for P1 vs a most conservative P2 (condition 4+) and P1 wins ties
-    //3 means highest average equity for P1 against an optimal P2
+    //3 means highest average equity for P1 against an optimal P2 and P1 wins ties
     //4~24 is an N+ condition
     //25 means highest average equity for P2 against optimal P3, assuming P1 has scored 0 (so P2 0 never ever wins)
     //The above also works for P1 against an optimal P2, but where P2 wins 0-0 ties
@@ -49,6 +72,19 @@ public class MidnightState {
     //(46 means P1 has scored 24 which cannot be beaten, and 45 means P1 has scored 23 which can only be beaten by 24,
     // so use the same strategy as the 24 condition)
     //45 means highest average equity for P1 against optimal P2 and P3
+
+    //Other conditions to consider: (NAIVE is like an unskilled 4 condition, GREEDY is like a less extreme 24 condition)
+    //46: highest average equity for P1 vs a naive (keep 1 and 4, then only 6s else single highest) P2 but P1 loses ties
+    //47: highest average equity for P1 vs a naive (keep 1 and 4, then only 6s else single highest) P2 and ties are ties
+    //48: highest average equity for P1 vs a naive (keep 1 and 4, then only 6s else single highest) P2 and P1 wins ties
+    //49: highest average equity for P1 vs a greedy (but not condition 24, so keep 1 and 4 and 6s) P2 but P1 loses ties
+    //50: highest average equity for P1 vs a greedy (but not condition 24, so keep 1 and 4 and 6s) P2 and ties are ties
+    //51: highest average equity for P1 vs a greedy (but not condition 24, so keep 1 and 4 and 6s) P2 and P1 wins ties
+    //although the last 3 don't quite work since the Midnight APP's AI will keep all if it has already won by doing so
+
+    //52~72: (N-48)+ condition but matching the condition is only a tie, not a win
+    //73: highest average equity for P1 against an optimal P2 but ties are ties
+
     private final int condition;
     private final int numLiveDice; //1~6
 
@@ -82,8 +118,6 @@ public class MidnightState {
 
     public void calculateEquityIfKeptAllDice() {
         switch (condition) {
-            case 1: case 2:
-                throw new UnsupportedOperationException("Not yet: " + condition);
             case 0:
                 optimalPolicyQual = 0;
                 if (canKeepLowQualifier()) {
@@ -123,6 +157,46 @@ public class MidnightState {
                 } else {
                     successNum = 0;
                     equityGivenFailure = calculateScoreIfKeptAllDice();
+                }
+
+                break;
+            case 1:
+                optimalPolicyQual = 0;
+                if (canKeepLowQualifier()) {
+                    optimalPolicyQual++;
+                }
+                if (canKeepHighQualifier()) {
+                    optimalPolicyQual++;
+                }
+                optimalPolicyHigh = numLiveDice - optimalPolicyQual;
+
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() == 0) {
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_COND1[calculateScoreIfKeptAllDice()];
+                } else {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_COND1[calculateScoreIfKeptAllDice()];
+                }
+
+                break;
+            case 2:
+                optimalPolicyQual = 0;
+                if (canKeepLowQualifier()) {
+                    optimalPolicyQual++;
+                }
+                if (canKeepHighQualifier()) {
+                    optimalPolicyQual++;
+                }
+                optimalPolicyHigh = numLiveDice - optimalPolicyQual;
+
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() == 0) {
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_COND2[calculateScoreIfKeptAllDice()];
+                } else {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_COND2[calculateScoreIfKeptAllDice()];
                 }
 
                 break;
