@@ -76,15 +76,11 @@ public class SolvingMidnight {
 
         calculateInitialRunThrough();
 
-        calculateAllStateEquitiesRecursively(45);
+        calculateAllStateEquitiesRecursively();
 
-        //writeToFile(45);
+        writeToFile();
 
         for (int condition = 0; condition <= 45; condition++) {
-            if (condition != 45) {
-                continue;
-            }
-
             BigDecimal runningTotal = BigDecimal.ZERO;
             BigDecimal runningEquityGivenSuccess = BigDecimal.ZERO;
             BigDecimal runningEquityGivenFailure = BigDecimal.ZERO;
@@ -103,7 +99,7 @@ public class SolvingMidnight {
             BigDecimal overallOppositeRatio = BigDecimal.ONE.subtract(overallRatio);
             BigDecimal percentage = overallRatio.multiply(BigDecimal.valueOf(100));
             if (condition < 10) {
-                System.out.println("Condition: " + condition);
+                System.out.println("Condition: 0" + condition);
             } else {
                 System.out.println("Condition: " + condition);
             }
@@ -122,10 +118,11 @@ public class SolvingMidnight {
 
         populateDistributions();
         calculateDistributions();
-        for (int i = 0; i < 10; i++) {
+        writeDistributionsToFile();
+        /*for (int i = 0; i < 10; i++) {
             System.out.println();
         }
-        long[] arr = distributionsFor6LiveDice.get(45).get("00__");
+        long[] arr = distributionsFor6LiveDice.get(0).get("00__");
         for (int i = 0; i < arr.length; i++) {
             if (i < 10) {
                 System.out.println(" " + i + ": " + arr[i] + " ");
@@ -140,9 +137,28 @@ public class SolvingMidnight {
             } else {
                 System.out.println(i + ": " + arr[i] / Math.pow(6, 21) + " ");
             }
-        }
+        }*/
 
-        System.out.println();
+        /*System.out.println(); //ONLY FOR CONDITION_45!!!
+        double[] P2Equities = {0.49179084403, 0.0, 0.0, 0.0,
+                0.49179084396, 0.49179084229, 0.49179082398,
+                0.49179070096, 0.49179009534, 0.49178749584,
+                0.49177718453, 0.49174559950, 0.49166215844,
+                0.49146575229, 0.49097871400, 0.48969102594,
+                0.48643883445, 0.47904091723, 0.46041268552,
+                0.42884948643, 0.37705571428, 0.29659671788,
+                0.20408843175, 0.09998965917946808615, 0.0};
+        double P2CumulativeEquity = 0.0;
+        for (int i = 0; i < arr.length; i++) {
+            if (i < 10) {
+                System.out.println(" " + i + ": " + arr[i] * P2Equities[i] / Math.pow(6, 21));
+            } else {
+                System.out.println(i + ": " + arr[i] * P2Equities[i] / Math.pow(6, 21));
+            }
+            P2CumulativeEquity += arr[i] * P2Equities[i] / Math.pow(6, 21);
+        }
+        System.out.println("The ANSWER: " + P2CumulativeEquity);*/
+        /*System.out.println();
         double cumSum = 0.0;
         for (int i = 0; i < arr.length; i++) {
             cumSum += arr[i];
@@ -162,7 +178,7 @@ public class SolvingMidnight {
                 System.out.println(i + ": " + cumSum1 / Math.pow(6, 21));
             }
             cumSum1 += arr[i] / 2.0;
-        }
+        }*/
     }
 
     //don't care about unreachable states, since they could be reachable under different qualifiers (such as 2-4-24)
@@ -2844,5 +2860,1035 @@ public class SolvingMidnight {
         String L = midnightState.hasLowQualifier() || keepLowQualifier ? "L" : "_";
 
         return points + H + L;
+    }
+
+    private void writeDistributionsToFile() {
+        for (int condition = 0; condition < CAPACITY; condition++) {
+
+
+            String modifiedPathway = condition < 10 ? PATHWAY + "0" : PATHWAY;
+            try (PrintWriter pw = new PrintWriter(modifiedPathway + condition + "Dist.txt")) {
+                //in this case you have no qualifiers and 1 dice left, so you lost for sure
+                for (int pointsBanked = 5; pointsBanked <= 30; pointsBanked++) {
+                    String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                    String distKey = points + "__";
+                    long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("1's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "6".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 1);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                    String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                    String distKey = points + "_L";
+                    long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("1's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "6".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 1);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                    String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                    String distKey = points + "H_";
+                    long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("1's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "6".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 1);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                    String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                    String distKey = points + "HL";
+                    long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("1's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "6".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 1);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                    String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                    String distKey = points + "__";
+                    long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("2's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "216".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 3);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                    String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                    String distKey = points + "_L";
+                    long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("2's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "216".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 3);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                    String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                    String distKey = points + "H_";
+                    long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("2's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "216".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 3);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                    String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                    String distKey = points + "HL";
+                    long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("2's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "216".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 3);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                    String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                    String distKey = points + "__";
+                    long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("3's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "46656".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 6);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                    String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                    String distKey = points + "_L";
+                    long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("3's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "46656".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 6);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                    String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                    String distKey = points + "H_";
+                    long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("3's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "46656".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 6);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                    String points = "0" + pointsBanked;
+                    String distKey = points + "HL";
+                    long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("3's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "46656".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 6);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                    String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                    String distKey = points + "__";
+                    long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("4's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "60466176".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 10);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                    String points = "0" + pointsBanked;
+                    String distKey = points + "_L";
+                    long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("4's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "60466176".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 10);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                    String points = "0" + pointsBanked;
+                    String distKey = points + "H_";
+                    long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("4's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "60466176".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 10);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                String distKey = "00HL";
+                long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("4's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "60466176".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 10);
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                    String points = "0" + pointsBanked;
+                    distKey = points + "__";
+                    dist = distributionsFor5LiveDice.get(condition).get(distKey);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println("5's Key: " + distKey);
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i];
+                        for (int j = 0; j < "470184984576".length() - answer.length(); j++) {
+                            pw.print(" ");
+                        }
+                        pw.println(answer);
+                    }
+                    pw.println();
+
+                    for (int i = 0; i < dist.length; i++) {
+                        pw.print(i < 10 ? " " + i : i);
+                        pw.print(": ");
+                        String answer = "" + dist[i] / Math.pow(6, 15);
+                        pw.println(answer);
+                    }
+                    pw.println();
+                }
+
+                distKey = "00_L";
+                dist = distributionsFor5LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("5's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "470184984576".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 15);
+                    pw.println(answer);
+                }
+                pw.println();
+
+                distKey = "00H_";
+                dist = distributionsFor5LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("5's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "470184984576".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 15);
+                    pw.println(answer);
+                }
+                pw.println();
+
+                distKey = "00__";
+                dist = distributionsFor6LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("6's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "21936950640377856".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 21);
+                    pw.println(answer);
+                }
+                pw.println();
+            } catch (FileNotFoundException e) {
+                System.err.println("File not found: " + modifiedPathway + condition + ".txt");
+                System.exit(1);
+            }
+        }
+    }
+
+    private void writeDistributionsToFile(int condition) {
+        String modifiedPathway = condition < 10 ? PATHWAY + "0" : PATHWAY;
+        try (PrintWriter pw = new PrintWriter(modifiedPathway + condition + "Dist.txt")) {
+            //in this case you have no qualifiers and 1 dice left, so you lost for sure
+            for (int pointsBanked = 5; pointsBanked <= 30; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("1's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "6".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 1);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "_L";
+                long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("1's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "6".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 1);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "H_";
+                long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("1's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "6".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 1);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "HL";
+                long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("1's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "6".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 1);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("2's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "216".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 3);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "_L";
+                long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("2's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "216".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 3);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "H_";
+                long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("2's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "216".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 3);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "HL";
+                long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("2's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "216".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 3);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("3's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "46656".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 6);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "_L";
+                long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("3's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "46656".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 6);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "H_";
+                long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("3's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "46656".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 6);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String points = "0" + pointsBanked;
+                String distKey = points + "HL";
+                long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("3's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "46656".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 6);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("4's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "60466176".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 10);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String points = "0" + pointsBanked;
+                String distKey = points + "_L";
+                long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("4's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "60466176".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 10);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String points = "0" + pointsBanked;
+                String distKey = points + "H_";
+                long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("4's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "60466176".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 10);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            String distKey = "00HL";
+            long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
+            pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+            pw.println("4's Key: " + distKey);
+            for (int i = 0; i < dist.length; i++) {
+                pw.print(i < 10 ? " " + i : i);
+                pw.print(": ");
+                String answer = "" + dist[i];
+                for (int j = 0; j < "60466176".length() - answer.length(); j++) {
+                    pw.print(" ");
+                }
+                pw.println(answer);
+            }
+            pw.println();
+            for (int i = 0; i < dist.length; i++) {
+                pw.print(i < 10 ? " " + i : i);
+                pw.print(": ");
+                String answer = "" + dist[i] / Math.pow(6, 10);
+                pw.println(answer);
+            }
+            pw.println();
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String points = "0" + pointsBanked;
+                distKey = points + "__";
+                dist = distributionsFor5LiveDice.get(condition).get(distKey);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println("5's Key: " + distKey);
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i];
+                    for (int j = 0; j < "470184984576".length() - answer.length(); j++) {
+                        pw.print(" ");
+                    }
+                    pw.println(answer);
+                }
+                pw.println();
+
+                for (int i = 0; i < dist.length; i++) {
+                    pw.print(i < 10 ? " " + i : i);
+                    pw.print(": ");
+                    String answer = "" + dist[i] / Math.pow(6, 15);
+                    pw.println(answer);
+                }
+                pw.println();
+            }
+
+            distKey = "00_L";
+            dist = distributionsFor5LiveDice.get(condition).get(distKey);
+            pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+            pw.println("5's Key: " + distKey);
+            for (int i = 0; i < dist.length; i++) {
+                pw.print(i < 10 ? " " + i : i);
+                pw.print(": ");
+                String answer = "" + dist[i];
+                for (int j = 0; j < "470184984576".length() - answer.length(); j++) {
+                    pw.print(" ");
+                }
+                pw.println(answer);
+            }
+            pw.println();
+            for (int i = 0; i < dist.length; i++) {
+                pw.print(i < 10 ? " " + i : i);
+                pw.print(": ");
+                String answer = "" + dist[i] / Math.pow(6, 15);
+                pw.println(answer);
+            }
+            pw.println();
+
+            distKey = "00H_";
+            dist = distributionsFor5LiveDice.get(condition).get(distKey);
+            pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+            pw.println("5's Key: " + distKey);
+            for (int i = 0; i < dist.length; i++) {
+                pw.print(i < 10 ? " " + i : i);
+                pw.print(": ");
+                String answer = "" + dist[i];
+                for (int j = 0; j < "470184984576".length() - answer.length(); j++) {
+                    pw.print(" ");
+                }
+                pw.println(answer);
+            }
+            pw.println();
+            for (int i = 0; i < dist.length; i++) {
+                pw.print(i < 10 ? " " + i : i);
+                pw.print(": ");
+                String answer = "" + dist[i] / Math.pow(6, 15);
+                pw.println(answer);
+            }
+            pw.println();
+
+            distKey = "00__";
+            dist = distributionsFor6LiveDice.get(condition).get(distKey);
+            pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+            pw.println("6's Key: " + distKey);
+            for (int i = 0; i < dist.length; i++) {
+                pw.print(i < 10 ? " " + i : i);
+                pw.print(": ");
+                String answer = "" + dist[i];
+                for (int j = 0; j < "21936950640377856".length() - answer.length(); j++) {
+                    pw.print(" ");
+                }
+                pw.println(answer);
+            }
+            pw.println();
+            for (int i = 0; i < dist.length; i++) {
+                pw.print(i < 10 ? " " + i : i);
+                pw.print(": ");
+                String answer = "" + dist[i] / Math.pow(6, 21);
+                pw.println(answer);
+            }
+            pw.println();
+        } catch (FileNotFoundException e) {
+            System.err.println("File not found: " + modifiedPathway + condition + ".txt");
+            System.exit(1);
+        }
     }
 }

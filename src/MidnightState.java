@@ -59,6 +59,16 @@ public class MidnightState {
             0.839270938016403400, 0.938946793798217000, 0.987666275523261900
     };
 
+    public static final double[] EQUITIES_COND0 = {0.0, 0.0, 0.0, 0.0, //indices 1, 2, 3 same
+            0.043272936401100234, 0.043272941642608725, 0.043273081510634650,
+            0.043274668006369706, 0.043285507491790180, 0.043338179784174110,
+            0.043543638153175045, 0.044229007314734500, 0.046183274290945400,
+            0.050934557873779400, 0.060894050594582310, 0.079756974761451550,
+            0.111726436012404120, 0.160827489528609120, 0.238157528628643760,
+            0.345789776046534700, 0.475071789657585000, 0.623137730242535800,
+            0.775980839482896400, 0.902561036549910300, 0.975332551046523800
+    };
+
     //0 means highest average score, with failure to qualify counting as 0 (but everything considered "pass" here)
     //btw it seems that condition 0 is equivalent to condition 4, so will change to
     //0 means highest average equity for P1 vs a most conservative P2 (condition 4+) but P1 loses ties
@@ -67,7 +77,7 @@ public class MidnightState {
     //3 means highest average equity for P1 against an optimal P2 and P1 wins ties
     //4~24 is an N+ condition
     //25 means highest average equity for P2 against optimal P3, assuming P1 has scored 0 (so P2 0 never ever wins)
-    //The above also works for P1 against an optimal P2, but where P2 wins 0-0 ties
+    //The above also works for P1 against an optimal P2, but where P2 wins 0-0 ties (P1 still wins other nonzero ties)
     //26~44 means highest average equity for P2 against optimal P3, assuming P1 has scored 22+N
     //(46 means P1 has scored 24 which cannot be beaten, and 45 means P1 has scored 23 which can only be beaten by 24,
     // so use the same strategy as the 24 condition)
@@ -81,9 +91,16 @@ public class MidnightState {
     //50: highest average equity for P1 vs a greedy (but not condition 24, so keep 1 and 4 and 6s) P2 and ties are ties
     //51: highest average equity for P1 vs a greedy (but not condition 24, so keep 1 and 4 and 6s) P2 and P1 wins ties
     //although the last 3 don't quite work since the Midnight APP's AI will keep all if it has already won by doing so
+    //thus
+    //52: highest average equity for P1 vs an enhanced naive (naive but bank all if 100% to win) P2 but P1 loses ties
+    //53: highest average equity for P1 vs an enhanced naive (naive but bank all if 100% to win) P2 and ties are ties
+    //54: highest average equity for P1 vs an enhanced naive (naive but bank all if 100% to win) P2 and P1 wins ties
+    //55: highest average equity for P1 vs an enhanced greedy (greedy but bank all if 100% to win) P2 but P1 loses ties
+    //56: highest average equity for P1 vs an enhanced greedy (greedy but bank all if 100% to win) P2 and ties are ties
+    //57: highest average equity for P1 vs an enhanced greedy (greedy but bank all if 100% to win) P2 and P1 wins ties
 
-    //52~72: (N-48)+ condition but matching the condition is only a tie, not a win
-    //73: highest average equity for P1 against an optimal P2 but ties are ties
+    //58~78: (N-54)+ condition but matching the condition is only a tie, not a win
+    //79: highest average equity for P1 against an optimal P2 but ties are ties
 
     private final int condition;
     private final int numLiveDice; //1~6
@@ -131,32 +148,10 @@ public class MidnightState {
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
                 if (calculateScoreIfKeptAllDice() == 0) {
                     successNum = 0;
-                    equityGivenFailure = calculateScoreIfKeptAllDice(); //0
+                    equityGivenFailure = EQUITIES_COND0[calculateScoreIfKeptAllDice()]; //0.0
                 } else {
                     successNum = successDenom;
-                    equityGivenSuccess = calculateScoreIfKeptAllDice();
-                }
-
-                break;
-            case 4: case 5: case 6: case 7: case 8: case 9: case 10:
-            case 11: case 12: case 13: case 14: case 15: case 16: case 17: case 18:
-            case 19: case 20: case 21: case 22: case 23: case 24:
-                optimalPolicyQual = 0;
-                if (canKeepLowQualifier()) {
-                    optimalPolicyQual++;
-                }
-                if (canKeepHighQualifier()) {
-                    optimalPolicyQual++;
-                }
-                optimalPolicyHigh = numLiveDice - optimalPolicyQual;
-
-                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
-                if (calculateScoreIfKeptAllDice() >= condition) {
-                    successNum = successDenom;
-                    equityGivenSuccess = calculateScoreIfKeptAllDice();
-                } else {
-                    successNum = 0;
-                    equityGivenFailure = calculateScoreIfKeptAllDice();
+                    equityGivenSuccess = EQUITIES_COND0[calculateScoreIfKeptAllDice()];
                 }
 
                 break;
@@ -220,6 +215,28 @@ public class MidnightState {
                 }
 
                 break;
+            case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11:
+            case 12: case 13: case 14: case 15: case 16: case 17: case 18: case 19:
+            case 20: case 21: case 22: case 23: case 24:
+                optimalPolicyQual = 0;
+                if (canKeepLowQualifier()) {
+                    optimalPolicyQual++;
+                }
+                if (canKeepHighQualifier()) {
+                    optimalPolicyQual++;
+                }
+                optimalPolicyHigh = numLiveDice - optimalPolicyQual;
+
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() >= condition) {
+                    successNum = successDenom;
+                    equityGivenSuccess = calculateScoreIfKeptAllDice();
+                } else {
+                    successNum = 0;
+                    equityGivenFailure = calculateScoreIfKeptAllDice();
+                }
+
+                break;
             case 25:
                 optimalPolicyQual = 0;
                 if (canKeepLowQualifier()) {
@@ -240,9 +257,9 @@ public class MidnightState {
                 }
 
                 break;
-            case 26: case 27: case 28: case 29: case 30: case 31: case 32:
-            case 33: case 34: case 35: case 36: case 37: case 38: case 39: case 40:
-            case 41: case 42: case 43: case 44:
+            case 26: case 27: case 28: case 29: case 30: case 31: case 32: case 33:
+            case 34: case 35: case 36: case 37: case 38: case 39: case 40: case 41:
+            case 42: case 43: case 44:
                 optimalPolicyQual = 0;
                 if (canKeepLowQualifier()) {
                     optimalPolicyQual++;
@@ -411,7 +428,7 @@ public class MidnightState {
     public String toString() {
         String string = condition < 10 ? "Condition: 0" : "Condition: ";
         string += condition + "\n";
-        string += getKey() + "\n";
+        string += "Key: " + getKey() + "\n";
         string += "optimalPolicyQual: " + optimalPolicyQual + "\n";
         string += "optimalPolicyHigh: " + optimalPolicyHigh + "\n";
         string += "successDenom: " + successDenom + "\n";
@@ -424,7 +441,7 @@ public class MidnightState {
     public String toStringAbridged() {
         String string = condition < 10 ? "Cond: 0" : "Cond: ";
         string += condition + ", ";
-        string += getKey() + "\n";
+        string += "Key: " + getKey() + "\n";
         string += "Qual: " + optimalPolicyQual + ", ";
         string += "High: " + optimalPolicyHigh + "\n";
         string += successNum + "/" + successDenom + "\n";
