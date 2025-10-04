@@ -146,12 +146,12 @@ public class MidnightState {
                 optimalPolicyHigh = numLiveDice - optimalPolicyQual;
 
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
-                if (calculateScoreIfKeptAllDice() == 0) {
-                    successNum = 0;
-                    equityGivenFailure = EQUITIES_COND0[calculateScoreIfKeptAllDice()]; //0.0
-                } else {
+                if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
                     equityGivenSuccess = EQUITIES_COND0[calculateScoreIfKeptAllDice()];
+                } else { // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_COND0[calculateScoreIfKeptAllDice()]; //0.0
                 }
 
                 break;
@@ -166,12 +166,12 @@ public class MidnightState {
                 optimalPolicyHigh = numLiveDice - optimalPolicyQual;
 
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
-                if (calculateScoreIfKeptAllDice() == 0) {
-                    successNum = 0;
-                    equityGivenFailure = EQUITIES_COND1[calculateScoreIfKeptAllDice()];
-                } else {
+                if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
                     equityGivenSuccess = EQUITIES_COND1[calculateScoreIfKeptAllDice()];
+                } else { // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_COND1[calculateScoreIfKeptAllDice()];
                 }
 
                 break;
@@ -186,12 +186,12 @@ public class MidnightState {
                 optimalPolicyHigh = numLiveDice - optimalPolicyQual;
 
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
-                if (calculateScoreIfKeptAllDice() == 0) {
-                    successNum = 0;
-                    equityGivenFailure = EQUITIES_COND2[calculateScoreIfKeptAllDice()];
-                } else {
+                if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
                     equityGivenSuccess = EQUITIES_COND2[calculateScoreIfKeptAllDice()];
+                } else {  // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_COND2[calculateScoreIfKeptAllDice()];
                 }
 
                 break;
@@ -206,12 +206,12 @@ public class MidnightState {
                 optimalPolicyHigh = numLiveDice - optimalPolicyQual;
 
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
-                if (calculateScoreIfKeptAllDice() == 0) {
-                    successNum = 0;
-                    equityGivenFailure = EQUITIES[3];
-                } else {
+                if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
                     equityGivenSuccess = EQUITIES[calculateScoreIfKeptAllDice()];
+                } else {  // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES[3];
                 }
 
                 break;
@@ -248,12 +248,12 @@ public class MidnightState {
                 optimalPolicyHigh = numLiveDice - optimalPolicyQual;
 
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
-                if (calculateScoreIfKeptAllDice() == 0) {
-                    successNum = 0;
-                    equityGivenFailure = EQUITIES[calculateScoreIfKeptAllDice()]; //0.0
-                } else {
+                if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
                     equityGivenSuccess = EQUITIES[calculateScoreIfKeptAllDice()];
+                } else { // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES[calculateScoreIfKeptAllDice()]; //0.0
                 }
 
                 break;
@@ -290,12 +290,12 @@ public class MidnightState {
                 optimalPolicyHigh = numLiveDice - optimalPolicyQual;
 
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
-                if (calculateScoreIfKeptAllDice() == 0) {
-                    successNum = 0;
-                    equityGivenFailure = EQUITIES_3P[3];
-                } else {
+                if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
                     equityGivenSuccess = EQUITIES_3P[calculateScoreIfKeptAllDice()];
+                } else { // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_3P[3];
                 }
 
                 break;

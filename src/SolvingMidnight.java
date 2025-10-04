@@ -606,7 +606,7 @@ public class SolvingMidnight {
 
     private void calculateAllStateEquitiesRecursively(int condition, int maxLiveDice) {
         if (maxLiveDice <= 0 || maxLiveDice > 6) {
-            throw new IllegalArgumentException("maxLiveDice: " + maxLiveDice);
+            throw new IllegalArgumentException("Invalid maxLiveDice: " + maxLiveDice);
         }
 
         for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
@@ -1009,10 +1009,10 @@ public class SolvingMidnight {
 
     private void printResults(int condition, int maxLiveDice) {
         if (condition < 0 || condition >= CAPACITY) {
-            throw new IllegalArgumentException("condition: " + condition);
+            throw new IllegalArgumentException("Invalid condition: " + condition);
         }
         if (maxLiveDice <= 0 || maxLiveDice > 6) {
-            throw new IllegalArgumentException("maxLiveDice: " + maxLiveDice);
+            throw new IllegalArgumentException("Invalid maxLiveDice: " + maxLiveDice);
         }
 
         for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
@@ -1084,7 +1084,7 @@ public class SolvingMidnight {
             
 
             String modifiedPathway = condition < 10 ? PATHWAY + "0" : PATHWAY;
-            try (PrintWriter pw = new PrintWriter(modifiedPathway + condition + ".txt")) {
+            try (PrintWriter pw = new PrintWriter(modifiedPathway + condition + "Strat.txt")) {
                 //in this case you have no qualifiers and 1 dice left, so you lost for sure
                 for (int pointsBanked = 5; pointsBanked <= 30; pointsBanked++) {
                     for (int dice1 = 1; dice1 <= 6; dice1++) {
@@ -1405,11 +1405,11 @@ public class SolvingMidnight {
 
     private void writeToFile(int condition) {
         if (condition < 0 || condition >= CAPACITY) {
-            throw new IllegalArgumentException("condition: " + condition);
+            throw new IllegalArgumentException("Invalid condition: " + condition);
         }
 
         String modifiedPathway = condition < 10 ? PATHWAY + "0" : PATHWAY;
-        try (PrintWriter pw = new PrintWriter(modifiedPathway + condition + ".txt")) {
+        try (PrintWriter pw = new PrintWriter(modifiedPathway + condition + "Strat.txt")) {
             //in this case you have no qualifiers and 1 dice left, so you lost for sure
             for (int pointsBanked = 5; pointsBanked <= 30; pointsBanked++) {
                 for (int dice1 = 1; dice1 <= 6; dice1++) {
@@ -1728,14 +1728,14 @@ public class SolvingMidnight {
     }
     private void writeToFile(int condition, int maxLiveDice) {
         if (condition < 0 || condition >= CAPACITY) {
-            throw new IllegalArgumentException("condition: " + condition);
+            throw new IllegalArgumentException("Invalid condition: " + condition);
         }
         if (maxLiveDice <= 0 || maxLiveDice > 6) {
-            throw new IllegalArgumentException("maxLiveDice: " + maxLiveDice);
+            throw new IllegalArgumentException("Invalid maxLiveDice: " + maxLiveDice);
         }
 
         String modifiedPathway = condition < 10 ? PATHWAY + "0" : PATHWAY;
-        try (PrintWriter pw = new PrintWriter(modifiedPathway + condition + ".txt")) {
+        try (PrintWriter pw = new PrintWriter(modifiedPathway + condition + "Strat.txt")) {
             //in this case you have no qualifiers and 1 dice left, so you lost for sure
             for (int pointsBanked = 5; pointsBanked <= 30; pointsBanked++) {
                 for (int dice1 = 1; dice1 <= 6; dice1++) {
@@ -2873,8 +2873,39 @@ public class SolvingMidnight {
                     String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                     String distKey = points + "__";
                     long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("1's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 1));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -2892,6 +2923,7 @@ public class SolvingMidnight {
                         String answer = "" + dist[i] / Math.pow(6, 1);
                         pw.println(answer);
                     }
+                    pw.println();
                     pw.println();
                 }
 
@@ -2899,8 +2931,39 @@ public class SolvingMidnight {
                     String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                     String distKey = points + "_L";
                     long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("1's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 1));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -2918,6 +2981,7 @@ public class SolvingMidnight {
                         String answer = "" + dist[i] / Math.pow(6, 1);
                         pw.println(answer);
                     }
+                    pw.println();
                     pw.println();
                 }
 
@@ -2925,8 +2989,39 @@ public class SolvingMidnight {
                     String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                     String distKey = points + "H_";
                     long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("1's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 1));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -2944,6 +3039,7 @@ public class SolvingMidnight {
                         String answer = "" + dist[i] / Math.pow(6, 1);
                         pw.println(answer);
                     }
+                    pw.println();
                     pw.println();
                 }
 
@@ -2951,8 +3047,39 @@ public class SolvingMidnight {
                     String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                     String distKey = points + "HL";
                     long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("1's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 1));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -2971,14 +3098,46 @@ public class SolvingMidnight {
                         pw.println(answer);
                     }
                     pw.println();
+                    pw.println();
                 }
 
                 for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
                     String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                     String distKey = points + "__";
                     long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("2's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 3));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -2996,6 +3155,7 @@ public class SolvingMidnight {
                         String answer = "" + dist[i] / Math.pow(6, 3);
                         pw.println(answer);
                     }
+                    pw.println();
                     pw.println();
                 }
 
@@ -3003,8 +3163,39 @@ public class SolvingMidnight {
                     String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                     String distKey = points + "_L";
                     long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("2's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 3));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -3022,6 +3213,7 @@ public class SolvingMidnight {
                         String answer = "" + dist[i] / Math.pow(6, 3);
                         pw.println(answer);
                     }
+                    pw.println();
                     pw.println();
                 }
 
@@ -3029,8 +3221,39 @@ public class SolvingMidnight {
                     String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                     String distKey = points + "H_";
                     long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("2's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 3));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -3048,6 +3271,7 @@ public class SolvingMidnight {
                         String answer = "" + dist[i] / Math.pow(6, 3);
                         pw.println(answer);
                     }
+                    pw.println();
                     pw.println();
                 }
 
@@ -3055,8 +3279,39 @@ public class SolvingMidnight {
                     String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                     String distKey = points + "HL";
                     long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("2's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 3));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -3075,14 +3330,46 @@ public class SolvingMidnight {
                         pw.println(answer);
                     }
                     pw.println();
+                    pw.println();
                 }
 
                 for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
                     String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                     String distKey = points + "__";
                     long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("3's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 6));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -3100,6 +3387,7 @@ public class SolvingMidnight {
                         String answer = "" + dist[i] / Math.pow(6, 6);
                         pw.println(answer);
                     }
+                    pw.println();
                     pw.println();
                 }
 
@@ -3107,8 +3395,39 @@ public class SolvingMidnight {
                     String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                     String distKey = points + "_L";
                     long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("3's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 6));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -3126,6 +3445,7 @@ public class SolvingMidnight {
                         String answer = "" + dist[i] / Math.pow(6, 6);
                         pw.println(answer);
                     }
+                    pw.println();
                     pw.println();
                 }
 
@@ -3133,8 +3453,39 @@ public class SolvingMidnight {
                     String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                     String distKey = points + "H_";
                     long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("3's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 6));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -3152,6 +3503,7 @@ public class SolvingMidnight {
                         String answer = "" + dist[i] / Math.pow(6, 6);
                         pw.println(answer);
                     }
+                    pw.println();
                     pw.println();
                 }
 
@@ -3159,8 +3511,39 @@ public class SolvingMidnight {
                     String points = "0" + pointsBanked;
                     String distKey = points + "HL";
                     long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("3's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 6));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -3179,14 +3562,46 @@ public class SolvingMidnight {
                         pw.println(answer);
                     }
                     pw.println();
+                    pw.println();
                 }
 
                 for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
                     String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                     String distKey = points + "__";
                     long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("4's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 10));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -3205,14 +3620,46 @@ public class SolvingMidnight {
                         pw.println(answer);
                     }
                     pw.println();
+                    pw.println();
                 }
 
                 for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                     String points = "0" + pointsBanked;
                     String distKey = points + "_L";
                     long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("4's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 10));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -3230,6 +3677,7 @@ public class SolvingMidnight {
                         String answer = "" + dist[i] / Math.pow(6, 10);
                         pw.println(answer);
                     }
+                    pw.println();
                     pw.println();
                 }
 
@@ -3237,8 +3685,39 @@ public class SolvingMidnight {
                     String points = "0" + pointsBanked;
                     String distKey = points + "H_";
                     long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("4's Key: " + distKey);
+                    long successDenom = (long)(Math.pow(6, 10));
+                    pw.println("successDenom: " + successDenom);
+                    long successNum = 0L;
+                    double equityGivenSuccess = 0.0;
+                    double equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -3256,13 +3735,45 @@ public class SolvingMidnight {
                         String answer = "" + dist[i] / Math.pow(6, 10);
                         pw.println(answer);
                     }
+                    pw.println();
                     pw.println();
                 }
 
                 String distKey = "00HL";
                 long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("4's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 10));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3280,13 +3791,45 @@ public class SolvingMidnight {
                     pw.println(answer);
                 }
                 pw.println();
+                pw.println();
 
                 for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                     String points = "0" + pointsBanked;
                     distKey = points + "__";
                     dist = distributionsFor5LiveDice.get(condition).get(distKey);
-                    pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                    pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                     pw.println("5's Key: " + distKey);
+                    successDenom = (long)(Math.pow(6, 15));
+                    pw.println("successDenom: " + successDenom);
+                    successNum = 0L;
+                    equityGivenSuccess = 0.0;
+                    equityGivenFailure = 0.0;
+                    for (int i = 0; i < dist.length; i++) {
+                        if (i == 1 || i == 2 || i == 3) {
+                            continue;
+                        }
+                        if (isSuccessFromDistScore(condition, i)) {
+                            successNum += dist[i];
+                            equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                        } else {
+                            equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                        }
+                    }
+                    if (successNum == 0L) {
+                        equityGivenSuccess = -1.0;
+                        equityGivenFailure /= successDenom;
+                    } else if (successNum == successDenom) {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure = -1.0;
+                    } else {
+                        equityGivenSuccess /= successNum;
+                        equityGivenFailure /= (successDenom - successNum);
+                    }
+                    pw.println("successNum: " + successNum);
+                    pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                    pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println();
+
                     for (int i = 0; i < dist.length; i++) {
                         pw.print(i < 10 ? " " + i : i);
                         pw.print(": ");
@@ -3305,12 +3848,44 @@ public class SolvingMidnight {
                         pw.println(answer);
                     }
                     pw.println();
+                    pw.println();
                 }
 
                 distKey = "00_L";
                 dist = distributionsFor5LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("5's Key: " + distKey);
+                successDenom = (long)(Math.pow(6, 15));
+                pw.println("successDenom: " + successDenom);
+                successNum = 0L;
+                equityGivenSuccess = 0.0;
+                equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3327,12 +3902,44 @@ public class SolvingMidnight {
                     String answer = "" + dist[i] / Math.pow(6, 15);
                     pw.println(answer);
                 }
+                pw.println();
                 pw.println();
 
                 distKey = "00H_";
                 dist = distributionsFor5LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("5's Key: " + distKey);
+                successDenom = (long)(Math.pow(6, 15));
+                pw.println("successDenom: " + successDenom);
+                successNum = 0L;
+                equityGivenSuccess = 0.0;
+                equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3350,11 +3957,43 @@ public class SolvingMidnight {
                     pw.println(answer);
                 }
                 pw.println();
+                pw.println();
 
                 distKey = "00__";
                 dist = distributionsFor6LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("6's Key: " + distKey);
+                successDenom = (long)(Math.pow(6, 21));
+                pw.println("successDenom: " + successDenom);
+                successNum = 0L;
+                equityGivenSuccess = 0.0;
+                equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3372,6 +4011,7 @@ public class SolvingMidnight {
                     pw.println(answer);
                 }
                 pw.println();
+                pw.println();
             } catch (FileNotFoundException e) {
                 System.err.println("File not found: " + modifiedPathway + condition + ".txt");
                 System.exit(1);
@@ -3387,8 +4027,39 @@ public class SolvingMidnight {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
                 long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("1's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 1));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3406,6 +4077,7 @@ public class SolvingMidnight {
                     String answer = "" + dist[i] / Math.pow(6, 1);
                     pw.println(answer);
                 }
+                pw.println();
                 pw.println();
             }
 
@@ -3413,8 +4085,39 @@ public class SolvingMidnight {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "_L";
                 long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("1's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 1));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3432,6 +4135,7 @@ public class SolvingMidnight {
                     String answer = "" + dist[i] / Math.pow(6, 1);
                     pw.println(answer);
                 }
+                pw.println();
                 pw.println();
             }
 
@@ -3439,8 +4143,39 @@ public class SolvingMidnight {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "H_";
                 long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("1's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 1));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3458,6 +4193,7 @@ public class SolvingMidnight {
                     String answer = "" + dist[i] / Math.pow(6, 1);
                     pw.println(answer);
                 }
+                pw.println();
                 pw.println();
             }
 
@@ -3465,8 +4201,39 @@ public class SolvingMidnight {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "HL";
                 long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("1's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 1));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3485,14 +4252,46 @@ public class SolvingMidnight {
                     pw.println(answer);
                 }
                 pw.println();
+                pw.println();
             }
 
             for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
                 long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("2's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 3));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3510,6 +4309,7 @@ public class SolvingMidnight {
                     String answer = "" + dist[i] / Math.pow(6, 3);
                     pw.println(answer);
                 }
+                pw.println();
                 pw.println();
             }
 
@@ -3517,8 +4317,39 @@ public class SolvingMidnight {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "_L";
                 long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("2's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 3));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3536,6 +4367,7 @@ public class SolvingMidnight {
                     String answer = "" + dist[i] / Math.pow(6, 3);
                     pw.println(answer);
                 }
+                pw.println();
                 pw.println();
             }
 
@@ -3543,8 +4375,39 @@ public class SolvingMidnight {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "H_";
                 long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("2's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 3));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3562,6 +4425,7 @@ public class SolvingMidnight {
                     String answer = "" + dist[i] / Math.pow(6, 3);
                     pw.println(answer);
                 }
+                pw.println();
                 pw.println();
             }
 
@@ -3569,8 +4433,39 @@ public class SolvingMidnight {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "HL";
                 long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("2's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 3));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3589,14 +4484,46 @@ public class SolvingMidnight {
                     pw.println(answer);
                 }
                 pw.println();
+                pw.println();
             }
 
             for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
                 long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("3's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 6));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3614,6 +4541,7 @@ public class SolvingMidnight {
                     String answer = "" + dist[i] / Math.pow(6, 6);
                     pw.println(answer);
                 }
+                pw.println();
                 pw.println();
             }
 
@@ -3621,8 +4549,39 @@ public class SolvingMidnight {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "_L";
                 long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("3's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 6));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3640,6 +4599,7 @@ public class SolvingMidnight {
                     String answer = "" + dist[i] / Math.pow(6, 6);
                     pw.println(answer);
                 }
+                pw.println();
                 pw.println();
             }
 
@@ -3647,8 +4607,39 @@ public class SolvingMidnight {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "H_";
                 long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("3's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 6));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3666,6 +4657,7 @@ public class SolvingMidnight {
                     String answer = "" + dist[i] / Math.pow(6, 6);
                     pw.println(answer);
                 }
+                pw.println();
                 pw.println();
             }
 
@@ -3673,8 +4665,39 @@ public class SolvingMidnight {
                 String points = "0" + pointsBanked;
                 String distKey = points + "HL";
                 long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("3's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 6));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3693,14 +4716,46 @@ public class SolvingMidnight {
                     pw.println(answer);
                 }
                 pw.println();
+                pw.println();
             }
 
             for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
                 long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("4's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 10));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3719,14 +4774,46 @@ public class SolvingMidnight {
                     pw.println(answer);
                 }
                 pw.println();
+                pw.println();
             }
 
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 String points = "0" + pointsBanked;
                 String distKey = points + "_L";
                 long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("4's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 10));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3744,6 +4831,7 @@ public class SolvingMidnight {
                     String answer = "" + dist[i] / Math.pow(6, 10);
                     pw.println(answer);
                 }
+                pw.println();
                 pw.println();
             }
 
@@ -3751,8 +4839,39 @@ public class SolvingMidnight {
                 String points = "0" + pointsBanked;
                 String distKey = points + "H_";
                 long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("4's Key: " + distKey);
+                long successDenom = (long)(Math.pow(6, 10));
+                pw.println("successDenom: " + successDenom);
+                long successNum = 0L;
+                double equityGivenSuccess = 0.0;
+                double equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3770,13 +4889,45 @@ public class SolvingMidnight {
                     String answer = "" + dist[i] / Math.pow(6, 10);
                     pw.println(answer);
                 }
+                pw.println();
                 pw.println();
             }
 
             String distKey = "00HL";
             long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
-            pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+            pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
             pw.println("4's Key: " + distKey);
+            long successDenom = (long)(Math.pow(6, 10));
+            pw.println("successDenom: " + successDenom);
+            long successNum = 0L;
+            double equityGivenSuccess = 0.0;
+            double equityGivenFailure = 0.0;
+            for (int i = 0; i < dist.length; i++) {
+                if (i == 1 || i == 2 || i == 3) {
+                    continue;
+                }
+                if (isSuccessFromDistScore(condition, i)) {
+                    successNum += dist[i];
+                    equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                } else {
+                    equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                }
+            }
+            if (successNum == 0L) {
+                equityGivenSuccess = -1.0;
+                equityGivenFailure /= successDenom;
+            } else if (successNum == successDenom) {
+                equityGivenSuccess /= successNum;
+                equityGivenFailure = -1.0;
+            } else {
+                equityGivenSuccess /= successNum;
+                equityGivenFailure /= (successDenom - successNum);
+            }
+            pw.println("successNum: " + successNum);
+            pw.println("equityGivenSuccess: " + equityGivenSuccess);
+            pw.println("equityGivenFailure: " + equityGivenFailure);
+            pw.println();
+
             for (int i = 0; i < dist.length; i++) {
                 pw.print(i < 10 ? " " + i : i);
                 pw.print(": ");
@@ -3794,13 +4945,45 @@ public class SolvingMidnight {
                 pw.println(answer);
             }
             pw.println();
+            pw.println();
 
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 String points = "0" + pointsBanked;
                 distKey = points + "__";
                 dist = distributionsFor5LiveDice.get(condition).get(distKey);
-                pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+                pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("5's Key: " + distKey);
+                successDenom = (long)(Math.pow(6, 15));
+                pw.println("successDenom: " + successDenom);
+                successNum = 0L;
+                equityGivenSuccess = 0.0;
+                equityGivenFailure = 0.0;
+                for (int i = 0; i < dist.length; i++) {
+                    if (i == 1 || i == 2 || i == 3) {
+                        continue;
+                    }
+                    if (isSuccessFromDistScore(condition, i)) {
+                        successNum += dist[i];
+                        equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                    } else {
+                        equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                    }
+                }
+                if (successNum == 0L) {
+                    equityGivenSuccess = -1.0;
+                    equityGivenFailure /= successDenom;
+                } else if (successNum == successDenom) {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure = -1.0;
+                } else {
+                    equityGivenSuccess /= successNum;
+                    equityGivenFailure /= (successDenom - successNum);
+                }
+                pw.println("successNum: " + successNum);
+                pw.println("equityGivenSuccess: " + equityGivenSuccess);
+                pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println();
+
                 for (int i = 0; i < dist.length; i++) {
                     pw.print(i < 10 ? " " + i : i);
                     pw.print(": ");
@@ -3819,12 +5002,44 @@ public class SolvingMidnight {
                     pw.println(answer);
                 }
                 pw.println();
+                pw.println();
             }
 
             distKey = "00_L";
             dist = distributionsFor5LiveDice.get(condition).get(distKey);
-            pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+            pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
             pw.println("5's Key: " + distKey);
+            successDenom = (long)(Math.pow(6, 15));
+            pw.println("successDenom: " + successDenom);
+            successNum = 0L;
+            equityGivenSuccess = 0.0;
+            equityGivenFailure = 0.0;
+            for (int i = 0; i < dist.length; i++) {
+                if (i == 1 || i == 2 || i == 3) {
+                    continue;
+                }
+                if (isSuccessFromDistScore(condition, i)) {
+                    successNum += dist[i];
+                    equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                } else {
+                    equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                }
+            }
+            if (successNum == 0L) {
+                equityGivenSuccess = -1.0;
+                equityGivenFailure /= successDenom;
+            } else if (successNum == successDenom) {
+                equityGivenSuccess /= successNum;
+                equityGivenFailure = -1.0;
+            } else {
+                equityGivenSuccess /= successNum;
+                equityGivenFailure /= (successDenom - successNum);
+            }
+            pw.println("successNum: " + successNum);
+            pw.println("equityGivenSuccess: " + equityGivenSuccess);
+            pw.println("equityGivenFailure: " + equityGivenFailure);
+            pw.println();
+
             for (int i = 0; i < dist.length; i++) {
                 pw.print(i < 10 ? " " + i : i);
                 pw.print(": ");
@@ -3841,12 +5056,44 @@ public class SolvingMidnight {
                 String answer = "" + dist[i] / Math.pow(6, 15);
                 pw.println(answer);
             }
+            pw.println();
             pw.println();
 
             distKey = "00H_";
             dist = distributionsFor5LiveDice.get(condition).get(distKey);
-            pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+            pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
             pw.println("5's Key: " + distKey);
+            successDenom = (long)(Math.pow(6, 15));
+            pw.println("successDenom: " + successDenom);
+            successNum = 0L;
+            equityGivenSuccess = 0.0;
+            equityGivenFailure = 0.0;
+            for (int i = 0; i < dist.length; i++) {
+                if (i == 1 || i == 2 || i == 3) {
+                    continue;
+                }
+                if (isSuccessFromDistScore(condition, i)) {
+                    successNum += dist[i];
+                    equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                } else {
+                    equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                }
+            }
+            if (successNum == 0L) {
+                equityGivenSuccess = -1.0;
+                equityGivenFailure /= successDenom;
+            } else if (successNum == successDenom) {
+                equityGivenSuccess /= successNum;
+                equityGivenFailure = -1.0;
+            } else {
+                equityGivenSuccess /= successNum;
+                equityGivenFailure /= (successDenom - successNum);
+            }
+            pw.println("successNum: " + successNum);
+            pw.println("equityGivenSuccess: " + equityGivenSuccess);
+            pw.println("equityGivenFailure: " + equityGivenFailure);
+            pw.println();
+
             for (int i = 0; i < dist.length; i++) {
                 pw.print(i < 10 ? " " + i : i);
                 pw.print(": ");
@@ -3864,11 +5111,43 @@ public class SolvingMidnight {
                 pw.println(answer);
             }
             pw.println();
+            pw.println();
 
             distKey = "00__";
             dist = distributionsFor6LiveDice.get(condition).get(distKey);
-            pw.println((condition < 10 ? "Condition: 0" : "Condition") + condition);
+            pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
             pw.println("6's Key: " + distKey);
+            successDenom = (long)(Math.pow(6, 21));
+            pw.println("successDenom: " + successDenom);
+            successNum = 0L;
+            equityGivenSuccess = 0.0;
+            equityGivenFailure = 0.0;
+            for (int i = 0; i < dist.length; i++) {
+                if (i == 1 || i == 2 || i == 3) {
+                    continue;
+                }
+                if (isSuccessFromDistScore(condition, i)) {
+                    successNum += dist[i];
+                    equityGivenSuccess += dist[i] * equityFromDistScore(condition, i);
+                } else {
+                    equityGivenFailure += dist[i] * equityFromDistScore(condition, i);
+                }
+            }
+            if (successNum == 0L) {
+                equityGivenSuccess = -1.0;
+                equityGivenFailure /= successDenom;
+            } else if (successNum == successDenom) {
+                equityGivenSuccess /= successNum;
+                equityGivenFailure = -1.0;
+            } else {
+                equityGivenSuccess /= successNum;
+                equityGivenFailure /= (successDenom - successNum);
+            }
+            pw.println("successNum: " + successNum);
+            pw.println("equityGivenSuccess: " + equityGivenSuccess);
+            pw.println("equityGivenFailure: " + equityGivenFailure);
+            pw.println();
+
             for (int i = 0; i < dist.length; i++) {
                 pw.print(i < 10 ? " " + i : i);
                 pw.print(": ");
@@ -3886,9 +5165,33 @@ public class SolvingMidnight {
                 pw.println(answer);
             }
             pw.println();
+            pw.println();
         } catch (FileNotFoundException e) {
             System.err.println("File not found: " + modifiedPathway + condition + ".txt");
             System.exit(1);
         }
+    }
+
+    private boolean isSuccessFromDistScore(int condition, int score) {
+        return switch (condition) {
+            case 0, 1, 2, 3, 25, 45 -> score > 0;
+            case 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 -> score >= condition;
+            case 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44 -> score >= condition - 22;
+            default -> throw new IllegalArgumentException("Invalid condition: " + condition);
+        };
+    }
+
+    private double equityFromDistScore(int condition, int score) {
+        return switch (condition) {
+            case 0 -> MidnightState.EQUITIES_COND0[score];
+            case 1 -> MidnightState.EQUITIES_COND1[score];
+            case 2 -> MidnightState.EQUITIES_COND2[score];
+            case 3 -> score == 0 ? MidnightState.EQUITIES[3] : MidnightState.EQUITIES[score];
+            case 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 -> score;
+            case 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
+                 35, 36, 37, 38, 39, 40, 41, 42, 43, 44 -> MidnightState.EQUITIES[score];
+            case 45 -> score == 0 ? MidnightState.EQUITIES_3P[3] : MidnightState.EQUITIES_3P[score];
+            default -> throw new IllegalArgumentException("Invalid condition: " + condition);
+        };
     }
 }

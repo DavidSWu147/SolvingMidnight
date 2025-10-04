@@ -1,5 +1,10 @@
-Condition35
+Condition: 35
 1's Key: 05__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -52,8 +57,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 06__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -106,8 +117,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 07__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -160,8 +177,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 08__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -214,8 +237,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 09__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -268,8 +297,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 10__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -322,8 +357,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 11__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -376,8 +417,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 12__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -430,8 +477,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 13__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -484,8 +537,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 14__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -538,8 +597,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 15__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -592,8 +657,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 16__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -646,8 +717,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 17__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -700,8 +777,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 18__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -754,8 +837,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 19__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -808,8 +897,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 20__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -862,8 +957,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 21__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -916,8 +1017,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 22__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -970,8 +1077,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 23__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -1024,8 +1137,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 24__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -1078,8 +1197,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 25__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -1132,8 +1257,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 26__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -1186,8 +1317,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 27__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -1240,8 +1377,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 28__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -1294,8 +1437,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 29__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -1348,8 +1497,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 30__
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0
+
  0: 6
  1: 0
  2: 0
@@ -1402,8 +1557,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 04_L
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212156068605979
+
  0: 5
  1: 0
  2: 0
@@ -1456,8 +1617,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 05_L
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212156171317263
+
  0: 5
  1: 0
  2: 0
@@ -1510,8 +1677,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 06_L
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212159079730718
+
  0: 5
  1: 0
  2: 0
@@ -1564,8 +1737,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 07_L
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212202773816752
+
  0: 5
  1: 0
  2: 0
@@ -1618,8 +1797,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 08_L
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.00721258879229673
+
  0: 5
  1: 0
  2: 0
@@ -1672,8 +1857,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 09_L
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007215011269986767
+
  0: 5
  1: 0
  2: 0
@@ -1726,8 +1917,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 10_L
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007227592901456988
+
  0: 5
  1: 0
  2: 0
@@ -1780,8 +1977,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 11_L
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007280603195086628
+
  0: 5
  1: 0
  2: 0
@@ -1834,8 +2037,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 12_L
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0074665493891337325
+
  0: 5
  1: 0
  2: 0
@@ -1888,8 +2097,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 13_L
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.048173248545107517
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -1942,8 +2157,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 14_L
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.05700987458690154
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -1996,8 +2217,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 15_L
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.07731436693210436
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -2050,8 +2277,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 16_L
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.1160277887863066
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -2104,8 +2337,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 17_L
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.17662299669947434
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -2158,8 +2397,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 18_L
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.262184243389988
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -2212,8 +2457,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 19_L
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.3754760556437732
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -2266,8 +2517,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 20_L
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.5147095537692777
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -2320,8 +2577,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 21_L
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.6575918836964838
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -2374,8 +2637,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 22_L
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.7828691240926606
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -2428,8 +2697,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 23_L
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.9000103408205319
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -2482,8 +2757,14 @@ Condition35
 23: 0.16666666666666666
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 24_L
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 1.0
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -2536,8 +2817,14 @@ Condition35
 23: 0.0
 24: 0.16666666666666666
 
-Condition35
+
+Condition: 35
 1's Key: 04H_
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212156068605979
+
  0: 5
  1: 0
  2: 0
@@ -2590,8 +2877,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 05H_
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212156171317263
+
  0: 5
  1: 0
  2: 0
@@ -2644,8 +2937,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 06H_
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212159079730718
+
  0: 5
  1: 0
  2: 0
@@ -2698,8 +2997,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 07H_
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212202773816752
+
  0: 5
  1: 0
  2: 0
@@ -2752,8 +3057,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 08H_
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.00721258879229673
+
  0: 5
  1: 0
  2: 0
@@ -2806,8 +3117,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 09H_
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007215011269986767
+
  0: 5
  1: 0
  2: 0
@@ -2860,8 +3177,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 10H_
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007227592901456988
+
  0: 5
  1: 0
  2: 0
@@ -2914,8 +3237,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 11H_
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007280603195086628
+
  0: 5
  1: 0
  2: 0
@@ -2968,8 +3297,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 12H_
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0074665493891337325
+
  0: 5
  1: 0
  2: 0
@@ -3022,8 +3357,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 13H_
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.048173248545107517
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -3076,8 +3417,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 14H_
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.05700987458690154
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -3130,8 +3477,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 15H_
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.07731436693210436
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -3184,8 +3537,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 16H_
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.1160277887863066
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -3238,8 +3597,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 17H_
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.17662299669947434
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -3292,8 +3657,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 18H_
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.262184243389988
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -3346,8 +3717,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 19H_
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.3754760556437732
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -3400,8 +3777,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 20H_
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.5147095537692777
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -3454,8 +3837,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 21H_
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.6575918836964838
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -3508,8 +3897,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 22H_
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.7828691240926606
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -3562,8 +3957,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 23H_
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.9000103408205319
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -3616,8 +4017,14 @@ Condition35
 23: 0.16666666666666666
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 24H_
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 1.0
+equityGivenFailure: 0.0
+
  0: 5
  1: 0
  2: 0
@@ -3670,8 +4077,14 @@ Condition35
 23: 0.0
 24: 0.16666666666666666
 
-Condition35
+
+Condition: 35
 1's Key: 03HL
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.04327627415575421
+
  0: 0
  1: 0
  2: 0
@@ -3724,8 +4137,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 04HL
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.043291710988605216
+
  0: 0
  1: 0
  2: 0
@@ -3778,8 +4197,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 05HL
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.04336015801237458
+
  0: 0
  1: 0
  2: 0
@@ -3832,8 +4257,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 06HL
+successDenom: 6
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0436145483217776
+
  0: 0
  1: 0
  2: 0
@@ -3886,8 +4317,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 07HL
+successDenom: 6
+successNum: 1
+equityGivenSuccess: 0.048173248545107517
+equityGivenFailure: 0.04368281465755301
+
  0: 0
  1: 0
  2: 0
@@ -3940,8 +4377,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 08HL
+successDenom: 6
+successNum: 2
+equityGivenSuccess: 0.05259156156600453
+equityGivenFailure: 0.043784635133496175
+
  0: 0
  1: 0
  2: 0
@@ -3994,8 +4437,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 09HL
+successDenom: 6
+successNum: 3
+equityGivenSuccess: 0.06083249668803781
+equityGivenFailure: 0.0439494909713547
+
  0: 0
  1: 0
  2: 0
@@ -4048,8 +4497,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 10HL
+successDenom: 6
+successNum: 4
+equityGivenSuccess: 0.074631319712605
+equityGivenFailure: 0.044241457752661084
+
  0: 0
  1: 0
  2: 0
@@ -4102,8 +4557,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 11HL
+successDenom: 6
+successNum: 5
+equityGivenSuccess: 0.09502965510997888
+equityGivenFailure: 0.044799296334802396
+
  0: 0
  1: 0
  2: 0
@@ -4156,8 +4617,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 12HL
+successDenom: 6
+successNum: 6
+equityGivenSuccess: 0.12288875315664706
+equityGivenFailure: -1.0
+
  0: 0
  1: 0
  2: 0
@@ -4210,8 +4677,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 13HL
+successDenom: 6
+successNum: 6
+equityGivenSuccess: 0.1774392210064247
+equityGivenFailure: -1.0
+
  0: 0
  1: 0
  2: 0
@@ -4264,8 +4737,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 14HL
+successDenom: 6
+successNum: 6
+equityGivenSuccess: 0.253722500870154
+equityGivenFailure: -1.0
+
  0: 0
  1: 0
  2: 0
@@ -4318,8 +4797,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 15HL
+successDenom: 6
+successNum: 6
+equityGivenSuccess: 0.35043542033088393
+equityGivenFailure: -1.0
+
  0: 0
  1: 0
  2: 0
@@ -4372,8 +4857,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 16HL
+successDenom: 6
+successNum: 6
+equityGivenSuccess: 0.4615756428819429
+equityGivenFailure: -1.0
+
  0: 0
  1: 0
  2: 0
@@ -4426,8 +4917,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 17HL
+successDenom: 6
+successNum: 6
+equityGivenSuccess: 0.5821402002354525
+equityGivenFailure: -1.0
+
  0: 0
  1: 0
  2: 0
@@ -4480,8 +4977,14 @@ Condition35
 23: 0.16666666666666666
 24: 0.0
 
-Condition35
+
+Condition: 35
 1's Key: 18HL
+successDenom: 6
+successNum: 6
+equityGivenSuccess: 0.7051094930037879
+equityGivenFailure: -1.0
+
  0: 0
  1: 0
  2: 0
@@ -4534,8 +5037,14 @@ Condition35
 23: 0.16666666666666666
 24: 0.16666666666666666
 
-Condition35
+
+Condition: 35
 2's Key: 04__
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006010130057171649
+
  0: 186
  1:   0
  2:   0
@@ -4588,8 +5097,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 05__
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006010130142764386
+
  0: 186
  1:   0
  2:   0
@@ -4642,8 +5157,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 06__
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006010132566442265
+
  0: 186
  1:   0
  2:   0
@@ -4696,8 +5217,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 07__
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0060101689781806265
+
  0: 186
  1:   0
  2:   0
@@ -4750,8 +5277,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 08__
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006010490660247275
+
  0: 186
  1:   0
  2:   0
@@ -4804,8 +5337,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 09__
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006012509391655639
+
  0: 186
  1:   0
  2:   0
@@ -4858,8 +5397,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 10__
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.00602299408454749
+
  0: 186
  1:   0
  2:   0
@@ -4912,8 +5457,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 11__
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006067169329238857
+
  0: 186
  1:   0
  2:   0
@@ -4966,8 +5517,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 12__
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006222124490944777
+
  0: 186
  1:   0
  2:   0
@@ -5020,8 +5577,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 13__
+successDenom: 216
+successNum: 30
+equityGivenSuccess: 0.048173248545107517
+equityGivenFailure: 0.0
+
  0: 186
  1:   0
  2:   0
@@ -5074,8 +5637,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 14__
+successDenom: 216
+successNum: 30
+equityGivenSuccess: 0.05700987458690154
+equityGivenFailure: 0.0
+
  0: 186
  1:   0
  2:   0
@@ -5128,8 +5697,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 15__
+successDenom: 216
+successNum: 30
+equityGivenSuccess: 0.07731436693210436
+equityGivenFailure: 0.0
+
  0: 186
  1:   0
  2:   0
@@ -5182,8 +5757,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 16__
+successDenom: 216
+successNum: 30
+equityGivenSuccess: 0.1160277887863066
+equityGivenFailure: 0.0
+
  0: 186
  1:   0
  2:   0
@@ -5236,8 +5817,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 17__
+successDenom: 216
+successNum: 30
+equityGivenSuccess: 0.17662299669947437
+equityGivenFailure: 0.0
+
  0: 186
  1:   0
  2:   0
@@ -5290,8 +5877,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 18__
+successDenom: 216
+successNum: 30
+equityGivenSuccess: 0.262184243389988
+equityGivenFailure: 0.0
+
  0: 186
  1:   0
  2:   0
@@ -5344,8 +5937,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 19__
+successDenom: 216
+successNum: 30
+equityGivenSuccess: 0.3754760556437732
+equityGivenFailure: 0.0
+
  0: 186
  1:   0
  2:   0
@@ -5398,8 +5997,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 20__
+successDenom: 216
+successNum: 30
+equityGivenSuccess: 0.5147095537692777
+equityGivenFailure: 0.0
+
  0: 186
  1:   0
  2:   0
@@ -5452,8 +6057,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 21__
+successDenom: 216
+successNum: 30
+equityGivenSuccess: 0.6575918836964838
+equityGivenFailure: 0.0
+
  0: 186
  1:   0
  2:   0
@@ -5506,8 +6117,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 22__
+successDenom: 216
+successNum: 30
+equityGivenSuccess: 0.7828691240926606
+equityGivenFailure: 0.0
+
  0: 186
  1:   0
  2:   0
@@ -5560,8 +6177,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 23__
+successDenom: 216
+successNum: 30
+equityGivenSuccess: 0.9000103408205319
+equityGivenFailure: 0.0
+
  0: 186
  1:   0
  2:   0
@@ -5614,8 +6237,14 @@ Condition35
 23: 0.1388888888888889
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 24__
+successDenom: 216
+successNum: 30
+equityGivenSuccess: 1.0
+equityGivenFailure: 0.0
+
  0: 186
  1:   0
  2:   0
@@ -5668,8 +6297,14 @@ Condition35
 23: 0.0
 24: 0.1388888888888889
 
-Condition35
+
+Condition: 35
 2's Key: 03_L
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0182333123777444
+
  0: 125
  1:   0
  2:   0
@@ -5722,8 +6357,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 04_L
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.018244988222154007
+
  0: 125
  1:   0
  2:   0
@@ -5776,8 +6417,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 05_L
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.018295826379827462
+
  0: 125
  1:   0
  2:   0
@@ -5830,8 +6477,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 06_L
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.01848210726754273
+
  0: 125
  1:   0
  2:   0
@@ -5884,8 +6537,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 07_L
+successDenom: 216
+successNum: 28
+equityGivenSuccess: 0.048173248545107517
+equityGivenFailure: 0.014734354606557726
+
  0: 125
  1:   0
  2:   0
@@ -5938,8 +6597,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 08_L
+successDenom: 216
+successNum: 46
+equityGivenSuccess: 0.05393626552888624
+equityGivenFailure: 0.011576774708850632
+
  0: 125
  1:   0
  2:   0
@@ -5992,8 +6657,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 09_L
+successDenom: 216
+successNum: 61
+equityGivenSuccess: 0.06531593037990352
+equityGivenFailure: 0.008524852948340399
+
  0: 125
  1:   0
  2:   0
@@ -6046,8 +6717,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 10_L
+successDenom: 216
+successNum: 75
+equityGivenSuccess: 0.08372844932762519
+equityGivenFailure: 0.005028219866715319
+
  0: 125
  1:   0
  2:   0
@@ -6100,8 +6777,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 11_L
+successDenom: 216
+successNum: 84
+equityGivenSuccess: 0.1149756653701263
+equityGivenFailure: 0.002375720260178915
+
  0: 125
  1:   0
  2:   0
@@ -6154,8 +6837,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 12_L
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.16030376485498052
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -6208,8 +6897,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 13_L
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.23283557136828126
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -6262,8 +6957,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 14_L
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.32921509774549884
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -6316,8 +7017,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 15_L
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.4441127531961711
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -6370,8 +7077,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 16_L
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.5657146578860768
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -6424,8 +7137,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 17_L
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.688346035217743
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -6478,8 +7197,14 @@ Condition35
 23: 0.125
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 18_L
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.8064716165243567
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -6532,8 +7257,14 @@ Condition35
 23: 0.11574074074074074
 24: 0.125
 
-Condition35
+
+Condition: 35
 2's Key: 03H_
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.018233318691588344
+
  0: 125
  1:   0
  2:   0
@@ -6586,8 +7317,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 04H_
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.01824504555779488
+
  0: 125
  1:   0
  2:   0
@@ -6640,8 +7377,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 05H_
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.01829619621699347
+
  0: 125
  1:   0
  2:   0
@@ -6694,8 +7437,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 06H_
+successDenom: 216
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.01848406731223443
+
  0: 125
  1:   0
  2:   0
@@ -6748,8 +7497,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 07H_
+successDenom: 216
+successNum: 28
+equityGivenSuccess: 0.048173248545107517
+equityGivenFailure: 0.014744095633374182
+
  0: 125
  1:   0
  2:   0
@@ -6802,8 +7557,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 08H_
+successDenom: 216
+successNum: 46
+equityGivenSuccess: 0.05393626552888624
+equityGivenFailure: 0.01161564565529515
+
  0: 125
  1:   0
  2:   0
@@ -6856,8 +7617,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 09H_
+successDenom: 216
+successNum: 66
+equityGivenSuccess: 0.06401724236211595
+equityGivenFailure: 0.007340138790489171
+
  0: 125
  1:   0
  2:   0
@@ -6910,8 +7677,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 10H_
+successDenom: 216
+successNum: 80
+equityGivenSuccess: 0.08139838180108963
+equityGivenFailure: 0.0035824549548633326
+
  0: 125
  1:   0
  2:   0
@@ -6964,8 +7737,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 11H_
+successDenom: 216
+successNum: 86
+equityGivenSuccess: 0.11421976052941679
+equityGivenFailure: 0.0017230498590308614
+
  0: 125
  1:   0
  2:   0
@@ -7018,8 +7797,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 12H_
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.1627449893179077
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -7072,8 +7857,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 13H_
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.23766437134051913
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -7126,8 +7917,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 14H_
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.33689724867039195
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -7180,8 +7977,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 15H_
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.4554751907910169
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -7234,8 +8037,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 16H_
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.581543313264136
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -7288,8 +8097,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 17H_
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.7070066292510674
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -7342,8 +8157,14 @@ Condition35
 23: 0.12037037037037036
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 18H_
+successDenom: 216
+successNum: 91
+equityGivenSuccess: 0.8247224349465682
+equityGivenFailure: 0.0
+
  0: 125
  1:   0
  2:   0
@@ -7396,8 +8217,14 @@ Condition35
 23: 0.1111111111111111
 24: 0.12037037037037036
 
-Condition35
+
+Condition: 35
 2's Key: 02HL
+successDenom: 216
+successNum: 34
+equityGivenSuccess: 0.05233166080006941
+equityGivenFailure: 0.043620977924539
+
  0:   0
  1:   0
  2:   0
@@ -7450,8 +8277,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 03HL
+successDenom: 216
+successNum: 67
+equityGivenSuccess: 0.058087245748540094
+equityGivenFailure: 0.04368189745597606
+
  0:   0
  1:   0
  2:   0
@@ -7504,8 +8337,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 04HL
+successDenom: 216
+successNum: 103
+equityGivenSuccess: 0.06678054928866357
+equityGivenFailure: 0.04379600216272042
+
  0:   0
  1:   0
  2:   0
@@ -7558,8 +8397,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 05HL
+successDenom: 216
+successNum: 136
+equityGivenSuccess: 0.08174858576175936
+equityGivenFailure: 0.043940684923788505
+
  0:   0
  1:   0
  2:   0
@@ -7612,8 +8457,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 06HL
+successDenom: 216
+successNum: 166
+equityGivenSuccess: 0.10477807095118485
+equityGivenFailure: 0.04405530661001574
+
  0:   0
  1:   0
  2:   0
@@ -7666,8 +8517,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 07HL
+successDenom: 216
+successNum: 187
+equityGivenSuccess: 0.14038660034540718
+equityGivenFailure: 0.044203252234882834
+
  0:   0
  1:   0
  2:   0
@@ -7720,8 +8577,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 08HL
+successDenom: 216
+successNum: 202
+equityGivenSuccess: 0.1907839384243398
+equityGivenFailure: 0.04437812150743161
+
  0:   0
  1:   0
  2:   0
@@ -7774,8 +8637,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 09HL
+successDenom: 216
+successNum: 211
+equityGivenSuccess: 0.25895550244258164
+equityGivenFailure: 0.04457616090194587
+
  0:   0
  1:   0
  2:   0
@@ -7828,8 +8697,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 10HL
+successDenom: 216
+successNum: 215
+equityGivenSuccess: 0.345621573090119
+equityGivenFailure: 0.044799296334802396
+
  0:   0
  1:   0
  2:   0
@@ -7882,8 +8757,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 11HL
+successDenom: 216
+successNum: 216
+equityGivenSuccess: 0.44811516401372226
+equityGivenFailure: -1.0
+
  0:   0
  1:   0
  2:   0
@@ -7936,8 +8817,14 @@ Condition35
 23: 0.05555555555555555
 24: 0.0
 
-Condition35
+
+Condition: 35
 2's Key: 12HL
+successDenom: 216
+successNum: 216
+equityGivenSuccess: 0.5600627004744361
+equityGivenFailure: -1.0
+
  0:   0
  1:   0
  2:   0
@@ -7990,8 +8877,14 @@ Condition35
 23: 0.1111111111111111
 24: 0.05555555555555555
 
-Condition35
+
+Condition: 35
 3's Key: 03__
+successDenom: 46656
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.01809064217051268
+
  0: 27154
  1:     0
  2:     0
@@ -8044,8 +8937,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 04__
+successDenom: 46656
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.018103038165459627
+
  0: 27154
  1:     0
  2:     0
@@ -8098,8 +8997,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 05__
+successDenom: 46656
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.018156930733761765
+
  0: 27154
  1:     0
  2:     0
@@ -8152,8 +9057,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 06__
+successDenom: 46656
+successNum: 0
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.018354115240799388
+
  0: 27154
  1:     0
  2:     0
@@ -8206,8 +9117,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 07__
+successDenom: 46656
+successNum: 6470
+equityGivenSuccess: 0.048173248545107517
+equityGivenFailure: 0.014273432112854863
+
  0: 27154
  1:     0
  2:     0
@@ -8260,8 +9177,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 08__
+successDenom: 46656
+successNum: 9836
+equityGivenSuccess: 0.05465787306418736
+equityGivenFailure: 0.008356180061377273
+
  0: 29794
  1:     0
  2:     0
@@ -8314,8 +9237,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 09__
+successDenom: 46656
+successNum: 13963
+equityGivenSuccess: 0.0652747375974251
+equityGivenFailure: 0.007460952675290492
+
  0: 27154
  1:     0
  2:     0
@@ -8368,8 +9297,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 10__
+successDenom: 46656
+successNum: 16745
+equityGivenSuccess: 0.084322225075209
+equityGivenFailure: 0.004081860139817549
+
  0: 27154
  1:     0
  2:     0
@@ -8422,8 +9357,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 11__
+successDenom: 46656
+successNum: 18230
+equityGivenSuccess: 0.11793154178368513
+equityGivenFailure: 0.002004668435160369
+
  0: 27154
  1:     0
  2:     0
@@ -8476,8 +9417,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 12__
+successDenom: 46656
+successNum: 19502
+equityGivenSuccess: 0.16638956601915933
+equityGivenFailure: 0.0
+
  0: 27154
  1:     0
  2:     0
@@ -8530,8 +9477,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 13__
+successDenom: 46656
+successNum: 19502
+equityGivenSuccess: 0.2420749322093761
+equityGivenFailure: 0.0
+
  0: 27154
  1:     0
  2:     0
@@ -8584,8 +9537,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 14__
+successDenom: 46656
+successNum: 19502
+equityGivenSuccess: 0.34197246931910896
+equityGivenFailure: 0.0
+
  0: 27154
  1:     0
  2:     0
@@ -8638,8 +9597,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 15__
+successDenom: 46656
+successNum: 19502
+equityGivenSuccess: 0.46022476687120306
+equityGivenFailure: 0.0
+
  0: 27154
  1:     0
  2:     0
@@ -8692,8 +9657,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 16__
+successDenom: 46656
+successNum: 19502
+equityGivenSuccess: 0.5842903773031634
+equityGivenFailure: 0.0
+
  0: 27154
  1:     0
  2:     0
@@ -8746,8 +9717,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 17__
+successDenom: 46656
+successNum: 19502
+equityGivenSuccess: 0.7077975788840386
+equityGivenFailure: 0.0
+
  0: 27154
  1:     0
  2:     0
@@ -8800,8 +9777,14 @@ Condition35
 23: 0.13243741426611796
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 18__
+successDenom: 46656
+successNum: 19502
+equityGivenSuccess: 0.8248162756445427
+equityGivenFailure: 0.0
+
  0: 27154
  1:     0
  2:     0
@@ -8854,8 +9837,14 @@ Condition35
 23: 0.11563357338820301
 24: 0.13243741426611796
 
-Condition35
+
+Condition: 35
 3's Key: 02_L
+successDenom: 46656
+successNum: 8378
+equityGivenSuccess: 0.0529238052044821
+equityGivenFailure: 0.025029633202178887
+
  0: 16340
  1:     0
  2:     0
@@ -8908,8 +9897,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 03_L
+successDenom: 46656
+successNum: 13722
+equityGivenSuccess: 0.06079254365057329
+equityGivenFailure: 0.023002896223170814
+
  0: 15625
  1:     0
  2:     0
@@ -8962,8 +9957,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 04_L
+successDenom: 46656
+successNum: 19170
+equityGivenSuccess: 0.07291421413954258
+equityGivenFailure: 0.01895661927874047
+
  0: 15625
  1:     0
  2:     0
@@ -9016,8 +10017,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 05_L
+successDenom: 46656
+successNum: 23577
+equityGivenSuccess: 0.09328604349521559
+equityGivenFailure: 0.014233979306332275
+
  0: 15625
  1:     0
  2:     0
@@ -9070,8 +10077,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 06_L
+successDenom: 46656
+successNum: 27074
+equityGivenSuccess: 0.12466919686732185
+equityGivenFailure: 0.008906507171416847
+
  0: 15625
  1:     0
  2:     0
@@ -9124,8 +10137,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 07_L
+successDenom: 46656
+successNum: 28790
+equityGivenSuccess: 0.17391265657845573
+equityGivenFailure: 0.005543377836754572
+
  0: 15625
  1:     0
  2:     0
@@ -9178,8 +10197,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 08_L
+successDenom: 46656
+successNum: 30238
+equityGivenSuccess: 0.23877469839292376
+equityGivenFailure: 0.0021458386264355633
+
  0: 15625
  1:     0
  2:     0
@@ -9232,8 +10257,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 09_L
+successDenom: 46656
+successNum: 30781
+equityGivenSuccess: 0.32634140368482917
+equityGivenFailure: 7.024084591163568E-4
+
  0: 15625
  1:     0
  2:     0
@@ -9286,8 +10317,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 10_L
+successDenom: 46656
+successNum: 30987
+equityGivenSuccess: 0.43006366637831334
+equityGivenFailure: 1.258005640903252E-4
+
  0: 15625
  1:     0
  2:     0
@@ -9340,8 +10377,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 11_L
+successDenom: 46656
+successNum: 31031
+equityGivenSuccess: 0.543996856265944
+equityGivenFailure: 0.0
+
  0: 15625
  1:     0
  2:     0
@@ -9394,8 +10437,14 @@ Condition35
 23: 0.07259516460905349
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 12_L
+successDenom: 46656
+successNum: 31031
+equityGivenSuccess: 0.6615685374337952
+equityGivenFailure: 0.0
+
  0: 15625
  1:     0
  2:     0
@@ -9448,8 +10497,14 @@ Condition35
 23: 0.12868655692729766
 24: 0.07259516460905349
 
-Condition35
+
+Condition: 35
 3's Key: 02H_
+successDenom: 46656
+successNum: 8378
+equityGivenSuccess: 0.0529238052044821
+equityGivenFailure: 0.02506196109671906
+
  0: 16340
  1:     0
  2:     0
@@ -9502,8 +10557,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 03H_
+successDenom: 46656
+successNum: 14559
+equityGivenSuccess: 0.06006705769664272
+equityGivenFailure: 0.022478508594777173
+
  0: 15625
  1:     0
  2:     0
@@ -9556,8 +10617,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 04H_
+successDenom: 46656
+successNum: 20414
+equityGivenSuccess: 0.07134808154839158
+equityGivenFailure: 0.017765106051355506
+
  0: 15625
  1:     0
  2:     0
@@ -9610,8 +10677,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 05H_
+successDenom: 46656
+successNum: 24766
+equityGivenSuccess: 0.09136896287100285
+equityGivenFailure: 0.012617152666994525
+
  0: 15625
  1:     0
  2:     0
@@ -9664,8 +10737,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 06H_
+successDenom: 46656
+successNum: 27817
+equityGivenSuccess: 0.12401723375251014
+equityGivenFailure: 0.007525374813034664
+
  0: 15625
  1:     0
  2:     0
@@ -9718,8 +10797,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 07H_
+successDenom: 46656
+successNum: 29152
+equityGivenSuccess: 0.17593060387065967
+equityGivenFailure: 0.004748475853889536
+
  0: 15625
  1:     0
  2:     0
@@ -9772,8 +10857,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 08H_
+successDenom: 46656
+successNum: 30467
+equityGivenSuccess: 0.24320314149017783
+equityGivenFailure: 0.001546918042277415
+
  0: 15625
  1:     0
  2:     0
@@ -9826,8 +10917,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 09H_
+successDenom: 46656
+successNum: 30841
+equityGivenSuccess: 0.33491539191948255
+equityGivenFailure: 5.356045683549794E-4
+
  0: 15625
  1:     0
  2:     0
@@ -9880,8 +10977,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 10H_
+successDenom: 46656
+successNum: 30994
+equityGivenSuccess: 0.44323144201818
+equityGivenFailure: 1.0583411852813744E-4
+
  0: 15625
  1:     0
  2:     0
@@ -9934,8 +11037,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 11H_
+successDenom: 46656
+successNum: 31031
+equityGivenSuccess: 0.5611356629361118
+equityGivenFailure: 0.0
+
  0: 15625
  1:     0
  2:     0
@@ -9988,8 +11097,14 @@ Condition35
 23: 0.06897290809327847
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 12H_
+successDenom: 46656
+successNum: 31031
+equityGivenSuccess: 0.6806119512864662
+equityGivenFailure: 0.0
+
  0: 15625
  1:     0
  2:     0
@@ -10042,8 +11157,14 @@ Condition35
 23: 0.12195644718792867
 24: 0.06897290809327847
 
-Condition35
+
+Condition: 35
 3's Key: 01HL
+successDenom: 46656
+successNum: 35386
+equityGivenSuccess: 0.12301983836038416
+equityGivenFailure: 0.043961641131464425
+
  0:     0
  1:     0
  2:     0
@@ -10096,8 +11217,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 02HL
+successDenom: 46656
+successNum: 39934
+equityGivenSuccess: 0.16220045974636735
+equityGivenFailure: 0.04406116561827285
+
  0:     0
  1:     0
  2:     0
@@ -10150,8 +11277,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 03HL
+successDenom: 46656
+successNum: 43048
+equityGivenSuccess: 0.2170903073938087
+equityGivenFailure: 0.04416816491095185
+
  0:     0
  1:     0
  2:     0
@@ -10204,8 +11337,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 04HL
+successDenom: 46656
+successNum: 44869
+equityGivenSuccess: 0.2897329822510662
+equityGivenFailure: 0.044279303788593245
+
  0:     0
  1:     0
  2:     0
@@ -10258,8 +11397,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 05HL
+successDenom: 46656
+successNum: 45904
+equityGivenSuccess: 0.37798338228081163
+equityGivenFailure: 0.04438505564639537
+
  0:     0
  1:     0
  2:     0
@@ -10312,8 +11457,14 @@ Condition35
 23: 0.023919753086419752
 24: 0.0
 
-Condition35
+
+Condition: 35
 3's Key: 06HL
+successDenom: 46656
+successNum: 46397
+equityGivenSuccess: 0.4786816801254113
+equityGivenFailure: 0.04449134931510597
+
  0:     0
  1:     0
  2:     0
@@ -10366,8 +11517,14 @@ Condition35
 23: 0.07175925925925926
 24: 0.023919753086419752
 
-Condition35
+
+Condition: 35
 4's Key: 02__
+successDenom: 60466176
+successNum: 12379194
+equityGivenSuccess: 0.053792233857345974
+equityGivenFailure: 0.017637714527825848
+
  0: 28698368
  1:        0
  2:        0
@@ -10420,8 +11577,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 03__
+successDenom: 60466176
+successNum: 19633362
+equityGivenSuccess: 0.06244774807660536
+equityGivenFailure: 0.015762898779257295
+
  0: 26158776
  1:        0
  2:        0
@@ -10474,8 +11637,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 04__
+successDenom: 60466176
+successNum: 25844018
+equityGivenSuccess: 0.0764989203422205
+equityGivenFailure: 0.01125518548069169
+
  0: 25769800
  1:        0
  2:        0
@@ -10528,8 +11697,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 05__
+successDenom: 60466176
+successNum: 31919886
+equityGivenSuccess: 0.0968229959128463
+equityGivenFailure: 0.01203435761881796
+
  0: 20758900
  1:        0
  2:        0
@@ -10582,8 +11757,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 06__
+successDenom: 60466176
+successNum: 37325972
+equityGivenSuccess: 0.1270087776985133
+equityGivenFailure: 0.008868790891465366
+
  0: 18485314
  1:        0
  2:        0
@@ -10636,8 +11817,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 07__
+successDenom: 60466176
+successNum: 39276280
+equityGivenSuccess: 0.17898880630953465
+equityGivenFailure: 0.005648184744152494
+
  0: 18482674
  1:        0
  2:        0
@@ -10690,8 +11877,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 08__
+successDenom: 60466176
+successNum: 41128292
+equityGivenSuccess: 0.2463067422450323
+equityGivenFailure: 0.0019640048960697424
+
  0: 18482674
  1:        0
  2:        0
@@ -10744,8 +11937,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 09__
+successDenom: 60466176
+successNum: 41701070
+equityGivenSuccess: 0.3375050268088697
+equityGivenFailure: 6.710806695280224E-4
+
  0: 18482674
  1:        0
  2:        0
@@ -10798,8 +11997,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 10__
+successDenom: 60466176
+successNum: 41929853
+equityGivenSuccess: 0.44450465225630725
+equityGivenFailure: 1.2966096075612266E-4
+
  0: 18482674
  1:        0
  2:        0
@@ -10852,8 +12057,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 11__
+successDenom: 60466176
+successNum: 41983502
+equityGivenSuccess: 0.5607399391826805
+equityGivenFailure: 0.0
+
  0: 18482674
  1:        0
  2:        0
@@ -10906,8 +12117,14 @@ Condition35
 23: 0.0798813869096005
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 12__
+successDenom: 60466176
+successNum: 41983502
+equityGivenSuccess: 0.6791309200287066
+equityGivenFailure: 0.0
+
  0: 18482674
  1:        0
  2:        0
@@ -10960,8 +12177,14 @@ Condition35
 23: 0.13700138735414655
 24: 0.0798813869096005
 
-Condition35
+
+Condition: 35
 4's Key: 01_L
+successDenom: 60466176
+successNum: 42561096
+equityGivenSuccess: 0.14406630177637006
+equityGivenFailure: 0.020012891878275804
+
  0:  9766340
  1:        0
  2:        0
@@ -11014,8 +12237,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 02_L
+successDenom: 60466176
+successNum: 46434943
+equityGivenSuccess: 0.1934400526402071
+equityGivenFailure: 0.01341469127317926
+
  0:  9765625
  1:        0
  2:        0
@@ -11068,8 +12297,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 03_L
+successDenom: 60466176
+successNum: 48611890
+equityGivenSuccess: 0.26216936142199526
+equityGivenFailure: 0.0077909400685743455
+
  0:  9765625
  1:        0
  2:        0
@@ -11122,8 +12357,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 04_L
+successDenom: 60466176
+successNum: 49743868
+equityGivenSuccess: 0.3488550898941133
+equityGivenFailure: 0.0039519816705088275
+
  0:  9765625
  1:        0
  2:        0
@@ -11176,8 +12417,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 05_L
+successDenom: 60466176
+successNum: 50333766
+equityGivenSuccess: 0.4491684508957226
+equityGivenFailure: 0.0016064737748867075
+
  0:  9765625
  1:        0
  2:        0
@@ -11230,8 +12477,14 @@ Condition35
 23: 0.04135573250076208
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 06_L
+successDenom: 60466176
+successNum: 50577184
+equityGivenSuccess: 0.558727950609639
+equityGivenFailure: 5.550759416513132E-4
+
  0:  9765625
  1:        0
  2:        0
@@ -11284,8 +12537,14 @@ Condition35
 23: 0.10215703073400904
 24: 0.04135573250076208
 
-Condition35
+
+Condition: 35
 4's Key: 01H_
+successDenom: 60466176
+successNum: 43295000
+equityGivenSuccess: 0.14448758488383912
+equityGivenFailure: 0.018998321328289006
+
  0:  9765625
  1:        0
  2:        0
@@ -11338,8 +12597,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 02H_
+successDenom: 60466176
+successNum: 46949026
+equityGivenSuccess: 0.19533727303173187
+equityGivenFailure: 0.012249434719789934
+
  0:  9765625
  1:        0
  2:        0
@@ -11392,8 +12657,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 03H_
+successDenom: 60466176
+successNum: 48878371
+equityGivenSuccess: 0.26653649455670325
+equityGivenFailure: 0.006955980692838302
+
  0:  9765625
  1:        0
  2:        0
@@ -11446,8 +12717,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 04H_
+successDenom: 60466176
+successNum: 49901366
+equityGivenSuccess: 0.35605105460928077
+equityGivenFailure: 0.003353005647297987
+
  0:  9765625
  1:        0
  2:        0
@@ -11500,8 +12777,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 05H_
+successDenom: 60466176
+successNum: 50405931
+equityGivenSuccess: 0.45963422661815045
+equityGivenFailure: 0.0013003367259679065
+
  0:  9765625
  1:        0
  2:        0
@@ -11554,8 +12837,14 @@ Condition35
 23: 0.03944205104023777
 24: 0.0
 
-Condition35
+
+Condition: 35
 4's Key: 06H_
+successDenom: 60466176
+successNum: 50603305
+equityGivenSuccess: 0.5717788155864744
+equityGivenFailure: 4.3877231603574985E-4
+
  0:  9765625
  1:        0
  2:        0
@@ -11608,8 +12897,14 @@ Condition35
 23: 0.09710466889786448
 24: 0.03944205104023777
 
-Condition35
+
+Condition: 35
 4's Key: 00HL
+successDenom: 60466176
+successNum: 59407747
+equityGivenSuccess: 0.4272696720797684
+equityGivenFailure: 0.04428297829497042
+
  0:        0
  1:        0
  2:        0
@@ -11662,8 +12957,14 @@ Condition35
 23: 0.05100689681450998
 24: 0.015363035360463344
 
-Condition35
+
+Condition: 35
 5's Key: 01__
+successDenom: 470184984576
+successNum: 334593051828
+equityGivenSuccess: 0.1605661558687651
+equityGivenFailure: 0.012911885971184322
+
  0:  95904428749
  1:            0
  2:            0
@@ -11716,8 +13017,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 5's Key: 02__
+successDenom: 470184984576
+successNum: 357396368885
+equityGivenSuccess: 0.21840914091391533
+equityGivenFailure: 0.0066801844470776245
+
  0:  95747586418
  1:            0
  2:            0
@@ -11770,8 +13077,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 5's Key: 03__
+successDenom: 470184984576
+successNum: 367021127241
+equityGivenSuccess: 0.29880549124213807
+equityGivenFailure: 0.003218021211942214
+
  0:  95672094352
  1:            0
  2:            0
@@ -11824,8 +13137,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 5's Key: 04__
+successDenom: 470184984576
+successNum: 371619302289
+equityGivenSuccess: 0.39668024921833256
+equityGivenFailure: 0.0013037363906414682
+
  0:  95669738926
  1:            0
  2:            0
@@ -11878,8 +13197,14 @@ Condition35
 23: 0.0
 24: 0.0
 
-Condition35
+
+Condition: 35
 5's Key: 05__
+successDenom: 470184984576
+successNum: 373575146314
+equityGivenSuccess: 0.5064930027813791
+equityGivenFailure: 4.3204605898217624E-4
+
  0:  95669736286
  1:            0
  2:            0
@@ -11932,8 +13257,14 @@ Condition35
 23: 0.05956886773034065
 24: 0.0
 
-Condition35
+
+Condition: 35
 5's Key: 06__
+successDenom: 470184984576
+successNum: 385880945225
+equityGivenSuccess: 0.6047327893994854
+equityGivenFailure: 2.2897557885847038E-4
+
  0:  83870262856
  1:            0
  2:            0
@@ -11986,8 +13317,14 @@ Condition35
 23: 0.11676060679501812
 24: 0.052551997246960254
 
-Condition35
+
+Condition: 35
 5's Key: 00_L
+successDenom: 470184984576
+successNum: 435719688461
+equityGivenSuccess: 0.48806056391563013
+equityGivenFailure: 0.005076785578313427
+
  0:  30517578840
  1:            0
  2:            0
@@ -12040,8 +13377,14 @@ Condition35
 23: 0.07507204036264693
 24: 0.02540905715603283
 
-Condition35
+
+Condition: 35
 5's Key: 00H_
+successDenom: 470184984576
+successNum: 419377692746
+equityGivenSuccess: 0.5155761370814765
+equityGivenFailure: 0.00266351979933747
+
  0:  47753906250
  1:            0
  2:            0
@@ -12094,8 +13437,14 @@ Condition35
 23: 0.0781334609039644
 24: 0.028108639445213385
 
-Condition35
+
+Condition: 35
 6's Key: 00__
+successDenom: 21936950640377856
+successNum: 18863387666818294
+equityGivenSuccess: 0.5717648521695435
+equityGivenFailure: 8.855765345547473E-4
+
  0:  3012199068944030
  1:                 0
  2:                 0
@@ -12147,4 +13496,5 @@ Condition35
 22: 0.14626882931461963
 23: 0.1046600606436143
 24: 0.04320318509737803
+
 
