@@ -433,9 +433,16 @@ public class MidnightState {
         string += "optimalPolicyHigh: " + optimalPolicyHigh + "\n";
         string += "successDenom: " + successDenom + "\n";
         string += "successNum: " + successNum + "\n";
+        string += "successPercentage: " + 100.0 * successNum / successDenom + "%\n";
         string += "equityGivenSuccess: " + equityGivenSuccess + "\n";
         string += "equityGivenFailure: " + equityGivenFailure + "\n";
+        string += "equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                equityGivenFailure * (successDenom - successNum) / successDenom) + "\n";
         return string;
+
+        /*pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                equityGivenFailure * (successDenom - successNum) / successDenom));*/
     }
 
     public String toStringAbridged() {

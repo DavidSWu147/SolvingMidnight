@@ -2902,8 +2902,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -2960,8 +2963,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3018,8 +3024,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3076,8 +3085,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3134,8 +3146,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3192,8 +3207,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3250,8 +3268,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3308,8 +3329,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3366,8 +3390,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3424,8 +3451,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3482,8 +3512,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3540,8 +3573,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3598,8 +3634,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3656,8 +3695,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3714,8 +3756,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3770,8 +3815,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -3826,8 +3874,11 @@ public class SolvingMidnight {
                         equityGivenFailure /= (successDenom - successNum);
                     }
                     pw.println("successNum: " + successNum);
+                    pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
+                    pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3882,8 +3933,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -3936,8 +3990,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -3990,8 +4047,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4056,8 +4116,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4114,8 +4177,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4172,8 +4238,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4230,8 +4299,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4288,8 +4360,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4346,8 +4421,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4404,8 +4482,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4462,8 +4543,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4520,8 +4604,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4578,8 +4665,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4636,8 +4726,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4694,8 +4787,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4752,8 +4848,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4810,8 +4909,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4868,8 +4970,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4924,8 +5029,11 @@ public class SolvingMidnight {
                 equityGivenFailure /= (successDenom - successNum);
             }
             pw.println("successNum: " + successNum);
+            pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
             pw.println("equityGivenSuccess: " + equityGivenSuccess);
             pw.println("equityGivenFailure: " + equityGivenFailure);
+            pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
             pw.println();
 
             for (int i = 0; i < dist.length; i++) {
@@ -4980,8 +5088,11 @@ public class SolvingMidnight {
                     equityGivenFailure /= (successDenom - successNum);
                 }
                 pw.println("successNum: " + successNum);
+                pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
+                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -5036,8 +5147,11 @@ public class SolvingMidnight {
                 equityGivenFailure /= (successDenom - successNum);
             }
             pw.println("successNum: " + successNum);
+            pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
             pw.println("equityGivenSuccess: " + equityGivenSuccess);
             pw.println("equityGivenFailure: " + equityGivenFailure);
+            pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
             pw.println();
 
             for (int i = 0; i < dist.length; i++) {
@@ -5090,8 +5204,11 @@ public class SolvingMidnight {
                 equityGivenFailure /= (successDenom - successNum);
             }
             pw.println("successNum: " + successNum);
+            pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
             pw.println("equityGivenSuccess: " + equityGivenSuccess);
             pw.println("equityGivenFailure: " + equityGivenFailure);
+            pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
             pw.println();
 
             for (int i = 0; i < dist.length; i++) {
@@ -5144,8 +5261,11 @@ public class SolvingMidnight {
                 equityGivenFailure /= (successDenom - successNum);
             }
             pw.println("successNum: " + successNum);
+            pw.println("successPercentage: " + 100.0 * successNum / successDenom + "%");
             pw.println("equityGivenSuccess: " + equityGivenSuccess);
             pw.println("equityGivenFailure: " + equityGivenFailure);
+            pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
             pw.println();
 
             for (int i = 0; i < dist.length; i++) {
