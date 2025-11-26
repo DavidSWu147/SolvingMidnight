@@ -6,7 +6,7 @@
  * 72/216 chance of a 6/36
  * 111/216 chance of a 5/36
  * 27/216 chance of losing outright (no 1s, 4s, or 6s)
- * This calculates out to 401/2592 ~= 15.4707% which is actually better than the 13.8889% you get from keeping four!
+ * This calculates out to 401/2592 ~= 15.4707% which is actually better than the 13.8889% you get from keeping 4 dice!
  *
  * Strategy for P1:
  * On initial roll:

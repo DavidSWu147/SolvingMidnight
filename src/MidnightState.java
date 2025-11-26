@@ -99,8 +99,9 @@ public class MidnightState {
     //56: highest average equity for P1 vs an enhanced greedy (greedy but bank all if 100% to win) P2 and ties are ties
     //57: highest average equity for P1 vs an enhanced greedy (greedy but bank all if 100% to win) P2 and P1 wins ties
 
-    //58~78: (N-54)+ condition but matching the condition is only a tie, not a win
-    //79: highest average equity for P1 against an optimal P2 but ties are ties
+    //58~77: (N-54)+ condition but matching the condition is only a tie, not a win (no 78, would just be a 24 condition)
+    //78: highest average equity for P1 against an optimal P2 but ties are ties
+    //79: highest average equity for P1 against an optimal P2 but P1 loses ties
 
     private final int condition;
     private final int numLiveDice; //1~6
@@ -439,10 +440,6 @@ public class MidnightState {
         string += "equityOverall: " + (equityGivenSuccess * successNum / successDenom +
                 equityGivenFailure * (successDenom - successNum) / successDenom) + "\n";
         return string;
-
-        /*pw.println("equityGivenFailure: " + equityGivenFailure);
-                pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                equityGivenFailure * (successDenom - successNum) / successDenom));*/
     }
 
     public String toStringAbridged() {
