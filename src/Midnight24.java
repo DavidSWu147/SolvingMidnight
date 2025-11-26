@@ -1,6 +1,6 @@
 /*
  * For condition 24: if you roll 4 sixes and no qualifiers, should you keep 3 or 4 sixes?
- * Keeping 4 is obviously 30/216 == 5/36 chance
+ * Keeping 4 is obviously 30/216 == 5/36 ~= 13.8889% chance
  * If you keep 3:
  * 6/216 chance of winning outright (146/164/416/461/614/641)
  * 72/216 chance of a 6/36
@@ -16,8 +16,6 @@
  * 4. Else, keep 1466
  * 5. Else, keep a single dice with the following priority: 6>4>1>5>3>2
  */
-// 99998668
-//999847659
 
 public class Midnight24 {
     public static final int OTHER_LOW_QUALIFIER = 0; //when nonzero, is a qualifier but only alongside the low qualifier
