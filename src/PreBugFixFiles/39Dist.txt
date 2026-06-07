@@ -1,11 +1,11 @@
-Condition: 03
+Condition: 39
 1's Key: 05__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -60,14 +60,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 06__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -122,14 +122,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 07__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -184,14 +184,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 08__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -246,14 +246,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 09__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -308,14 +308,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 10__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -370,14 +370,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 11__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -432,14 +432,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 12__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -494,14 +494,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 13__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -556,14 +556,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 14__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -618,14 +618,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 15__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -680,14 +680,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 16__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -742,14 +742,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 17__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -804,14 +804,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 18__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -866,14 +866,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 19__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -928,14 +928,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 20__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -990,14 +990,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 21__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -1052,14 +1052,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 22__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -1114,14 +1114,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 23__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -1176,14 +1176,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 24__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -1238,14 +1238,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 25__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -1300,14 +1300,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 26__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -1362,14 +1362,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 27__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -1424,14 +1424,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 28__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -1486,14 +1486,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 29__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -1548,14 +1548,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 30__
 successDenom: 6
 successNum: 0
 successPercentage: 0.0%
 equityGivenSuccess: -1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640110019
+equityGivenFailure: 0.0
+equityOverall: 0.0
 
  0: 6
  1: 0
@@ -1610,14 +1610,14 @@ equityOverall: 0.04327293640110019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 04_L
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.043272936411635876
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640285614
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212156068605979
+equityOverall: 0.007212156068605979
 
  0: 5
  1: 0
@@ -1672,14 +1672,14 @@ equityOverall: 0.04327293640285614
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 05_L
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.04327293702790358
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.043272936505567426
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212156171317263
+equityOverall: 0.007212156171317263
 
  0: 5
  1: 0
@@ -1734,14 +1734,14 @@ equityOverall: 0.043272936505567426
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 06_L
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.04327295447838431
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293941398088
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212159079730718
+equityOverall: 0.007212159079730718
 
  0: 5
  1: 0
@@ -1796,14 +1796,14 @@ equityOverall: 0.04327293941398088
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 07_L
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.043273216642900514
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327298310806692
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212202773816752
+equityOverall: 0.007212202773816752
 
  0: 5
  1: 0
@@ -1858,14 +1858,14 @@ equityOverall: 0.04327298310806692
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 08_L
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.04327553275378038
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327336912654689
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.00721258879229673
+equityOverall: 0.00721258879229673
 
  0: 5
  1: 0
@@ -1920,14 +1920,14 @@ equityOverall: 0.04327336912654689
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 09_L
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.0432900676199206
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327579160423693
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007215011269986767
+equityOverall: 0.007215011269986767
 
  0: 5
  1: 0
@@ -1982,14 +1982,14 @@ equityOverall: 0.04327579160423693
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 10_L
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.04336555740874193
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04328837323570715
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007227592901456988
+equityOverall: 0.007227592901456988
 
  0: 5
  1: 0
@@ -2044,14 +2044,14 @@ equityOverall: 0.04328837323570715
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 11_L
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.04368361917051977
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.043341383529336794
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007280603195086628
+equityOverall: 0.007280603195086628
 
  0: 5
  1: 0
@@ -2106,14 +2106,14 @@ equityOverall: 0.043341383529336794
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 12_L
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.044799296334802396
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.0435273297233839
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0074665493891337325
+equityOverall: 0.0074665493891337325
 
  0: 5
  1: 0
@@ -2168,14 +2168,14 @@ equityOverall: 0.0435273297233839
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 13_L
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.048173248545107517
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.044089655091768085
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.00802887475751792
+equityOverall: 0.00802887475751792
 
  0: 5
  1: 0
@@ -2230,14 +2230,14 @@ equityOverall: 0.044089655091768085
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 14_L
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.05700987458690154
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04556242609873375
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.00950164576448359
+equityOverall: 0.00950164576448359
 
  0: 5
  1: 0
@@ -2292,14 +2292,14 @@ equityOverall: 0.04556242609873375
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 15_L
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.07731436693210436
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.048946508156267554
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.012885727822017393
+equityOverall: 0.012885727822017393
 
  0: 5
  1: 0
@@ -2354,14 +2354,14 @@ equityOverall: 0.048946508156267554
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 16_L
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.1160277887863066
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.05539874513196793
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.019337964797717766
+equityOverall: 0.019337964797717766
 
  0: 5
  1: 0
@@ -2416,14 +2416,14 @@ equityOverall: 0.05539874513196793
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 17_L
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.17662299669947434
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.06549794645082922
+equityGivenFailure: 0.0
+equityOverall: 0.029437166116579056
 
  0: 5
  1: 0
@@ -2478,14 +2478,14 @@ equityOverall: 0.06549794645082922
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 18_L
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.262184243389988
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.07975815423258151
+equityGivenFailure: 0.0
+equityOverall: 0.04369737389833134
 
  0: 5
  1: 0
@@ -2540,14 +2540,14 @@ equityOverall: 0.07975815423258151
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 19_L
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.3754760556437732
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.0986401229415457
+equityGivenFailure: 0.0
+equityOverall: 0.06257934260729553
 
  0: 5
  1: 0
@@ -2602,14 +2602,14 @@ equityOverall: 0.0986401229415457
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 20_L
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.5147095537692777
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.12184570596246311
+equityGivenFailure: 0.0
+equityOverall: 0.08578492562821295
 
  0: 5
  1: 0
@@ -2664,14 +2664,14 @@ equityOverall: 0.12184570596246311
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 21_L
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.6575918836964838
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.14565942761699746
+equityGivenFailure: 0.0
+equityOverall: 0.1095986472827473
 
  0: 5
  1: 0
@@ -2726,14 +2726,14 @@ equityOverall: 0.14565942761699746
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 22_L
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.7828691240926606
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.16653896768302695
+equityGivenFailure: 0.0
+equityOverall: 0.13047818734877678
 
  0: 5
  1: 0
@@ -2788,14 +2788,14 @@ equityOverall: 0.16653896768302695
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 23_L
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.9000103408205319
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.1860625038043388
+equityGivenFailure: 0.0
+equityOverall: 0.15000172347008864
 
  0: 5
  1: 0
@@ -2850,14 +2850,14 @@ equityOverall: 0.1860625038043388
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 24_L
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.20272744700091683
+equityGivenFailure: 0.0
+equityOverall: 0.16666666666666666
 
  0: 5
  1: 0
@@ -2912,14 +2912,14 @@ equityOverall: 0.20272744700091683
 24: 0.16666666666666666
 
 
-Condition: 03
+Condition: 39
 1's Key: 04H_
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.043272936411635876
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293640285614
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212156068605979
+equityOverall: 0.007212156068605979
 
  0: 5
  1: 0
@@ -2974,14 +2974,14 @@ equityOverall: 0.04327293640285614
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 05H_
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.04327293702790358
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.043272936505567426
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212156171317263
+equityOverall: 0.007212156171317263
 
  0: 5
  1: 0
@@ -3036,14 +3036,14 @@ equityOverall: 0.043272936505567426
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 06H_
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.04327295447838431
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327293941398088
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212159079730718
+equityOverall: 0.007212159079730718
 
  0: 5
  1: 0
@@ -3098,14 +3098,14 @@ equityOverall: 0.04327293941398088
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 07H_
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.043273216642900514
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327298310806692
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007212202773816752
+equityOverall: 0.007212202773816752
 
  0: 5
  1: 0
@@ -3160,14 +3160,14 @@ equityOverall: 0.04327298310806692
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 08H_
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.04327553275378038
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327336912654689
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.00721258879229673
+equityOverall: 0.00721258879229673
 
  0: 5
  1: 0
@@ -3222,14 +3222,14 @@ equityOverall: 0.04327336912654689
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 09H_
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.0432900676199206
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04327579160423693
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007215011269986767
+equityOverall: 0.007215011269986767
 
  0: 5
  1: 0
@@ -3284,14 +3284,14 @@ equityOverall: 0.04327579160423693
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 10H_
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.04336555740874193
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04328837323570715
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007227592901456988
+equityOverall: 0.007227592901456988
 
  0: 5
  1: 0
@@ -3346,14 +3346,14 @@ equityOverall: 0.04328837323570715
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 11H_
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.04368361917051977
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.043341383529336794
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007280603195086628
+equityOverall: 0.007280603195086628
 
  0: 5
  1: 0
@@ -3408,14 +3408,14 @@ equityOverall: 0.043341383529336794
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 12H_
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.044799296334802396
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.0435273297233839
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0074665493891337325
+equityOverall: 0.0074665493891337325
 
  0: 5
  1: 0
@@ -3470,14 +3470,14 @@ equityOverall: 0.0435273297233839
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 13H_
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.048173248545107517
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.044089655091768085
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.00802887475751792
+equityOverall: 0.00802887475751792
 
  0: 5
  1: 0
@@ -3532,14 +3532,14 @@ equityOverall: 0.044089655091768085
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 14H_
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.05700987458690154
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04556242609873375
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.00950164576448359
+equityOverall: 0.00950164576448359
 
  0: 5
  1: 0
@@ -3594,14 +3594,14 @@ equityOverall: 0.04556242609873375
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 15H_
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.07731436693210436
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.048946508156267554
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.012885727822017393
+equityOverall: 0.012885727822017393
 
  0: 5
  1: 0
@@ -3656,14 +3656,14 @@ equityOverall: 0.048946508156267554
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 16H_
 successDenom: 6
-successNum: 1
-successPercentage: 16.666666666666668%
-equityGivenSuccess: 0.1160277887863066
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.05539874513196793
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.019337964797717766
+equityOverall: 0.019337964797717766
 
  0: 5
  1: 0
@@ -3718,14 +3718,14 @@ equityOverall: 0.05539874513196793
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 17H_
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.17662299669947434
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.06549794645082922
+equityGivenFailure: 0.0
+equityOverall: 0.029437166116579056
 
  0: 5
  1: 0
@@ -3780,14 +3780,14 @@ equityOverall: 0.06549794645082922
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 18H_
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.262184243389988
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.07975815423258151
+equityGivenFailure: 0.0
+equityOverall: 0.04369737389833134
 
  0: 5
  1: 0
@@ -3842,14 +3842,14 @@ equityOverall: 0.07975815423258151
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 19H_
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.3754760556437732
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.0986401229415457
+equityGivenFailure: 0.0
+equityOverall: 0.06257934260729553
 
  0: 5
  1: 0
@@ -3904,14 +3904,14 @@ equityOverall: 0.0986401229415457
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 20H_
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.5147095537692777
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.12184570596246311
+equityGivenFailure: 0.0
+equityOverall: 0.08578492562821295
 
  0: 5
  1: 0
@@ -3966,14 +3966,14 @@ equityOverall: 0.12184570596246311
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 21H_
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.6575918836964838
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.14565942761699746
+equityGivenFailure: 0.0
+equityOverall: 0.1095986472827473
 
  0: 5
  1: 0
@@ -4028,14 +4028,14 @@ equityOverall: 0.14565942761699746
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 22H_
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.7828691240926606
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.16653896768302695
+equityGivenFailure: 0.0
+equityOverall: 0.13047818734877678
 
  0: 5
  1: 0
@@ -4090,14 +4090,14 @@ equityOverall: 0.16653896768302695
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 23H_
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 0.9000103408205319
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.1860625038043388
+equityGivenFailure: 0.0
+equityOverall: 0.15000172347008864
 
  0: 5
  1: 0
@@ -4152,14 +4152,14 @@ equityOverall: 0.1860625038043388
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 24H_
 successDenom: 6
 successNum: 1
 successPercentage: 16.666666666666668%
 equityGivenSuccess: 1.0
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.20272744700091683
+equityGivenFailure: 0.0
+equityOverall: 0.16666666666666666
 
  0: 5
  1: 0
@@ -4214,13 +4214,13 @@ equityOverall: 0.20272744700091683
 24: 0.16666666666666666
 
 
-Condition: 03
+Condition: 39
 1's Key: 03HL
 successDenom: 6
-successNum: 6
-successPercentage: 100.0%
-equityGivenSuccess: 0.04327627415575421
-equityGivenFailure: -1.0
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.04327627415575421
 equityOverall: 0.04327627415575421
 
  0: 0
@@ -4276,13 +4276,13 @@ equityOverall: 0.04327627415575421
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 04HL
 successDenom: 6
-successNum: 6
-successPercentage: 100.0%
-equityGivenSuccess: 0.043291710988605216
-equityGivenFailure: -1.0
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.043291710988605216
 equityOverall: 0.043291710988605216
 
  0: 0
@@ -4338,13 +4338,13 @@ equityOverall: 0.043291710988605216
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 05HL
 successDenom: 6
-successNum: 6
-successPercentage: 100.0%
-equityGivenSuccess: 0.04336015801237458
-equityGivenFailure: -1.0
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.04336015801237458
 equityOverall: 0.04336015801237458
 
  0: 0
@@ -4400,13 +4400,13 @@ equityOverall: 0.04336015801237458
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 06HL
 successDenom: 6
-successNum: 6
-successPercentage: 100.0%
-equityGivenSuccess: 0.0436145483217776
-equityGivenFailure: -1.0
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0436145483217776
 equityOverall: 0.0436145483217776
 
  0: 0
@@ -4462,13 +4462,13 @@ equityOverall: 0.0436145483217776
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 07HL
 successDenom: 6
-successNum: 6
-successPercentage: 100.0%
-equityGivenSuccess: 0.04443122030547877
-equityGivenFailure: -1.0
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.04443122030547877
 equityOverall: 0.04443122030547877
 
  0: 0
@@ -4524,13 +4524,13 @@ equityOverall: 0.04443122030547877
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 08HL
 successDenom: 6
-successNum: 6
-successPercentage: 100.0%
-equityGivenSuccess: 0.046720277277665624
-equityGivenFailure: -1.0
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.046720277277665624
 equityOverall: 0.046720277277665624
 
  0: 0
@@ -4586,13 +4586,13 @@ equityOverall: 0.046720277277665624
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 09HL
 successDenom: 6
-successNum: 6
-successPercentage: 100.0%
-equityGivenSuccess: 0.05239099382969625
-equityGivenFailure: -1.0
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.05239099382969625
 equityOverall: 0.05239099382969625
 
  0: 0
@@ -4648,13 +4648,13 @@ equityOverall: 0.05239099382969625
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 10HL
 successDenom: 6
-successNum: 6
-successPercentage: 100.0%
-equityGivenSuccess: 0.06450136572595704
-equityGivenFailure: -1.0
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.06450136572595704
 equityOverall: 0.06450136572595704
 
  0: 0
@@ -4710,13 +4710,13 @@ equityOverall: 0.06450136572595704
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 11HL
 successDenom: 6
-successNum: 6
-successPercentage: 100.0%
-equityGivenSuccess: 0.08665792864744946
-equityGivenFailure: -1.0
+successNum: 1
+successPercentage: 16.666666666666668%
+equityGivenSuccess: 0.17662299669947434
+equityGivenFailure: 0.06866491503704449
 equityOverall: 0.08665792864744946
 
  0: 0
@@ -4772,13 +4772,13 @@ equityOverall: 0.08665792864744946
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 12HL
 successDenom: 6
-successNum: 6
-successPercentage: 100.0%
-equityGivenSuccess: 0.12288875315664706
-equityGivenFailure: -1.0
+successNum: 2
+successPercentage: 33.333333333333336%
+equityGivenSuccess: 0.21940362004473118
+equityGivenFailure: 0.074631319712605
 equityOverall: 0.12288875315664706
 
  0: 0
@@ -4834,14 +4834,14 @@ equityOverall: 0.12288875315664706
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 13HL
 successDenom: 6
-successNum: 6
-successPercentage: 100.0%
-equityGivenSuccess: 0.1774392210064247
-equityGivenFailure: -1.0
-equityOverall: 0.1774392210064247
+successNum: 3
+successPercentage: 50.0%
+equityGivenSuccess: 0.27142776524441187
+equityGivenFailure: 0.0834506767684375
+equityOverall: 0.17743922100642467
 
  0: 0
  1: 0
@@ -4896,13 +4896,13 @@ equityOverall: 0.1774392210064247
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 14HL
 successDenom: 6
-successNum: 6
-successPercentage: 100.0%
-equityGivenSuccess: 0.253722500870154
-equityGivenFailure: -1.0
+successNum: 4
+successPercentage: 66.66666666666667%
+equityGivenSuccess: 0.3322482123756283
+equityGivenFailure: 0.09667107785920548
 equityOverall: 0.253722500870154
 
  0: 0
@@ -4958,13 +4958,13 @@ equityOverall: 0.253722500870154
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 15HL
 successDenom: 6
-successNum: 6
-successPercentage: 100.0%
-equityGivenSuccess: 0.35043542033088393
-equityGivenFailure: -1.0
+successNum: 5
+successPercentage: 83.33333333333333%
+equityGivenSuccess: 0.3973169466397994
+equityGivenFailure: 0.1160277887863066
 equityOverall: 0.35043542033088393
 
  0: 0
@@ -5020,7 +5020,7 @@ equityOverall: 0.35043542033088393
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 16HL
 successDenom: 6
 successNum: 6
@@ -5082,7 +5082,7 @@ equityOverall: 0.4615756428819429
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 17HL
 successDenom: 6
 successNum: 6
@@ -5144,7 +5144,7 @@ equityOverall: 0.5821402002354525
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 1's Key: 18HL
 successDenom: 6
 successNum: 6
@@ -5206,14 +5206,14 @@ equityOverall: 0.7051094930037879
 24: 0.16666666666666666
 
 
-Condition: 03
+Condition: 39
 2's Key: 04__
 successDenom: 216
-successNum: 30
-successPercentage: 13.88888888888889%
-equityGivenSuccess: 0.043272936411635876
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04327293640256349
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006010130057171649
+equityOverall: 0.006010130057171649
 
  0: 186
  1:   0
@@ -5268,14 +5268,14 @@ equityOverall: 0.04327293640256349
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 05__
 successDenom: 216
-successNum: 30
-successPercentage: 13.88888888888889%
-equityGivenSuccess: 0.04327293702790358
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04327293648815622
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006010130142764386
+equityOverall: 0.006010130142764386
 
  0: 186
  1:   0
@@ -5330,14 +5330,14 @@ equityOverall: 0.04327293648815622
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 06__
 successDenom: 216
-successNum: 30
-successPercentage: 13.88888888888889%
-equityGivenSuccess: 0.04327295447838431
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.0432729389118341
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006010132566442265
+equityOverall: 0.006010132566442265
 
  0: 186
  1:   0
@@ -5392,14 +5392,14 @@ equityOverall: 0.0432729389118341
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 07__
 successDenom: 216
-successNum: 30
-successPercentage: 13.88888888888889%
-equityGivenSuccess: 0.043273216642900514
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.043272975323572466
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0060101689781806265
+equityOverall: 0.0060101689781806265
 
  0: 186
  1:   0
@@ -5454,14 +5454,14 @@ equityOverall: 0.043272975323572466
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 08__
 successDenom: 216
-successNum: 30
-successPercentage: 13.88888888888889%
-equityGivenSuccess: 0.04327553275378038
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04327329700563911
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006010490660247275
+equityOverall: 0.006010490660247275
 
  0: 186
  1:   0
@@ -5516,14 +5516,14 @@ equityOverall: 0.04327329700563911
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 09__
 successDenom: 216
-successNum: 30
-successPercentage: 13.88888888888889%
-equityGivenSuccess: 0.0432900676199206
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04327531573704747
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006012509391655639
+equityOverall: 0.006012509391655639
 
  0: 186
  1:   0
@@ -5578,14 +5578,14 @@ equityOverall: 0.04327531573704747
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 10__
 successDenom: 216
-successNum: 30
-successPercentage: 13.88888888888889%
-equityGivenSuccess: 0.04336555740874193
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.043285800429939326
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.00602299408454749
+equityOverall: 0.00602299408454749
 
  0: 186
  1:   0
@@ -5640,14 +5640,14 @@ equityOverall: 0.043285800429939326
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 11__
 successDenom: 216
-successNum: 30
-successPercentage: 13.88888888888889%
-equityGivenSuccess: 0.04368361917051977
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04332997567463069
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006067169329238857
+equityOverall: 0.006067169329238857
 
  0: 186
  1:   0
@@ -5702,14 +5702,14 @@ equityOverall: 0.04332997567463069
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 12__
 successDenom: 216
-successNum: 30
-successPercentage: 13.88888888888889%
-equityGivenSuccess: 0.044799296334802396
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.043484930836336616
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006222124490944777
+equityOverall: 0.006222124490944777
 
  0: 186
  1:   0
@@ -5764,14 +5764,14 @@ equityOverall: 0.043484930836336616
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 13__
 successDenom: 216
-successNum: 30
-successPercentage: 13.88888888888889%
-equityGivenSuccess: 0.048173248545107517
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.043953535309990105
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.006690728964598266
+equityOverall: 0.006690728964598266
 
  0: 186
  1:   0
@@ -5826,14 +5826,14 @@ equityOverall: 0.043953535309990105
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 14__
 successDenom: 216
-successNum: 30
-successPercentage: 13.88888888888889%
-equityGivenSuccess: 0.05700987458690154
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04518084448246149
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.007918038137069658
+equityOverall: 0.007918038137069658
 
  0: 186
  1:   0
@@ -5888,14 +5888,14 @@ equityOverall: 0.04518084448246149
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 15__
 successDenom: 216
-successNum: 30
-successPercentage: 13.88888888888889%
-equityGivenSuccess: 0.07731436693210436
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04800091286373966
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.010738106518347827
+equityOverall: 0.010738106518347827
 
  0: 186
  1:   0
@@ -5950,14 +5950,14 @@ equityOverall: 0.04800091286373966
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 16__
 successDenom: 216
-successNum: 30
-successPercentage: 13.88888888888889%
-equityGivenSuccess: 0.1160277887863066
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.05337777701015664
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.016114970664764805
+equityOverall: 0.016114970664764805
 
  0: 186
  1:   0
@@ -6012,14 +6012,14 @@ equityOverall: 0.05337777701015664
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 17__
 successDenom: 216
 successNum: 30
 successPercentage: 13.88888888888889%
 equityGivenSuccess: 0.17662299669947437
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.06179377810920772
+equityGivenFailure: 0.0
+equityOverall: 0.024530971763815884
 
  0: 186
  1:   0
@@ -6074,14 +6074,14 @@ equityOverall: 0.06179377810920772
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 18__
 successDenom: 216
 successNum: 30
 successPercentage: 13.88888888888889%
 equityGivenSuccess: 0.262184243389988
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.07367728459400127
+equityGivenFailure: 0.0
+equityOverall: 0.036414478248609446
 
  0: 186
  1:   0
@@ -6136,14 +6136,14 @@ equityOverall: 0.07367728459400127
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 19__
 successDenom: 216
 successNum: 30
 successPercentage: 13.88888888888889%
 equityGivenSuccess: 0.3754760556437732
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.08941225851813811
+equityGivenFailure: 0.0
+equityOverall: 0.052149452172746275
 
  0: 186
  1:   0
@@ -6198,14 +6198,14 @@ equityOverall: 0.08941225851813811
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 20__
 successDenom: 216
 successNum: 30
 successPercentage: 13.88888888888889%
 equityGivenSuccess: 0.5147095537692777
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.10875024436890264
+equityGivenFailure: 0.0
+equityOverall: 0.0714874380235108
 
  0: 186
  1:   0
@@ -6260,14 +6260,14 @@ equityOverall: 0.10875024436890264
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 21__
 successDenom: 216
 successNum: 30
 successPercentage: 13.88888888888889%
 equityGivenSuccess: 0.6575918836964838
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.12859501241434793
+equityGivenFailure: 0.0
+equityOverall: 0.09133220606895609
 
  0: 186
  1:   0
@@ -6322,14 +6322,14 @@ equityOverall: 0.12859501241434793
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 22__
 successDenom: 216
 successNum: 30
 successPercentage: 13.88888888888889%
 equityGivenSuccess: 0.7828691240926606
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.14599462913603914
+equityGivenFailure: 0.0
+equityOverall: 0.1087318227906473
 
  0: 186
  1:   0
@@ -6384,14 +6384,14 @@ equityOverall: 0.14599462913603914
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 23__
 successDenom: 216
 successNum: 30
 successPercentage: 13.88888888888889%
 equityGivenSuccess: 0.9000103408205319
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.1622642425704657
+equityGivenFailure: 0.0
+equityOverall: 0.12500143622507387
 
  0: 186
  1:   0
@@ -6446,14 +6446,14 @@ equityOverall: 0.1622642425704657
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 24__
 successDenom: 216
 successNum: 30
 successPercentage: 13.88888888888889%
 equityGivenSuccess: 1.0
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.17615169523428073
+equityGivenFailure: 0.0
+equityOverall: 0.1388888888888889
 
  0: 186
  1:   0
@@ -6508,14 +6508,14 @@ equityOverall: 0.17615169523428073
 24: 0.1388888888888889
 
 
-Condition: 03
+Condition: 39
 2's Key: 03_L
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.043279071138382315
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.0432755209431959
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0182333123777444
+equityOverall: 0.0182333123777444
 
  0: 125
  1:   0
@@ -6570,14 +6570,14 @@ equityOverall: 0.0432755209431959
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 04_L
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.04330678523060731
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04328719678760551
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.018244988222154007
+equityOverall: 0.018244988222154007
 
  0: 125
  1:   0
@@ -6632,14 +6632,14 @@ equityOverall: 0.04328719678760551
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 05_L
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.0434274560224476
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.043338034945278964
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.018295826379827462
+equityOverall: 0.018295826379827462
 
  0: 125
  1:   0
@@ -6694,14 +6694,14 @@ equityOverall: 0.043338034945278964
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 06_L
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.04386961725043109
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04352431583299423
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.01848210726754273
+equityOverall: 0.01848210726754273
 
  0: 125
  1:   0
@@ -6756,14 +6756,14 @@ equityOverall: 0.04352431583299423
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 07_L
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.04526274313511938
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.044111234608487905
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.019069026043036404
+equityOverall: 0.019069026043036404
 
  0: 125
  1:   0
@@ -6818,14 +6818,14 @@ equityOverall: 0.044111234608487905
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 08_L
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.049083028242227225
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04572070657490834
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.02067849800945684
+equityOverall: 0.02067849800945684
 
  0: 125
  1:   0
@@ -6880,14 +6880,14 @@ equityOverall: 0.04572070657490834
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 09_L
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.05830356000183381
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04960528245511296
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.024563073889661464
+equityOverall: 0.024563073889661464
 
  0: 125
  1:   0
@@ -6942,14 +6942,14 @@ equityOverall: 0.04960528245511296
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 10_L
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.07729188623750638
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.057604993971067615
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.032562785405616114
+equityOverall: 0.032562785405616114
 
  0: 125
  1:   0
@@ -7004,14 +7004,14 @@ equityOverall: 0.057604993971067615
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 11_L
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.11019354215083842
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.07146633974936953
+successNum: 28
+successPercentage: 12.962962962962964%
+equityGivenSuccess: 0.17662299669947434
+equityGivenFailure: 0.027032810787984123
+equityOverall: 0.04642413118391804
 
  0: 125
  1:   0
@@ -7066,14 +7066,14 @@ equityOverall: 0.07146633974936953
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 12_L
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.16075613613214582
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.09276817332482776
+successNum: 46
+successPercentage: 21.296296296296298%
+equityGivenSuccess: 0.232423809758505
+equityGivenFailure: 0.019367660097765374
+equityOverall: 0.06474072900699696
 
  0: 125
  1:   0
@@ -7088,12 +7088,12 @@ equityOverall: 0.09276817332482776
 10:   0
 11:   0
 12:   0
-13:   8
-14:  10
-15:  12
-16:   7
-17:  26
-18:  28
+13:  10
+14:  12
+15:  14
+16:   9
+17:  16
+18:  30
 19:   0
 20:   0
 21:   0
@@ -7114,12 +7114,12 @@ equityOverall: 0.09276817332482776
 10: 0.0
 11: 0.0
 12: 0.0
-13: 0.037037037037037035
-14: 0.046296296296296294
-15: 0.05555555555555555
-16: 0.032407407407407406
-17: 0.12037037037037036
-18: 0.12962962962962962
+13: 0.046296296296296294
+14: 0.05555555555555555
+15: 0.06481481481481481
+16: 0.041666666666666664
+17: 0.07407407407407407
+18: 0.1388888888888889
 19: 0.0
 20: 0.0
 21: 0.0
@@ -7128,14 +7128,14 @@ equityOverall: 0.09276817332482776
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 13_L
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.23283557136828126
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.12313497242894036
+successNum: 61
+successPercentage: 28.24074074074074%
+equityGivenSuccess: 0.30436853873871567
+equityGivenFailure: 0.016913265364206034
+equityOverall: 0.09809276386348885
 
  0: 125
  1:   0
@@ -7190,14 +7190,14 @@ equityOverall: 0.12313497242894036
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 14_L
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.32921509774549884
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.16373930993045333
+successNum: 75
+successPercentage: 34.72222222222222%
+equityGivenSuccess: 0.3783083096965187
+equityGivenFailure: 0.01124433097589709
+equityOverall: 0.13869710136500182
 
  0: 125
  1:   0
@@ -7252,14 +7252,14 @@ equityOverall: 0.16373930993045333
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 15_L
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.4441127531961711
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.2121452666249495
+successNum: 84
+successPercentage: 38.888888888888886%
+equityGivenSuccess: 0.47145316689699307
+equityGivenFailure: 0.0061529887992738345
+equityOverall: 0.187103058059498
 
  0: 125
  1:   0
@@ -7314,14 +7314,14 @@ equityOverall: 0.2121452666249495
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 16_L
 successDenom: 216
 successNum: 91
 successPercentage: 42.129629629629626%
 equityGivenSuccess: 0.5657146578860768
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.263375698693382
+equityGivenFailure: 0.0
+equityOverall: 0.2383334901279305
 
  0: 125
  1:   0
@@ -7376,14 +7376,14 @@ equityOverall: 0.263375698693382
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 17_L
 successDenom: 216
 successNum: 91
 successPercentage: 42.129629629629626%
 equityGivenSuccess: 0.688346035217743
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.3150398437729266
+equityGivenFailure: 0.0
+equityOverall: 0.28999763520747507
 
  0: 125
  1:   0
@@ -7438,14 +7438,14 @@ equityOverall: 0.3150398437729266
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 18_L
 successDenom: 216
 successNum: 91
 successPercentage: 42.129629629629626%
 equityGivenSuccess: 0.8064716165243567
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.36480571367524994
+equityGivenFailure: 0.0
+equityOverall: 0.33976350510979847
 
  0: 125
  1:   0
@@ -7500,14 +7500,14 @@ equityOverall: 0.36480571367524994
 24: 0.125
 
 
-Condition: 03
+Condition: 39
 2's Key: 03H_
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.043279086125088816
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04327552725703984
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.018233318691588344
+equityOverall: 0.018233318691588344
 
  0: 125
  1:   0
@@ -7562,14 +7562,14 @@ equityOverall: 0.04327552725703984
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 04H_
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.04330692132399664
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04328725412324638
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.01824504555779488
+equityOverall: 0.01824504555779488
 
  0: 125
  1:   0
@@ -7624,14 +7624,14 @@ equityOverall: 0.04328725412324638
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 05H_
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.04342833387769878
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04333840478244497
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.01829619621699347
+equityOverall: 0.01829619621699347
 
  0: 125
  1:   0
@@ -7686,14 +7686,14 @@ equityOverall: 0.04333840478244497
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 06H_
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.043874269664204796
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04352627587768593
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.01848406731223443
+equityOverall: 0.01848406731223443
 
  0: 125
  1:   0
@@ -7748,14 +7748,14 @@ equityOverall: 0.04352627587768593
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 07H_
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.045282867454256664
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04411971290960593
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.01907750434415443
+equityOverall: 0.01907750434415443
 
  0: 125
  1:   0
@@ -7810,14 +7810,14 @@ equityOverall: 0.04411971290960593
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 08H_
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.049155644296024675
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.045751299449424854
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.020709090883973356
+equityOverall: 0.020709090883973356
 
  0: 125
  1:   0
@@ -7872,14 +7872,14 @@ equityOverall: 0.045751299449424854
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 09H_
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.058529217741461845
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04970035122504886
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.024658142659597353
+equityOverall: 0.024658142659597353
 
  0: 125
  1:   0
@@ -7934,14 +7934,14 @@ equityOverall: 0.04970035122504886
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 10H_
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.07790090452326648
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.05786157111923507
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.03281936255378356
+equityOverall: 0.03281936255378356
 
  0: 125
  1:   0
@@ -7996,14 +7996,14 @@ equityOverall: 0.05786157111923507
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 11H_
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.11163756733832964
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.07207470221261816
+successNum: 28
+successPercentage: 12.962962962962964%
+equityGivenSuccess: 0.17662299669947434
+equityGivenFailure: 0.027731780426610193
+equityOverall: 0.04703249364716666
 
  0: 125
  1:   0
@@ -8058,14 +8058,14 @@ equityOverall: 0.07207470221261816
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 12H_
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.1636497318722383
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.09398723449310745
+successNum: 46
+successPercentage: 21.296296296296298%
+equityGivenSuccess: 0.232423809758505
+equityGivenFailure: 0.02091658487628546
+equityOverall: 0.06595979017527664
 
  0: 125
  1:   0
@@ -8080,12 +8080,12 @@ equityOverall: 0.09398723449310745
 10:   0
 11:   0
 12:   0
-13:   7
-14:   8
-15:  10
-16:  12
-17:  26
-18:  28
+13:   9
+14:  10
+15:  12
+16:  14
+17:  16
+18:  30
 19:   0
 20:   0
 21:   0
@@ -8106,12 +8106,12 @@ equityOverall: 0.09398723449310745
 10: 0.0
 11: 0.0
 12: 0.0
-13: 0.032407407407407406
-14: 0.037037037037037035
-15: 0.046296296296296294
-16: 0.05555555555555555
-17: 0.12037037037037036
-18: 0.12962962962962962
+13: 0.041666666666666664
+14: 0.046296296296296294
+15: 0.05555555555555555
+16: 0.06481481481481481
+17: 0.07407407407407407
+18: 0.1388888888888889
 19: 0.0
 20: 0.0
 21: 0.0
@@ -8120,14 +8120,14 @@ equityOverall: 0.09398723449310745
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 13H_
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.23766437134051913
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.12516932797279984
+successNum: 66
+successPercentage: 30.555555555555557%
+equityGivenSuccess: 0.2946908461599853
+equityGivenFailure: 0.014519079636188079
+equityOverall: 0.10012711940734835
 
  0: 125
  1:   0
@@ -8182,14 +8182,14 @@ equityOverall: 0.12516932797279984
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 14H_
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.33689724867039195
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.16697577166269997
+successNum: 80
+successPercentage: 37.03703703703704%
+equityGivenSuccess: 0.3696863882703414
+equityGivenFailure: 0.007961312995429128
+equityOverall: 0.14193356309724847
 
  0: 125
  1:   0
@@ -8244,14 +8244,14 @@ equityOverall: 0.16697577166269997
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 15H_
 successDenom: 216
-successNum: 91
-successPercentage: 42.129629629629626%
-equityGivenSuccess: 0.4554751907910169
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.21693221950055583
+successNum: 86
+successPercentage: 39.81481481481482%
+equityGivenSuccess: 0.4752105048610582
+equityGivenFailure: 0.004462607261011792
+equityOverall: 0.19189001093510435
 
  0: 125
  1:   0
@@ -8306,14 +8306,14 @@ equityOverall: 0.21693221950055583
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 16H_
 successDenom: 216
 successNum: 91
 successPercentage: 42.129629629629626%
 equityGivenSuccess: 0.581543313264136
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.2700442525795088
+equityGivenFailure: 0.0
+equityOverall: 0.24500204401405729
 
  0: 125
  1:   0
@@ -8368,14 +8368,14 @@ equityOverall: 0.2700442525795088
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 17H_
 successDenom: 216
 successNum: 91
 successPercentage: 42.129629629629626%
 equityGivenSuccess: 0.7070066292510674
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.32290148292585485
+equityGivenFailure: 0.0
+equityOverall: 0.2978592743604034
 
  0: 125
  1:   0
@@ -8430,14 +8430,14 @@ equityOverall: 0.32290148292585485
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 18H_
 successDenom: 216
 successNum: 91
 successPercentage: 42.129629629629626%
 equityGivenSuccess: 0.8247224349465682
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.3724947158809039
+equityGivenFailure: 0.0
+equityOverall: 0.34745250731545235
 
  0: 125
  1:   0
@@ -8492,13 +8492,13 @@ equityOverall: 0.3724947158809039
 24: 0.12037037037037036
 
 
-Condition: 03
+Condition: 39
 2's Key: 02HL
 successDenom: 216
-successNum: 216
-successPercentage: 100.0%
-equityGivenSuccess: 0.04507282455869333
-equityGivenFailure: -1.0
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.04507282455869333
 equityOverall: 0.04507282455869333
 
  0:   0
@@ -8554,13 +8554,13 @@ equityOverall: 0.04507282455869333
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 03HL
 successDenom: 216
-successNum: 216
-successPercentage: 100.0%
-equityGivenSuccess: 0.04819058339674662
-equityGivenFailure: -1.0
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.04819058339674662
 equityOverall: 0.04819058339674662
 
  0:   0
@@ -8616,13 +8616,13 @@ equityOverall: 0.04819058339674662
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 04HL
 successDenom: 216
-successNum: 216
-successPercentage: 100.0%
-equityGivenSuccess: 0.05517241997587233
-equityGivenFailure: -1.0
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.05517241997587233
 equityOverall: 0.05517241997587233
 
  0:   0
@@ -8678,13 +8678,13 @@ equityOverall: 0.05517241997587233
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 05HL
 successDenom: 216
-successNum: 216
-successPercentage: 100.0%
-equityGivenSuccess: 0.0686809402396072
-equityGivenFailure: -1.0
+successNum: 14
+successPercentage: 6.481481481481482%
+equityGivenSuccess: 0.17662299669947434
+equityGivenFailure: 0.06119980761367582
 equityOverall: 0.0686809402396072
 
  0:   0
@@ -8740,14 +8740,14 @@ equityOverall: 0.0686809402396072
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 06HL
 successDenom: 216
-successNum: 216
-successPercentage: 100.0%
-equityGivenSuccess: 0.09183022392712976
-equityGivenFailure: -1.0
-equityOverall: 0.09183022392712976
+successNum: 34
+successPercentage: 15.74074074074074%
+equityGivenSuccess: 0.21688711278912784
+equityGivenFailure: 0.06492503082920745
+equityOverall: 0.08884498817475046
 
  0:   0
  1:   0
@@ -8762,12 +8762,12 @@ equityOverall: 0.09183022392712976
 10:   9
 11:  16
 12:  24
-13:  32
-14:  31
-15:  28
-16:  29
-17:  28
-18:  14
+13:  34
+14:  33
+15:  30
+16:  31
+17:  18
+18:  16
 19:   0
 20:   0
 21:   0
@@ -8788,12 +8788,12 @@ equityOverall: 0.09183022392712976
 10: 0.041666666666666664
 11: 0.07407407407407407
 12: 0.1111111111111111
-13: 0.14814814814814814
-14: 0.14351851851851852
-15: 0.12962962962962962
-16: 0.13425925925925927
-17: 0.12962962962962962
-18: 0.06481481481481481
+13: 0.1574074074074074
+14: 0.1527777777777778
+15: 0.1388888888888889
+16: 0.14351851851851852
+17: 0.08333333333333333
+18: 0.07407407407407407
 19: 0.0
 20: 0.0
 21: 0.0
@@ -8802,14 +8802,14 @@ equityOverall: 0.09183022392712976
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 07HL
 successDenom: 216
-successNum: 216
-successPercentage: 100.0%
-equityGivenSuccess: 0.12811380334323563
-equityGivenFailure: -1.0
-equityOverall: 0.12811380334323563
+successNum: 67
+successPercentage: 31.01851851851852%
+equityGivenSuccess: 0.2552083545986547
+equityGivenFailure: 0.06880010941457769
+equityOverall: 0.12662118546704604
 
  0:   0
  1:   0
@@ -8824,12 +8824,12 @@ equityOverall: 0.12811380334323563
 10:   4
 11:   9
 12:  16
-13:  24
-14:  32
-15:  31
-16:  28
-17:  29
-18:  28
+13:  25
+14:  33
+15:  32
+16:  29
+17:  24
+18:  29
 19:  14
 20:   0
 21:   0
@@ -8850,12 +8850,12 @@ equityOverall: 0.12811380334323563
 10: 0.018518518518518517
 11: 0.041666666666666664
 12: 0.07407407407407407
-13: 0.1111111111111111
-14: 0.14814814814814814
-15: 0.14351851851851852
-16: 0.12962962962962962
-17: 0.13425925925925927
-18: 0.12962962962962962
+13: 0.11574074074074074
+14: 0.1527777777777778
+15: 0.14814814814814814
+16: 0.13425925925925927
+17: 0.1111111111111111
+18: 0.13425925925925927
 19: 0.06481481481481481
 20: 0.0
 21: 0.0
@@ -8864,14 +8864,14 @@ equityOverall: 0.12811380334323563
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 08HL
 successDenom: 216
-successNum: 216
-successPercentage: 100.0%
-equityGivenSuccess: 0.18148525485667932
-equityGivenFailure: -1.0
-equityOverall: 0.18148525485667932
+successNum: 103
+successPercentage: 47.68518518518518%
+equityGivenSuccess: 0.2986046164889835
+equityGivenFailure: 0.07473043850157012
+equityOverall: 0.18148525485667927
 
  0:   0
  1:   0
@@ -8926,13 +8926,13 @@ equityOverall: 0.18148525485667932
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 09HL
 successDenom: 216
-successNum: 216
-successPercentage: 100.0%
-equityGivenSuccess: 0.25399301768469656
-equityGivenFailure: -1.0
+successNum: 136
+successPercentage: 62.96296296296296%
+equityGivenSuccess: 0.35547205607768717
+equityGivenFailure: 0.08147865241661253
 equityOverall: 0.25399301768469656
 
  0:   0
@@ -8988,14 +8988,14 @@ equityOverall: 0.25399301768469656
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 10HL
 successDenom: 216
-successNum: 216
-successPercentage: 100.0%
-equityGivenSuccess: 0.3442288773643999
-equityGivenFailure: -1.0
-equityOverall: 0.3442288773643999
+successNum: 166
+successPercentage: 76.85185185185185%
+equityGivenSuccess: 0.42172624867722297
+equityGivenFailure: 0.086937604605827
+equityOverall: 0.34422887736439983
 
  0:   0
  1:   0
@@ -9050,13 +9050,13 @@ equityOverall: 0.3442288773643999
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 11HL
 successDenom: 216
-successNum: 216
-successPercentage: 100.0%
-equityGivenSuccess: 0.44811516401372226
-equityGivenFailure: -1.0
+successNum: 187
+successPercentage: 86.57407407407408%
+equityGivenSuccess: 0.5031038317961912
+equityGivenFailure: 0.09353306486469834
 equityOverall: 0.44811516401372226
 
  0:   0
@@ -9112,13 +9112,13 @@ equityOverall: 0.44811516401372226
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 2's Key: 12HL
 successDenom: 216
-successNum: 216
-successPercentage: 100.0%
-equityGivenSuccess: 0.5600627004744361
-equityGivenFailure: -1.0
+successNum: 202
+successPercentage: 93.51851851851852%
+equityGivenSuccess: 0.5918961676291392
+equityGivenFailure: 0.10075124581371989
 equityOverall: 0.5600627004744361
 
  0:   0
@@ -9174,25 +9174,25 @@ equityOverall: 0.5600627004744361
 24: 0.05555555555555555
 
 
-Condition: 03
+Condition: 39
 3's Key: 03__
 successDenom: 46656
-successNum: 16862
-successPercentage: 36.14111796982167%
-equityGivenSuccess: 0.04328070350440289
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.043275743519067655
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.01809064217051268
+equityOverall: 0.01809064217051268
 
- 0: 29794
+ 0: 27154
  1:     0
  2:     0
  3:     0
- 4:  1567
- 5:  1708
- 6:  2036
- 7:  1715
- 8:  2618
- 9:  7218
+ 4:  2023
+ 5:  2236
+ 6:  2660
+ 7:  2267
+ 8:  3386
+ 9:  6930
 10:     0
 11:     0
 12:     0
@@ -9209,16 +9209,16 @@ equityOverall: 0.043275743519067655
 23:     0
 24:     0
 
- 0: 0.6385888203017832
+ 0: 0.5820044581618655
  1: 0.0
  2: 0.0
  3: 0.0
- 4: 0.03358624828532236
- 5: 0.03660836762688614
- 6: 0.043638545953360766
- 7: 0.03675840192043896
- 8: 0.056112825788751715
- 9: 0.15470679012345678
+ 4: 0.04335991083676269
+ 5: 0.047925240054869686
+ 6: 0.05701303155006859
+ 7: 0.04858967764060357
+ 8: 0.07257373113854595
+ 9: 0.14853395061728394
 10: 0.0
 11: 0.0
 12: 0.0
@@ -9236,26 +9236,26 @@ equityOverall: 0.043275743519067655
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 04__
 successDenom: 46656
-successNum: 16862
-successPercentage: 36.14111796982167%
-equityGivenSuccess: 0.04331554363270878
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04328833513093952
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.018103038165459627
+equityOverall: 0.018103038165459627
 
- 0: 29794
+ 0: 27154
  1:     0
  2:     0
  3:     0
  4:     0
- 5:  1567
- 6:  1708
- 7:  2036
- 8:  1715
- 9:  2618
-10:  7218
+ 5:  2023
+ 6:  2236
+ 7:  2660
+ 8:  2267
+ 9:  3386
+10:  6930
 11:     0
 12:     0
 13:     0
@@ -9271,17 +9271,17 @@ equityOverall: 0.04328833513093952
 23:     0
 24:     0
 
- 0: 0.6385888203017832
+ 0: 0.5820044581618655
  1: 0.0
  2: 0.0
  3: 0.0
  4: 0.0
- 5: 0.03358624828532236
- 6: 0.03660836762688614
- 7: 0.043638545953360766
- 8: 0.03675840192043896
- 9: 0.056112825788751715
-10: 0.15470679012345678
+ 5: 0.04335991083676269
+ 6: 0.047925240054869686
+ 7: 0.05701303155006859
+ 8: 0.04858967764060357
+ 9: 0.07257373113854595
+10: 0.14853395061728394
 11: 0.0
 12: 0.0
 13: 0.0
@@ -9298,27 +9298,27 @@ equityOverall: 0.04328833513093952
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 05__
 successDenom: 46656
-successNum: 16862
-successPercentage: 36.14111796982167%
-equityGivenSuccess: 0.043465900195654564
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.04334267567372913
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.018156930733761765
+equityOverall: 0.018156930733761765
 
- 0: 29794
+ 0: 27154
  1:     0
  2:     0
  3:     0
  4:     0
  5:     0
- 6:  1203
- 7:  1344
- 8:  1672
- 9:  1351
-10:  4438
-11:  6854
+ 6:  1563
+ 7:  1776
+ 8:  2200
+ 9:  1807
+10:  5686
+11:  6470
 12:     0
 13:     0
 14:     0
@@ -9333,18 +9333,18 @@ equityOverall: 0.04334267567372913
 23:     0
 24:     0
 
- 0: 0.6385888203017832
+ 0: 0.5820044581618655
  1: 0.0
  2: 0.0
  3: 0.0
  4: 0.0
  5: 0.0
- 6: 0.02578446502057613
- 7: 0.02880658436213992
- 8: 0.03583676268861454
- 9: 0.02895661865569273
-10: 0.09512174211248285
-11: 0.14690500685871055
+ 6: 0.03350051440329218
+ 7: 0.03806584362139918
+ 8: 0.04715363511659808
+ 9: 0.03873028120713306
+10: 0.12187071330589849
+11: 0.13867455418381344
 12: 0.0
 13: 0.0
 14: 0.0
@@ -9360,28 +9360,28 @@ equityOverall: 0.04334267567372913
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 06__
 successDenom: 46656
-successNum: 16862
-successPercentage: 36.14111796982167%
-equityGivenSuccess: 0.044010801549028
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.043539609114670974
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.018354115240799388
+equityOverall: 0.018354115240799388
 
- 0: 29794
+ 0: 27154
  1:     0
  2:     0
  3:     0
  4:     0
  5:     0
  6:     0
- 7:  1203
- 8:  1344
- 9:  1672
-10:  1351
-11:  4438
-12:  6854
+ 7:  1563
+ 8:  1776
+ 9:  2200
+10:  1807
+11:  5686
+12:  6470
 13:     0
 14:     0
 15:     0
@@ -9395,19 +9395,19 @@ equityOverall: 0.043539609114670974
 23:     0
 24:     0
 
- 0: 0.6385888203017832
+ 0: 0.5820044581618655
  1: 0.0
  2: 0.0
  3: 0.0
  4: 0.0
  5: 0.0
  6: 0.0
- 7: 0.02578446502057613
- 8: 0.02880658436213992
- 9: 0.03583676268861454
-10: 0.02895661865569273
-11: 0.09512174211248285
-12: 0.14690500685871055
+ 7: 0.03350051440329218
+ 8: 0.03806584362139918
+ 9: 0.04715363511659808
+10: 0.03873028120713306
+11: 0.12187071330589849
+12: 0.13867455418381344
 13: 0.0
 14: 0.0
 15: 0.0
@@ -9422,14 +9422,14 @@ equityOverall: 0.043539609114670974
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 07__
 successDenom: 46656
-successNum: 19502
-successPercentage: 41.79955418381344%
-equityGivenSuccess: 0.04539396272044053
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04415951594670581
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.018974474043510613
+equityOverall: 0.018974474043510613
 
  0: 27154
  1:     0
@@ -9484,14 +9484,14 @@ equityOverall: 0.04415951594670581
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 08__
 successDenom: 46656
-successNum: 19502
-successPercentage: 41.79955418381344%
-equityGivenSuccess: 0.04945661348091105
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04585768585262779
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0206726439494326
+equityOverall: 0.0206726439494326
 
  0: 27154
  1:     0
@@ -9546,14 +9546,14 @@ equityOverall: 0.04585768585262779
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 09__
 successDenom: 46656
-successNum: 19502
-successPercentage: 41.79955418381344%
-equityGivenSuccess: 0.05924274878915592
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.0499482467832989
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.024763204880103713
+equityOverall: 0.024763204880103713
 
  0: 27154
  1:     0
@@ -9608,14 +9608,14 @@ equityOverall: 0.0499482467832989
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 10__
 successDenom: 46656
-successNum: 19502
-successPercentage: 41.79955418381344%
-equityGivenSuccess: 0.07933280284356724
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.05834579981332997
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.03316075791013478
+equityOverall: 0.03316075791013478
 
  0: 27154
  1:     0
@@ -9670,14 +9670,14 @@ equityOverall: 0.05834579981332997
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 11__
 successDenom: 46656
-successNum: 19502
-successPercentage: 41.79955418381344%
-equityGivenSuccess: 0.11399808073066565
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.07283573142671718
+successNum: 6470
+successPercentage: 13.867455418381343%
+equityGivenSuccess: 0.17662299669947434
+equityGivenFailure: 0.02688597476145529
+equityOverall: 0.04765068952352197
 
  0: 27154
  1:     0
@@ -9732,16 +9732,16 @@ equityOverall: 0.07283573142671718
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 12__
 successDenom: 46656
-successNum: 19502
-successPercentage: 41.79955418381344%
-equityGivenSuccess: 0.16700382321281199
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.09499189547607455
+successNum: 9836
+successPercentage: 21.08196159122085%
+equityGivenSuccess: 0.23941082494389565
+equityGivenFailure: 0.014374254619959033
+equityOverall: 0.061816377941852046
 
- 0: 27154
+ 0: 29794
  1:     0
  2:     0
  3:     0
@@ -9754,12 +9754,12 @@ equityOverall: 0.09499189547607455
 10:     0
 11:     0
 12:     0
-13:  1563
-14:  1776
-15:  2200
-16:  1807
-17:  5686
-18:  6470
+13:  1567
+14:  1708
+15:  2036
+16:  1715
+17:  2618
+18:  7218
 19:     0
 20:     0
 21:     0
@@ -9767,7 +9767,7 @@ equityOverall: 0.09499189547607455
 23:     0
 24:     0
 
- 0: 0.5820044581618655
+ 0: 0.6385888203017832
  1: 0.0
  2: 0.0
  3: 0.0
@@ -9780,12 +9780,12 @@ equityOverall: 0.09499189547607455
 10: 0.0
 11: 0.0
 12: 0.0
-13: 0.03350051440329218
-14: 0.03806584362139918
-15: 0.04715363511659808
-16: 0.03873028120713306
-17: 0.12187071330589849
-18: 0.13867455418381344
+13: 0.03358624828532236
+14: 0.03660836762688614
+15: 0.043638545953360766
+16: 0.03675840192043896
+17: 0.056112825788751715
+18: 0.15470679012345678
 19: 0.0
 20: 0.0
 21: 0.0
@@ -9794,14 +9794,14 @@ equityOverall: 0.09499189547607455
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 13__
 successDenom: 46656
-successNum: 19502
-successPercentage: 41.79955418381344%
-equityGivenSuccess: 0.2420749322093761
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.12637128435748302
+successNum: 13963
+successPercentage: 29.9275548696845%
+equityGivenSuccess: 0.3036072078326029
+equityGivenFailure: 0.014733364481100509
+equityOverall: 0.10118624245428785
 
  0: 27154
  1:     0
@@ -9856,14 +9856,14 @@ equityOverall: 0.12637128435748302
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 14__
 successDenom: 46656
-successNum: 19502
-successPercentage: 41.79955418381344%
-equityGivenSuccess: 0.34197246931910896
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.16812800950996093
+successNum: 16745
+successPercentage: 35.8903463648834%
+equityGivenSuccess: 0.3821141806853366
+equityGivenFailure: 0.009048348135645817
+equityOverall: 0.14294296760676575
 
  0: 27154
  1:     0
@@ -9918,14 +9918,14 @@ equityOverall: 0.16812800950996093
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 15__
 successDenom: 46656
-successNum: 19502
-successPercentage: 41.79955418381344%
-equityGivenSuccess: 0.46022476687120306
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.21755694269885284
+successNum: 18230
+successPercentage: 39.07321673525377%
+equityGivenSuccess: 0.48424114405847624
+equityGivenFailure: 0.005191984357144234
+equityOverall: 0.19237190079565766
 
  0: 27154
  1:     0
@@ -9980,14 +9980,14 @@ equityOverall: 0.21755694269885284
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 16__
 successDenom: 46656
 successNum: 19502
 successPercentage: 41.79955418381344%
 equityGivenSuccess: 0.5842903773031634
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.26941581475483894
+equityGivenFailure: 0.0
+equityOverall: 0.24423077285164377
 
  0: 27154
  1:     0
@@ -10042,14 +10042,14 @@ equityOverall: 0.26941581475483894
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 17__
 successDenom: 46656
 successNum: 19502
 successPercentage: 41.79955418381344%
 equityGivenSuccess: 0.7077975788840386
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.32104127440054864
+equityGivenFailure: 0.0
+equityOverall: 0.29585623249735343
 
  0: 27154
  1:     0
@@ -10104,14 +10104,14 @@ equityOverall: 0.32104127440054864
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 18__
 successDenom: 46656
 successNum: 19502
 successPercentage: 41.79955418381344%
 equityGivenSuccess: 0.8248162756445427
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.3699545679581479
+equityGivenFailure: 0.0
+equityOverall: 0.3447695260549527
 
  0: 27154
  1:     0
@@ -10166,14 +10166,14 @@ equityOverall: 0.3699545679581479
 24: 0.13243741426611796
 
 
-Condition: 03
+Condition: 39
 3's Key: 02_L
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.04629718919791364
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04528437305529082
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.030792354209543425
+equityOverall: 0.030792354209543425
 
  0: 15625
  1:     0
@@ -10228,14 +10228,14 @@ equityOverall: 0.04528437305529082
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 03_L
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.05133413602248403
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.048634456579665905
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.03414243773391851
+equityOverall: 0.03414243773391851
 
  0: 15625
  1:     0
@@ -10290,14 +10290,14 @@ equityOverall: 0.048634456579665905
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 04_L
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.062247996274637514
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.05589328711560072
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.041401268269853325
+equityOverall: 0.041401268269853325
 
  0: 15625
  1:     0
@@ -10352,14 +10352,14 @@ equityOverall: 0.05589328711560072
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 05_L
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.08243542913169428
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.06931998955445808
+successNum: 3924
+successPercentage: 8.410493827160494%
+equityGivenSuccess: 0.17662299669947434
+equityGivenFailure: 0.043643760234411404
+equityOverall: 0.05482797070871068
 
  0: 15625
  1:     0
@@ -10414,16 +10414,16 @@ equityOverall: 0.06931998955445808
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 06_L
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.11541451619994748
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.09125444709078706
+successNum: 8378
+successPercentage: 17.95696159122085%
+equityGivenSuccess: 0.22262059219888633
+equityGivenFailure: 0.0390102997911651
+equityOverall: 0.0719811294763479
 
- 0: 15625
+ 0: 16340
  1:     0
  2:     0
  3:     0
@@ -10431,17 +10431,17 @@ equityOverall: 0.09125444709078706
  5:     0
  6:     0
  7:     0
- 8:    66
- 9:   298
-10:   756
-11:  1209
-12:  1991
-13:  3813
-14:  4298
-15:  3903
-16:  4475
-17:  6298
-18:  3924
+ 8:    69
+ 9:   310
+10:   783
+11:  1257
+12:  2063
+13:  4239
+14:  4695
+15:  4265
+16:  4257
+17:  3874
+18:  4504
 19:     0
 20:     0
 21:     0
@@ -10449,7 +10449,7 @@ equityOverall: 0.09125444709078706
 23:     0
 24:     0
 
- 0: 0.33489797668038407
+ 0: 0.35022290809327844
  1: 0.0
  2: 0.0
  3: 0.0
@@ -10457,17 +10457,17 @@ equityOverall: 0.09125444709078706
  5: 0.0
  6: 0.0
  7: 0.0
- 8: 0.0014146090534979425
- 9: 0.006387174211248285
-10: 0.016203703703703703
-11: 0.025913065843621397
-12: 0.04267403978052126
-13: 0.08172582304526749
-14: 0.09212105624142661
-15: 0.08365483539094651
-16: 0.095914780521262
-17: 0.13498799725651578
-18: 0.08410493827160494
+ 8: 0.0014789094650205761
+ 9: 0.006644375857338821
+10: 0.01678240740740741
+11: 0.02694187242798354
+12: 0.04421724965706447
+13: 0.09085648148148148
+14: 0.10063014403292181
+15: 0.09141375171467764
+16: 0.09124228395061729
+17: 0.08303326474622771
+18: 0.09653635116598079
 19: 0.0
 20: 0.0
 21: 0.0
@@ -10476,14 +10476,14 @@ equityOverall: 0.09125444709078706
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 07_L
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.16488043446035164
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.1241543294111446
+successNum: 13722
+successPercentage: 29.411008230452676%
+equityGivenSuccess: 0.2747321554558631
+equityGivenFailure: 0.038609686949938805
+equityOverall: 0.10805568559616423
 
  0: 15625
  1:     0
@@ -10494,17 +10494,17 @@ equityOverall: 0.1241543294111446
  6:     0
  7:     0
  8:     0
- 9:    66
-10:   298
-11:   756
-12:  1209
-13:  1991
-14:  3813
-15:  4298
-16:  3903
-17:  4475
-18:  6298
-19:  3924
+ 9:    69
+10:   310
+11:   783
+12:  1257
+13:  2198
+14:  4044
+15:  4526
+16:  4122
+17:  3239
+18:  6517
+19:  3966
 20:     0
 21:     0
 22:     0
@@ -10520,17 +10520,17 @@ equityOverall: 0.1241543294111446
  6: 0.0
  7: 0.0
  8: 0.0
- 9: 0.0014146090534979425
-10: 0.006387174211248285
-11: 0.016203703703703703
-12: 0.025913065843621397
-13: 0.04267403978052126
-14: 0.08172582304526749
-15: 0.09212105624142661
-16: 0.08365483539094651
-17: 0.095914780521262
-18: 0.13498799725651578
-19: 0.08410493827160494
+ 9: 0.0014789094650205761
+10: 0.006644375857338821
+11: 0.01678240740740741
+12: 0.02694187242798354
+13: 0.04711076817558299
+14: 0.08667695473251029
+15: 0.09700788751714677
+16: 0.08834876543209877
+17: 0.0694230109739369
+18: 0.13968192729766804
+19: 0.08500514403292181
 20: 0.0
 21: 0.0
 22: 0.0
@@ -10538,14 +10538,14 @@ equityOverall: 0.1241543294111446
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 08_L
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.23449310240960358
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.17045385571286864
+successNum: 19170
+successPercentage: 41.08796296296296%
+equityGivenSuccess: 0.3295083269072529
+equityGivenFailure: 0.034922536347972453
+equityOverall: 0.15596183686712126
 
  0: 15625
  1:     0
@@ -10600,14 +10600,14 @@ equityOverall: 0.17045385571286864
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 09_L
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.32414478357008275
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.23008137024670844
+successNum: 23577
+successPercentage: 50.53369341563786%
+equityGivenSuccess: 0.3986606213850558
+equityGivenFailure: 0.028036912389618796
+equityOverall: 0.2153267612190388
 
  0: 15625
  1:     0
@@ -10622,12 +10622,12 @@ equityOverall: 0.23008137024670844
 10:     0
 11:    63
 12:   286
-13:   729
-14:  1161
-15:  1772
-16:  3291
-17:  3779
-18:  4923
+13:   767
+14:  1199
+15:  1810
+16:  3329
+17:  3589
+18:  4961
 19:  5636
 20:  5788
 21:  3603
@@ -10648,12 +10648,12 @@ equityOverall: 0.23008137024670844
 10: 0.0
 11: 0.0013503086419753086
 12: 0.0061299725651577505
-13: 0.015625
-14: 0.02488425925925926
-15: 0.037980109739369
-16: 0.07053755144032922
-17: 0.08099708504801098
-18: 0.10551697530864197
+13: 0.016439471879286693
+14: 0.025698731138545955
+15: 0.03879458161865569
+16: 0.07135202331961592
+17: 0.0769247256515775
+18: 0.10633144718792867
 19: 0.12079903978052126
 20: 0.12405692729766804
 21: 0.07722479423868313
@@ -10662,14 +10662,14 @@ equityOverall: 0.23008137024670844
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 10_L
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.42952847864965266
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.3001722790690279
+successNum: 27074
+successPercentage: 58.0289780521262%
+equityGivenSuccess: 0.47842892240017504
+equityGivenFailure: 0.017723871943813006
+equityOverall: 0.2850663045581723
 
  0: 15625
  1:     0
@@ -10683,17 +10683,17 @@ equityOverall: 0.3001722790690279
  9:     0
 10:     0
 11:     0
-12:    45
-13:   214
-14:   567
-15:   836
-16:  1987
-17:  3398
-18:  4126
-19:  4886
+12:    63
+13:   300
+14:   743
+15:  1120
+16:  1731
+17:  3166
+18:  4068
+19:  4868
 20:  5581
-21:  6004
-22:  3387
+21:  5788
+22:  3603
 23:     0
 24:     0
 
@@ -10709,29 +10709,29 @@ equityOverall: 0.3001722790690279
  9: 0.0
 10: 0.0
 11: 0.0
-12: 9.645061728395061E-4
-13: 0.004586762688614541
-14: 0.012152777777777778
-15: 0.01791838134430727
-16: 0.04258830589849109
-17: 0.07283093278463648
-18: 0.08843449931412894
-19: 0.10472393689986283
+12: 0.0013503086419753086
+13: 0.006430041152263375
+14: 0.015925068587105625
+15: 0.02400548696844993
+16: 0.037101337448559674
+17: 0.06785836762688614
+18: 0.08719135802469136
+19: 0.10433813443072702
 20: 0.1196201989026063
-21: 0.12868655692729766
-22: 0.07259516460905349
+21: 0.12405692729766804
+22: 0.07722479423868313
 23: 0.0
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 11_L
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.5439981828679298
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.3763063109534019
+successNum: 29399
+successPercentage: 63.01225994513032%
+equityGivenSuccess: 0.5690001314749202
+equityGivenFailure: 0.008815433529642076
+equityOverall: 0.3618004715717638
 
  0: 15625
  1:     0
@@ -10746,12 +10746,12 @@ equityOverall: 0.3763063109534019
 10:     0
 11:     0
 12:     0
-13:    45
-14:   214
-15:   548
-16:   817
-17:  1968
-18:  3493
+13:    47
+14:   216
+15:   550
+16:   819
+17:  1958
+18:  3495
 19:  4107
 20:  4867
 21:  5581
@@ -10772,12 +10772,12 @@ equityOverall: 0.3763063109534019
 10: 0.0
 11: 0.0
 12: 0.0
-13: 9.645061728395061E-4
-14: 0.004586762688614541
-15: 0.01174554183813443
-16: 0.017511145404663923
-17: 0.04218106995884774
-18: 0.07486711248285323
+13: 0.0010073731138545952
+14: 0.004629629629629629
+15: 0.01178840877914952
+16: 0.017554012345679014
+17: 0.04196673525377229
+18: 0.07490997942386832
 19: 0.08802726337448559
 20: 0.10431670096021949
 21: 0.1196201989026063
@@ -10786,14 +10786,14 @@ equityOverall: 0.3763063109534019
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 12_L
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.6615685374337952
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.4545025916575637
+successNum: 30238
+successPercentage: 64.8105281207133%
+equityGivenSuccess: 0.6762283462220833
+equityGivenFailure: 0.004954352055350715
+equityOverall: 0.44001057281181627
 
  0: 15625
  1:     0
@@ -10848,14 +10848,14 @@ equityOverall: 0.4545025916575637
 24: 0.07259516460905349
 
 
-Condition: 03
+Condition: 39
 3's Key: 02H_
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.046339835324008545
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.0453127370800433
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.030820718234295896
+equityOverall: 0.030820718234295896
 
  0: 15625
  1:     0
@@ -10910,14 +10910,14 @@ equityOverall: 0.0453127370800433
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 03H_
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.051470654832219784
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.04872525551624234
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.034233236670494945
+equityOverall: 0.034233236670494945
 
  0: 15625
  1:     0
@@ -10972,14 +10972,14 @@ equityOverall: 0.04872525551624234
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 04H_
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.06262865357353295
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.056146463055287456
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.04165444420954005
+equityOverall: 0.04165444420954005
 
  0: 15625
  1:     0
@@ -11034,14 +11034,14 @@ equityOverall: 0.056146463055287456
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 05H_
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.08337021028074328
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.06994171438805159
+successNum: 3924
+successPercentage: 8.410493827160494%
+equityGivenSuccess: 0.17662299669947434
+equityGivenFailure: 0.044322576901923795
+equityOverall: 0.05544969554230421
 
  0: 15625
  1:     0
@@ -11096,16 +11096,16 @@ equityOverall: 0.06994171438805159
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 06H_
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.11738608231621019
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.09256573970382177
+successNum: 8378
+successPercentage: 17.95696159122085%
+equityGivenSuccess: 0.22262059219888633
+equityGivenFailure: 0.040519170275339265
+equityOverall: 0.07321905266721765
 
- 0: 15625
+ 0: 16340
  1:     0
  2:     0
  3:     0
@@ -11113,17 +11113,17 @@ equityOverall: 0.09256573970382177
  5:     0
  6:     0
  7:     0
- 8:    58
- 9:   239
-10:   579
-11:  1127
-12:  1885
-13:  3635
-14:  3850
-15:  4124
-16:  5312
-17:  6298
-18:  3924
+ 8:    61
+ 9:   251
+10:   606
+11:  1175
+12:  1957
+13:  4074
+14:  4273
+15:  4512
+16:  5029
+17:  3874
+18:  4504
 19:     0
 20:     0
 21:     0
@@ -11131,7 +11131,7 @@ equityOverall: 0.09256573970382177
 23:     0
 24:     0
 
- 0: 0.33489797668038407
+ 0: 0.35022290809327844
  1: 0.0
  2: 0.0
  3: 0.0
@@ -11139,17 +11139,17 @@ equityOverall: 0.09256573970382177
  5: 0.0
  6: 0.0
  7: 0.0
- 8: 0.0012431412894375858
- 9: 0.005122599451303155
-10: 0.012409979423868314
-11: 0.024155521262002745
-12: 0.04040209190672154
-13: 0.07791066529492456
-14: 0.08251886145404663
-15: 0.08839163237311386
-16: 0.11385459533607682
-17: 0.13498799725651578
-18: 0.08410493827160494
+ 8: 0.0013074417009602195
+ 9: 0.00537980109739369
+10: 0.012988683127572016
+11: 0.025184327846364884
+12: 0.04194530178326475
+13: 0.08731995884773662
+14: 0.091585219478738
+15: 0.09670781893004116
+16: 0.1077889231824417
+17: 0.08303326474622771
+18: 0.09653635116598079
 19: 0.0
 20: 0.0
 21: 0.0
@@ -11158,14 +11158,14 @@ equityOverall: 0.09256573970382177
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 07H_
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.16840188719570306
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.12649645475045124
+successNum: 14559
+successPercentage: 31.204989711934157%
+equityGivenSuccess: 0.26909183909628503
+equityGivenFailure: 0.03841518464661852
+equityOverall: 0.11039781093547087
 
  0: 15625
  1:     0
@@ -11176,17 +11176,17 @@ equityOverall: 0.12649645475045124
  6:     0
  7:     0
  8:     0
- 9:    58
-10:   239
-11:   579
-12:  1127
-13:  1885
-14:  3635
-15:  3850
-16:  4124
-17:  5312
-18:  6298
-19:  3924
+ 9:    61
+10:   251
+11:   606
+12:  1175
+13:  2092
+14:  3866
+15:  4078
+16:  4343
+17:  4076
+18:  6517
+19:  3966
 20:     0
 21:     0
 22:     0
@@ -11202,17 +11202,17 @@ equityOverall: 0.12649645475045124
  6: 0.0
  7: 0.0
  8: 0.0
- 9: 0.0012431412894375858
-10: 0.005122599451303155
-11: 0.012409979423868314
-12: 0.024155521262002745
-13: 0.04040209190672154
-14: 0.07791066529492456
-15: 0.08251886145404663
-16: 0.08839163237311386
-17: 0.11385459533607682
-18: 0.13498799725651578
-19: 0.08410493827160494
+ 9: 0.0013074417009602195
+10: 0.00537980109739369
+11: 0.012988683127572016
+12: 0.025184327846364884
+13: 0.044838820301783266
+14: 0.08286179698216735
+15: 0.08740569272976681
+16: 0.09308556241426612
+17: 0.08736282578875171
+18: 0.13968192729766804
+19: 0.08500514403292181
 20: 0.0
 21: 0.0
 22: 0.0
@@ -11220,14 +11220,14 @@ equityOverall: 0.12649645475045124
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 08H_
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.240308986773125
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.1743220121704397
+successNum: 20414
+successPercentage: 43.75428669410151%
+equityGivenSuccess: 0.32295562770194397
+equityGivenFailure: 0.032465535291578175
+equityOverall: 0.15956740314277004
 
  0: 15625
  1:     0
@@ -11242,12 +11242,12 @@ equityOverall: 0.1743220121704397
 10:    58
 11:   239
 12:   579
-13:  1127
-14:  1885
-15:  3181
-16:  3396
-17:  3670
-18:  7582
+13:  1165
+14:  1923
+15:  3219
+16:  3434
+17:  3480
+18:  7620
 19:  5844
 20:  3470
 21:     0
@@ -11268,12 +11268,12 @@ equityOverall: 0.1743220121704397
 10: 0.0012431412894375858
 11: 0.005122599451303155
 12: 0.012409979423868314
-13: 0.024155521262002745
-14: 0.04040209190672154
-15: 0.06817986968449931
-16: 0.0727880658436214
-17: 0.07866083676268862
-18: 0.16250857338820301
+13: 0.024969993141289438
+14: 0.04121656378600823
+15: 0.068994341563786
+16: 0.07360253772290809
+17: 0.07458847736625514
+18: 0.16332304526748972
 19: 0.12525720164609053
 20: 0.0743741426611797
 21: 0.0
@@ -11282,14 +11282,14 @@ equityOverall: 0.1743220121704397
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 09H_
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.33318813788353924
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.23609612349818448
+successNum: 24766
+successPercentage: 53.08213305898491%
+equityGivenSuccess: 0.3951428466425686
+equityGivenFailure: 0.02505891686873709
+equityOverall: 0.2215073609012026
 
  0: 15625
  1:     0
@@ -11304,12 +11304,12 @@ equityOverall: 0.23609612349818448
 10:     0
 11:    52
 12:   215
-13:   525
-14:  1031
-15:  1563
-16:  2823
-17:  3044
-18:  5700
+13:   539
+14:  1045
+15:  1577
+16:  2837
+17:  2974
+18:  5714
 19:  7170
 20:  5510
 21:  3398
@@ -11330,12 +11330,12 @@ equityOverall: 0.23609612349818448
 10: 0.0
 11: 0.0011145404663923182
 12: 0.0046081961591220855
-13: 0.011252572016460906
-14: 0.022097908093278464
-15: 0.03350051440329218
-16: 0.060506687242798354
-17: 0.0652434842249657
-18: 0.12217078189300412
+13: 0.01155264060356653
+14: 0.02239797668038409
+15: 0.03380058299039781
+16: 0.060806755829903976
+17: 0.06374314128943759
+18: 0.12247085048010974
 19: 0.15367798353909465
 20: 0.11809842249657064
 21: 0.07283093278463648
@@ -11344,14 +11344,14 @@ equityOverall: 0.23609612349818448
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 10H_
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.44275902225027564
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.3089719403874206
+successNum: 27817
+successPercentage: 59.62148491083676%
+equityGivenSuccess: 0.4828567210909374
+equityGivenFailure: 0.015227761490937512
+equityOverall: 0.29403509107755443
 
  0: 15625
  1:     0
@@ -11365,17 +11365,17 @@ equityOverall: 0.3089719403874206
  9:     0
 10:     0
 11:     0
-12:    37
-13:   155
-14:   390
-15:   716
-16:  1698
-17:  2868
-18:  3554
-19:  5625
+12:    52
+13:   217
+14:   527
+15:   943
+16:  1475
+17:  2723
+18:  3496
+19:  5610
 20:  7080
-21:  5690
-22:  3218
+21:  5510
+22:  3398
 23:     0
 24:     0
 
@@ -11391,29 +11391,29 @@ equityOverall: 0.3089719403874206
  9: 0.0
 10: 0.0
 11: 0.0
-12: 7.930384087791496E-4
-13: 0.0033221879286694104
-14: 0.008359053497942387
-15: 0.01534636488340192
-16: 0.0363940329218107
-17: 0.06147119341563786
-18: 0.07617455418381344
-19: 0.12056327160493827
+12: 0.0011145404663923182
+13: 0.004651063100137174
+14: 0.011295438957475994
+15: 0.02021176268861454
+16: 0.03161436899862826
+17: 0.058363340192043894
+18: 0.07493141289437585
+19: 0.1202417695473251
 20: 0.15174897119341563
-21: 0.12195644718792867
-22: 0.06897290809327847
+21: 0.11809842249657064
+22: 0.07283093278463648
 23: 0.0
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 11H_
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.5611356629361118
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.3877044836213494
+successNum: 29761
+successPercentage: 63.78815157750343%
+equityGivenSuccess: 0.5810107222915523
+equityGivenFailure: 0.00717020718861185
+equityOverall: 0.373212464775602
 
  0: 15625
  1:     0
@@ -11468,14 +11468,14 @@ equityOverall: 0.3877044836213494
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 12H_
 successDenom: 46656
-successNum: 31031
-successPercentage: 66.5102023319616%
-equityGivenSuccess: 0.6806119512864662
-equityGivenFailure: 0.0432729364011002
-equityOverall: 0.467168404741888
+successNum: 30467
+successPercentage: 65.30135459533608%
+equityGivenSuccess: 0.6913295238738284
+equityGivenFailure: 0.003541469918241151
+equityOverall: 0.4526763858961406
 
  0: 15625
  1:     0
@@ -11530,14 +11530,14 @@ equityOverall: 0.467168404741888
 24: 0.06897290809327847
 
 
-Condition: 03
+Condition: 39
 3's Key: 01HL
 successDenom: 46656
-successNum: 46656
-successPercentage: 100.0%
-equityGivenSuccess: 0.10482907949008925
-equityGivenFailure: -1.0
-equityOverall: 0.10482907949008925
+successNum: 9777
+successPercentage: 20.955504115226336%
+equityGivenSuccess: 0.248185043220389
+equityGivenFailure: 0.06410764548799625
+equityOverall: 0.10268199214500937
 
  0:     0
  1:     0
@@ -11547,18 +11547,18 @@ equityOverall: 0.10482907949008925
  5:    11
  6:    56
  7:   192
- 8:   515
- 9:  1149
-10:  2131
-11:  3349
-12:  4590
-13:  5558
-14:  6393
-15:  6047
-16:  5706
-17:  5366
-18:  3936
-19:  1656
+ 8:   516
+ 9:  1156
+10:  2152
+11:  3392
+12:  4662
+13:  5859
+14:  6717
+15:  6365
+16:  5800
+17:  3848
+18:  4231
+19:  1698
 20:     0
 21:     0
 22:     0
@@ -11573,18 +11573,18 @@ equityOverall: 0.10482907949008925
  5: 2.357681755829904E-4
  6: 0.0012002743484224967
  7: 0.00411522633744856
- 8: 0.01103823731138546
- 9: 0.024627057613168725
-10: 0.04567472565157751
-11: 0.07178069272976681
-12: 0.09837962962962964
-13: 0.11912722908093279
-14: 0.1370241769547325
-15: 0.12960819615912209
-16: 0.12229938271604938
-17: 0.11501200274348422
-18: 0.08436213991769548
-19: 0.035493827160493825
+ 8: 0.011059670781893004
+ 9: 0.024777091906721536
+10: 0.04612482853223594
+11: 0.07270233196159122
+12: 0.09992283950617284
+13: 0.1255787037037037
+14: 0.14396862139917696
+15: 0.13642403978052126
+16: 0.12431412894375857
+17: 0.08247599451303154
+18: 0.09068501371742113
+19: 0.0363940329218107
 20: 0.0
 21: 0.0
 22: 0.0
@@ -11592,14 +11592,14 @@ equityOverall: 0.10482907949008925
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 02HL
 successDenom: 46656
-successNum: 46656
-successPercentage: 100.0%
-equityGivenSuccess: 0.1461351338376418
-equityGivenFailure: -1.0
-equityOverall: 0.1461351338376418
+successNum: 16483
+successPercentage: 35.32878943758573%
+equityGivenSuccess: 0.28527478592982797
+equityGivenFailure: 0.06833572348831814
+equityOverall: 0.14497766806615178
 
  0:     0
  1:     0
@@ -11610,17 +11610,17 @@ equityOverall: 0.1461351338376418
  6:    11
  7:    56
  8:   192
- 9:   515
-10:  1149
-11:  2131
-12:  3349
-13:  4590
-14:  5558
-15:  6141
-16:  5795
-17:  5454
-18:  6626
-19:  3684
+ 9:   516
+10:  1153
+11:  2140
+12:  3365
+13:  4749
+14:  5725
+15:  6307
+16:  5958
+17:  4592
+18:  6789
+19:  3698
 20:  1404
 21:     0
 22:     0
@@ -11636,17 +11636,17 @@ equityOverall: 0.1461351338376418
  6: 2.357681755829904E-4
  7: 0.0012002743484224967
  8: 0.00411522633744856
- 9: 0.01103823731138546
-10: 0.024627057613168725
-11: 0.04567472565157751
-12: 0.07178069272976681
-13: 0.09837962962962964
-14: 0.11912722908093279
-15: 0.13162294238683128
-16: 0.12420696159122085
-17: 0.11689814814814815
-18: 0.1420181755829904
-19: 0.07896090534979423
+ 9: 0.011059670781893004
+10: 0.024712791495198904
+11: 0.0458676268861454
+12: 0.07212362825788751
+13: 0.10178755144032922
+14: 0.12270661865569273
+15: 0.13518089849108367
+16: 0.12770061728395063
+17: 0.09842249657064472
+18: 0.14551183127572018
+19: 0.07926097393689986
 20: 0.03009259259259259
 21: 0.0
 22: 0.0
@@ -11654,14 +11654,14 @@ equityOverall: 0.1461351338376418
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 03HL
 successDenom: 46656
-successNum: 46656
-successPercentage: 100.0%
-equityGivenSuccess: 0.2042470546487679
-equityGivenFailure: -1.0
-equityOverall: 0.2042470546487679
+successNum: 23671
+successPercentage: 50.73516803840878%
+equityGivenSuccess: 0.330718515493263
+equityGivenFailure: 0.07294897506450358
+equityOverall: 0.2037287845528687
 
  0:     0
  1:     0
@@ -11676,12 +11676,12 @@ equityOverall: 0.2042470546487679
 10:   515
 11:  1143
 12:  2107
-13:  3295
-14:  4494
-15:  5162
-16:  5709
-17:  5369
-18:  7854
+13:  3370
+14:  4569
+15:  5237
+16:  5784
+17:  4994
+18:  7929
 19:  6140
 20:  3276
 21:  1332
@@ -11702,12 +11702,12 @@ equityOverall: 0.2042470546487679
 10: 0.01103823731138546
 11: 0.024498456790123458
 12: 0.04516032235939643
-13: 0.0706232853223594
-14: 0.09632201646090535
-15: 0.11063957475994513
-16: 0.12236368312757202
-17: 0.11507630315500686
-18: 0.16833847736625515
+13: 0.07223079561042524
+14: 0.0979295267489712
+15: 0.11224708504801098
+16: 0.12397119341563786
+17: 0.10703875171467764
+18: 0.16994598765432098
 19: 0.13160150891632372
 20: 0.07021604938271606
 21: 0.02854938271604938
@@ -11716,14 +11716,14 @@ equityOverall: 0.2042470546487679
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 04HL
 successDenom: 46656
-successNum: 46656
-successPercentage: 100.0%
-equityGivenSuccess: 0.28047223561034523
-equityGivenFailure: -1.0
-equityOverall: 0.28047223561034523
+successNum: 30308
+successPercentage: 64.96056241426612%
+equityGivenSuccess: 0.38901305040253426
+equityGivenFailure: 0.077118587824877
+equityOverall: 0.27972698485427594
 
  0:     0
  1:     0
@@ -11737,17 +11737,17 @@ equityOverall: 0.28047223561034523
  9:    56
 10:   192
 11:   512
-12:  1113
-13:  2008
-14:  3085
-15:  3898
-16:  5088
-17:  5530
-18:  7281
-19:  7501
+12:  1131
+13:  2113
+14:  3280
+15:  4201
+16:  4851
+17:  5203
+18:  7242
+19:  7483
 20:  5808
-21:  3456
-22:  1116
+21:  3240
+22:  1332
 23:     0
 24:     0
 
@@ -11763,29 +11763,29 @@ equityOverall: 0.28047223561034523
  9: 0.0012002743484224967
 10: 0.00411522633744856
 11: 0.010973936899862825
-12: 0.02385545267489712
-13: 0.04303840877914952
-14: 0.06612225651577504
-15: 0.08354766803840878
-16: 0.10905349794238683
-17: 0.11852709190672153
-18: 0.1560570987654321
-19: 0.1607724622770919
+12: 0.02424125514403292
+13: 0.0452889231824417
+14: 0.07030178326474623
+15: 0.09004200960219479
+16: 0.10397376543209877
+17: 0.11151834705075446
+18: 0.15522119341563786
+19: 0.1603866598079561
 20: 0.12448559670781893
-21: 0.07407407407407407
-22: 0.023919753086419752
+21: 0.06944444444444445
+22: 0.02854938271604938
 23: 0.0
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 05HL
 successDenom: 46656
-successNum: 46656
-successPercentage: 100.0%
-equityGivenSuccess: 0.37264911363729636
-equityGivenFailure: -1.0
-equityOverall: 0.37264911363729636
+successNum: 36082
+successPercentage: 77.33624828532236%
+equityGivenSuccess: 0.4575184786159001
+equityGivenFailure: 0.08163118325748359
+equityOverall: 0.3723283152688516
 
  0:     0
  1:     0
@@ -11799,17 +11799,17 @@ equityOverall: 0.37264911363729636
  9:    11
 10:    56
 11:   192
-12:   503
-13:  1077
-14:  1927
-15:  2781
-16:  3864
-17:  5000
-18:  6411
-19:  7121
+12:   512
+13:  1122
+14:  2017
+15:  2925
+16:  3738
+17:  4874
+18:  6384
+19:  7112
 20:  7332
-21:  5916
-22:  3348
+21:  5808
+22:  3456
 23:  1116
 24:     0
 
@@ -11825,29 +11825,29 @@ equityOverall: 0.37264911363729636
  9: 2.357681755829904E-4
 10: 0.0012002743484224967
 11: 0.00411522633744856
-12: 0.010781035665294925
-13: 0.023083847736625515
-14: 0.04130229766803841
-15: 0.05960648148148148
-16: 0.08281893004115226
-17: 0.1071673525377229
-18: 0.13740997942386832
-19: 0.15262774348422498
+12: 0.010973936899862825
+13: 0.024048353909465022
+14: 0.04323131001371742
+15: 0.0626929012345679
+16: 0.08011831275720165
+17: 0.10446673525377229
+18: 0.1368312757201646
+19: 0.15243484224965706
 20: 0.15715020576131689
-21: 0.12680041152263374
-22: 0.07175925925925926
+21: 0.12448559670781893
+22: 0.07407407407407407
 23: 0.023919753086419752
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 3's Key: 06HL
 successDenom: 46656
-successNum: 46656
-successPercentage: 100.0%
-equityGivenSuccess: 0.4762805153827506
-equityGivenFailure: -1.0
-equityOverall: 0.4762805153827506
+successNum: 40282
+successPercentage: 86.33830589849109%
+equityGivenSuccess: 0.5379343960927048
+equityGivenFailure: 0.08659365811578676
+equityOverall: 0.4762736051148053
 
  0:     0
  1:     0
@@ -11862,12 +11862,12 @@ equityOverall: 0.4762805153827506
 10:    11
 11:    56
 12:   192
-13:   503
-14:  1077
-15:  1838
-16:  2692
-17:  3775
-18:  5445
+13:   504
+14:  1078
+15:  1839
+16:  2693
+17:  3770
+18:  5446
 19:  6322
 20:  7032
 21:  7332
@@ -11888,12 +11888,12 @@ equityOverall: 0.4762805153827506
 10: 2.357681755829904E-4
 11: 0.0012002743484224967
 12: 0.00411522633744856
-13: 0.010781035665294925
-14: 0.023083847736625515
-15: 0.03939471879286694
-16: 0.05769890260631001
-17: 0.08091135116598079
-18: 0.11670524691358025
+13: 0.010802469135802469
+14: 0.02310528120713306
+15: 0.039416152263374485
+16: 0.057720336076817556
+17: 0.08080418381344308
+18: 0.11672668038408779
 19: 0.13550240054869683
 20: 0.1507201646090535
 21: 0.15715020576131689
@@ -11902,30 +11902,30 @@ equityOverall: 0.4762805153827506
 24: 0.023919753086419752
 
 
-Condition: 03
+Condition: 39
 4's Key: 02__
 successDenom: 60466176
-successNum: 34436760
-successPercentage: 56.95210492557029%
-equityGivenSuccess: 0.04753963919209584
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.045702913451490274
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.032272375481042684
+equityOverall: 0.032272375481042684
 
- 0: 26029416
+ 0: 18482674
  1:        0
  2:        0
  3:        0
- 4:    34934
- 5:   151974
- 6:   383930
- 7:   679284
- 8:  1212986
- 9:  3623388
-10:  4003128
-11:  4269214
-12:  4384872
-13:  8773192
-14:  6919858
+ 4:    90612
+ 5:   383290
+ 6:   922000
+ 7:  1603814
+ 8:  2628152
+ 9:  5110634
+10:  5486066
+11:  5356644
+12:  5658288
+13:  8978444
+14:  5765558
 15:        0
 16:        0
 17:        0
@@ -11937,21 +11937,21 @@ equityOverall: 0.045702913451490274
 23:        0
 24:        0
 
- 0: 0.4304789507442971
+ 0: 0.3056696358638588
  1: 0.0
  2: 0.0
  3: 0.0
- 4: 5.777444897458043E-4
- 5: 0.002513372104099985
- 6: 0.006349500256143203
- 7: 0.011234115416857187
- 8: 0.020060570723043573
- 9: 0.05992421283594981
-10: 0.06620441815272061
-11: 0.07060499410447256
-12: 0.07251776596555404
-13: 0.145092555547088
-14: 0.11444179966002811
+ 4: 0.0014985568129858254
+ 5: 0.0063389158262629345
+ 6: 0.015248194296262426
+ 7: 0.026524151287490052
+ 8: 0.04346482899795085
+ 9: 0.08452054252612237
+10: 0.09072950139926163
+11: 0.08858909814306762
+12: 0.09357773840369862
+13: 0.148487048362377
+14: 0.09535178808066182
 15: 0.0
 16: 0.0
 17: 0.0
@@ -11964,31 +11964,31 @@ equityOverall: 0.045702913451490274
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 03__
 successDenom: 60466176
-successNum: 34436760
-successPercentage: 56.95210492557029%
-equityGivenSuccess: 0.05448434673302127
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.049658070576972115
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.03597107203185451
+equityOverall: 0.03597107203185451
 
- 0: 26029416
+ 0: 18482674
  1:        0
  2:        0
  3:        0
  4:        0
- 5:    34934
- 6:   148422
- 7:   380378
- 8:   675732
- 9:  1209434
-10:  3641148
-11:  3999576
-12:  4269214
-13:  4384872
-14:  8773192
-15:  6919858
+ 5:    90612
+ 6:   376926
+ 7:   915636
+ 8:  1597450
+ 9:  2621788
+10:  5142454
+11:  5479702
+12:  5356644
+13:  5658288
+14:  8978444
+15:  5765558
 16:        0
 17:        0
 18:        0
@@ -11999,22 +11999,22 @@ equityOverall: 0.049658070576972115
 23:        0
 24:        0
 
- 0: 0.4304789507442971
+ 0: 0.3056696358638588
  1: 0.0
  2: 0.0
  3: 0.0
  4: 0.0
- 5: 5.777444897458043E-4
- 6: 0.002454628518264492
- 7: 0.00629075667030771
- 8: 0.011175371831021694
- 9: 0.02000182713720808
-10: 0.06021793076512727
-11: 0.06614567456688512
-12: 0.07060499410447256
-13: 0.07251776596555404
-14: 0.145092555547088
-15: 0.11444179966002811
+ 5: 0.0014985568129858254
+ 6: 0.00623366690164101
+ 7: 0.015142945371640503
+ 8: 0.026418902362868125
+ 9: 0.04335958007332893
+10: 0.085046787149232
+11: 0.0906242524746397
+12: 0.08858909814306762
+13: 0.09357773840369862
+14: 0.148487048362377
+15: 0.09535178808066182
 16: 0.0
 17: 0.0
 18: 0.0
@@ -12026,32 +12026,32 @@ equityOverall: 0.049658070576972115
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 04__
 successDenom: 60466176
-successNum: 34663860
-successPercentage: 57.327686804602955%
-equityGivenSuccess: 0.06900926166253739
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.05802697634199082
+successNum: 0
+successPercentage: 0.0%
+equityGivenSuccess: -1.0
+equityGivenFailure: 0.0439666247044727
+equityOverall: 0.0439666247044727
 
- 0: 25802316
+ 0: 18482674
  1:        0
  2:        0
  3:        0
  4:        0
  5:        0
- 6:    32256
- 7:   138676
- 8:   363792
- 9:   642226
-10:  1157316
-11:  3551794
-12:  3921504
-13:  4168270
-14:  5186184
-15:  8651920
-16:  6849922
+ 6:    85068
+ 7:   356964
+ 8:   871644
+ 9:  1519816
+10:  2510134
+11:  4987924
+12:  5330716
+13:  5222076
+14:  6557010
+15:  8843876
+16:  5698274
 17:        0
 18:        0
 19:        0
@@ -12061,23 +12061,23 @@ equityOverall: 0.05802697634199082
 23:        0
 24:        0
 
- 0: 0.42672313195397044
+ 0: 0.3056696358638588
  1: 0.0
  2: 0.0
  3: 0.0
  4: 0.0
  5: 0.0
- 6: 5.33455265965554E-4
- 7: 0.002293447496994022
- 8: 0.006016454554691866
- 9: 0.01062124385044624
-10: 0.019139890705177055
-11: 0.05874017897212484
-12: 0.06485450642686583
-13: 0.06893556490160714
-14: 0.08577000139714475
-15: 0.14308693839015055
-16: 0.11328518608486172
+ 6: 0.0014068691891479957
+ 7: 0.0059035319184067465
+ 8: 0.014415398122745516
+ 9: 0.02513497794204813
+10: 0.041513027051685886
+11: 0.08249114347829768
+12: 0.08816029642754322
+13: 0.08636358945536758
+14: 0.10844095713940964
+15: 0.14626153967467698
+16: 0.0942390337368118
 17: 0.0
 18: 0.0
 19: 0.0
@@ -12088,200 +12088,14 @@ equityOverall: 0.05802697634199082
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 05__
 successDenom: 60466176
-successNum: 34666500
-successPercentage: 57.33205288192857%
-equityGivenSuccess: 0.09525080021612789
-equityGivenFailure: 0.043272936401100186
-equityOverall: 0.07307291277042868
-
- 0: 25799676
- 1:        0
- 2:        0
- 3:        0
- 4:        0
- 5:        0
- 6:        0
- 7:    32256
- 8:   139036
- 9:   364224
-10:   642754
-11:  1157772
-12:  3553042
-13:  3921120
-14:  4168270
-15:  5186184
-16:  8651920
-17:  6849922
-18:        0
-19:        0
-20:        0
-21:        0
-22:        0
-23:        0
-24:        0
-
- 0: 0.4266794711807143
- 1: 0.0
- 2: 0.0
- 3: 0.0
- 4: 0.0
- 5: 0.0
- 6: 0.0
- 7: 5.33455265965554E-4
- 8: 0.0022994012388016733
- 9: 0.006023599044861047
-10: 0.010629976005097462
-11: 0.019147432111466748
-12: 0.05876081861039137
-13: 0.06484815576893767
-14: 0.06893556490160714
-15: 0.08577000139714475
-16: 0.14308693839015055
-17: 0.11328518608486172
-18: 0.0
-19: 0.0
-20: 0.0
-21: 0.0
-22: 0.0
-23: 0.0
-24: 0.0
-
-
-Condition: 03
-4's Key: 06__
-successDenom: 60466176
-successNum: 34666500
-successPercentage: 57.33205288192857%
-equityGivenSuccess: 0.1369026913401459
-equityGivenFailure: 0.043272936401100186
-equityOverall: 0.09695279701597401
-
- 0: 25799676
- 1:        0
- 2:        0
- 3:        0
- 4:        0
- 5:        0
- 6:        0
- 7:        0
- 8:    32256
- 9:   139036
-10:   364224
-11:   642754
-12:  1157772
-13:  3553042
-14:  3921120
-15:  4168270
-16:  5186184
-17:  8651920
-18:  6849922
-19:        0
-20:        0
-21:        0
-22:        0
-23:        0
-24:        0
-
- 0: 0.4266794711807143
- 1: 0.0
- 2: 0.0
- 3: 0.0
- 4: 0.0
- 5: 0.0
- 6: 0.0
- 7: 0.0
- 8: 5.33455265965554E-4
- 9: 0.0022994012388016733
-10: 0.006023599044861047
-11: 0.010629976005097462
-12: 0.019147432111466748
-13: 0.05876081861039137
-14: 0.06484815576893767
-15: 0.06893556490160714
-16: 0.08577000139714475
-17: 0.14308693839015055
-18: 0.11328518608486172
-19: 0.0
-20: 0.0
-21: 0.0
-22: 0.0
-23: 0.0
-24: 0.0
-
-
-Condition: 03
-4's Key: 07__
-successDenom: 60466176
-successNum: 39746876
-successPercentage: 65.73406593464749%
-equityGivenSuccess: 0.1783371578078317
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.13205614075471936
-
- 0: 20719300
- 1:        0
- 2:        0
- 3:        0
- 4:        0
- 5:        0
- 6:        0
- 7:        0
- 8:        0
- 9:    72264
-10:   299152
-11:   724980
-12:  1285270
-13:  2123880
-14:  4551424
-15:  4841448
-16:  4891694
-17:  6039418
-18:  8725148
-19:  6192198
-20:        0
-21:        0
-22:        0
-23:        0
-24:        0
-
- 0: 0.34265934065352505
- 1: 0.0
- 2: 0.0
- 3: 0.0
- 4: 0.0
- 5: 0.0
- 6: 0.0
- 7: 0.0
- 8: 0.0
- 9: 0.0011951144388558654
-10: 0.004947427136784704
-11: 0.011989843710308389
-12: 0.0212560159253332
-13: 0.035125092084539955
-14: 0.07527223153652052
-15: 0.08006869824213789
-16: 0.08089967521676912
-17: 0.09988093177911565
-18: 0.14429799562651358
-19: 0.1024076336495961
-20: 0.0
-21: 0.0
-22: 0.0
-23: 0.0
-24: 0.0
-
-
-Condition: 03
-4's Key: 08__
-successDenom: 60466176
-successNum: 41983502
-successPercentage: 69.43303641361412%
-equityGivenSuccess: 0.24293019617043618
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.18190103427916737
+successNum: 5698274
+successPercentage: 9.42390337368118%
+equityGivenSuccess: 0.17662299669947434
+equityGivenFailure: 0.04644091808361367
+equityOverall: 0.05870915138222205
 
  0: 18482674
  1:        0
@@ -12290,20 +12104,20 @@ equityOverall: 0.18190103427916737
  4:        0
  5:        0
  6:        0
- 7:        0
- 8:        0
- 9:        0
-10:    85068
-11:   356964
-12:   871644
-13:  1519816
-14:  2510134
-15:  4492372
-16:  4835164
-17:  4726524
-18:  9034770
-19:  8348324
-20:  5202722
+ 7:    85068
+ 8:   356964
+ 9:   871644
+10:  1519816
+11:  2510134
+12:  4987924
+13:  5330716
+14:  5222076
+15:  6557010
+16:  8843876
+17:  5698274
+18:        0
+19:        0
+20:        0
 21:        0
 22:        0
 23:        0
@@ -12316,36 +12130,222 @@ equityOverall: 0.18190103427916737
  4: 0.0
  5: 0.0
  6: 0.0
- 7: 0.0
- 8: 0.0
- 9: 0.0
-10: 0.0014068691891479957
-11: 0.0059035319184067465
-12: 0.014415398122745516
-13: 0.02513497794204813
-14: 0.041513027051685886
-15: 0.07429561942200545
-16: 0.07996477237125099
-17: 0.07816806539907535
-18: 0.1494185774208708
-19: 0.13806601561838472
-20: 0.08604350968051958
+ 7: 0.0014068691891479957
+ 8: 0.0059035319184067465
+ 9: 0.014415398122745516
+10: 0.02513497794204813
+11: 0.041513027051685886
+12: 0.08249114347829768
+13: 0.08816029642754322
+14: 0.08636358945536758
+15: 0.10844095713940964
+16: 0.14626153967467698
+17: 0.0942390337368118
+18: 0.0
+19: 0.0
+20: 0.0
 21: 0.0
 22: 0.0
 23: 0.0
 24: 0.0
 
 
-Condition: 03
+Condition: 39
+4's Key: 06__
+successDenom: 60466176
+successNum: 12379194
+successPercentage: 20.472923573007165%
+equityGivenSuccess: 0.2310292130740219
+equityGivenFailure: 0.028995071271725792
+equityOverall: 0.0703573667142908
+
+ 0: 28698368
+ 1:        0
+ 2:        0
+ 3:        0
+ 4:        0
+ 5:        0
+ 6:        0
+ 7:        0
+ 8:    34584
+ 9:   148432
+10:   385860
+11:   682390
+12:  1219560
+13:  3877915
+14:  4184086
+15:  4331260
+16:  4524527
+17:  4507580
+18:  7871614
+19:        0
+20:        0
+21:        0
+22:        0
+23:        0
+24:        0
+
+ 0: 0.4746185371471151
+ 1: 0.0
+ 2: 0.0
+ 3: 0.0
+ 4: 0.0
+ 5: 0.0
+ 6: 0.0
+ 7: 0.0
+ 8: 5.719561296550322E-4
+ 9: 0.0024547938999813714
+10: 0.006381418927500889
+11: 0.011285482978119866
+12: 0.020169292663719963
+13: 0.06413362406116108
+14: 0.06919713262502329
+15: 0.07163112150502125
+16: 0.07482740433263052
+17: 0.07454713193703534
+18: 0.1301821037930363
+19: 0.0
+20: 0.0
+21: 0.0
+22: 0.0
+23: 0.0
+24: 0.0
+
+
+Condition: 39
+4's Key: 07__
+successDenom: 60466176
+successNum: 19633362
+successPercentage: 32.469991156708836%
+equityGivenSuccess: 0.28547464327464894
+equityGivenFailure: 0.028105354602864254
+equityOverall: 0.11167313987467717
+
+ 0: 26158776
+ 1:        0
+ 2:        0
+ 3:        0
+ 4:        0
+ 5:        0
+ 6:        0
+ 7:        0
+ 8:        0
+ 9:    34584
+10:   148432
+11:   385860
+12:   682390
+13:  1293260
+14:  3717906
+15:  4080692
+16:  4330914
+17:  3818252
+18:  8895252
+19:  6919858
+20:        0
+21:        0
+22:        0
+23:        0
+24:        0
+
+ 0: 0.43261832863384647
+ 1: 0.0
+ 2: 0.0
+ 3: 0.0
+ 4: 0.0
+ 5: 0.0
+ 6: 0.0
+ 7: 0.0
+ 8: 0.0
+ 9: 5.719561296550322E-4
+10: 0.0024547938999813714
+11: 0.006381418927500889
+12: 0.011285482978119866
+13: 0.02138815591711968
+14: 0.06148736774754865
+15: 0.06748718490152246
+16: 0.07162539929761723
+17: 0.06314690712374468
+18: 0.14711120478331555
+19: 0.11444179966002811
+20: 0.0
+21: 0.0
+22: 0.0
+23: 0.0
+24: 0.0
+
+
+Condition: 39
+4's Key: 08__
+successDenom: 60466176
+successNum: 25844018
+successPercentage: 42.74128067897001%
+equityGivenSuccess: 0.34725034020393497
+equityGivenFailure: 0.021854118097552108
+equityOverall: 0.16093263070680586
+
+ 0: 25769800
+ 1:        0
+ 2:        0
+ 3:        0
+ 4:        0
+ 5:        0
+ 6:        0
+ 7:        0
+ 8:        0
+ 9:        0
+10:    32256
+11:   139036
+12:   364224
+13:   656320
+14:  1171338
+15:  3060262
+16:  3428922
+17:  3596228
+18:  7834300
+19:  8141888
+20:  6271602
+21:        0
+22:        0
+23:        0
+24:        0
+
+ 0: 0.42618537676336604
+ 1: 0.0
+ 2: 0.0
+ 3: 0.0
+ 4: 0.0
+ 5: 0.0
+ 6: 0.0
+ 7: 0.0
+ 8: 0.0
+ 9: 0.0
+10: 5.33455265965554E-4
+11: 0.0022994012388016733
+12: 0.006023599044861047
+13: 0.010854332842215786
+14: 0.019371788948585072
+15: 0.050611138366018056
+16: 0.05670810074048671
+17: 0.05947503609290589
+18: 0.12956499845467323
+19: 0.13465194160781724
+20: 0.10372083063430372
+21: 0.0
+22: 0.0
+23: 0.0
+24: 0.0
+
+
+Condition: 39
 4's Key: 09__
 successDenom: 60466176
-successNum: 41983502
-successPercentage: 69.43303641361412%
-equityGivenSuccess: 0.3355909301802757
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.24623819546534137
+successNum: 32957204
+successPercentage: 54.505189810581044%
+equityGivenSuccess: 0.4032624162451054
+equityGivenFailure: 0.028612570481601204
+equityOverall: 0.23281618004004828
 
- 0: 18482674
+ 0: 18522274
  1:        0
  2:        0
  3:        0
@@ -12358,12 +12358,12 @@ equityOverall: 0.24623819546534137
 10:        0
 11:    79155
 12:   333312
-13:   818427
-14:  1425208
-15:  2155942
-16:  4102702
-17:  4451407
-18:  6911394
+13:   837675
+14:  1443376
+15:  2172670
+16:  4120510
+17:  4309447
+18:  6941802
 19:  8591883
 20:  7982306
 21:  5131766
@@ -12371,7 +12371,7 @@ equityOverall: 0.24623819546534137
 23:        0
 24:        0
 
- 0: 0.3056696358638588
+ 0: 0.3063245474627005
  1: 0.0
  2: 0.0
  3: 0.0
@@ -12384,12 +12384,12 @@ equityOverall: 0.24623819546534137
 10: 0.0
 11: 0.0013090789799573236
 12: 0.005512371081644058
-13: 0.013535286240029467
-14: 0.023570334594997376
-15: 0.03565533894519805
-16: 0.06785119006037359
-17: 0.0736181332188098
-18: 0.11430182057486156
+13: 0.013853612968678555
+14: 0.02387080009822351
+15: 0.03593198948119358
+16: 0.06814570182179207
+17: 0.07127037436599265
+18: 0.11480471329954783
 19: 0.1420940361765229
 20: 0.13201274709351554
 21: 0.0848700271702315
@@ -12398,16 +12398,16 @@ equityOverall: 0.24623819546534137
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 10__
 successDenom: 60466176
-successNum: 41983502
-successPercentage: 69.43303641361412%
-equityGivenSuccess: 0.44399791951223166
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.32150845984310117
+successNum: 37325972
+successPercentage: 61.73033333545022%
+equityGivenSuccess: 0.4874279398040148
+equityGivenFailure: 0.017756568921453615
+equityOverall: 0.30768627174843727
 
- 0: 18482674
+ 0: 18485314
  1:        0
  2:        0
  3:        0
@@ -12419,21 +12419,21 @@ equityOverall: 0.32150845984310117
  9:        0
 10:        0
 11:        0
-12:    54018
-13:   232764
-14:   592194
-15:   957928
-16:  2442772
-17:  4238710
-18:  5003080
-19:  6846306
+12:    79155
+13:   339220
+14:   824263
+15:  1340723
+16:  2071529
+17:  3979889
+18:  4909184
+19:  6821169
 20:  8501658
-21:  8283950
-22:  4830122
+21:  7982306
+22:  5131766
 23:        0
 24:        0
 
- 0: 0.3056696358638588
+ 0: 0.30571329663711494
  1: 0.0
  2: 0.0
  3: 0.0
@@ -12445,29 +12445,29 @@ equityOverall: 0.32150845984310117
  9: 0.0
 10: 0.0
 11: 0.0
-12: 8.933589582380734E-4
-13: 0.003849490994767058
-14: 0.009793806044556217
-15: 0.015842377728666025
-16: 0.040398982730444205
-17: 0.07010051371530424
-18: 0.0827417960083998
-19: 0.1132253840560382
+12: 0.0013090789799573236
+13: 0.005610078599976291
+14: 0.013631803010000169
+15: 0.022173107159943438
+16: 0.034259302258505646
+17: 0.06582008758086505
+18: 0.08118892783959085
+19: 0.11280966403431895
 20: 0.14060187963598028
-21: 0.13700138735414655
-22: 0.0798813869096005
+21: 0.13201274709351554
+22: 0.0848700271702315
 23: 0.0
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 11__
 successDenom: 60466176
-successNum: 41983502
-successPercentage: 69.43303641361412%
-equityGivenSuccess: 0.5607403009956401
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.4025662400885964
+successNum: 40176730
+successPercentage: 66.44496585992142%
+equityGivenSuccess: 0.5817242499956821
+equityGivenFailure: 0.00837013916356477
+equityOverall: 0.3893350823624211
 
  0: 18482674
  1:        0
@@ -12482,12 +12482,12 @@ equityOverall: 0.4025662400885964
 10:        0
 11:        0
 12:        0
-13:    54018
-14:   232764
-15:   575652
-16:   941386
-17:  2426230
-18:  4321420
+13:    54756
+14:   233502
+15:   576390
+16:   942124
+17:  2422540
+18:  4322158
 19:  4986538
 20:  6829764
 21:  8501658
@@ -12508,12 +12508,12 @@ equityOverall: 0.4025662400885964
 10: 0.0
 11: 0.0
 12: 0.0
-13: 8.933589582380734E-4
-14: 0.003849490994767058
-15: 0.00952023160849464
-16: 0.015568803292604447
-17: 0.04012540829438263
-18: 0.07146838589561212
+13: 9.055641289437585E-4
+14: 0.003861696165472743
+15: 0.009532436779200326
+16: 0.015581008463310132
+17: 0.0400643824408542
+18: 0.07148059106631781
 19: 0.08246822157233823
 20: 0.11295180961997663
 21: 0.14060187963598028
@@ -12522,14 +12522,14 @@ equityOverall: 0.4025662400885964
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 12__
 successDenom: 60466176
-successNum: 41983502
-successPercentage: 69.43303641361412%
-equityGivenSuccess: 0.6791309200287066
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.48476844171212863
+successNum: 41128292
+successPercentage: 68.0186754326915%
+equityGivenSuccess: 0.6911331377868322
+equityGivenFailure: 0.004507671962143306
+equityOverall: 0.47154121899964446
 
  0: 18482674
  1:        0
@@ -12584,61 +12584,61 @@ equityOverall: 0.48476844171212863
 24: 0.0798813869096005
 
 
-Condition: 03
+Condition: 39
 4's Key: 01_L
 successDenom: 60466176
-successNum: 50700551
-successPercentage: 83.84944171101543%
-equityGivenSuccess: 0.12864952632923943
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.11486073040774798
+successNum: 15150023
+successPercentage: 25.055368144993988%
+equityGivenSuccess: 0.26684345243675567
+equityGivenFailure: 0.04559383819563181
+equityOverall: 0.10102874356312444
 
- 0:  9765625
+ 0: 14988625
  1:        0
  2:        0
  3:        0
- 4:      436
- 5:     5406
- 6:    30209
- 7:   102498
- 8:   269617
- 9:   659222
-10:  1413010
-11:  2481629
-12:  3614777
-13:  4952099
-14:  6813339
-15:  6825066
-16:  6477434
-17:  7051727
-18:  6736902
-19:  3267180
+ 4:      440
+ 5:     5450
+ 6:    30433
+ 7:   103266
+ 8:   272571
+ 9:   628535
+10:  1278598
+11:  2180820
+12:  3052892
+13:  4321583
+14:  6234625
+15:  6397592
+16:  5820723
+17:  4214810
+18:  7129011
+19:  3806202
 20:        0
 21:        0
 22:        0
 23:        0
 24:        0
 
- 0: 0.16150558288984573
+ 0: 0.24788445361585293
  1: 0.0
  2: 0.0
  3: 0.0
- 4: 7.210642855933208E-6
- 5: 8.940535614489662E-5
- 6: 4.996016285203814E-4
- 7: 0.0016951295216684449
- 8: 0.004458972235981981
- 9: 0.010902326616454131
-10: 0.023368601976748126
-11: 0.041041606467721724
-12: 0.05978180263954512
-13: 0.08189866347757795
-14: 0.11268017015000253
-15: 0.11287411328938678
-16: 0.1071249155891717
-17: 0.11662267182234246
-18: 0.11141604192069299
-19: 0.054033183775339125
+ 4: 7.2767955426848885E-6
+ 5: 9.01330356991651E-5
+ 6: 5.033061789784755E-4
+ 7: 0.0017078308375247677
+ 8: 0.004507825995148098
+ 9: 0.010394819741866923
+10: 0.021145673243831393
+11: 0.036066775580450135
+12: 0.050489252040678084
+13: 0.07147108161759724
+14: 0.1031092986597995
+15: 0.10580447488526477
+16: 0.09626411632182594
+17: 0.06970525141196295
+18: 0.11790080788307168
+19: 0.06294762215490525
 20: 0.0
 21: 0.0
 22: 0.0
@@ -12646,78 +12646,78 @@ equityOverall: 0.11486073040774798
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 02_L
 successDenom: 60466176
-successNum: 50700551
-successPercentage: 83.84944171101543%
-equityGivenSuccess: 0.1817706048037505
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.1594024581394959
+successNum: 22630245
+successPercentage: 37.426287714969774%
+equityGivenSuccess: 0.3143335386531463
+equityGivenFailure: 0.044835635528035024
+equityOverall: 0.14569869613744968
 
- 0:  9765625
+ 0: 14676000
  1:        0
  2:        0
  3:        0
  4:        0
- 5:      436
- 6:     5317
- 7:    29985
- 8:   102049
- 9:   268853
-10:   658362
-11:  1411526
-12:  2480234
-13:  3613517
-14:  4960514
-15:  6468054
-16:  6480411
-17:  6133409
-18:  8771852
-19:  6392877
-20:  2923155
+ 5:      440
+ 6:     5361
+ 7:    30209
+ 8:   102817
+ 9:   271807
+10:   624276
+11:  1263110
+12:  2146890
+13:  3068852
+14:  4119035
+15:  5681100
+16:  5846034
+17:  4830341
+18:  7937456
+19:  6442964
+20:  3419484
 21:        0
 22:        0
 23:        0
 24:        0
 
- 0: 0.16150558288984573
+ 0: 0.24271420769191687
  1: 0.0
  2: 0.0
  3: 0.0
  4: 0.0
- 5: 7.210642855933208E-6
- 6: 8.793345886467171E-5
- 7: 4.958970780622872E-4
- 8: 0.0016877038825805688
- 9: 0.00444633707281241
-10: 0.01088810378880252
-11: 0.02334405932996325
-12: 0.04101853571821707
-13: 0.059760964543218345
-14: 0.0820378321923318
-15: 0.10696978753873901
-16: 0.10717414972628664
-17: 0.10143537107423496
-18: 0.1450703943970262
-19: 0.10572649740575624
-20: 0.04834363926040238
+ 5: 7.2767955426848885E-6
+ 6: 8.86611384189402E-5
+ 7: 4.996016285203814E-4
+ 8: 0.0017004051984368914
+ 9: 0.0044951908319785265
+10: 0.010324383668648072
+11: 0.020889530040728885
+12: 0.035505635415079
+13: 0.05075320126081729
+14: 0.06812130801855239
+15: 0.09395500717624346
+16: 0.09668271398541889
+17: 0.07988500876920016
+18: 0.13127101009331232
+19: 0.1065548448110891
+20: 0.056552013476096126
 21: 0.0
 22: 0.0
 23: 0.0
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 03_L
 successDenom: 60466176
-successNum: 50700551
-successPercentage: 83.84944171101543%
-equityGivenSuccess: 0.2535260258594177
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.21956897809206125
+successNum: 31493208
+successPercentage: 52.0840080907382%
+equityGivenSuccess: 0.3600177314405472
+equityGivenFailure: 0.05135646880188084
+equityOverall: 0.2121196258075785
 
- 0:  9765625
+ 0:  9812100
  1:        0
  2:        0
  3:        0
@@ -12725,17 +12725,17 @@ equityOverall: 0.21956897809206125
  5:        0
  6:      431
  7:     5303
- 8:    29956
- 9:   101999
-10:   268791
-11:   652375
-12:  1387877
-13:  2427149
-14:  3519854
-15:  4527956
-16:  6000204
-17:  6018492
-18:  8708009
+ 8:    30151
+ 9:   102779
+10:   270546
+11:   655495
+12:  1392557
+13:  2496236
+14:  3587056
+15:  4592883
+16:  6027431
+17:  5653947
+18:  8787106
 19:  8251043
 20:  5948625
 21:  2852487
@@ -12743,7 +12743,7 @@ equityOverall: 0.21956897809206125
 23:        0
 24:        0
 
- 0: 0.16150558288984573
+ 0: 0.1622741944190418
  1: 0.0
  2: 0.0
  3: 0.0
@@ -12751,17 +12751,17 @@ equityOverall: 0.21956897809206125
  5: 0.0
  6: 7.127951997493607E-6
  7: 8.770192446104083E-5
- 8: 4.954174710833375E-4
- 9: 0.0016868769739961727
-10: 0.004445311706167759
-11: 0.010789089754906942
-12: 0.022952948107715625
-13: 0.04014060687416383
-14: 0.05821194976841267
-15: 0.07488411372334841
-16: 0.09923240391454555
-17: 0.09953485399837424
-18: 0.1440145479019543
+ 8: 4.98642414562482E-4
+ 9: 0.0016997767479127505
+10: 0.004474336197480059
+11: 0.010840688850573254
+12: 0.023030346751215094
+13: 0.041283179541567176
+14: 0.05932334798218429
+15: 0.07595788759653
+16: 0.09968268871509255
+17: 0.09350594620040135
+18: 0.14532266766795374
 19: 0.13645716573841216
 20: 0.09837938155705431
 21: 0.04717491974356043
@@ -12770,78 +12770,78 @@ equityOverall: 0.21956897809206125
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 04_L
 successDenom: 60466176
-successNum: 50700551
-successPercentage: 83.84944171101543%
-equityGivenSuccess: 0.34318910848295014
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.2947509722927797
+successNum: 38199049
+successPercentage: 63.17424306772765%
+equityGivenSuccess: 0.4275788519100379
+equityGivenFailure: 0.04524102999631223
+equityOverall: 0.286780054951945
 
- 0:  9765625
+ 0:  9776350
  1:        0
  2:        0
  3:        0
  4:        0
  5:        0
  6:        0
- 7:      431
- 8:     5303
- 9:    29956
-10:   101999
-11:   267171
-12:   617131
-13:  1258241
-14:  2142353
-15:  2863264
-16:  4724566
-17:  6025850
-18:  7372598
-19:  8487343
-20:  8022673
-21:  6274353
-22:  2507319
+ 7:      425
+ 8:     5282
+ 9:    29995
+10:   102032
+11:   266574
+12:   643309
+13:  1404325
+14:  2426380
+15:  3313629
+16:  4298826
+17:  5499751
+18:  7540822
+19:  8416411
+20:  7987825
+21:  5909745
+22:  2844495
 23:        0
 24:        0
 
- 0: 0.16150558288984573
+ 0: 0.16168295478119868
  1: 0.0
  2: 0.0
  3: 0.0
  4: 0.0
  5: 0.0
  6: 0.0
- 7: 7.127951997493607E-6
- 8: 8.770192446104083E-5
- 9: 4.954174710833375E-4
-10: 0.0016868769739961727
-11: 0.0044185198680333285
-12: 0.010206218431937883
-13: 0.020809005682780404
-14: 0.035430601730130906
-15: 0.04735315161984115
-16: 0.0781356836589104
-17: 0.09965654186565395
-18: 0.12192929151001711
-19: 0.1403651357082677
-20: 0.13268034347004182
-21: 0.10376632714461718
-22: 0.041466472098384395
+ 7: 7.028722967366086E-6
+ 8: 8.735462285559451E-5
+ 9: 4.960624597791665E-4
+10: 0.0016874227336618741
+11: 0.0044086465795356395
+12: 0.010639154690384256
+13: 0.023224967955638536
+14: 0.04012788902013582
+15: 0.05480136531207133
+16: 0.07109472244449525
+17: 0.09095582627881081
+18: 0.12471140890404579
+19: 0.13919205011410016
+20: 0.1321040212630612
+21: 0.09773637744182798
+22: 0.047042746675430576
 23: 0.0
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 05_L
 successDenom: 60466176
-successNum: 50700551
-successPercentage: 83.84944171101543%
-equityGivenSuccess: 0.44628660490344235
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.3811976474593965
+successNum: 43629477
+successPercentage: 72.15517812801656%
+equityGivenSuccess: 0.5046722145210779
+equityGivenFailure: 0.03542384203953725
+equityOverall: 0.3740108410664115
 
- 0:  9765625
+ 0:  9766340
  1:        0
  2:        0
  3:        0
@@ -12849,25 +12849,25 @@ equityOverall: 0.3811976474593965
  5:        0
  6:        0
  7:        0
- 8:      425
- 9:     5237
-10:    29620
-11:   100847
-12:   257718
-13:   584929
-14:  1188764
-15:  1932296
-16:  2839759
-17:  4655635
-18:  6497354
-19:  7519397
+ 8:      428
+ 9:     5294
+10:    29827
+11:   101300
+12:   264891
+13:   620403
+14:  1256474
+15:  2038212
+16:  2753530
+17:  4545147
+18:  6482114
+19:  7513646
 20:  8346505
-21:  8064397
-22:  6177045
+21:  7987825
+22:  6253617
 23:  2500623
 24:        0
 
- 0: 0.16150558288984573
+ 0: 0.1615174076826026
  1: 0.0
  2: 0.0
  3: 0.0
@@ -12875,33 +12875,33 @@ equityOverall: 0.3811976474593965
  5: 0.0
  6: 0.0
  7: 0.0
- 8: 7.028722967366086E-6
- 9: 8.66104051296381E-5
-10: 4.898606453961964E-4
-11: 0.0016678250002116887
-12: 0.004262184531067419
-13: 0.009673656227243475
-14: 0.01965998312841877
-15: 0.031956642999881456
-16: 0.046964421894316585
-17: 0.07699569094629037
-18: 0.10745435596919507
-19: 0.12435707857563211
+ 8: 7.078337482429846E-6
+ 9: 8.755308091584955E-5
+10: 4.932840469355959E-4
+11: 0.0016753167919863164
+12: 0.00438081283658487
+13: 0.010260331329700757
+14: 0.02077978273340785
+15: 0.03370829999237921
+16: 0.04553835188783891
+17: 0.07516842143283545
+18: 0.10720231423267117
+19: 0.12426196755025487
 20: 0.1380359326840844
-21: 0.1333703821455486
-22: 0.10215703073400904
+21: 0.1321040212630612
+22: 0.10342339161649647
 23: 0.04135573250076208
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 06_L
 successDenom: 60466176
-successNum: 50700551
-successPercentage: 83.84944171101543%
-equityGivenSuccess: 0.5574892614916174
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.47444045417639896
+successNum: 46706782
+successPercentage: 77.2444779706261%
+equityGivenSuccess: 0.5974786726522301
+equityGivenFailure: 0.025990006197591942
+equityOverall: 0.4674334432617697
 
  0:  9765625
  1:        0
@@ -12912,17 +12912,17 @@ equityOverall: 0.47444045417639896
  6:        0
  7:        0
  8:        0
- 9:      425
-10:     5237
-11:    29425
-12:   100067
-13:   255963
-14:   581809
-15:  1132395
-16:  1874757
-17:  2782415
-18:  4951130
-19:  6438060
+ 9:      428
+10:     5249
+11:    29452
+12:   100115
+13:   259349
+14:   585219
+15:  1135802
+16:  1878155
+17:  2765284
+18:  4954528
+19:  6438102
 20:  7462638
 21:  8344165
 22:  8064397
@@ -12938,17 +12938,17 @@ equityOverall: 0.47444045417639896
  6: 0.0
  7: 0.0
  8: 0.0
- 9: 7.028722967366086E-6
-10: 8.66104051296381E-5
-11: 4.8663570191705195E-4
-12: 0.001654925226295111
-13: 0.004233160039755119
-14: 0.009622057131577164
-15: 0.018727742928542398
-16: 0.031005053139130215
-17: 0.04601605697704449
-18: 0.08188263798921235
-19: 0.10647374161713154
+ 9: 7.078337482429846E-6
+10: 8.680886318989314E-5
+11: 4.8708223255262577E-4
+12: 0.001655719058536131
+13: 0.004289158289090416
+14: 0.009678452297032973
+15: 0.01878408847948314
+16: 0.031061249846525765
+17: 0.045732741557858725
+18: 0.0819388346966079
+19: 0.10647443622034243
 20: 0.12341838848879744
 21: 0.13799723336233466
 22: 0.1333703821455486
@@ -12956,61 +12956,61 @@ equityOverall: 0.47444045417639896
 24: 0.04135573250076208
 
 
-Condition: 03
+Condition: 39
 4's Key: 01H_
 successDenom: 60466176
-successNum: 50700551
-successPercentage: 83.84944171101543%
-equityGivenSuccess: 0.13060315765312688
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.11649883936591914
+successNum: 15945623
+successPercentage: 26.37114508448492%
+equityGivenSuccess: 0.2623419416093279
+equityGivenFailure: 0.04602610242224105
+equityOverall: 0.1030710662149888
 
- 0:  9765625
+ 0: 14988625
  1:        0
  2:        0
  3:        0
- 4:      365
- 5:     4076
- 6:    21561
- 7:    78041
- 8:   223520
- 9:   589221
-10:  1273040
-11:  2265262
-12:  3521113
-13:  4879909
-14:  6632808
-15:  6673285
-16:  6918628
-17:  7615640
-18:  6736902
-19:  3267180
+ 4:      369
+ 5:     4120
+ 6:    21785
+ 7:    78809
+ 8:   226474
+ 9:   557486
+10:  1130899
+11:  1941266
+12:  2948486
+13:  4237782
+14:  6010918
+15:  6142857
+16:  6230677
+17:  5010410
+18:  7129011
+19:  3806202
 20:        0
 21:        0
 22:        0
 23:        0
 24:        0
 
- 0: 0.16150558288984573
+ 0: 0.24788445361585293
  1: 0.0
  2: 0.0
  3: 0.0
- 4: 6.036432666090874E-6
- 5: 6.740958779996275E-5
- 6: 3.5657951976324746E-4
- 7: 0.0012906554566969805
- 8: 0.0036966121356839235
- 9: 0.00974463806012803
-10: 0.021053754085589935
-11: 0.03746329187412149
-12: 0.05823277132656777
-13: 0.08070477286342699
-14: 0.10969451747701062
-15: 0.11036393305242256
-16: 0.11442145770885197
-17: 0.1259487618333926
-18: 0.11141604192069299
-19: 0.054033183775339125
+ 4: 6.102585352842555E-6
+ 5: 6.813726735423123E-5
+ 6: 3.602840702213416E-4
+ 7: 0.001303356772553303
+ 8: 0.00374546589485004
+ 9: 0.00921979918161188
+10: 0.018703001823697267
+11: 0.032104990399922095
+12: 0.048762567687429086
+13: 0.07008516629197785
+14: 0.09940959388600992
+15: 0.10159162372034243
+16: 0.10304400595797558
+17: 0.08286302080687226
+18: 0.11790080788307168
+19: 0.06294762215490525
 20: 0.0
 21: 0.0
 22: 0.0
@@ -13018,78 +13018,78 @@ equityOverall: 0.11649883936591914
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 02H_
 successDenom: 60466176
-successNum: 50700551
-successPercentage: 83.84944171101543%
-equityGivenSuccess: 0.1850992527253363
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.1621935108382709
+successNum: 23947514
+successPercentage: 39.604809803087264%
+equityGivenSuccess: 0.3090665087038302
+equityGivenFailure: 0.04367824013182477
+equityOverall: 0.14878475913947392
 
- 0:  9765625
+ 0: 14722475
  1:        0
  2:        0
  3:        0
  4:        0
- 5:      365
- 6:     4073
- 7:    21549
- 8:    78014
- 9:   223472
-10:   589149
-11:  1272944
-12:  2265169
-13:  3521029
-14:  4880470
-15:  6179682
-16:  6220201
-17:  6465586
-18:  9880850
-19:  6283860
-20:  2814138
+ 5:      369
+ 6:     4117
+ 7:    21773
+ 8:    78977
+ 9:   227206
+10:   555866
+11:  1120627
+12:  1915442
+13:  3013685
+14:  4072416
+15:  5346383
+16:  5439326
+17:  4845202
+18:  9546936
+19:  6289428
+20:  3265948
 21:        0
 22:        0
 23:        0
 24:        0
 
- 0: 0.16150558288984573
+ 0: 0.24348281922111298
  1: 0.0
  2: 0.0
  3: 0.0
  4: 0.0
- 5: 6.036432666090874E-6
- 6: 6.735997328489898E-5
- 7: 3.5638106170299245E-4
- 8: 0.0012902089260614065
- 9: 0.003695818303442903
-10: 0.009743447311766499
-11: 0.021052166421107892
-12: 0.037461753824154516
-13: 0.05823138212014598
-14: 0.0807140507777439
-15: 0.10220064189275009
-16: 0.10287075207137293
-17: 0.10692897133101323
-18: 0.16341119372258633
-19: 0.10392355554285423
-20: 0.04654069739750038
+ 5: 6.102585352842555E-6
+ 6: 6.808765283916746E-5
+ 7: 3.6008561216108653E-4
+ 8: 0.0013061351853968738
+ 9: 0.0037575718365255974
+10: 0.009193007343477451
+11: 0.018533121724118952
+12: 0.031677908654253246
+13: 0.049840839943309796
+14: 0.06735031499263323
+15: 0.08841939996337787
+16: 0.08995650725456825
+17: 0.08013078253865434
+18: 0.15788886666158614
+19: 0.10401564008281258
+20: 0.05401280874781961
 21: 0.0
 22: 0.0
 23: 0.0
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 03H_
 successDenom: 60466176
-successNum: 50700551
-successPercentage: 83.84944171101543%
-equityGivenSuccess: 0.2588618452923816
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.22404303289730934
+successNum: 32876164
+successPercentage: 54.37116446722214%
+equityGivenSuccess: 0.35633098872236735
+equityGivenFailure: 0.05033477213117186
+equityOverall: 0.21670847831744805
 
- 0:  9765625
+ 0:  9776350
  1:        0
  2:        0
  3:        0
@@ -13097,25 +13097,25 @@ equityOverall: 0.22404303289730934
  5:        0
  6:      365
  7:     4073
- 8:    21549
- 9:    78014
-10:   223472
-11:   579561
-12:  1234592
-13:  2178877
-14:  3367621
-15:  4323390
-16:  5565074
-17:  5615181
-18:  9922146
-19:  9179950
+ 8:    21594
+ 9:    78389
+10:   224657
+11:   582036
+12:  1238792
+13:  2238108
+14:  3428172
+15:  4383221
+16:  5614255
+17:  5302526
+18:  9984272
+19:  9182680
 20:  5707604
 21:  2699082
 22:        0
 23:        0
 24:        0
 
- 0: 0.16150558288984573
+ 0: 0.16168295478119868
  1: 0.0
  2: 0.0
  3: 0.0
@@ -13123,18 +13123,18 @@ equityOverall: 0.22404303289730934
  5: 0.0
  6: 6.036432666090874E-6
  7: 6.735997328489898E-5
- 8: 3.5638106170299245E-4
- 9: 0.0012902089260614065
-10: 0.003695818303442903
-11: 0.00958487932162272
-12: 0.020417894460532778
-13: 0.03603464191286051
-14: 0.055694294277845516
-15: 0.07150096609383733
-16: 0.09203614926798083
-17: 0.09286482743674744
-18: 0.16409415406061068
-19: 0.15181958918652305
+ 8: 3.5712527942894886E-4
+ 9: 0.0012964107404443766
+10: 0.003715416036893089
+11: 0.009625811296550322
+12: 0.020487354781622044
+13: 0.037014214360107704
+14: 0.056695697111720775
+15: 0.07249046144409728
+16: 0.09284951308976443
+17: 0.08769408536766075
+18: 0.1651216045148944
+19: 0.15186473839523107
 20: 0.0943933348786601
 21: 0.04463788151577503
 22: 0.0
@@ -13142,76 +13142,76 @@ equityOverall: 0.22404303289730934
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 04H_
 successDenom: 60466176
-successNum: 50700551
-successPercentage: 83.84944171101543%
-equityGivenSuccess: 0.35122427316268195
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.3014884130172955
+successNum: 39441128
+successPercentage: 65.22841464292367%
+equityGivenSuccess: 0.4269444419846845
+equityGivenFailure: 0.04364371502915938
+equityOverall: 0.29366470253705007
 
- 0:  9765625
+ 0:  9766340
  1:        0
  2:        0
  3:        0
  4:        0
  5:        0
  6:        0
- 7:      365
- 8:     4073
- 9:    21549
-10:    78014
-11:   221327
-12:   545916
-13:  1115027
-14:  1918972
-15:  2708658
-16:  4403507
-17:  5496946
-18:  7280531
-19:  9632048
-20:  8892672
-21:  5982644
-22:  2398302
+ 7:      353
+ 8:     3944
+ 9:    20934
+10:    75917
+11:   215636
+12:   558201
+13:  1211178
+14:  2126788
+15:  3055732
+16:  3990025
+17:  5099446
+18:  7674807
+19:  9517817
+20:  8822976
+21:  5642984
+22:  2683098
 23:        0
 24:        0
 
- 0: 0.16150558288984573
+ 0: 0.1615174076826026
  1: 0.0
  2: 0.0
  3: 0.0
  4: 0.0
  5: 0.0
  6: 0.0
- 7: 6.036432666090874E-6
- 8: 6.735997328489898E-5
- 9: 3.5638106170299245E-4
-10: 0.0012902089260614065
-11: 0.0036603439251723146
-12: 0.009028452535182646
-13: 0.018440507962666598
-14: 0.031736288400311605
-15: 0.04479625104785856
-16: 0.07282595479495843
-17: 0.0909094367072262
-18: 0.12040667165722535
-19: 0.1592964635302884
-20: 0.1470685363003607
-21: 0.09894199361970567
-22: 0.03966353023548239
+ 7: 5.837974605835831E-6
+ 8: 6.522654913715727E-5
+ 9: 3.462100861149215E-4
+10: 0.001255528380031838
+11: 0.0035662251900963607
+12: 0.009231623974368745
+13: 0.020030669708631814
+14: 0.03517318508780843
+15: 0.050536220448271774
+16: 0.06598771848909381
+17: 0.08433551346127792
+18: 0.1269272758376518
+19: 0.1574072916402056
+20: 0.14591589188639942
+21: 0.0933246382241867
+22: 0.04437353537951532
 23: 0.0
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 05H_
 successDenom: 60466176
-successNum: 50700551
-successPercentage: 83.84944171101543%
-equityGivenSuccess: 0.4572443419960852
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.3903856488357384
+successNum: 44426825
+successPercentage: 73.47384593991855%
+equityGivenSuccess: 0.5095365401020135
+equityGivenFailure: 0.03341668260282282
+equityOverall: 0.3832402531911379
 
  0:  9765625
  1:        0
@@ -13222,20 +13222,20 @@ equityOverall: 0.3903856488357384
  6:        0
  7:        0
  8:      353
- 9:     3941
-10:    20877
-11:    75320
-12:   207821
-13:   505842
-14:  1032473
-15:  1686609
-16:  2638259
-17:  4284406
-18:  6022659
-19:  7644670
+ 9:     3944
+10:    20889
+11:    75347
+12:   213671
+13:   534264
+14:  1089929
+15:  1778874
+16:  2556455
+17:  4205917
+18:  6004677
+19:  7638910
 20:  9432943
-21:  8887920
-22:  5871548
+21:  8818296
+22:  5941172
 23:  2384910
 24:        0
 
@@ -13248,32 +13248,32 @@ equityOverall: 0.3903856488357384
  6: 0.0
  7: 0.0
  8: 5.837974605835831E-6
- 9: 6.517693462209352E-5
-10: 3.4526741032871004E-4
-11: 0.0012456550915341496
-12: 0.0034369793783552644
-13: 0.00836570184296093
-14: 0.017075215737142036
-15: 0.027893429212391404
-16: 0.043631980299200665
-17: 0.07085624200875544
-18: 0.0996037685597978
-19: 0.12642886495749292
+ 9: 6.522654913715727E-5
+10: 3.454658683889651E-4
+11: 0.0012461016221697234
+12: 0.0035337276827295976
+13: 0.008835749758674998
+14: 0.01802543292964318
+15: 0.02941932362317736
+16: 0.04227909170244204
+17: 0.06955817745114228
+18: 0.09930637915650561
+19: 0.1263336050885705
 20: 0.15600363085636507
-21: 0.14698994690849973
-22: 0.09710466889786448
+21: 0.14583849324289996
+22: 0.09825612256346423
 23: 0.03944205104023777
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 4's Key: 06H_
 successDenom: 60466176
-successNum: 50700551
-successPercentage: 83.84944171101543%
-equityGivenSuccess: 0.5707714511052413
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.4855774960144211
+successNum: 47259109
+successPercentage: 78.15792584601348%
+equityGivenSuccess: 0.6057429650577792
+equityGivenFailure: 0.02347315101192344
+equityOverall: 0.478563160497604
 
  0:  9765625
  1:        0
@@ -13287,17 +13287,17 @@ equityOverall: 0.4855774960144211
  9:      353
 10:     3941
 11:    20787
-12:    73985
-13:   203111
-14:   495627
-15:   972109
-16:  1654955
-17:  2600845
-18:  4523301
-19:  5976545
+12:    74960
+13:   207742
+14:   505133
+15:   987465
+16:  1641061
+17:  2588415
+18:  4520132
+19:  5975570
 20:  7598751
-21:  9443563
-22:  8876220
+21:  9431863
+22:  8887920
 23:  5871548
 24:  2384910
 
@@ -13313,29 +13313,29 @@ equityOverall: 0.4855774960144211
  9: 5.837974605835831E-6
 10: 6.517693462209352E-5
 11: 3.437789748767972E-4
-12: 0.0012235766323307762
-13: 0.00335908458970516
-14: 0.008196764419168825
-15: 0.016076905541372418
-16: 0.027369929925781977
-17: 0.04301322114366882
-18: 0.07480712853414113
-19: 0.09884112731058105
+12: 0.0012397013497264984
+13: 0.0034356728627919185
+14: 0.008353976279234196
+15: 0.01633086570581212
+16: 0.027140148568350016
+17: 0.04280765166958797
+18: 0.07475471906806212
+19: 0.09882500259318532
 20: 0.12566944865175533
-21: 0.15617926623969078
-22: 0.14679645029975105
+21: 0.1559857696309421
+22: 0.14698994690849973
 23: 0.09710466889786448
 24: 0.03944205104023777
 
 
-Condition: 03
+Condition: 39
 4's Key: 00HL
 successDenom: 60466176
-successNum: 60466176
-successPercentage: 100.0%
-equityGivenSuccess: 0.4206383597339953
-equityGivenFailure: -1.0
-equityOverall: 0.4206383597339953
+successNum: 48397521
+successPercentage: 80.04065115677234%
+equityGivenSuccess: 0.5051235770859764
+equityGivenFailure: 0.08066294905454226
+equityOverall: 0.42040399963502756
 
  0:        0
  1:        0
@@ -13345,21 +13345,21 @@ equityOverall: 0.4206383597339953
  5:       26
  6:      286
  7:     1922
- 8:     9324
- 9:    35642
-10:   112149
-11:   296201
-12:   662575
-13:  1275463
-14:  2165180
-15:  3100662
-16:  4250164
-17:  5362051
-18:  7572387
-19:  8540327
+ 8:     9325
+ 9:    35664
+10:   112230
+11:   296379
+12:   669313
+13:  1318263
+14:  2240253
+15:  3214270
+16:  4170723
+17:  5217719
+18:  7563833
+19:  8534153
 20:  8966064
-21:  8238996
-22:  5863620
+21:  8161884
+22:  5940732
 23:  3084192
 24:   928944
 
@@ -13371,80 +13371,80 @@ equityOverall: 0.4206383597339953
  5: 4.2999246388592525E-7
  6: 4.729917102745178E-6
  7: 3.178636598418263E-5
- 8: 1.5420191281816797E-4
- 9: 5.894535153008519E-4
-10: 0.0018547394166285628
-11: 0.004898622992133651
-12: 0.010957779106123727
-13: 0.021093826075589763
-14: 0.03580811857525106
-15: 0.05127928050221003
-16: 0.07028994193381767
-17: 0.0886785200373842
-18: 0.125233436293375
-19: 0.14124139419698048
+ 8: 1.5421845098985589E-4
+ 9: 5.898173550779861E-4
+10: 0.0018560790085352843
+11: 0.004901566786694102
+12: 0.011069213306956933
+13: 0.02180165982383275
+14: 0.03704968873837829
+15: 0.053158149111331265
+16: 0.0689761330367576
+17: 0.0862915326413233
+18: 0.12509196877275652
+19: 0.14113928752497926
 20: 0.14828230579688056
-21: 0.1362579303840878
-22: 0.09697355427272265
+21: 0.1349826388888889
+22: 0.09824884576792156
 23: 0.05100689681450998
 24: 0.015363035360463344
 
 
-Condition: 03
+Condition: 39
 5's Key: 01__
 successDenom: 470184984576
-successNum: 346035532178
-successPercentage: 73.59561524280606%
-equityGivenSuccess: 0.1582513043437846
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.12789197368465607
+successNum: 142489034758
+successPercentage: 30.30488838057913%
+equityGivenSuccess: 0.28004030040181377
+equityGivenFailure: 0.033959426887689804
+equityOverall: 0.10853396093209919
 
- 0: 124149452398
+ 0: 176142738810
  1:            0
  2:            0
  3:            0
- 4:      1107381
- 5:     12820696
- 6:     70041248
- 7:    248694413
- 8:    698945697
- 9:   2116236123
-10:   5190214370
-11:  10087082375
-12:  16157629350
-13:  24202095512
-14:  41779851207
-15:  43287879247
-16:  43901457782
-17:  54932088745
-18:  64091656934
-19:  39257731098
+ 4:      1118909
+ 5:     13003182
+ 6:     72552492
+ 7:    258209975
+ 8:    724615463
+ 9:   1851294157
+10:   4002826905
+11:   7291722422
+12:  11139482488
+13:  17305956514
+14:  34590180641
+15:  36576578399
+16:  37725669461
+17:  31480570132
+18:  64775563492
+19:  46232901134
 20:            0
 21:            0
 22:            0
 23:            0
 24:            0
 
- 0: 0.2640438475719393
+ 0: 0.37462433847997234
  1: 0.0
  2: 0.0
  3: 0.0
- 4: 2.355202816607608E-6
- 5: 2.7267344599618285E-5
- 6: 1.4896530152523114E-4
- 7: 5.289288708874143E-4
- 8: 0.0014865334281788905
- 9: 0.004500858582092672
-10: 0.011038664653828523
-11: 0.021453433661001012
-12: 0.034364409498466884
-13: 0.05147356105772878
-14: 0.08885832720642053
-15: 0.09206563515854474
-16: 0.0933706077866122
-17: 0.11683080180566859
-18: 0.13631157743541322
-19: 0.08349422543427573
+ 4: 2.3797208262807493E-6
+ 5: 2.7655459928661727E-5
+ 6: 1.5430627174414313E-4
+ 7: 5.491667821609546E-4
+ 8: 0.0015411284638394789
+ 9: 0.003937374050065522
+10: 0.008513302288055073
+11: 0.015508199243273318
+12: 0.02369170189057671
+13: 0.03680669753757883
+14: 0.0735671741457088
+15: 0.07779188957295981
+16: 0.08023580228751877
+17: 0.06695358457775576
+18: 0.1377661252845257
+19: 0.09832917394350985
 20: 0.0
 21: 0.0
 22: 0.0
@@ -13452,202 +13452,202 @@ equityOverall: 0.12789197368465607
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 5's Key: 02__
 successDenom: 470184984576
-successNum: 356989940160
-successPercentage: 75.92542336968157%
-equityGivenSuccess: 0.21968642560289536
-equityGivenFailure: 0.043272936401100186
-equityOverall: 0.17721562495879067
+successNum: 200563543613
+successPercentage: 42.65630553767316%
+equityGivenSuccess: 0.3321043747323775
+equityGivenFailure: 0.031781764223921094
+equityOverall: 0.15988829456112438
 
- 0: 113195044416
+ 0: 160113827079
  1:            0
  2:            0
  3:            0
  4:            0
- 5:      1100081
- 6:     12660746
- 7:     69400366
- 8:    246721311
- 9:    702200299
-10:   2192833061
-11:   5489822860
-12:  10811227383
-13:  17305602892
-14:  25996562876
-15:  40070555100
-16:  41765395832
-17:  42923295039
-18:  75337070600
-19:  60672319579
-20:  33393172135
+ 5:      1118909
+ 6:     12921826
+ 7:     72332374
+ 8:    258168282
+ 9:    725479077
+10:   1876078340
+11:   4107309691
+12:   7582459526
+13:  12014399649
+14:  17799096761
+15:  31508476103
+16:  33549773346
+17:  32021481257
+18:  69018127384
+19:  60108275038
+20:  39415659934
 21:            0
 22:            0
 23:            0
 24:            0
 
- 0: 0.24074576630318428
+ 0: 0.3405336885085479
  1: 0.0
  2: 0.0
  3: 0.0
  4: 0.0
- 5: 2.3396770124252756E-6
- 6: 2.6927159342225946E-5
- 7: 1.4760225927372682E-4
- 8: 5.24732433177309E-4
- 9: 0.001493455388910867
-10: 0.0046637666725521595
-11: 0.01167587872877432
-12: 0.022993561550565613
-13: 0.036805945446356014
-14: 0.05529007460636581
-15: 0.08522295780273488
-16: 0.08882758318975859
-17: 0.09129022926520518
-18: 0.16022857613782993
-19: 0.12903925384540438
-20: 0.07102134953355231
+ 5: 2.3797208262807493E-6
+ 6: 2.7482430158105857E-5
+ 7: 1.5383811983112853E-4
+ 8: 5.490781085508486E-4
+ 9: 0.0015429652175179887
+10: 0.003990085607884302
+11: 0.008735518627214053
+12: 0.016126545454950365
+13: 0.02555249538611757
+14: 0.03785551930598281
+15: 0.06701293562450422
+16: 0.07135441251118274
+17: 0.06810400652389208
+18: 0.14678930558839234
+19: 0.1278396312298318
+20: 0.08383011203461542
 21: 0.0
 22: 0.0
 23: 0.0
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 5's Key: 03__
 successDenom: 470184984576
-successNum: 374281104226
-successPercentage: 79.60294703232952%
-equityGivenSuccess: 0.2940560230233859
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.24290366401107935
+successNum: 262289068102
+successPercentage: 55.78422891120718%
+equityGivenSuccess: 0.3849086183116971
+equityGivenFailure: 0.03749267963177924
+equityOverall: 0.23129598213900376
 
- 0:  95903880350
+ 0: 113462026586
  1:            0
  2:            0
  3:            0
  4:            0
  5:            0
  6:      1096176
- 7:     12649812
- 8:     69378077
- 9:    246682693
-10:    704854049
-11:   2320708721
-12:   5968521499
-13:  11805942171
-14:  19095152707
-15:  26225882054
-16:  39666196288
-17:  40822438866
-18:  68126493861
-19:  72459466080
-20:  55778962577
-21:  30976678595
+ 7:     12702624
+ 8:     69914113
+ 9:    248870944
+10:    699095135
+11:   2114230336
+12:   5208734269
+13:  10448802590
+14:  16482256624
+15:  22774539446
+16:  36373647631
+17:  36271829112
+18:  65534441974
+19:  70920702564
+20:  57078761957
+21:  32483332495
 22:            0
 23:            0
 24:            0
 
- 0: 0.20397052967670481
+ 0: 0.2413135899869643
  1: 0.0
  2: 0.0
  3: 0.0
  4: 0.0
  5: 0.0
  6: 2.331371770598973E-6
- 7: 2.6903904665112296E-5
- 8: 1.4755485452723092E-4
- 9: 5.24650299546362E-4
-10: 0.001499099444095643
-11: 0.004935735502257163
-12: 0.01269398576048159
-13: 0.025109143333546215
-14: 0.040612000241180585
-15: 0.05577779579169204
-16: 0.08436295838704823
-17: 0.08682208110667881
-18: 0.1448929593581867
-19: 0.15410842212526624
-20: 0.11863195211837729
-21: 0.0658818967239754
+ 7: 2.7016226414492756E-5
+ 8: 1.4869490794787213E-4
+ 9: 5.293043209885254E-4
+10: 0.0014868512562782603
+11: 0.004496592629189456
+12: 0.011078053191547779
+13: 0.022222748349614876
+14: 0.03505483408591461
+15: 0.04843740270978125
+16: 0.07736029185151619
+17: 0.07714374193533413
+18: 0.1393801251077747
+19: 0.1508357452715219
+20: 0.12139639467319883
+21: 0.0690862821242422
 22: 0.0
 23: 0.0
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 5's Key: 04__
 successDenom: 470184984576
-successNum: 374438595882
-successPercentage: 79.63644271193783%
-equityGivenSuccess: 0.3940669910314856
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.322632842753711
+successNum: 310863018309
+successPercentage: 66.11504588759418%
+equityGivenSuccess: 0.4561947123864347
+equityGivenFailure: 0.03351292903665326
+equityOverall: 0.3129691840568627
 
- 0:  95746388694
+ 0:  95945162322
  1:            0
  2:            0
  3:            0
  4:            0
  5:            0
  6:            0
- 7:      1096176
- 8:     12649812
- 9:     70618325
-10:    251646289
-11:    709060877
-12:   2068120859
-13:   4957283671
-14:   9523871451
-15:  14068627090
-16:  28489375545
-17:  40473093941
-18:  49221791173
-19:  66859990328
-20:  71059448469
-21:  58630436393
-22:  28041485483
+ 7:      1066518
+ 8:     12367290
+ 9:     68210285
+10:    242657521
+11:    686278565
+12:   2265477947
+13:   5950211663
+14:  11706154239
+15:  17691986006
+16:  24752393911
+17:  37490805235
+18:  49529232061
+19:  66419460708
+20:  70887194805
+21:  55599151361
+22:  30937174139
 23:            0
 24:            0
 
- 0: 0.20363557288062162
+ 0: 0.2040583291032161
  1: 0.0
  2: 0.0
  3: 0.0
  4: 0.0
  5: 0.0
  6: 0.0
- 7: 2.331371770598973E-6
- 8: 2.6903904665112296E-5
- 9: 1.5019264186771442E-4
-10: 5.352069871540618E-4
-11: 0.0015080466205006776
-12: 0.004398525956470037
-13: 0.01054326240441375
-14: 0.020255584000812718
-15: 0.029921472508712084
-16: 0.060591844655972886
-17: 0.08607908646316627
-18: 0.10468601250077535
-19: 0.14219933115961267
-20: 0.15113083318277268
-21: 0.12469653076197516
-22: 0.05963926199873662
+ 7: 2.2682944691688887E-6
+ 8: 2.630303052138614E-5
+ 9: 1.4507116823713582E-4
+10: 5.160894732077034E-4
+11: 0.0014595926869482388
+12: 0.0048182694499335115
+13: 0.012655043989475203
+14: 0.02489691211546513
+15: 0.03762771374324969
+16: 0.05264394806933495
+17: 0.07973628776939397
+18: 0.1053398846959439
+19: 0.14126240285596373
+20: 0.15076448021606675
+21: 0.1182495255801029
+22: 0.06579787775847053
 23: 0.0
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 5's Key: 05__
 successDenom: 470184984576
-successNum: 374513011664
-successPercentage: 79.65226962782013%
-equityGivenSuccess: 0.505350115937556
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.4113278973341044
+successNum: 344266937034
+successPercentage: 73.21946644988047%
+equityGivenSuccess: 0.5417854176989295
+equityGivenFailure: 0.02124398253095557
+equityOverall: 0.40238164401149656
 
- 0:  95671972912
+ 0:  95611459999
  1:            0
  2:            0
  3:            0
@@ -13655,25 +13655,25 @@ equityOverall: 0.4113278973341044
  5:            0
  6:            0
  7:            0
- 8:      1066518
- 9:     12363582
-10:     69514517
-11:    247293291
-12:    673457291
-13:   1946598509
-14:   4696464353
-15:   8720172985
-16:  13908228934
-17:  28155531723
-18:  42427630371
-19:  50011551433
-20:  66229356932
-21:  71145792885
-22:  58259601185
-23:  28008387155
+ 8:      1058271
+ 9:     12258342
+10:     67286594
+11:    238347973
+12:    673794131
+13:   2014809883
+14:   4845368992
+15:   8979668903
+16:  13473994454
+17:  27675232413
+18:  42143835255
+19:  51568915559
+20:  65979503922
+21:  70612906845
+22:  58349703185
+23:  27936839855
 24:            0
 
- 0: 0.20347730372179873
+ 0: 0.2033486034974507
  1: 0.0
  2: 0.0
  3: 0.0
@@ -13681,35 +13681,35 @@ equityOverall: 0.4113278973341044
  5: 0.0
  6: 0.0
  7: 0.0
- 8: 2.2682944691688887E-6
- 9: 2.6295144263590513E-5
-10: 1.478450381878662E-4
-11: 5.259489331055571E-4
-12: 0.0014323241130452208
-13: 0.004140069489363616
-14: 0.009988546012874366
-15: 0.018546260027558333
-16: 0.02958033410305959
-17: 0.05988181810695187
-18: 0.09023603850144232
-19: 0.1063656923840285
-20: 0.14085808586959414
-21: 0.15131447242867047
-22: 0.12390783010124605
-23: 0.05956886773034065
+ 8: 2.2507545640878344E-6
+ 9: 2.6071317464666038E-5
+10: 1.4310664144385048E-4
+11: 5.069238295964209E-4
+12: 0.0014330405119329984
+13: 0.004285142973710444
+14: 0.010305239748073668
+15: 0.019098161782213484
+16: 0.028656794444744935
+17: 0.058860306732161534
+18: 0.08963245666597405
+19: 0.1096779294334621
+20: 0.14032669286854943
+21: 0.15018111841380216
+22: 0.12409946106130584
+23: 0.0594166993235496
 24: 0.0
 
 
-Condition: 03
+Condition: 39
 5's Key: 06__
 successDenom: 470184984576
-successNum: 386314721720
-successPercentage: 82.16228386543821%
-equityGivenSuccess: 0.6041070557857733
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.5040670575841659
+successNum: 358872321685
+successPercentage: 76.32577250603212%
+equityGivenSuccess: 0.6445650564007607
+equityGivenFailure: 0.013399095672263472
+equityOverall: 0.4951413909934083
 
- 0:  83870262856
+ 0:  95385282262
  1:            0
  2:            0
  3:            0
@@ -13718,24 +13718,24 @@ equityOverall: 0.5040670575841659
  6:            0
  7:            0
  8:            0
- 9:      1521888
-10:     17460276
-11:     95864671
-12:    338760078
-13:    922883135
-14:   2488412850
-15:   5451476632
-16:   9961229134
-17:  15874904455
-18:  31642010695
-19:  44265641678
-20:  54882393917
-21:  69414337766
-22:  71349580425
-23:  54899084105
-24:  24709160015
+ 9:      1058271
+10:     12214716
+11:     68228990
+12:    242629671
+13:    666808172
+14:   1927029116
+15:   4504171591
+16:   8505240102
+17:  13634467848
+18:  28893768290
+19:  42073935479
+20:  51430573797
+21:  65940126386
+22:  70879155285
+23:  58083454745
+24:  27936839855
 
- 0: 0.17837716134561787
+ 0: 0.2028675635994966
  1: 0.0
  2: 0.0
  3: 0.0
@@ -13744,207 +13744,207 @@ equityOverall: 0.5040670575841659
  6: 0.0
  7: 0.0
  8: 0.0
- 9: 3.2367856267728267E-6
-10: 3.71349076911616E-5
-11: 2.038871383492779E-4
-12: 7.204825528520112E-4
-13: 0.0019628086078338526
-14: 0.005292412415602729
-15: 0.011594323108629241
-16: 0.021185766157510888
-17: 0.03376310383309147
-18: 0.06729693999806034
-19: 0.09414516228738684
-20: 0.11672510972780521
-21: 0.14763197473989084
-22: 0.15174789235207312
-23: 0.11676060679501812
-24: 0.052551997246960254
+ 9: 2.2507545640878344E-6
+10: 2.597853270668543E-5
+11: 1.451109504518249E-4
+12: 5.160302412013366E-4
+13: 0.0014181826172124773
+14: 0.004098448864201272
+15: 0.009579573441848083
+16: 0.01808913593799639
+17: 0.02899809286826799
+18: 0.06145191624112712
+19: 0.08948379225028023
+20: 0.10938370106263323
+21: 0.14024294383935507
+22: 0.15074738158411607
+23: 0.12353319789099194
+24: 0.0594166993235496
 
 
-Condition: 03
+Condition: 39
 5's Key: 00_L
 successDenom: 470184984576
-successNum: 439667406451
-successPercentage: 93.50945284811256%
-equityGivenSuccess: 0.484118164580325
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.4555048971785066
+successNum: 369351428011
+successPercentage: 78.55449240772141%
+equityGivenSuccess: 0.5615690103540512
+equityGivenFailure: 0.043776996535406544
+equityOverall: 0.45052588471836147
 
- 0:  30517578125
+ 0:  48214684265
  1:            0
  2:            0
  3:            0
- 4:         2532
- 5:        73418
- 6:       885433
- 7:      6179478
- 8:     29628881
- 9:    112530428
-10:    373327114
-11:   1075584708
-12:   2620273243
-13:   5467216785
-14:  10201324100
-15:  16240087519
-16:  23733113519
-17:  32523355764
-18:  50120435369
-19:  59164157669
-20:  66544358347
-21:  67823900375
-22:  56386268482
-23:  35297746140
-24:  11946957147
+ 4:         2536
+ 5:        73586
+ 6:       887021
+ 7:      6187190
+ 8:     29701227
+ 9:    111294767
+10:    356695431
+11:    994717351
+12:   2363243968
+13:   4884199486
+14:   8951259552
+15:  14319953369
+16:  20600656816
+17:  28160228293
+18:  46315523603
+19:  55998303445
+20:  63596497516
+21:  65523668826
+22:  57320781461
+23:  38597022555
+24:  13839402312
 
- 0: 0.06490547151887446
+ 0: 0.10254407487827091
  1: 0.0
  2: 0.0
  3: 0.0
- 4: 5.385114546529572E-9
- 5: 1.5614705362445027E-7
- 6: 1.8831588184349598E-6
- 7: 1.3142652791374196E-5
- 8: 6.301537048597696E-5
- 9: 2.393322451619268E-4
-10: 7.940005024547013E-4
-11: 0.0022875777476601745
-12: 0.005572856065071689
-13: 0.011627799620037179
-14: 0.02169640553111086
-15: 0.034539783386840536
-16: 0.05047611960726878
-17: 0.06917140451290395
-18: 0.10659726918799256
-19: 0.12583166117555333
-20: 0.14152803796362806
-21: 0.14424939672661335
-22: 0.11992358397588472
-23: 0.07507204036264693
-24: 0.02540905715603283
+ 4: 5.393621836492494E-9
+ 5: 1.56504359802893E-7
+ 6: 1.88653621255024E-6
+ 7: 1.315905484642271E-5
+ 8: 6.316923758589134E-5
+ 9: 2.3670421355620827E-4
+10: 7.586278649916016E-4
+11: 0.002115587234026644
+12: 0.00502620042222554
+13: 0.010387825316039044
+14: 0.019037740135559627
+15: 0.03045599889140089
+16: 0.04381394024008893
+17: 0.059891806877657154
+18: 0.09850489726881873
+19: 0.11909845120957605
+20: 0.13525846124871382
+21: 0.13935721253431232
+22: 0.12191112719750147
+23: 0.08208901564520556
+24: 0.029433952095428983
 
 
-Condition: 03
+Condition: 39
 5's Key: 00H_
 successDenom: 470184984576
-successNum: 422431078326
-successPercentage: 89.84359181672653%
-equityGivenSuccess: 0.5121991312950211
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.464573072863302
+successNum: 374525666901
+successPercentage: 79.65496117208784%
+equityGivenSuccess: 0.566776045404512
+equityGivenFailure: 0.04225313736657308
+equityOverall: 0.46006165610289934
 
- 0:  47753906250
+ 0:  47759346440
  1:            0
  2:            0
  3:            0
  4:         2096
- 5:        54861
- 6:       614844
- 7:      4253339
- 8:     21424233
- 9:     86336996
-10:    290582882
-11:    825964090
-12:   1992817208
-13:   4159997089
-14:   7878428808
-15:  12700439465
-16:  19406944405
-17:  27533883355
-18:  43602918034
-19:  54111659910
-20:  66853156527
-21:  72543229600
-22:  60464930270
+ 5:        54865
+ 6:       614888
+ 7:      4251031
+ 8:     21401468
+ 9:     86271045
+10:    290323015
+11:    825081872
+12:   2017650864
+13:   4311423595
+14:   8162323351
+15:  13144241170
+16:  19036331975
+17:  27026824005
+18:  43643477782
+19:  54066438753
+20:  66838902481
+21:  72210326044
+22:  60786257522
 23:  36737180110
 24:  13216260204
 
- 0: 0.10156408183273477
+ 0: 0.10157565215118061
  1: 0.0
  2: 0.0
  3: 0.0
  4: 4.457819940571083E-9
- 5: 1.1667960866396479E-7
- 6: 1.3076640474906903E-6
- 7: 9.046097045901083E-6
- 8: 4.5565540591050116E-5
- 9: 1.8362346487490737E-4
-10: 6.180182088588807E-4
-11: 0.0017566790031477333
-12: 0.004238368457889118
-13: 0.00884757537025852
-14: 0.016756019580473316
-15: 0.027011580296322966
-16: 0.04127512583691003
-17: 0.05855968237656357
-18: 0.09273566673618878
-19: 0.11508589530734678
-20: 0.1421847968779487
-21: 0.15428657226350498
-22: 0.1285981735986861
+ 5: 1.1668811595392771E-7
+ 6: 1.3077576276802826E-6
+ 7: 9.041188339592478E-6
+ 8: 4.551712347704863E-5
+ 9: 1.834831988048212E-4
+10: 6.174655178786821E-4
+11: 0.0017548026820636059
+12: 0.004291185235996982
+13: 0.009169632668912055
+14: 0.017359812879521368
+15: 0.0279554677439415
+16: 0.04048689898544175
+17: 0.05748125714684839
+18: 0.09282193012045355
+19: 0.11498971793358233
+20: 0.142154481052332
+21: 0.15357854549336003
+22: 0.12928157962512432
 23: 0.0781334609039644
 24: 0.028108639445213385
 
 
-Condition: 03
+Condition: 39
 6's Key: 00__
 successDenom: 21936950640377856
-successNum: 18924718036509069
-successPercentage: 86.26868130739933%
-equityGivenSuccess: 0.5700687406710753
-equityGivenFailure: 0.04327293640110019
-equityOverall: 0.4977327299275161
+successNum: 17310011187506720
+successPercentage: 78.9080099202364%
+equityGivenSuccess: 0.6157869758044441
+equityGivenFailure: 0.023648280283289205
+equityOverall: 0.49089314088668046
 
- 0:  3012232603868787
+ 0:  3387480852892629
  1:                 0
  2:                 0
  3:                 0
- 4:          32627148
- 5:         879145126
- 6:       10133063901
- 7:       70581786109
- 8:      351444472226
- 9:     1437708343236
-10:     5168088342745
-11:    16053559323225
-12:    41824418754566
-13:    93504354709641
-14:   200846785286804
-15:   371465985958187
-16:   619235901502928
-17:   934891307482430
-18:  1712855350460892
-19:  2259270586414035
-20:  2846992302916735
-21:  3368377803672261
-22:  3208692088900664
-23:  2295922584357920
-24:   947746138988290
+ 4:          32640616
+ 5:         879775606
+ 6:       10139177733
+ 7:       70587471885
+ 8:      351466019457
+ 9:     1420218812204
+10:     4963678631193
+11:    14996036935739
+12:    38568274485661
+13:    86243495108773
+14:   184496581809962
+15:   344178890228350
+16:   564158318881328
+17:   852564428378712
+18:  1625095018799830
+19:  2189171610154336
+20:  2742552046523573
+21:  3261661229036254
+22:  3202745673003165
+23:  2393952015641765
+24:  1042269165969085
 
- 0: 0.1373131869260067
+ 0: 0.15441894857790867
  1: 0.0
  2: 0.0
  3: 0.0
- 4: 1.487314647093449E-9
- 5: 4.007599508300927E-8
- 6: 4.619176141258556E-7
- 7: 3.2174839277381104E-6
- 8: 1.6020662032175065E-5
- 9: 6.553820386456574E-5
-10: 2.3558827420764903E-4
-11: 7.318045058494275E-4
-12: 0.0019065739555242755
-13: 0.004262413506895251
-14: 0.009155638291728612
-15: 0.016933346482279756
-16: 0.02822798444753495
-17: 0.042617195197660655
-18: 0.0780808316771318
-19: 0.10298927245865927
-20: 0.12978067688571399
-21: 0.15354813250444738
-22: 0.14626882931461963
-23: 0.1046600606436143
-24: 0.04320318509737803
+ 4: 1.4879285883937139E-9
+ 5: 4.01047356317909E-8
+ 6: 4.6219631430165614E-7
+ 7: 3.2177431149010487E-6
+ 8: 1.602164426673233E-5
+ 9: 6.474094031965864E-5
+10: 2.2627021925539158E-4
+11: 6.83597149921868E-4
+12: 0.0017581420097044387
+13: 0.003931425863266085
+14: 0.008410311206625576
+15: 0.01568945911720489
+16: 0.025717262537069307
+17: 0.038864309007900784
+18: 0.07408026053578422
+19: 0.09979379750824968
+20: 0.12501974825414175
+21: 0.14868343747980795
+22: 0.14599776083318017
+23: 0.10912875061292156
+24: 0.04751203497037783
 
 

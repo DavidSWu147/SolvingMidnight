@@ -69,8 +69,8 @@ public class MidnightState {
             0.775980839482896400, 0.902561036549910300, 0.975332551046523800
     };
 
-    //0 means highest average score, with failure to qualify counting as 0 (but everything considered "pass" here)
-    //btw it seems that condition 0 is equivalent to condition 4, so will change to
+    //OLD 0 means highest average score, with failure to qualify counting as 0 (but everything considered "pass" here)
+    //btw it seems that OLD condition 0 is equivalent to condition 4, so has been changed to
     //0 means highest average equity for P1 vs a most conservative P2 (condition 4+) but P1 loses ties
     //1 means highest average equity for P1 vs a most conservative P2 (condition 4+) and ties are ties
     //2 means highest average equity for P1 vs a most conservative P2 (condition 4+) and P1 wins ties
@@ -103,6 +103,9 @@ public class MidnightState {
     //78: highest average equity for P1 against an optimal P2 but ties are ties
     //79: highest average equity for P1 against an optimal P2 but P1 loses ties
 
+    //ADDENDUM: conditions 58, 59, and 60 might be provably equivalent to conditions 5, 6, and 7. In that case they
+    //can be replaced
+
     private final int condition;
     private final int numLiveDice; //1~6
 
@@ -118,6 +121,9 @@ public class MidnightState {
     private double equityGivenSuccess; //average score (which can differ from Midnight score) given condition fulfilled
     private double equityGivenFailure; //average score given condition not fulfilled
 
+    private double equityOverall; //always (equityGivenSuccess * successNum / successDenom +
+                                  //equityGivenFailure * (successDenom - successNum) / successDenom)
+
     public MidnightState(int condition, int numLiveDice, int[] liveDice, boolean hasLowQualifier,
                          boolean hasHighQualifier, int pointsBanked) {
         this.condition = condition;
@@ -132,6 +138,7 @@ public class MidnightState {
         this.successNum = -1L;
         this.equityGivenSuccess = -1.0;
         this.equityGivenFailure = -1.0;
+        this.equityOverall = -1.0;
     }
 
     public void calculateEquityIfKeptAllDice() {
@@ -154,6 +161,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_COND0[calculateScoreIfKeptAllDice()]; //0.0
                 }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                                equityGivenFailure * (successDenom - successNum) / successDenom);
 
                 break;
             case 1:
@@ -174,6 +183,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_COND1[calculateScoreIfKeptAllDice()];
                 }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
 
                 break;
             case 2:
@@ -194,6 +205,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_COND2[calculateScoreIfKeptAllDice()];
                 }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
 
                 break;
             case 3:
@@ -214,6 +227,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES[3];
                 }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
 
                 break;
             case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11:
@@ -236,6 +251,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = calculateScoreIfKeptAllDice();
                 }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
 
                 break;
             case 25:
@@ -256,6 +273,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES[calculateScoreIfKeptAllDice()]; //0.0
                 }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
 
                 break;
             case 26: case 27: case 28: case 29: case 30: case 31: case 32: case 33:
@@ -278,6 +297,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES[calculateScoreIfKeptAllDice()];
                 }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
 
                 break;
             case 45:
@@ -298,6 +319,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_3P[3];
                 }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
 
                 break;
             default:
@@ -417,6 +440,14 @@ public class MidnightState {
         this.equityGivenFailure = equityGivenFailure;
     }
 
+    public double getEquityOverall() {
+        return equityOverall;
+    }
+
+    public void setEquityOverall(double equityOverall) {
+        this.equityOverall = equityOverall;
+    }
+
     public boolean equals(Object o) {
         if (o instanceof MidnightState) {
             MidnightState other = (MidnightState)(o);
@@ -437,8 +468,7 @@ public class MidnightState {
         string += "successPercentage: " + 100.0 * successNum / successDenom + "%\n";
         string += "equityGivenSuccess: " + equityGivenSuccess + "\n";
         string += "equityGivenFailure: " + equityGivenFailure + "\n";
-        string += "equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                equityGivenFailure * (successDenom - successNum) / successDenom) + "\n";
+        string += "equityOverall: " + equityOverall + "\n";
         return string;
     }
 

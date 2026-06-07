@@ -541,32 +541,38 @@ public class SolvingMidnight {
             System.out.println(condition);
 
             for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
-                solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+                solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                        condition <= 3 || condition == 45);
             }
             System.out.println("1 done");
 
             for (MidnightState midnightState : mapsFor2LiveDice.get(condition).values()) {
-                solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+                solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                        condition <= 3 || condition == 45);
             }
             System.out.println("2 done");
 
             for (MidnightState midnightState : mapsFor3LiveDice.get(condition).values()) {
-                solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+                solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                        condition <= 3 || condition == 45);
             }
             System.out.println("3 done");
 
             for (MidnightState midnightState : mapsFor4LiveDice.get(condition).values()) {
-                solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+                solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                        condition <= 3 || condition == 45);
             }
             System.out.println("4 done");
 
             for (MidnightState midnightState : mapsFor5LiveDice.get(condition).values()) {
-                solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+                solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                        condition <= 3 || condition == 45);
             }
             System.out.println("5 done");
 
             for (MidnightState midnightState : mapsFor6LiveDice.get(condition).values()) {
-                solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+                solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                        condition <= 3 || condition == 45);
             }
             System.out.println("6 done");
         }
@@ -574,32 +580,38 @@ public class SolvingMidnight {
 
     private void calculateAllStateEquitiesRecursively(int condition) {
         for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+            solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                    condition <= 3 || condition == 45);
         }
         System.out.println("1 done");
 
         for (MidnightState midnightState : mapsFor2LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+            solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                    condition <= 3 || condition == 45);
         }
         System.out.println("2 done");
 
         for (MidnightState midnightState : mapsFor3LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+            solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                    condition <= 3 || condition == 45);
         }
         System.out.println("3 done");
 
         for (MidnightState midnightState : mapsFor4LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+            solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                    condition <= 3 || condition == 45);
         }
         System.out.println("4 done");
 
         for (MidnightState midnightState : mapsFor5LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+            solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                    condition <= 3 || condition == 45);
         }
         System.out.println("5 done");
 
         for (MidnightState midnightState : mapsFor6LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+            solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                    condition <= 3 || condition == 45);
         }
         System.out.println("6 done");
     }
@@ -610,7 +622,8 @@ public class SolvingMidnight {
         }
 
         for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+            solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                    condition <= 3 || condition == 45);
         }
         System.out.println("1 done");
         if (maxLiveDice == 1) {
@@ -618,7 +631,8 @@ public class SolvingMidnight {
         }
 
         for (MidnightState midnightState : mapsFor2LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+            solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                    condition <= 3 || condition == 45);
         }
         System.out.println("2 done");
         if (maxLiveDice == 2) {
@@ -626,7 +640,8 @@ public class SolvingMidnight {
         }
 
         for (MidnightState midnightState : mapsFor3LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+            solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                    condition <= 3 || condition == 45);
         }
         System.out.println("3 done");
         if (maxLiveDice == 3) {
@@ -634,7 +649,8 @@ public class SolvingMidnight {
         }
 
         for (MidnightState midnightState : mapsFor4LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+            solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                    condition <= 3 || condition == 45);
         }
         System.out.println("4 done");
         if (maxLiveDice == 4) {
@@ -642,7 +658,8 @@ public class SolvingMidnight {
         }
 
         for (MidnightState midnightState : mapsFor5LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+            solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                    condition <= 3 || condition == 45);
         }
         System.out.println("5 done");
         if (maxLiveDice == 5) {
@@ -650,14 +667,16 @@ public class SolvingMidnight {
         }
 
         for (MidnightState midnightState : mapsFor6LiveDice.get(condition).values()) {
-            solveStateEquityRecursively(midnightState, condition <= 3 || condition >= 25);
+            solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
+                    condition <= 3 || condition == 45);
         }
         System.out.println("6 done");
     }
 
     //Assumes calculateEquityIfKeptAllDice() has been run for the current state, and
     //solveStateEquityRecursively() has been run for the branching states one level simpler
-    private void solveStateEquityRecursively(MidnightState midnightState, boolean mergeSuccessesAndEquity) {
+    private void solveStateEquityRecursively(MidnightState midnightState, boolean mergeSuccessesAndEquity, 
+                                             boolean elevateEquityOverall) {
         if (midnightState.getNumLiveDice() <= 1) {  //the base case is already done
             return;
         }
@@ -668,6 +687,7 @@ public class SolvingMidnight {
         long successNum = midnightState.getSuccessNum();
         double equityGivenSuccess = midnightState.getEquityGivenSuccess();
         double equityGivenFailure = midnightState.getEquityGivenFailure();
+        double equityOverall = midnightState.getEquityOverall();
 
         int maxQual = midnightState.getOptimalPolicyQual();
         int maxHigh = midnightState.getOptimalPolicyHigh();
@@ -767,6 +787,7 @@ public class SolvingMidnight {
                 long contendingSuccessNum = 0L;
                 double contendingEquityGivenSuccess = 0.0; //keep this as a sum and only /= at the end
                 double contendingEquityGivenFailure = 0.0; //keep this as a sum and only /= at the end
+                double contendingEquityOverall = 0.0; //calculate this at the end
                 for (int dice1 = 1; dice1 <= 6; dice1++) {
                     if (newNumLiveDice >= 2) {
                         for (int dice2 = 1; dice2 <= 6; dice2++) {
@@ -844,6 +865,10 @@ public class SolvingMidnight {
                     }
                 }
 
+                if (contendingSuccessDenom != successDenom) {
+                    throw new AssertionError("contendingSuccessDenom: " + contendingSuccessDenom +
+                            ", but successDenom: " + successDenom);
+                }
                 if (contendingSuccessNum == 0) {
                     contendingEquityGivenSuccess = -1.0;
                 } else {
@@ -854,13 +879,17 @@ public class SolvingMidnight {
                 } else {
                     contendingEquityGivenFailure /= contendingSuccessDenom - contendingSuccessNum;
                 }
-                if (contendingSuccessDenom != successDenom) {
-                    throw new AssertionError("contendingSuccessDenom: " + contendingSuccessDenom +
-                            ", but successDenom: " + successDenom);
-                }
+                contendingEquityOverall = (contendingEquityGivenSuccess * contendingSuccessNum / contendingSuccessDenom
+                        + contendingEquityGivenFailure *
+                        (contendingSuccessDenom - contendingSuccessNum) / contendingSuccessDenom);
 
                 boolean updateFlag = false;
-                if (mergeSuccessesAndEquity) {
+                if (elevateEquityOverall) {
+                    if (contendingEquityOverall > equityOverall) {
+                        updateFlag = true;
+                    }
+                    //if equityOverall is equal, don't update which means prefer the solution that keeps more dice
+                } else if (mergeSuccessesAndEquity) {
                     double mergedEquity = equityGivenSuccess * successNum / successDenom;
                     double contendingMergedEquity = contendingEquityGivenSuccess *
                             contendingSuccessNum / contendingSuccessDenom;
@@ -892,6 +921,7 @@ public class SolvingMidnight {
                     successNum = contendingSuccessNum;
                     equityGivenSuccess = contendingEquityGivenSuccess;
                     equityGivenFailure = contendingEquityGivenFailure;
+                    equityOverall = contendingEquityOverall;
                 }
             }
         }
@@ -901,6 +931,7 @@ public class SolvingMidnight {
         midnightState.setSuccessNum(successNum);
         midnightState.setEquityGivenSuccess(equityGivenSuccess);
         midnightState.setEquityGivenFailure(equityGivenFailure);
+        midnightState.setEquityOverall(equityOverall);
     }
 
     private void printResults() {
