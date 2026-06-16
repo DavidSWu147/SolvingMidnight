@@ -17,6 +17,9 @@
  * 5. Else, keep a single dice with the following priority: 6>4>1>5>3>2
  */
 
+//TODO write a similar manual program for the naive and greedy strategies, unenhanced and enhanced
+//TODO and then write programs for parsing Dist.txt and Strat.txt files so you don't have to parse them manually
+
 public class Midnight24 {
     public static final int OTHER_LOW_QUALIFIER = 0; //when nonzero, is a qualifier but only alongside the low qualifier
     public static final int LOW_QUALIFIER = 1;

@@ -1,12 +1,12 @@
 Condition: 0OLD
 RunningTotal: 21936950640377856
-Percentage: 100.0
+PercentageSuccess: 100.0
 EquityGivenSuccess: 18.6763371958 //This is P1's average score
 EquityGivenFailure: N/A
 
 Condition: 0
 RunningTotal: 20987674370482710
-Percentage: 95.672706359889976662 //This is the percentage P1 does not score 0
+PercentageSuccess: 95.672706359889976662 //This is the percentage P1 does not score 0
 EquityGivenSuccess: 19.5210712714 //Proves that this is exactly the same as Condition 04
 EquityGivenFailure: 0.0
 
@@ -14,302 +14,348 @@ The above condition is obsolete and has been merged with Condition 04. The below
 
 Condition: 00
 RunningTotal: 18909655152935441
-Percentage: 86.200016870757425674 //Actual win percentage if losing ties is 47.3934887095%
+PercentageSuccess: 86.200016870757425674
 EquityGivenSuccess: 0.5498083461
 EquityGivenFailure: 0.0
+EquityOverall: 0.4739348871
 
 Condition: 01
 RunningTotal: 18924751800249521
-Percentage: 86.268835220042000468 //Actual win percentage if ties are ties is 52.5410799415%
+PercentageSuccess: 86.268835220042000468
 EquityGivenSuccess: 0.6055951248
 EquityGivenFailure: 0.0216364682
+EquityOverall: 0.5254107994
 
 Condition: 02
 RunningTotal: 19776116925116108
-Percentage: 90.149799073329508003 //Actual win percentage if winning ties is 57.7536996902%
+PercentageSuccess: 90.149799073329508003
 EquityGivenSuccess: 0.6359132595
 EquityGivenFailure: 0.0432729364
+EquityOverall: 0.5775369969
 
 Condition: 03OLD
 RunningTotal: 21936950640377856
-Percentage: 100.0
+PercentageSuccess: 100.0
 EquityGivenSuccess: 0.4977327299 //This is P1's win percentage
 EquityGivenFailure: N/A
 
 Condition: 03
 RunningTotal: 18924718036509069
-Percentage: 86.268681307399329643 //This is the percentage P1 does not score 0
+PercentageSuccess: 86.268681307399329643 //This is the percentage P1 does not score 0
 EquityGivenSuccess: 0.5700687407
 EquityGivenFailure: 0.0432729364
+EquityOverall: 0.4977327299
 
 Condition: 04
 RunningTotal: 20987674370482710
-Percentage: 95.672706359889976662
+PercentageSuccess: 95.672706359889976662
 EquityGivenSuccess: 19.5210712714 //This is P1's average nonzero score
 EquityGivenFailure: 0.0
+EquityOverall: 18.6763371958
 
 Condition: 05
 RunningTotal: 20987674370251590
-Percentage: 95.672706358836411817
+PercentageSuccess: 95.672706358836411817
 EquityGivenSuccess: 19.2202780265
 EquityGivenFailure: 1.0E-9
+EquityOverall: 18.3885601577
 
 Condition: 06
 RunningTotal: 20987674356732556
-Percentage: 95.672706297209642347
+PercentageSuccess: 95.672706297209642347
 EquityGivenSuccess: 19.2058721817
 EquityGivenFailure: 7.14E-8
+EquityOverall: 18.3747776873
 
 Condition: 07
 RunningTotal: 20987673973922222
-Percentage: 95.672704552161571283
+PercentageSuccess: 95.672704552161571283
 EquityGivenSuccess: 19.1117713083
 EquityGivenFailure: 0.0000024363
+EquityOverall: 18.2847486039
 
 Condition: 08
 RunningTotal: 20987668222832170
-Percentage: 95.672678335709949177
+PercentageSuccess: 95.672678335709949177
 EquityGivenSuccess: 19.0016459169
 EquityGivenFailure: 0.0000434550
+EquityOverall: 18.1793854570
 
 Condition: 09
 RunningTotal: 20987617414422121
-Percentage: 95.672446724621963774
+PercentageSuccess: 95.672446724621963774
 EquityGivenSuccess: 18.7344624802
 EquityGivenFailure: 0.0004550718
+EquityOverall: 17.9237383290
 
 Condition: 10
 RunningTotal: 20987298563781037
-Percentage: 95.670993238007934962
+PercentageSuccess: 95.670993238007934962
 EquityGivenSuccess: 18.4167053932
 EquityGivenFailure: 0.0033517763
+EquityOverall: 17.6195900701
 
 Condition: 11
 RunningTotal: 20985642548009811
-Percentage: 95.663444259125802254
+PercentageSuccess: 95.663444259125802254
 EquityGivenSuccess: 18.3920737224
 EquityGivenFailure: 0.0200377300
+EquityOverall: 17.5953601409
 
 Condition: 12
 RunningTotal: 20978665242841099
-Percentage: 95.631638082948018693
+PercentageSuccess: 95.631638082948018693
 EquityGivenSuccess: 18.3488639122
 EquityGivenFailure: 0.0959247952
+EquityOverall: 17.5515094710
 
 Condition: 13
 RunningTotal: 20954190687957635
-Percentage: 95.520070366519759297
+PercentageSuccess: 95.520070366519759297
 EquityGivenSuccess: 18.3628654579
 EquityGivenFailure: 0.3779720513
+EquityOverall: 17.5571548886
 
 Condition: 14
 RunningTotal: 20880176464857177
-Percentage: 95.182675145489243582
+PercentageSuccess: 95.182675145489243582
 EquityGivenSuccess: 18.3833390557
 EquityGivenFailure: 1.2181404438
+EquityOverall: 17.5564356767
 
 Condition: 15
 RunningTotal: 20686327835550864
-Percentage: 94.299012541309841426
+PercentageSuccess: 94.299012541309841426
 EquityGivenSuccess: 18.5405120150
 EquityGivenFailure: 3.0972925246
+EquityOverall: 17.6600960086
 
 Condition: 16
 RunningTotal: 20240909189196220
-Percentage: 92.268563306789560691
+PercentageSuccess: 92.268563306789560691
 EquityGivenSuccess: 18.9311911128
 EquityGivenFailure: 6.0264142662
+EquityOverall: 17.9334664606
 
 Condition: 17
 RunningTotal: 19391654764860460
-Percentage: 88.397221121369336300
+PercentageSuccess: 88.397221121369336300
 EquityGivenSuccess: 19.4367803772
 EquityGivenFailure: 7.8184882546
+EquityOverall: 18.0887356327
 
 Condition: 18
 RunningTotal: 18062380679825866
-Percentage: 82.337700330052564038
+PercentageSuccess: 82.337700330052564038
 EquityGivenSuccess: 19.9886847977
 EquityGivenFailure: 9.7536089811
+EquityOverall: 18.1809350355
 
 Condition: 19
 RunningTotal: 16185427834446875
-Percentage: 73.781575661001199616
+PercentageSuccess: 73.781575661001199616
 EquityGivenSuccess: 20.5878302728
 EquityGivenFailure: 10.2900353359
+EquityOverall: 17.8879106987
 
 Condition: 20
 RunningTotal: 13700150941076635
-Percentage: 62.452394435622684523
+PercentageSuccess: 62.452394435622684523
 EquityGivenSuccess: 21.2042213187
 EquityGivenFailure: 10.7129651571
+EquityOverall: 17.2650058364
 
 Condition: 21
 RunningTotal: 10645792565210298
-Percentage: 48.529044623072225198
+PercentageSuccess: 48.529044623072225198
 EquityGivenSuccess: 21.9850557443
 EquityGivenFailure: 12.1456743481
+EquityOverall: 16.9206321365
 
 Condition: 22
 RunningTotal: 7511389946214996
-Percentage: 34.240811630351624107
+PercentageSuccess: 34.240811630351624107
 EquityGivenSuccess: 22.7396219120
 EquityGivenFailure: 11.2638942845
+EquityOverall: 15.1932765646
 
 Condition: 23
 RunningTotal: 4763189307281314
-Percentage: 21.713087590733940749
+PercentageSuccess: 21.713087590733940749
 EquityGivenSuccess: 23.3911109436
 EquityGivenFailure: 11.4676443825
+EquityOverall: 14.0565971208
 
 Condition: 24
 RunningTotal: 2193468217968196
-Percentage: 9.998965917946808615
+PercentageSuccess: 9.998965917946808615
 EquityGivenSuccess: 24.0000000000
 EquityGivenFailure: 12.0658532987
+EquityOverall: 13.2591445600
 
 Condition: 25OLD
 RunningTotal: 21936950640377856
-Percentage: 100.0
+PercentageSuccess: 100.0
 EquityGivenSuccess: 0.4917908441 //This is P1's (or in 3P, if P1 scored zero, P2's) win percentage
 EquityGivenFailure: N/A
 
 Condition: 25
 RunningTotal: 18924751800249521
-Percentage: 86.268835220042000468 //This is the percentage P1/P2 does not score 0
+PercentageSuccess: 86.268835220042000468 //This is the percentage P1/P2 does not score 0
 EquityGivenSuccess: 0.5700677919 //Equity: 0.49179084403
 EquityGivenFailure: 0.0
+EquityOverall: 0.4917908441
 
 Condition: 26
 RunningTotal: 18924751767645942
-Percentage: 86.268835071417975486
-EquityGivenSuccess: 0.5700677928 //Equity: 0.49179084396
+PercentageSuccess: 86.268835071417975486
+EquityGivenSuccess: 0.5700677928 //Equity in practice: 0.49179084396
 EquityGivenFailure: 5E-10
+EquityOverall: 0.4917908441
 
 Condition: 27
 RunningTotal: 18924750923149240
-Percentage: 86.268831221763956365
-EquityGivenSuccess: 0.5700678163 //Equity: 0.49179084229
+PercentageSuccess: 86.268831221763956365
+EquityGivenSuccess: 0.5700678163 //Equity in practice: 0.49179084229
 EquityGivenFailure: 1.26E-8
+EquityOverall: 0.4917908441
 
 Condition: 28
 RunningTotal: 18924741623911868
-Percentage: 86.268788831016379610
-EquityGivenSuccess: 0.5700680752 //Equity: 0.49179082398
+PercentageSuccess: 86.268788831016379610
+EquityGivenSuccess: 0.5700680752 //Equity in practice: 0.49179082398
 EquityGivenFailure: 1.462E-7
+EquityOverall: 0.4917908440
 
 Condition: 29
 RunningTotal: 18924679720797368
-Percentage: 86.268506644510539280
-EquityGivenSuccess: 0.5700697973 //Equity: 0.49179070096
+PercentageSuccess: 86.268506644510539280
+EquityGivenSuccess: 0.5700697973 //Equity in practice: 0.49179070096
 EquityGivenFailure: 0.0000010355
+EquityOverall: 0.4917908431
 
 Condition: 30
 RunningTotal: 18924381886779531
-Percentage: 86.267148962566865682
-EquityGivenSuccess: 0.5700780671 //Equity: 0.49179009534
+PercentageSuccess: 86.267148962566865682
+EquityGivenSuccess: 0.5700780671 //Equity in practice: 0.49179009534
 EquityGivenFailure: 0.0000053137
+EquityOverall: 0.4917908251
 
 Condition: 31
 RunningTotal: 18923184256171683
-Percentage: 86.261689541029746468
-EquityGivenSuccess: 0.5701111333 //Equity: 0.49178749584
+PercentageSuccess: 86.261689541029746468
+EquityGivenSuccess: 0.5701111333 //Equity in practice: 0.49178749584
 EquityGivenFailure: 0.0000225143
+EquityOverall: 0.4917905889
 
 Condition: 32
 RunningTotal: 18917902980483441
-Percentage: 86.237614746976460346
-EquityGivenSuccess: 0.5702583333 //Equity: 0.49177718453
+PercentageSuccess: 86.237614746976460346
+EquityGivenSuccess: 0.5702583333 //Equity in practice: 0.49177718453
 EquityGivenFailure: 0.0000983292
+EquityOverall: 0.4917907170
 
 Condition: 33
 RunningTotal: 18902291409697958
-Percentage: 86.166449109411739562
-EquityGivenSuccess: 0.5706926589 //Equity: 0.49174559950
+PercentageSuccess: 86.166449109411739562
+EquityGivenSuccess: 0.5706926589 //Equity in practice: 0.49174559950
 EquityGivenFailure: 0.0003225626
+EquityOverall: 0.4917902213
 
 Condition: 34
 RunningTotal: 18861977004949861
-Percentage: 85.982675140964671027
-EquityGivenSuccess: 0.5718153775 //Equity: 0.49166215844
+PercentageSuccess: 85.982675140964671027
+EquityGivenSuccess: 0.5718153775 //Equity in practice: 0.49166215844
 EquityGivenFailure: 0.0009056861
+EquityOverall: 0.4917891114
 
 Condition: 35
 RunningTotal: 18776988880715622
-Percentage: 85.595255186261362680
-EquityGivenSuccess: 0.5741740605 //Equity: 0.49146575229
+PercentageSuccess: 85.595255186261362680
+EquityGivenSuccess: 0.5741740605 //Equity in practice: 0.49146575229
 EquityGivenFailure: 0.0021785028
+EquityOverall: 0.4917795601
 
 Condition: 36
 RunningTotal: 18588889078403387
-Percentage: 84.737798717512180824
-EquityGivenSuccess: 0.5794093326 //Equity: 0.49097871400
+PercentageSuccess: 84.737798717512180824
+EquityGivenSuccess: 0.5794093326 //Equity in practice: 0.49097871400
 EquityGivenFailure: 0.0052513752
+EquityOverall: 0.4917801895
 
 Condition: 37
 RunningTotal: 18221952570204878
-Percentage: 83.065111778411748713
-EquityGivenSuccess: 0.5895267164 //Equity: 0.48969102594
+PercentageSuccess: 83.065111778411748713
+EquityGivenSuccess: 0.5895267164 //Equity in practice: 0.48969102594
 EquityGivenFailure: 0.0123478378
+EquityOverall: 0.4917821185
 
 Condition: 38
 RunningTotal: 17599947128517751
-Percentage: 80.229688332902217392
-EquityGivenSuccess: 0.6063077703 //Equity: 0.48643883445
+PercentageSuccess: 80.229688332902217392
+EquityGivenSuccess: 0.6063077703 //Equity in practice: 0.48643883445
 EquityGivenFailure: 0.0270324166
+EquityOverall: 0.4917832274
 
 Condition: 39
 RunningTotal: 16457446759128008
-Percentage: 75.021579019446316548
-EquityGivenSuccess: 0.6385375028 //Equity: 0.47904091723
+PercentageSuccess: 75.021579019446316548
+EquityGivenSuccess: 0.6385375028 //Equity in practice: 0.47904091723
 EquityGivenFailure: 0.0474498515
+EquityOverall: 0.4908931409
 
 Condition: 40
 RunningTotal: 14876988814966068
-Percentage: 67.817031905897643374
-EquityGivenSuccess: 0.6789042112 //Equity: 0.46041268552
+PercentageSuccess: 67.817031905897643374
+EquityGivenSuccess: 0.6789042112 //Equity in practice: 0.46041268552
 EquityGivenFailure: 0.0941989759
+EquityOverall: 0.4907287119
 
 Condition: 41
 RunningTotal: 13464467251843826
-Percentage: 61.378025927909483806
-EquityGivenSuccess: 0.6987019865 //Equity: 0.42884948643
+PercentageSuccess: 61.378025927909483806
+EquityGivenSuccess: 0.6987019865 //Equity in practice: 0.42884948643
 EquityGivenFailure: 0.1374020493
+EquityOverall: 0.4819168703
 
 Condition: 42
 RunningTotal: 10611591291882738
-Percentage: 48.373137478600613734
-EquityGivenSuccess: 0.7794733481 //Equity: 0.37705571428
+PercentageSuccess: 48.373137478600613734
+EquityGivenSuccess: 0.7794733481 //Equity in practice: 0.37705571428
 EquityGivenFailure: 0.1925224514
+EquityOverall: 0.4764490156
 
 Condition: 43
 RunningTotal: 7511338646489736
-Percentage: 34.240577779594055386
-EquityGivenSuccess: 0.8662141153 //Equity: 0.29659671788
+PercentageSuccess: 34.240577779594055386
+EquityGivenSuccess: 0.8662141153 //Equity in practice: 0.29659671788
 EquityGivenFailure: 0.2312495013
+EquityOverall: 0.4486650538
 
 Condition: 44
 RunningTotal: 4760607607065850
-Percentage: 21.701318861990429608
-EquityGivenSuccess: 0.9404425282 //Equity: 0.20408843175
+PercentageSuccess: 21.701318861990429608
+EquityGivenSuccess: 0.9404425282 //Equity in practice: 0.20408843175
 EquityGivenFailure: 0.2619432906
+EquityOverall: 0.4091865736
 
 Condition: 45OLD
 RunningTotal: 21936950640377856
-Percentage: 100.0
+PercentageSuccess: 100.0
 EquityGivenSuccess: 0.3490311735 //This is P1's win percentage in 3P
 EquityGivenFailure: N/A
 
 Condition: 45
 RunningTotal: 17955606997143091
-Percentage: 81.85097049948876667100 //This is the percentage P1 does not score 0
+PercentageSuccess: 81.850970499488766671 //This is the percentage P1 does not score 0
 EquityGivenSuccess: 0.4251052591
 EquityGivenFailure: 0.0059418782
+EquityOverall: 0.3490311735
 
-0.3297310803417072
+was 0.3297310803417072, updated to 0.3297308070570784
 In 2P: Player 1 wins 49.773273% of the time and so Player 2 wins 50.226727% of the time.
-In 3P: Player 1 wins 34.903117% of the time and Player 2 wins 32.973108% of the time,
-and so Player 3 wins 32.123775% of the time. What an interesting reversal!
+In 3P: Player 1 wins 34.903117% of the time and Player 2 wins 32.973081% of the time,
+and so Player 3 wins 32.123802% of the time. What an interesting reversal!
 
 Strategy for first roll of most neutral conditions, in priority order:
 1. If you can bank a score of 20 or more that does not contain any 2s or 3s, do so, except for 144466 (keep only 1466)
@@ -324,3 +370,4 @@ Strategy for first roll of most neutral conditions, in priority order:
 10. Bless your heart for you have rolled 222222, an unlucky feat far, far rarer than Midnight. Keep a single 2 of course
 Note that many plausible plays (Keep 14, Keep 16, Keep 46, Keep 66, Keep 146 etc.) are NEVER optimal on the first roll
 However, notably when playing 3P, the first player should keep 66 if possible on the first roll (but not 166/466/666)
+So this would go into the priority order as 4.5. Keep 66

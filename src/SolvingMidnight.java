@@ -84,6 +84,7 @@ public class SolvingMidnight {
             BigDecimal runningTotal = BigDecimal.ZERO;
             BigDecimal runningEquityGivenSuccess = BigDecimal.ZERO;
             BigDecimal runningEquityGivenFailure = BigDecimal.ZERO;
+            BigDecimal runningEquityOverall = BigDecimal.ZERO;
             for (MidnightState midnightState : mapsFor6LiveDice.get(condition).values()) {
                 runningTotal = runningTotal.add(BigDecimal.valueOf(midnightState.getSuccessNum()));
                 BigDecimal ratio = BigDecimal.valueOf(midnightState.getSuccessNum()).divide(
@@ -93,26 +94,31 @@ public class SolvingMidnight {
                 BigDecimal oppositeRatio = BigDecimal.ONE.subtract(ratio);
                 BigDecimal tempFailure = BigDecimal.valueOf(midnightState.getEquityGivenFailure()).multiply(oppositeRatio);
                 runningEquityGivenFailure = runningEquityGivenFailure.add(tempFailure);
+                runningEquityOverall = runningEquityOverall.add(BigDecimal.valueOf(midnightState.getEquityOverall()));
             }
             BigDecimal exp_6_21 = BigDecimal.valueOf(6).pow(21);
             BigDecimal overallRatio = runningTotal.divide(exp_6_21, 20, RoundingMode.HALF_UP);
             BigDecimal overallOppositeRatio = BigDecimal.ONE.subtract(overallRatio);
-            BigDecimal percentage = overallRatio.multiply(BigDecimal.valueOf(100));
+            BigDecimal percentageSuccess = overallRatio.multiply(BigDecimal.valueOf(100));
             if (condition < 10) {
                 System.out.println("Condition: 0" + condition);
             } else {
                 System.out.println("Condition: " + condition);
             }
             System.out.println("RunningTotal: " + runningTotal);
-            System.out.println("Percentage: " + percentage);
-            System.out.println("EquityGivenSuccess: " + runningEquityGivenSuccess.divide(overallRatio, 10, RoundingMode.HALF_UP)
-                    .divide(BigDecimal.valueOf(46656.0), 10, RoundingMode.HALF_UP));
+            System.out.println("PercentageSuccess: " + percentageSuccess);
+            BigDecimal equityGivenSuccess = runningEquityGivenSuccess.divide(overallRatio, 10, RoundingMode.HALF_UP)
+                    .divide(BigDecimal.valueOf(46656.0), 10, RoundingMode.HALF_UP);
+            System.out.println("EquityGivenSuccess: " + equityGivenSuccess);
             if (overallOppositeRatio.compareTo(BigDecimal.ZERO) == 0) {
                 System.out.println("EquityGivenFailure: N/A");
             } else {
-                System.out.println("EquityGivenFailure: " + runningEquityGivenFailure.divide(overallOppositeRatio, 10, RoundingMode.HALF_UP)
-                        .divide(BigDecimal.valueOf(46656.0), 10, RoundingMode.HALF_UP));
+                BigDecimal equityGivenFailure = runningEquityGivenFailure.divide(overallOppositeRatio, 10, RoundingMode.HALF_UP)
+                        .divide(BigDecimal.valueOf(46656.0), 10, RoundingMode.HALF_UP);
+                System.out.println("EquityGivenFailure: " + equityGivenFailure);
             }
+            BigDecimal equityOverall = runningEquityOverall.divide(BigDecimal.valueOf(46656.0), 10, RoundingMode.HALF_UP);
+            System.out.println("EquityOverall: " + equityOverall);
             System.out.println();
         }
 
