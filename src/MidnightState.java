@@ -37,36 +37,92 @@ public class MidnightState {
             (1.0-0.09998965917946808615) * (1.0-0.09998965917946808615),
             1.0};
 
-    public static final double[] EQUITIES_COND2 = {0.043272936401100234,
-            0.043272936401100234, 0.043272936401100234, 0.043272936401100234, //indices 1, 2, 3 same
+    public static final double[] EQUITIES_SAFEST = {0.0, 0.0, 0.0, 0.043272936401100234, //index 3 is score of 0
             0.043272941642608725, 0.043273081510634650, 0.043274668006369706,
             0.043285507491790180, 0.043338179784174110, 0.043543638153175045,
             0.044229007314734500, 0.046183274290945400, 0.050934557873779400,
             0.060894050594582310, 0.079756974761451550, 0.111726436012404120,
             0.160827489528609120, 0.238157528628643760, 0.345789776046534700,
             0.475071789657585000, 0.623137730242535800, 0.775980839482896400,
-            0.902561036549910300, 0.975332551046523800, 1.0
-    };
+            0.902561036549910300, 0.975332551046523800, 1.0};
 
-    public static final double[] EQUITIES_COND1 = {0.021636468200550117,
-            0.043272936401100234, 0.043272936401100234, 0.043272936401100234, //indices 1, 2, 3 same
-            0.043272939021854480, 0.043273011576621690, 0.043273874758502180,
-            0.043280087749079940, 0.043311843637982150, 0.043440908968674580,
-            0.043886322733954780, 0.045206140802839950, 0.048558916082362400,
-            0.055914304234180850, 0.070325512678016930, 0.095741705386927830,
-            0.136276962770506630, 0.199492509078626450, 0.291973652337589260,
-            0.410430782852059900, 0.549104759950060500, 0.699559284862716100,
-            0.839270938016403400, 0.938946793798217000, 0.987666275523261900
+    public static final double[] EQUITIES_NAIVE = {0.0, 0.0, 0.0, //indices 0, 1, 2 same at 0.0
+            0.043272936401100234, //index 3 is score of 0
+            0.043272941733898396, 0.043273084756514040, 0.043274717430650530,
+            0.043285928924708980, 0.043340768171511760, 0.043558559308860996,
+            0.044309422856956040, 0.046534822024770786, 0.052164169541830105,
+            0.064561539238436520, 0.089436759165168900, 0.133636443689504170,
+            0.202169876222985960, 0.296551129395260700, 0.415205540008828000,
+            0.556686106872727800, 0.687166745130514800, 0.799757945443496800,
+            0.889305932514944400, 0.954813869254533800, 1.0};
+    public static final double[] EQUITIES_GREEDY = {0.0, 0.0, 0.0, //indices 0, 1, 2 same at 0.0
+            0.14809936688132622, //index 3 is score of 0
+            0.148099370486992620, 0.148099465571903570, 0.148100532734851850,
+            0.148107790260042620, 0.148143195148847470, 0.148285123592654250,
+            0.148783512738060180, 0.150289939754534700, 0.154161238545490440,
+            0.162798424244780330, 0.180639018508011840, 0.213408623028379120,
+            0.265740428643149700, 0.339330772989428100, 0.434689432002550400,
+            0.558765692530095900, 0.676143480453409400, 0.780875329310785500,
+            0.866444020786910500, 0.936180578838422700, 1.0};
+    public static final double[] EQUITIES_NAIVE_ENHANCED = {0.0, 0.0, 0.0, //indices 0, 1, 2 same at 0.0
+            0.043272936401100234, //index 3 is score of 0
+            0.043272936411635880, 0.043272937027903580, 0.0432729544783842860,
+            0.043273216642900510, 0.043275595881903990, 0.0432908283016926300,
+            0.043367341702273410, 0.043684535741841040, 0.0448107717138983840,
+            0.048221782343967755, 0.057116280999636160, 0.0773521889988338000,
+            0.117432909734998120, 0.186628468324122580, 0.2911136506084998000,
+            0.428653071989725130, 0.585904336953864700, 0.7379386941750790000,
+            0.865461328221997700, 0.954813869254533800, 1.0
     };
-
-    public static final double[] EQUITIES_COND0 = {0.0, 0.0, 0.0, 0.0, //indices 1, 2, 3 same
-            0.043272936401100234, 0.043272941642608725, 0.043273081510634650,
-            0.043274668006369706, 0.043285507491790180, 0.043338179784174110,
-            0.043543638153175045, 0.044229007314734500, 0.046183274290945400,
-            0.050934557873779400, 0.060894050594582310, 0.079756974761451550,
-            0.111726436012404120, 0.160827489528609120, 0.238157528628643760,
-            0.345789776046534700, 0.475071789657585000, 0.623137730242535800,
-            0.775980839482896400, 0.902561036549910300, 0.975332551046523800
+    public static final double[] EQUITIES_GREEDY_ENHANCED = {0.0, 0.0, 0.0, //indices 0, 1, 2 same at 0.0
+            0.14809936688132622, //index 3 is score of 0
+            0.14809936688590880, 0.14809936716405045, 0.14809937573029028,
+            0.14809951288441536, 0.14810082098394795, 0.14810963644394556,
+            0.14815594538694798, 0.14835580713209404, 0.14908864673972260,
+            0.15136947905848983, 0.15745210492992520, 0.17168423388255807,
+            0.20077844933762257, 0.25249560074055450, 0.33334574772248170,
+            0.44475113056975270, 0.58022101231390620, 0.71795019137779270,
+            0.83905458485081340, 0.93618057883842270, 1.0
+    };
+    public static final double[] EQUITIES_NAIVE_ENHANCED_TIES = {0.0, 0.0, 0.0, //indices 0, 1, 2 same at 0.0
+            0.021636468200550117, //index 3 is score of 0
+            0.043272936406368060, 0.043272936736911696, 0.043272946894428240,
+            0.043273113091793006, 0.043274733265602220, 0.043285716594378236,
+            0.043343066548667610, 0.043587020904946860, 0.044474391860279884,
+            0.047228534804601804, 0.054573071612741234, 0.071605703971085230,
+            0.106077142148786500, 0.167037039888427270, 0.261300808044805930,
+            0.388101562391353200, 0.538612524138272200, 0.690462210679307900,
+            0.823667910222892300, 0.922059900884739100, 0.977406934627266900
+    };
+    public static final double[] EQUITIES_GREEDY_ENHANCED_TIES = {0.0, 0.0, 0.0, //indices 0, 1, 2 same at 0.0
+            0.07404968344066311, //index 3 is score of 0
+            0.14809936688361752, 0.14809936703375010, 0.14809937206330515,
+            0.14809945976822697, 0.14810035555887155, 0.14810672245622247,
+            0.14814139793869350, 0.14829466578343203, 0.14887023108705813,
+            0.15070626709111180, 0.15571237376245490, 0.16762787359445808,
+            0.19248535132231210, 0.23778789443026707, 0.31024394146952370,
+            0.41160287777590310, 0.53927300436050100, 0.67473662383594730,
+            0.79969391860476310, 0.90131229981266660, 0.96809028941921140
+    };
+    public static final double[] EQUITIES_NAIVE_ENHANCED_TIES_SETTLES = {0.0, 0.0, 0.0, //indices 0, 1, 2 same at 0.0
+            0.021636468200550117, //index 3 is score of 0, and this is by definition same as ties non-settles
+            0.043432620317285690, 0.043993865912229660, 0.045294076853175380,
+            0.047444680925088720, 0.050909048691572350, 0.056407166308563140,
+            0.064376898951492870, 0.074607153281900150, 0.086751739024482550,
+            0.101725798534190430, 0.121324991667731610, 0.147089072946142460,
+            0.182440709342038300, 0.234755778810049220, 0.313623580049141540,
+            0.420902289348796140, 0.545917607873338700, 0.682565178722113200,
+            0.810735783318413700, 0.913118174274884200, 0.977406934627266900
+    };
+    public static final double[] EQUITIES_GREEDY_ENHANCED_TIES_SETTLES = {0.0, 0.0, 0.0, //indices 0, 1, 2 same at 0.0
+            0.07404968344066311, //index 3 is score of 0, and this is by definition same as ties non-settles
+            0.14819152367763500, 0.14853766695613302, 0.14937497074844830,
+            0.15081368731460523, 0.15313653389941903, 0.15692489949641542,
+            0.16252826890334252, 0.16994149450743773, 0.17876013483810232,
+            0.18965701582312460, 0.20476175774155764, 0.22484450078478102,
+            0.25231254049859003, 0.29212134336831386, 0.35448505094480500,
+            0.44364296307345350, 0.54900036143948440, 0.66936537053129560,
+            0.78764820114382230, 0.89104126133663010, 0.96809028941921140
     };
 
     //OLD 0 means highest average score, with failure to qualify counting as 0 (but everything considered "pass" here)
@@ -92,10 +148,10 @@ public class MidnightState {
     //51: highest average equity for P1 vs a greedy (but not condition 24, so keep 1 and 4 and 6s) P2 and P1 wins ties
     //although the last 3 don't quite work since the Midnight APP's AI will keep all if it has already won by doing so
     //thus
-    //52: highest average equity for P1 vs an enhanced naive (naive but bank all if 100% to win) P2 but P1 loses ties
+    //52: highest average equity for P1 vs an enhanced naive (naive but bank all if 100+% to win) P2 but P1 loses ties
     //53: highest average equity for P1 vs an enhanced naive (naive but bank all if 100% to win) P2 and ties are ties
     //54: highest average equity for P1 vs an enhanced naive (naive but bank all if 100% to win) P2 and P1 wins ties
-    //55: highest average equity for P1 vs an enhanced greedy (greedy but bank all if 100% to win) P2 but P1 loses ties
+    //55: highest average equity for P1 vs an enhanced greedy (greedy but bank all if 100+% to win) P2 but P1 loses ties
     //56: highest average equity for P1 vs an enhanced greedy (greedy but bank all if 100% to win) P2 and ties are ties
     //57: highest average equity for P1 vs an enhanced greedy (greedy but bank all if 100% to win) P2 and P1 wins ties
 
@@ -104,11 +160,12 @@ public class MidnightState {
     //79: highest average equity for P1 against an optimal P2 but P1 loses ties
 
     //ADDENDUM: conditions 58, 59, and 60 might be provably equivalent to conditions 5, 6, and 7. In that case they
-    //can be replaced
+    //can be replaced. probably make cond58 and cond59 versus enhanced naive and enhanced greedy but P1 loses ties and
+    //the cutoff for enhanced keep all is one different from the preexisting condition. keep cond60 for proof purposes
+    //then need 2 more conditions for naive and greedy where ties are ties but the opponent banks all at the tying score
 
     private final int condition;
     private final int numLiveDice; //1~6
-
     private final int[] liveDice; //array of length 1~6
     private final boolean hasLowQualifier;
     private final boolean hasHighQualifier;
@@ -116,11 +173,10 @@ public class MidnightState {
 
     private int optimalPolicyQual; //how many qualifier dice to keep (4 > 1)
     private int optimalPolicyHigh; //how many high dice to keep (6 > 5 > 4 > 3 > 2 > 1)
-    private long successDenom; //this should always be 6^[[number of live dice - 1]th triangular number]
-    private long successNum; //number of times the condition is fulfilled
+    private long successDenom; //this should always be 6^[[number of live dice - 1]th triangular number] (or x2 if ties)
+    private long successNum; //number of times the condition is fulfilled (or if with ties, 2 for a win and 1 for a tie)
     private double equityGivenSuccess; //average score (which can differ from Midnight score) given condition fulfilled
     private double equityGivenFailure; //average score given condition not fulfilled
-
     private double equityOverall; //always (equityGivenSuccess * successNum / successDenom +
                                   //equityGivenFailure * (successDenom - successNum) / successDenom)
 
@@ -141,84 +197,62 @@ public class MidnightState {
         this.equityOverall = -1.0;
     }
 
+    public static void main(String[] args) {
+
+    }
+
     public void calculateEquityIfKeptAllDice() {
+        optimalPolicyQual = 0;
+        if (canKeepLowQualifier()) {
+            optimalPolicyQual++;
+        }
+        if (canKeepHighQualifier()) {
+            optimalPolicyQual++;
+        }
+        optimalPolicyHigh = numLiveDice - optimalPolicyQual;
+
         switch (condition) {
             case 0:
-                optimalPolicyQual = 0;
-                if (canKeepLowQualifier()) {
-                    optimalPolicyQual++;
-                }
-                if (canKeepHighQualifier()) {
-                    optimalPolicyQual++;
-                }
-                optimalPolicyHigh = numLiveDice - optimalPolicyQual;
-
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
                 if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
-                    equityGivenSuccess = EQUITIES_COND0[calculateScoreIfKeptAllDice()];
+                    equityGivenSuccess = EQUITIES_SAFEST[calculateScoreIfKeptAllDice() - 1];
                 } else { // == 0
                     successNum = 0;
-                    equityGivenFailure = EQUITIES_COND0[calculateScoreIfKeptAllDice()]; //0.0
+                    equityGivenFailure = EQUITIES_SAFEST[0]; //0.0
                 }
                 equityOverall = (equityGivenSuccess * successNum / successDenom +
                                 equityGivenFailure * (successDenom - successNum) / successDenom);
 
                 break;
             case 1:
-                optimalPolicyQual = 0;
-                if (canKeepLowQualifier()) {
-                    optimalPolicyQual++;
-                }
-                if (canKeepHighQualifier()) {
-                    optimalPolicyQual++;
-                }
-                optimalPolicyHigh = numLiveDice - optimalPolicyQual;
-
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
                 if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
-                    equityGivenSuccess = EQUITIES_COND1[calculateScoreIfKeptAllDice()];
+                    equityGivenSuccess = EQUITIES_SAFEST[calculateScoreIfKeptAllDice() - 1]/2 +
+                                         EQUITIES_SAFEST[calculateScoreIfKeptAllDice()]/2;
                 } else { // == 0
                     successNum = 0;
-                    equityGivenFailure = EQUITIES_COND1[calculateScoreIfKeptAllDice()];
+                    equityGivenFailure = EQUITIES_SAFEST[3]/2; // + EQUITIES_SAFEST[0]/2 which is 0.0
                 }
                 equityOverall = (equityGivenSuccess * successNum / successDenom +
                         equityGivenFailure * (successDenom - successNum) / successDenom);
 
                 break;
             case 2:
-                optimalPolicyQual = 0;
-                if (canKeepLowQualifier()) {
-                    optimalPolicyQual++;
-                }
-                if (canKeepHighQualifier()) {
-                    optimalPolicyQual++;
-                }
-                optimalPolicyHigh = numLiveDice - optimalPolicyQual;
-
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
                 if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
-                    equityGivenSuccess = EQUITIES_COND2[calculateScoreIfKeptAllDice()];
+                    equityGivenSuccess = EQUITIES_SAFEST[calculateScoreIfKeptAllDice()];
                 } else {  // == 0
                     successNum = 0;
-                    equityGivenFailure = EQUITIES_COND2[calculateScoreIfKeptAllDice()];
+                    equityGivenFailure = EQUITIES_SAFEST[3];
                 }
                 equityOverall = (equityGivenSuccess * successNum / successDenom +
                         equityGivenFailure * (successDenom - successNum) / successDenom);
 
                 break;
             case 3:
-                optimalPolicyQual = 0;
-                if (canKeepLowQualifier()) {
-                    optimalPolicyQual++;
-                }
-                if (canKeepHighQualifier()) {
-                    optimalPolicyQual++;
-                }
-                optimalPolicyHigh = numLiveDice - optimalPolicyQual;
-
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
                 if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
@@ -234,15 +268,6 @@ public class MidnightState {
             case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11:
             case 12: case 13: case 14: case 15: case 16: case 17: case 18: case 19:
             case 20: case 21: case 22: case 23: case 24:
-                optimalPolicyQual = 0;
-                if (canKeepLowQualifier()) {
-                    optimalPolicyQual++;
-                }
-                if (canKeepHighQualifier()) {
-                    optimalPolicyQual++;
-                }
-                optimalPolicyHigh = numLiveDice - optimalPolicyQual;
-
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
                 if (calculateScoreIfKeptAllDice() >= condition) {
                     successNum = successDenom;
@@ -256,15 +281,6 @@ public class MidnightState {
 
                 break;
             case 25:
-                optimalPolicyQual = 0;
-                if (canKeepLowQualifier()) {
-                    optimalPolicyQual++;
-                }
-                if (canKeepHighQualifier()) {
-                    optimalPolicyQual++;
-                }
-                optimalPolicyHigh = numLiveDice - optimalPolicyQual;
-
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
                 if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
@@ -280,15 +296,6 @@ public class MidnightState {
             case 26: case 27: case 28: case 29: case 30: case 31: case 32: case 33:
             case 34: case 35: case 36: case 37: case 38: case 39: case 40: case 41:
             case 42: case 43: case 44:
-                optimalPolicyQual = 0;
-                if (canKeepLowQualifier()) {
-                    optimalPolicyQual++;
-                }
-                if (canKeepHighQualifier()) {
-                    optimalPolicyQual++;
-                }
-                optimalPolicyHigh = numLiveDice - optimalPolicyQual;
-
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
                 if (calculateScoreIfKeptAllDice() > condition - 22) {
                     successNum = successDenom;
@@ -302,15 +309,6 @@ public class MidnightState {
 
                 break;
             case 45:
-                optimalPolicyQual = 0;
-                if (canKeepLowQualifier()) {
-                    optimalPolicyQual++;
-                }
-                if (canKeepHighQualifier()) {
-                    optimalPolicyQual++;
-                }
-                optimalPolicyHigh = numLiveDice - optimalPolicyQual;
-
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
                 if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
@@ -318,6 +316,177 @@ public class MidnightState {
                 } else { // == 0
                     successNum = 0;
                     equityGivenFailure = EQUITIES_3P[3];
+                }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
+
+                break;
+            case 46:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_NAIVE[calculateScoreIfKeptAllDice() - 1];
+                } else { // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_NAIVE[0]; //0.0
+                }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
+
+                break;
+            case 47:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_NAIVE[calculateScoreIfKeptAllDice() - 1]/2 +
+                            EQUITIES_NAIVE[calculateScoreIfKeptAllDice()]/2;
+                } else { // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_NAIVE[3]/2; // + EQUITIES_NAIVE[0]/2 which is 0.0
+                }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
+
+                break;
+            case 48:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_NAIVE[calculateScoreIfKeptAllDice()];
+                } else {  // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_NAIVE[3];
+                }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
+
+                break;
+            case 49:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_GREEDY[calculateScoreIfKeptAllDice() - 1];
+                } else { // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_GREEDY[0]; //0.0
+                }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
+
+                break;
+            case 50:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_GREEDY[calculateScoreIfKeptAllDice() - 1]/2 +
+                            EQUITIES_GREEDY[calculateScoreIfKeptAllDice()]/2;
+                } else { // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_GREEDY[3]/2; // + EQUITIES_GREEDY[0]/2 which is 0.0
+                }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
+
+                break;
+            case 51:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_GREEDY[calculateScoreIfKeptAllDice()];
+                } else {  // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_GREEDY[3];
+                }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
+
+                break;
+            case 52:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_NAIVE_ENHANCED[calculateScoreIfKeptAllDice() - 1];
+                } else { // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_NAIVE_ENHANCED[0]; //0.0
+                }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
+
+                break;
+            case 53:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_NAIVE_ENHANCED_TIES[calculateScoreIfKeptAllDice()];
+                } else {  // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_NAIVE_ENHANCED_TIES[3];
+                }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
+
+                break;
+            case 54:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_NAIVE_ENHANCED[calculateScoreIfKeptAllDice()];
+                } else {  // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_NAIVE_ENHANCED[3];
+                }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
+
+                break;
+            case 55:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_GREEDY_ENHANCED[calculateScoreIfKeptAllDice() - 1];
+                } else { // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_GREEDY_ENHANCED[0]; //0.0
+                }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
+
+                break;
+            case 56:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_GREEDY_ENHANCED_TIES[calculateScoreIfKeptAllDice()];
+                } else {  // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_GREEDY_ENHANCED_TIES[3];
+                }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
+
+                break;
+            case 57:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_GREEDY_ENHANCED[calculateScoreIfKeptAllDice()];
+                } else {  // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_GREEDY_ENHANCED[3];
+                }
+                equityOverall = (equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom);
+
+                break;
+            case 79:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES[calculateScoreIfKeptAllDice() - 1];
+                } else { // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES[0]; //0.0
                 }
                 equityOverall = (equityGivenSuccess * successNum / successDenom +
                         equityGivenFailure * (successDenom - successNum) / successDenom);

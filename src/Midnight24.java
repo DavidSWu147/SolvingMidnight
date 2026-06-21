@@ -18,7 +18,7 @@
  */
 
 //TODO write a similar manual program for the naive and greedy strategies, unenhanced and enhanced
-//TODO and then write programs for parsing Dist.txt and Strat.txt files so you don't have to parse them manually
+//TODO and then write programs for parsing Dist.txt and Strat.txt files, so you don't have to parse them manually
 
 public class Midnight24 {
     public static final int OTHER_LOW_QUALIFIER = 0; //when nonzero, is a qualifier but only alongside the low qualifier

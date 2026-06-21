@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
@@ -12,25 +11,26 @@ public class SolvingMidnight {
     public static final boolean ABRIDGED_RESULTS = false;
     public static final int LOW_QUALIFIER = 1;
     public static final int HIGH_QUALIFIER = 4;
-    public static final int CAPACITY = 46;
+    public static final int MAX_SCORE = 24;
+    public static final int CAPACITY = 80;
 
     //If I were to redo this, I think I would make ArrayList<ArrayList<HashMap<String, MidnightState>> and
     //use the CONDITION first as the major axis, before the # of live dice as the minor axis
-    ArrayList<HashMap<String, MidnightState>> mapsFor1LiveDice;
-    ArrayList<HashMap<String, MidnightState>> mapsFor2LiveDice;
-    ArrayList<HashMap<String, MidnightState>> mapsFor3LiveDice;
-    ArrayList<HashMap<String, MidnightState>> mapsFor4LiveDice;
-    ArrayList<HashMap<String, MidnightState>> mapsFor5LiveDice;
-    ArrayList<HashMap<String, MidnightState>> mapsFor6LiveDice;
+    private final ArrayList<HashMap<String, MidnightState>> mapsFor1LiveDice;
+    private final ArrayList<HashMap<String, MidnightState>> mapsFor2LiveDice;
+    private final ArrayList<HashMap<String, MidnightState>> mapsFor3LiveDice;
+    private final ArrayList<HashMap<String, MidnightState>> mapsFor4LiveDice;
+    private final ArrayList<HashMap<String, MidnightState>> mapsFor5LiveDice;
+    private final ArrayList<HashMap<String, MidnightState>> mapsFor6LiveDice;
 
     //The inner ArrayList is like an Array with length 25 for the scores of 0~24
     //Scores of 1, 2, and 3 are impossible so those indices always contain 0
-    ArrayList<HashMap<String, long[]>> distributionsFor1LiveDice;
-    ArrayList<HashMap<String, long[]>> distributionsFor2LiveDice;
-    ArrayList<HashMap<String, long[]>> distributionsFor3LiveDice;
-    ArrayList<HashMap<String, long[]>> distributionsFor4LiveDice;
-    ArrayList<HashMap<String, long[]>> distributionsFor5LiveDice;
-    ArrayList<HashMap<String, long[]>> distributionsFor6LiveDice;
+    private final ArrayList<HashMap<String, long[]>> distributionsFor1LiveDice;
+    private final ArrayList<HashMap<String, long[]>> distributionsFor2LiveDice;
+    private final ArrayList<HashMap<String, long[]>> distributionsFor3LiveDice;
+    private final ArrayList<HashMap<String, long[]>> distributionsFor4LiveDice;
+    private final ArrayList<HashMap<String, long[]>> distributionsFor5LiveDice;
+    private final ArrayList<HashMap<String, long[]>> distributionsFor6LiveDice;
 
     public SolvingMidnight() {
         mapsFor1LiveDice = new ArrayList<>();
@@ -76,11 +76,16 @@ public class SolvingMidnight {
 
         calculateInitialRunThrough();
 
-        calculateAllStateEquitiesRecursively();
+        for (int condition = 46; condition <= 57; condition++) {
+            System.out.println(condition);
+            calculateAllStateEquitiesRecursively(condition);
+        }
 
-        writeToFile();
+        for (int condition = 46; condition <= 57; condition++) {
+            writeToFile(condition);
+        }
 
-        for (int condition = 0; condition <= 45; condition++) {
+        for (int condition = 46; condition <= 57; condition++) {
             BigDecimal runningTotal = BigDecimal.ZERO;
             BigDecimal runningEquityGivenSuccess = BigDecimal.ZERO;
             BigDecimal runningEquityGivenFailure = BigDecimal.ZERO;
@@ -99,14 +104,14 @@ public class SolvingMidnight {
             BigDecimal exp_6_21 = BigDecimal.valueOf(6).pow(21);
             BigDecimal overallRatio = runningTotal.divide(exp_6_21, 20, RoundingMode.HALF_UP);
             BigDecimal overallOppositeRatio = BigDecimal.ONE.subtract(overallRatio);
-            BigDecimal percentageSuccess = overallRatio.multiply(BigDecimal.valueOf(100));
+            BigDecimal successPercentage = overallRatio.multiply(BigDecimal.valueOf(100));
             if (condition < 10) {
                 System.out.println("Condition: 0" + condition);
             } else {
                 System.out.println("Condition: " + condition);
             }
             System.out.println("RunningTotal: " + runningTotal);
-            System.out.println("PercentageSuccess: " + percentageSuccess);
+            System.out.println("SuccessPercentage: " + successPercentage);
             BigDecimal equityGivenSuccess = runningEquityGivenSuccess.divide(overallRatio, 10, RoundingMode.HALF_UP)
                     .divide(BigDecimal.valueOf(46656.0), 10, RoundingMode.HALF_UP);
             System.out.println("EquityGivenSuccess: " + equityGivenSuccess);
@@ -124,7 +129,9 @@ public class SolvingMidnight {
 
         populateDistributions();
         calculateDistributions();
-        writeDistributionsToFile();
+        for (int condition = 46; condition <= 57; condition++) {
+            writeDistributionsToFile(condition);
+        }
         /*for (int i = 0; i < 10; i++) {
             System.out.println();
         }
@@ -191,7 +198,6 @@ public class SolvingMidnight {
     private void populateWithStates() {
         //1 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
 
             //in this case you have no qualifiers and 1 dice left, so you lost for sure
             for (int pointsBanked = 5; pointsBanked <= 30; pointsBanked++) {
@@ -241,7 +247,6 @@ public class SolvingMidnight {
 
         //2 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
 
             for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
                 for (int dice1 = 1; dice1 <= 6; dice1++) {
@@ -298,7 +303,6 @@ public class SolvingMidnight {
 
         //3 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
 
             for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
                 for (int dice1 = 1; dice1 <= 6; dice1++) {
@@ -363,7 +367,6 @@ public class SolvingMidnight {
 
         //4 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
 
             for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
                 for (int dice1 = 1; dice1 <= 6; dice1++) {
@@ -433,7 +436,6 @@ public class SolvingMidnight {
 
         //5 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
 
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 for (int dice1 = 1; dice1 <= 6; dice1++) {
@@ -489,7 +491,6 @@ public class SolvingMidnight {
 
         //6 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
 
             for (int dice1 = 1; dice1 <= 6; dice1++) {
                 for (int dice2 = 1; dice2 <= 6; dice2++) {
@@ -513,7 +514,9 @@ public class SolvingMidnight {
 
     private void calculateInitialRunThrough() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
+            if (58 <= condition && condition <= 78) {   //TODO remove
+                continue;
+            }
 
             for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
                 midnightState.calculateEquityIfKeptAllDice();
@@ -543,42 +546,41 @@ public class SolvingMidnight {
 
     private void calculateAllStateEquitiesRecursively() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
             System.out.println(condition);
 
             for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
                 solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                        condition <= 3 || condition == 45);
+                        condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
             }
             System.out.println("1 done");
 
             for (MidnightState midnightState : mapsFor2LiveDice.get(condition).values()) {
                 solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                        condition <= 3 || condition == 45);
+                        condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
             }
             System.out.println("2 done");
 
             for (MidnightState midnightState : mapsFor3LiveDice.get(condition).values()) {
                 solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                        condition <= 3 || condition == 45);
+                        condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
             }
             System.out.println("3 done");
 
             for (MidnightState midnightState : mapsFor4LiveDice.get(condition).values()) {
                 solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                        condition <= 3 || condition == 45);
+                        condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
             }
             System.out.println("4 done");
 
             for (MidnightState midnightState : mapsFor5LiveDice.get(condition).values()) {
                 solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                        condition <= 3 || condition == 45);
+                        condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
             }
             System.out.println("5 done");
 
             for (MidnightState midnightState : mapsFor6LiveDice.get(condition).values()) {
                 solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                        condition <= 3 || condition == 45);
+                        condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
             }
             System.out.println("6 done");
         }
@@ -587,37 +589,37 @@ public class SolvingMidnight {
     private void calculateAllStateEquitiesRecursively(int condition) {
         for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
             solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                    condition <= 3 || condition == 45);
+                    condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
         }
         System.out.println("1 done");
 
         for (MidnightState midnightState : mapsFor2LiveDice.get(condition).values()) {
             solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                    condition <= 3 || condition == 45);
+                    condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
         }
         System.out.println("2 done");
 
         for (MidnightState midnightState : mapsFor3LiveDice.get(condition).values()) {
             solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                    condition <= 3 || condition == 45);
+                    condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
         }
         System.out.println("3 done");
 
         for (MidnightState midnightState : mapsFor4LiveDice.get(condition).values()) {
             solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                    condition <= 3 || condition == 45);
+                    condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
         }
         System.out.println("4 done");
 
         for (MidnightState midnightState : mapsFor5LiveDice.get(condition).values()) {
             solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                    condition <= 3 || condition == 45);
+                    condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
         }
         System.out.println("5 done");
 
         for (MidnightState midnightState : mapsFor6LiveDice.get(condition).values()) {
             solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                    condition <= 3 || condition == 45);
+                    condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
         }
         System.out.println("6 done");
     }
@@ -629,7 +631,7 @@ public class SolvingMidnight {
 
         for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
             solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                    condition <= 3 || condition == 45);
+                    condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
         }
         System.out.println("1 done");
         if (maxLiveDice == 1) {
@@ -638,7 +640,7 @@ public class SolvingMidnight {
 
         for (MidnightState midnightState : mapsFor2LiveDice.get(condition).values()) {
             solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                    condition <= 3 || condition == 45);
+                    condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
         }
         System.out.println("2 done");
         if (maxLiveDice == 2) {
@@ -647,7 +649,7 @@ public class SolvingMidnight {
 
         for (MidnightState midnightState : mapsFor3LiveDice.get(condition).values()) {
             solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                    condition <= 3 || condition == 45);
+                    condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
         }
         System.out.println("3 done");
         if (maxLiveDice == 3) {
@@ -656,7 +658,7 @@ public class SolvingMidnight {
 
         for (MidnightState midnightState : mapsFor4LiveDice.get(condition).values()) {
             solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                    condition <= 3 || condition == 45);
+                    condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
         }
         System.out.println("4 done");
         if (maxLiveDice == 4) {
@@ -665,7 +667,7 @@ public class SolvingMidnight {
 
         for (MidnightState midnightState : mapsFor5LiveDice.get(condition).values()) {
             solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                    condition <= 3 || condition == 45);
+                    condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
         }
         System.out.println("5 done");
         if (maxLiveDice == 5) {
@@ -674,14 +676,14 @@ public class SolvingMidnight {
 
         for (MidnightState midnightState : mapsFor6LiveDice.get(condition).values()) {
             solveStateEquityRecursively(midnightState, 25 <= condition && condition <= 44,
-                    condition <= 3 || condition == 45);
+                    condition <= 3 || 45 <= condition && condition <= 57 || condition >= 78);
         }
         System.out.println("6 done");
     }
 
     //Assumes calculateEquityIfKeptAllDice() has been run for the current state, and
     //solveStateEquityRecursively() has been run for the branching states one level simpler
-    private void solveStateEquityRecursively(MidnightState midnightState, boolean mergeSuccessesAndEquity, 
+    private void solveStateEquityRecursively(MidnightState midnightState, boolean mergeSuccessesAndEquity,
                                              boolean elevateEquityOverall) {
         if (midnightState.getNumLiveDice() <= 1) {  //the base case is already done
             return;
@@ -942,7 +944,7 @@ public class SolvingMidnight {
 
     private void printResults() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
+
 
             for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
                 if (ABRIDGED_RESULTS) {
@@ -1118,7 +1120,7 @@ public class SolvingMidnight {
 
     private void writeToFile() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
+
 
             String modifiedPathway = condition < 10 ? PATHWAY + "0" : PATHWAY;
             try (PrintWriter pw = new PrintWriter(modifiedPathway + condition + "Strat.txt")) {
@@ -2114,139 +2116,135 @@ public class SolvingMidnight {
     private void populateDistributions() {
         //1 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
 
             //in this case you have no qualifiers and 1 dice left, so you lost for sure
             for (int pointsBanked = 5; pointsBanked <= 30; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
-                distributionsFor1LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor1LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "_L";
-                distributionsFor1LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor1LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "H_";
-                distributionsFor1LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor1LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "HL";
-                distributionsFor1LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor1LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
         }
 
         //2 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
 
             for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
-                distributionsFor2LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor2LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "_L";
-                distributionsFor2LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor2LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "H_";
-                distributionsFor2LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor2LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "HL";
-                distributionsFor2LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor2LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
         }
 
         //3 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
 
             for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
-                distributionsFor3LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor3LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "_L";
-                distributionsFor3LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor3LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "H_";
-                distributionsFor3LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor3LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 String distKey = "0" + pointsBanked + "HL";
-                distributionsFor3LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor3LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
         }
 
         //4 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
 
             for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
-                distributionsFor4LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor4LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 String distKey = "0" + pointsBanked + "_L";
-                distributionsFor4LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor4LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 String distKey = "0" + pointsBanked + "H_";
-                distributionsFor4LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor4LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
 
-            distributionsFor4LiveDice.get(condition).put("00HL", new long[25]);
+            distributionsFor4LiveDice.get(condition).put("00HL", new long[MAX_SCORE+1]);
         }
 
         //5 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
 
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 String distKey = "0" + pointsBanked + "__";
-                distributionsFor5LiveDice.get(condition).put(distKey, new long[25]);
+                distributionsFor5LiveDice.get(condition).put(distKey, new long[MAX_SCORE+1]);
             }
 
-            distributionsFor5LiveDice.get(condition).put("00_L", new long[25]);
+            distributionsFor5LiveDice.get(condition).put("00_L", new long[MAX_SCORE+1]);
 
-            distributionsFor5LiveDice.get(condition).put("00H_", new long[25]);
+            distributionsFor5LiveDice.get(condition).put("00H_", new long[MAX_SCORE+1]);
         }
 
         //6 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
-            distributionsFor6LiveDice.get(condition).put("00__", new long[25]);
+            distributionsFor6LiveDice.get(condition).put("00__", new long[MAX_SCORE+1]);
         }
     }
 
     private void calculateDistributions() {
         //1 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
+            if (58 <= condition && condition <= 78) {   //TODO remove
+                continue;
+            }
 
             //in this case you have no qualifiers and 1 dice left, so you lost for sure
             for (int pointsBanked = 5; pointsBanked <= 30; pointsBanked++) {
@@ -2296,7 +2294,9 @@ public class SolvingMidnight {
 
         //2 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
+            if (58 <= condition && condition <= 78) {   //TODO remove
+                continue;
+            }
 
             for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
@@ -2385,7 +2385,9 @@ public class SolvingMidnight {
 
         //3 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
+            if (58 <= condition && condition <= 78) {   //TODO remove
+                continue;
+            }
 
             for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
@@ -2505,7 +2507,9 @@ public class SolvingMidnight {
 
         //4 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
+            if (58 <= condition && condition <= 78) {   //TODO remove
+                continue;
+            }
 
             for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
@@ -2653,7 +2657,9 @@ public class SolvingMidnight {
 
         //5 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
+            if (58 <= condition && condition <= 78) {   //TODO remove
+                continue;
+            }
 
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 String distKey = "0" + pointsBanked + "__";
@@ -2786,7 +2792,9 @@ public class SolvingMidnight {
 
         //6 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
+            if (58 <= condition && condition <= 78) {   //TODO remove
+                continue;
+            }
 
             String distKey = "00__";
             for (int dice1 = 1; dice1 <= 6; dice1++) {
@@ -2848,15 +2856,15 @@ public class SolvingMidnight {
 
         int numLiveDice = key.length() - 5; //00HL|000000
         MidnightState midnightState =
-        switch (numLiveDice) {
-            case 1 -> mapsFor1LiveDice.get(condition).get(key);
-            case 2 -> mapsFor2LiveDice.get(condition).get(key);
-            case 3 -> mapsFor3LiveDice.get(condition).get(key);
-            case 4 -> mapsFor4LiveDice.get(condition).get(key);
-            case 5 -> mapsFor5LiveDice.get(condition).get(key);
-            case 6 -> mapsFor6LiveDice.get(condition).get(key);
-            default -> throw new IllegalArgumentException("Invalid oldKey: " + key);
-        };
+                switch (numLiveDice) {
+                    case 1 -> mapsFor1LiveDice.get(condition).get(key);
+                    case 2 -> mapsFor2LiveDice.get(condition).get(key);
+                    case 3 -> mapsFor3LiveDice.get(condition).get(key);
+                    case 4 -> mapsFor4LiveDice.get(condition).get(key);
+                    case 5 -> mapsFor5LiveDice.get(condition).get(key);
+                    case 6 -> mapsFor6LiveDice.get(condition).get(key);
+                    default -> throw new IllegalArgumentException("Invalid oldKey: " + key);
+                };
         if (midnightState.getOptimalPolicyQual() + midnightState.getOptimalPolicyHigh() >= numLiveDice) { // == num...
             return null;
         }
@@ -2895,7 +2903,6 @@ public class SolvingMidnight {
         String points = newPointsBanked < 10 ? "0" + newPointsBanked : "" + newPointsBanked;
         String H = midnightState.hasHighQualifier() || keepHighQualifier ? "H" : "_";
         String L = midnightState.hasLowQualifier() || keepLowQualifier ? "L" : "_";
-
         return points + H + L;
     }
 
@@ -2943,7 +2950,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3004,7 +3011,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3065,7 +3072,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3126,7 +3133,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3187,7 +3194,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3248,7 +3255,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3309,7 +3316,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3370,7 +3377,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3431,7 +3438,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3492,7 +3499,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3553,7 +3560,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3614,7 +3621,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3675,7 +3682,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3736,7 +3743,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3797,7 +3804,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3856,7 +3863,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -3915,7 +3922,7 @@ public class SolvingMidnight {
                     pw.println("equityGivenSuccess: " + equityGivenSuccess);
                     pw.println("equityGivenFailure: " + equityGivenFailure);
                     pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom));
+                            equityGivenFailure * (successDenom - successNum) / successDenom));
                     pw.println();
 
                     for (int i = 0; i < dist.length; i++) {
@@ -3974,7 +3981,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4031,7 +4038,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4088,7 +4095,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4157,7 +4164,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4218,7 +4225,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4279,7 +4286,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4340,7 +4347,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4401,7 +4408,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4462,7 +4469,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4523,7 +4530,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4584,7 +4591,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4645,7 +4652,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4706,7 +4713,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4767,7 +4774,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4828,7 +4835,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4889,7 +4896,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -4950,7 +4957,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -5011,7 +5018,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -5070,7 +5077,7 @@ public class SolvingMidnight {
             pw.println("equityGivenSuccess: " + equityGivenSuccess);
             pw.println("equityGivenFailure: " + equityGivenFailure);
             pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom));
+                    equityGivenFailure * (successDenom - successNum) / successDenom));
             pw.println();
 
             for (int i = 0; i < dist.length; i++) {
@@ -5129,7 +5136,7 @@ public class SolvingMidnight {
                 pw.println("equityGivenSuccess: " + equityGivenSuccess);
                 pw.println("equityGivenFailure: " + equityGivenFailure);
                 pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                            equityGivenFailure * (successDenom - successNum) / successDenom));
+                        equityGivenFailure * (successDenom - successNum) / successDenom));
                 pw.println();
 
                 for (int i = 0; i < dist.length; i++) {
@@ -5188,7 +5195,7 @@ public class SolvingMidnight {
             pw.println("equityGivenSuccess: " + equityGivenSuccess);
             pw.println("equityGivenFailure: " + equityGivenFailure);
             pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom));
+                    equityGivenFailure * (successDenom - successNum) / successDenom));
             pw.println();
 
             for (int i = 0; i < dist.length; i++) {
@@ -5245,7 +5252,7 @@ public class SolvingMidnight {
             pw.println("equityGivenSuccess: " + equityGivenSuccess);
             pw.println("equityGivenFailure: " + equityGivenFailure);
             pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom));
+                    equityGivenFailure * (successDenom - successNum) / successDenom));
             pw.println();
 
             for (int i = 0; i < dist.length; i++) {
@@ -5302,7 +5309,7 @@ public class SolvingMidnight {
             pw.println("equityGivenSuccess: " + equityGivenSuccess);
             pw.println("equityGivenFailure: " + equityGivenFailure);
             pw.println("equityOverall: " + (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom));
+                    equityGivenFailure * (successDenom - successNum) / successDenom));
             pw.println();
 
             for (int i = 0; i < dist.length; i++) {
@@ -5331,7 +5338,7 @@ public class SolvingMidnight {
 
     private boolean isSuccessFromDistScore(int condition, int score) {
         return switch (condition) {
-            case 0, 1, 2, 3, 25, 45 -> score > 0;
+            case 0, 1, 2, 3, 25, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 79 -> score > 0;
             case 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 -> score >= condition;
             case 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44 -> score >= condition - 22;
             default -> throw new IllegalArgumentException("Invalid condition: " + condition);
@@ -5340,14 +5347,36 @@ public class SolvingMidnight {
 
     private double equityFromDistScore(int condition, int score) {
         return switch (condition) {
-            case 0 -> MidnightState.EQUITIES_COND0[score];
-            case 1 -> MidnightState.EQUITIES_COND1[score];
-            case 2 -> MidnightState.EQUITIES_COND2[score];
+            case 0 -> score == 0 ? MidnightState.EQUITIES_SAFEST[0] : MidnightState.EQUITIES_SAFEST[score-1];
+            case 1 -> score == 0 ? MidnightState.EQUITIES_SAFEST[3]/2 : // + EQUITIES_SAFEST[0]/2 which is 0.0
+                      MidnightState.EQUITIES_SAFEST[score-1]/2 + MidnightState.EQUITIES_SAFEST[score]/2;
+            case 2 -> score == 0 ? MidnightState.EQUITIES_SAFEST[3] : MidnightState.EQUITIES_SAFEST[score];
             case 3 -> score == 0 ? MidnightState.EQUITIES[3] : MidnightState.EQUITIES[score];
             case 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 -> score;
             case 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
-                 35, 36, 37, 38, 39, 40, 41, 42, 43, 44 -> MidnightState.EQUITIES[score];
+                    35, 36, 37, 38, 39, 40, 41, 42, 43, 44 -> MidnightState.EQUITIES[score];
             case 45 -> score == 0 ? MidnightState.EQUITIES_3P[3] : MidnightState.EQUITIES_3P[score];
+            case 46 -> score == 0 ? MidnightState.EQUITIES_NAIVE[0] : MidnightState.EQUITIES_NAIVE[score-1];
+            case 47 -> score == 0 ? MidnightState.EQUITIES_NAIVE[3]/2 : // + EQUITIES_NAIVE[0]/2 which is 0.0
+                    MidnightState.EQUITIES_NAIVE[score-1]/2 + MidnightState.EQUITIES_NAIVE[score]/2;
+            case 48 -> score == 0 ? MidnightState.EQUITIES_NAIVE[3] : MidnightState.EQUITIES_NAIVE[score];
+            case 49 -> score == 0 ? MidnightState.EQUITIES_GREEDY[0] : MidnightState.EQUITIES_GREEDY[score-1];
+            case 50 -> score == 0 ? MidnightState.EQUITIES_GREEDY[3]/2 : // + EQUITIES_GREEDY[0]/2 which is 0.0
+                    MidnightState.EQUITIES_GREEDY[score-1]/2 + MidnightState.EQUITIES_GREEDY[score]/2;
+            case 51 -> score == 0 ? MidnightState.EQUITIES_GREEDY[3] : MidnightState.EQUITIES_GREEDY[score];
+            case 52 -> score == 0 ? MidnightState.EQUITIES_NAIVE_ENHANCED[0] :
+                                    MidnightState.EQUITIES_NAIVE_ENHANCED[score-1];
+            case 53 -> score == 0 ? MidnightState.EQUITIES_NAIVE_ENHANCED_TIES[3] :
+                                    MidnightState.EQUITIES_NAIVE_ENHANCED_TIES[score];
+            case 54 -> score == 0 ? MidnightState.EQUITIES_NAIVE_ENHANCED[3] :
+                                    MidnightState.EQUITIES_NAIVE_ENHANCED[score];
+            case 55 -> score == 0 ? MidnightState.EQUITIES_GREEDY_ENHANCED[0] :
+                                    MidnightState.EQUITIES_GREEDY_ENHANCED[score-1];
+            case 56 -> score == 0 ? MidnightState.EQUITIES_GREEDY_ENHANCED_TIES[3] :
+                                    MidnightState.EQUITIES_GREEDY_ENHANCED_TIES[score];
+            case 57 -> score == 0 ? MidnightState.EQUITIES_GREEDY_ENHANCED[3] :
+                                    MidnightState.EQUITIES_GREEDY_ENHANCED[score];
+            case 79 -> score == 0 ? MidnightState.EQUITIES[0] : MidnightState.EQUITIES[score-1];
             default -> throw new IllegalArgumentException("Invalid condition: " + condition);
         };
     }
