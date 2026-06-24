@@ -159,10 +159,8 @@ public class MidnightState {
     //78: highest average equity for P1 against an optimal P2 but ties are ties
     //79: highest average equity for P1 against an optimal P2 but P1 loses ties
 
-    //ADDENDUM: conditions 58, 59, and 60 might be provably equivalent to conditions 5, 6, and 7. In that case they
-    //can be replaced. probably make cond58 and cond59 versus enhanced naive and enhanced greedy but P1 loses ties and
-    //the cutoff for enhanced keep all is one different from the preexisting condition. keep cond60 for proof purposes
-    //then need 2 more conditions for naive and greedy where ties are ties but the opponent banks all at the tying score
+    //ADDENDUM: conditions 58, 59, and 60 ~~might be~~ ARE provably equivalent to conditions 5, 6, and 7 in policy.
+    //But they cannot easily be replaced since the Dist.txt files contain different info from conditions 5, 6, and 7.
 
     private final int condition;
     private final int numLiveDice; //1~6
@@ -177,8 +175,8 @@ public class MidnightState {
     private long successNum; //number of times the condition is fulfilled (or if with ties, 2 for a win and 1 for a tie)
     private double equityGivenSuccess; //average score (which can differ from Midnight score) given condition fulfilled
     private double equityGivenFailure; //average score given condition not fulfilled
-    private double equityOverall; //always (equityGivenSuccess * successNum / successDenom +
-                                  //equityGivenFailure * (successDenom - successNum) / successDenom)
+    private double equityOverall; //always equityGivenSuccess * successNum / successDenom +
+                                  //equityGivenFailure * (successDenom - successNum) / successDenom
 
     public MidnightState(int condition, int numLiveDice, int[] liveDice, boolean hasLowQualifier,
                          boolean hasHighQualifier, int pointsBanked) {
@@ -221,8 +219,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_SAFEST[0]; //0.0
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                                equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 1:
@@ -235,8 +233,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_SAFEST[3]/2; // + EQUITIES_SAFEST[0]/2 which is 0.0
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 2:
@@ -248,8 +246,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_SAFEST[3];
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 3:
@@ -261,8 +259,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES[3];
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11:
@@ -276,8 +274,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = calculateScoreIfKeptAllDice();
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 25:
@@ -289,8 +287,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES[calculateScoreIfKeptAllDice()]; //0.0
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 26: case 27: case 28: case 29: case 30: case 31: case 32: case 33:
@@ -304,8 +302,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES[calculateScoreIfKeptAllDice()];
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 45:
@@ -317,8 +315,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_3P[3];
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 46:
@@ -330,8 +328,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_NAIVE[0]; //0.0
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 47:
@@ -344,8 +342,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_NAIVE[3]/2; // + EQUITIES_NAIVE[0]/2 which is 0.0
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 48:
@@ -357,8 +355,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_NAIVE[3];
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 49:
@@ -370,8 +368,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_GREEDY[0]; //0.0
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 50:
@@ -384,8 +382,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_GREEDY[3]/2; // + EQUITIES_GREEDY[0]/2 which is 0.0
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 51:
@@ -397,8 +395,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_GREEDY[3];
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 52:
@@ -410,8 +408,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_NAIVE_ENHANCED[0]; //0.0
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 53:
@@ -423,8 +421,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_NAIVE_ENHANCED_TIES[3];
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 54:
@@ -436,8 +434,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_NAIVE_ENHANCED[3];
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 55:
@@ -449,8 +447,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_GREEDY_ENHANCED[0]; //0.0
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 56:
@@ -462,8 +460,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_GREEDY_ENHANCED_TIES[3];
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 57:
@@ -475,8 +473,28 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES_GREEDY_ENHANCED[3];
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
+
+                break;
+            case 58: case 59: case 60: case 61: case 62: case 63: case 64: case 65:
+            case 66: case 67: case 68: case 69: case 70: case 71: case 72: case 73:
+            case 74: case 75: case 76: case 77:
+                successDenom = (long)(2.0 * Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > condition - 54) {
+                    successNum = successDenom;
+                    equityGivenSuccess = calculateScoreIfKeptAllDice();
+                } else if (calculateScoreIfKeptAllDice() == condition - 54) {
+                    //in the tie branch, both equityGivenSuccess and equityGivenFailure must be set to override -1.0
+                    successNum = successDenom / 2L;
+                    equityGivenSuccess = calculateScoreIfKeptAllDice();
+                    equityGivenFailure = calculateScoreIfKeptAllDice();
+                } else {
+                    successNum = 0;
+                    equityGivenFailure = calculateScoreIfKeptAllDice();
+                }
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             case 79:
@@ -488,8 +506,8 @@ public class MidnightState {
                     successNum = 0;
                     equityGivenFailure = EQUITIES[0]; //0.0
                 }
-                equityOverall = (equityGivenSuccess * successNum / successDenom +
-                        equityGivenFailure * (successDenom - successNum) / successDenom);
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
 
                 break;
             default:
