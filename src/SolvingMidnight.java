@@ -76,16 +76,16 @@ public class SolvingMidnight {
 
         calculateInitialRunThrough();
 
-        for (int condition = 58; condition <= 77; condition++) {
+        for (int condition = 78; condition <= 78; condition++) {
             System.out.println(condition);
             calculateAllStateEquitiesRecursively(condition);
         }
 
-        for (int condition = 58; condition <= 77; condition++) {
+        for (int condition = 78; condition <= 78; condition++) {
             writeToFile(condition);
         }
 
-        for (int condition = 58; condition <= 77; condition++) {
+        for (int condition = 78; condition <= 78; condition++) {
             BigDecimal runningTotal = BigDecimal.ZERO;
             BigDecimal runningEquityGivenSuccess = BigDecimal.ZERO;
             BigDecimal runningEquityGivenFailure = BigDecimal.ZERO;
@@ -130,7 +130,7 @@ public class SolvingMidnight {
 
         populateDistributions();
         calculateDistributions();
-        for (int condition = 58; condition <= 77; condition++) {
+        for (int condition = 78; condition <= 78; condition++) {
             writeDistributionsToFile(condition);
         }
         /*for (int i = 0; i < 10; i++) {
@@ -515,10 +515,7 @@ public class SolvingMidnight {
 
     private void calculateInitialRunThrough() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 78) {   //TODO remove
-                continue;
-            }
-
+            
             for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
                 midnightState.calculateEquityIfKeptAllDice();
             }
@@ -547,10 +544,6 @@ public class SolvingMidnight {
 
     private void calculateAllStateEquitiesRecursively() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 78) {   //TODO remove
-                continue;
-            }
-
             System.out.println(condition);
             calculateAllStateEquitiesRecursively(condition);
         }
@@ -1451,10 +1444,6 @@ public class SolvingMidnight {
     private void calculateDistributions() {
         //1 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 78) {   //TODO remove
-                continue;
-            }
-
             //in this case you have no qualifiers and 1 dice left, so you lost for sure
             for (int pointsBanked = 5; pointsBanked <= 30; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
@@ -1503,10 +1492,6 @@ public class SolvingMidnight {
 
         //2 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 78) {   //TODO remove
-                continue;
-            }
-
             for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
@@ -1594,10 +1579,6 @@ public class SolvingMidnight {
 
         //3 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 78) {   //TODO remove
-                continue;
-            }
-
             for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
@@ -1716,10 +1697,6 @@ public class SolvingMidnight {
 
         //4 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 78) {   //TODO remove
-                continue;
-            }
-
             for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
@@ -1866,10 +1843,6 @@ public class SolvingMidnight {
 
         //5 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 78) {   //TODO remove
-                continue;
-            }
-
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 String distKey = "0" + pointsBanked + "__";
                 for (int dice1 = 1; dice1 <= 6; dice1++) {
@@ -2001,10 +1974,6 @@ public class SolvingMidnight {
 
         //6 dice
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 78) {   //TODO remove
-                continue;
-            }
-
             String distKey = "00__";
             for (int dice1 = 1; dice1 <= 6; dice1++) {
                 for (int dice2 = 1; dice2 <= 6; dice2++) {
@@ -2117,10 +2086,6 @@ public class SolvingMidnight {
 
     private void writeDistributionsToFile() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            if (condition == 78) {   //TODO remove
-                continue;
-            }
-
             writeDistributionsToFile(condition);
         }
     }
@@ -3424,6 +3389,7 @@ public class SolvingMidnight {
                                     MidnightState.EQUITIES_GREEDY_ENHANCED_TIES[score];
             case 57 -> score == 0 ? MidnightState.EQUITIES_GREEDY_ENHANCED[3] :
                                     MidnightState.EQUITIES_GREEDY_ENHANCED[score];
+            case 78 -> score == 0 ? MidnightState.EQUITIES_WITH_TIES[3] : MidnightState.EQUITIES_WITH_TIES[score];
             case 79 -> score == 0 ? MidnightState.EQUITIES[0] : MidnightState.EQUITIES[score-1];
             default -> throw new IllegalArgumentException("Invalid condition: " + condition);
         };

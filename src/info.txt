@@ -1,3 +1,40 @@
+//OLD 0 means highest average score, with failure to qualify counting as 0 (but everything considered "pass" here)
+//btw it seems that OLD condition 0 is equivalent to condition 4, so has been changed to
+//0 means highest average equity for P1 vs a most conservative P2 (condition 4+) but P1 loses ties
+//1 means highest average equity for P1 vs a most conservative P2 (condition 4+) and ties are ties
+//2 means highest average equity for P1 vs a most conservative P2 (condition 4+) and P1 wins ties
+//3 means highest average equity for P1 against an optimal P2 and P1 wins ties
+//4~24 is an N+ condition
+//25 means highest average equity for P2 against optimal P3, assuming P1 has scored 0 (so P2 0 never ever wins)
+//The above also works for P1 against an optimal P2, but where P2 wins 0-0 ties (P1 still wins other nonzero ties)
+//26~44 means highest average equity for P2 against optimal P3, assuming P1 has scored 22+N
+//(46 means P1 has scored 24 which cannot be beaten, and 45 means P1 has scored 23 which can only be beaten by 24,
+// so use the same strategy as the 24 condition)
+//45 means highest average equity for P1 against optimal P2 and P3
+
+//Other conditions to consider: (NAIVE is like an unskilled 4 condition, GREEDY is like a less extreme 24 condition)
+//46: highest average equity for P1 vs a naive (keep 1 and 4, then only 6s else single highest) P2 but P1 loses ties
+//47: highest average equity for P1 vs a naive (keep 1 and 4, then only 6s else single highest) P2 and ties are ties
+//48: highest average equity for P1 vs a naive (keep 1 and 4, then only 6s else single highest) P2 and P1 wins ties
+//49: highest average equity for P1 vs a greedy (but not condition 24, so keep 1 and 4 and 6s) P2 but P1 loses ties
+//50: highest average equity for P1 vs a greedy (but not condition 24, so keep 1 and 4 and 6s) P2 and ties are ties
+//51: highest average equity for P1 vs a greedy (but not condition 24, so keep 1 and 4 and 6s) P2 and P1 wins ties
+//although the last 3 don't quite work since the Midnight APP's AI will keep all if it has already won by doing so
+//thus
+//52: highest average equity for P1 vs an enhanced naive (naive but bank all if 100+% to win) P2 but P1 loses ties
+//53: highest average equity for P1 vs an enhanced naive (naive but bank all if 100% to win) P2 and ties are ties
+//54: highest average equity for P1 vs an enhanced naive (naive but bank all if 100% to win) P2 and P1 wins ties
+//55: highest average equity for P1 vs an enhanced greedy (greedy but bank all if 100+% to win) P2 but P1 loses ties
+//56: highest average equity for P1 vs an enhanced greedy (greedy but bank all if 100% to win) P2 and ties are ties
+//57: highest average equity for P1 vs an enhanced greedy (greedy but bank all if 100% to win) P2 and P1 wins ties
+
+//58~77: (N-54)+ condition but matching the condition is only a tie, not a win (no 78, would just be a 24 condition)
+//78: highest average equity for P1 against an optimal P2 but ties are ties
+//79: highest average equity for P1 against an optimal P2 but P1 loses ties
+
+//ADDENDUM: conditions 58, 59, and 60 ~~might be~~ ARE provably equivalent to conditions 5, 6, and 7 in policy.
+//But they cannot easily be replaced since the Dist.txt files contain different info from conditions 5, 6, and 7.
+
 Condition: 0OLD
 RunningTotal: 21936950640377856
 SuccessPercentage: 100.0
@@ -575,6 +612,13 @@ SuccessPercentage: 15.238272100766491375
 EquityGivenSuccess: 23.5758674790
 EquityGivenFailure: 11.9460895415
 EquityOverall: 13.7182667484
+
+Condition: 78
+RunningTotal: 18924751800249521
+SuccessPercentage: 86.268835220042000468
+EquityGivenSuccess: 0.5301297996
+EquityGivenFailure: 0.0216364682
+EquityOverall: 0.4603077424
 
 Condition: 79
 RunningTotal: 18519516990980686

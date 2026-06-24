@@ -11,6 +11,16 @@ public class MidnightState {
             1.0-0.62452394435622684523, 1.0-0.48529044623072225198, 1.0-0.34240811630351624107,
             1.0-0.21713087590733940749, 1.0-0.09998965917946808615, 1.0};
 
+    public static final double[] EQUITIES_WITH_TIES = {0.0, //indices 1, 2, 3 same
+            0.5*(1.0-0.95672706359889976662), 0.5*(1.0-0.95672706359889976662), 0.5*(1.0-0.95672706359889976662),
+            1.0-0.95672706359363194240, 1.0-0.95672706326308830309, 1.0-0.95672705310557176157,
+            1.0-0.95672688690846976831, 1.0-0.95672531619324483282, 1.0-0.95671499362589494341,
+            1.0-0.95666002764499655038, 1.0-0.95641475427119358949, 1.0-0.95554169906838220135,
+            1.0-0.95285780241645191860, 1.0-0.94565720562020318020, 1.0-0.92869704231860471335,
+            1.0-0.89457113847101772609, 1.0-0.84103527401802686353, 1.0-0.76269232945969985677,
+            1.0-0.65792701175616073826, 1.0-0.52840436510202576361, 1.0-0.39136295798563781872,
+            1.0-0.26589968860397199705, 1.0-0.15238272100766491375, 1.0-(0.5*0.09998965917946808615)};
+
     public static final double[] EQUITIES_3P = {0.0,
             (1.0-0.86268835220042000468) * (1.0-0.95672706359889976662),
             (1.0-0.86268835220042000468) * (1.0-0.95672706359889976662),
@@ -492,6 +502,19 @@ public class MidnightState {
                 } else {
                     successNum = 0;
                     equityGivenFailure = calculateScoreIfKeptAllDice();
+                }
+                equityOverall = equityGivenSuccess * successNum / successDenom +
+                        equityGivenFailure * (successDenom - successNum) / successDenom;
+
+                break;
+            case 78:
+                successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
+                if (calculateScoreIfKeptAllDice() > 0) {
+                    successNum = successDenom;
+                    equityGivenSuccess = EQUITIES_WITH_TIES[calculateScoreIfKeptAllDice()];
+                } else {  // == 0
+                    successNum = 0;
+                    equityGivenFailure = EQUITIES_WITH_TIES[3];
                 }
                 equityOverall = equityGivenSuccess * successNum / successDenom +
                         equityGivenFailure * (successDenom - successNum) / successDenom;
