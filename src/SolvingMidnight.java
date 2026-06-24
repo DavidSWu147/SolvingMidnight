@@ -76,16 +76,11 @@ public class SolvingMidnight {
 
         calculateInitialRunThrough();
 
-        for (int condition = 78; condition <= 78; condition++) {
-            System.out.println(condition);
-            calculateAllStateEquitiesRecursively(condition);
-        }
+        calculateAllStateEquitiesRecursively();
 
-        for (int condition = 78; condition <= 78; condition++) {
-            writeToFile(condition);
-        }
+        writeToFile();
 
-        for (int condition = 78; condition <= 78; condition++) {
+        for (int condition = 0; condition < CAPACITY; condition++) {
             BigDecimal runningTotal = BigDecimal.ZERO;
             BigDecimal runningEquityGivenSuccess = BigDecimal.ZERO;
             BigDecimal runningEquityGivenFailure = BigDecimal.ZERO;
@@ -130,9 +125,7 @@ public class SolvingMidnight {
 
         populateDistributions();
         calculateDistributions();
-        for (int condition = 78; condition <= 78; condition++) {
-            writeDistributionsToFile(condition);
-        }
+        writeDistributionsToFile();
         /*for (int i = 0; i < 10; i++) {
             System.out.println();
         }
@@ -743,10 +736,10 @@ public class SolvingMidnight {
                                                         contendingSuccessDenom += midnightState.getSuccessDenom() / 7776L;
                                                         contendingSuccessNum += newMidnightState.getSuccessNum() * (midnightState.getSuccessDenom() / 470184984576L / correctionFactor);
                                                         contendingEquityGivenSuccess += newMidnightState.getSuccessNum() *
-                                                                newMidnightState.getEquityGivenSuccess() * midnightState.getSuccessDenom() / 470184984576L / correctionFactor;
+                                                                newMidnightState.getEquityGivenSuccess() * (double)(midnightState.getSuccessDenom() / 470184984576L / correctionFactor);
                                                         contendingEquityGivenFailure +=
                                                                 (newMidnightState.getSuccessDenom() - newMidnightState.getSuccessNum()) *
-                                                                        newMidnightState.getEquityGivenFailure() * midnightState.getSuccessDenom() / 470184984576L / correctionFactor;
+                                                                        newMidnightState.getEquityGivenFailure() * (double)(midnightState.getSuccessDenom() / 470184984576L / correctionFactor);
                                                     }
                                                 }
                                             } else {
@@ -756,10 +749,10 @@ public class SolvingMidnight {
                                                 contendingSuccessDenom += midnightState.getSuccessDenom() / 1296L;
                                                 contendingSuccessNum += newMidnightState.getSuccessNum() * (midnightState.getSuccessDenom() / 60466176L / correctionFactor);
                                                 contendingEquityGivenSuccess += newMidnightState.getSuccessNum() *
-                                                        newMidnightState.getEquityGivenSuccess() * midnightState.getSuccessDenom() / 60466176L / correctionFactor;
+                                                        newMidnightState.getEquityGivenSuccess() * (double)(midnightState.getSuccessDenom() / 60466176L / correctionFactor);
                                                 contendingEquityGivenFailure +=
                                                         (newMidnightState.getSuccessDenom() - newMidnightState.getSuccessNum()) *
-                                                                newMidnightState.getEquityGivenFailure() * midnightState.getSuccessDenom() / 60466176L / correctionFactor;
+                                                                newMidnightState.getEquityGivenFailure() * (double)(midnightState.getSuccessDenom() / 60466176L / correctionFactor);
                                             }
                                         }
                                     } else {
@@ -769,10 +762,10 @@ public class SolvingMidnight {
                                         contendingSuccessDenom += midnightState.getSuccessDenom() / 216L;
                                         contendingSuccessNum += newMidnightState.getSuccessNum() * (midnightState.getSuccessDenom() / 46656L / correctionFactor);
                                         contendingEquityGivenSuccess += newMidnightState.getSuccessNum() *
-                                                newMidnightState.getEquityGivenSuccess() * midnightState.getSuccessDenom() / 46656L / correctionFactor;
+                                                newMidnightState.getEquityGivenSuccess() * (double)(midnightState.getSuccessDenom() / 46656L / correctionFactor);
                                         contendingEquityGivenFailure +=
                                                 (newMidnightState.getSuccessDenom() - newMidnightState.getSuccessNum()) *
-                                                        newMidnightState.getEquityGivenFailure() * midnightState.getSuccessDenom() / 46656L / correctionFactor;
+                                                        newMidnightState.getEquityGivenFailure() * (double)(midnightState.getSuccessDenom() / 46656L / correctionFactor);
                                     }
                                 }
                             } else {
@@ -782,10 +775,10 @@ public class SolvingMidnight {
                                 contendingSuccessDenom += midnightState.getSuccessDenom() / 36L;
                                 contendingSuccessNum += newMidnightState.getSuccessNum() * (midnightState.getSuccessDenom() / 216L / correctionFactor);
                                 contendingEquityGivenSuccess += newMidnightState.getSuccessNum() *
-                                        newMidnightState.getEquityGivenSuccess() * midnightState.getSuccessDenom() / 216L / correctionFactor;
+                                        newMidnightState.getEquityGivenSuccess() * (double)(midnightState.getSuccessDenom() / 216L / correctionFactor);
                                 contendingEquityGivenFailure +=
                                         (newMidnightState.getSuccessDenom() - newMidnightState.getSuccessNum()) *
-                                                newMidnightState.getEquityGivenFailure() * midnightState.getSuccessDenom() / 216L / correctionFactor;
+                                                newMidnightState.getEquityGivenFailure() * (double)(midnightState.getSuccessDenom() / 216L / correctionFactor);
                             }
                         }
                     } else {
@@ -795,10 +788,10 @@ public class SolvingMidnight {
                         contendingSuccessDenom += midnightState.getSuccessDenom() / 6L;
                         contendingSuccessNum += newMidnightState.getSuccessNum() * (midnightState.getSuccessDenom() / 6L / correctionFactor);
                         contendingEquityGivenSuccess += newMidnightState.getSuccessNum() *
-                                newMidnightState.getEquityGivenSuccess() * midnightState.getSuccessDenom() / 6L / correctionFactor;
+                                newMidnightState.getEquityGivenSuccess() * (double)(midnightState.getSuccessDenom() / 6L / correctionFactor);
                         contendingEquityGivenFailure +=
                                 (newMidnightState.getSuccessDenom() - newMidnightState.getSuccessNum()) *
-                                        newMidnightState.getEquityGivenFailure() * midnightState.getSuccessDenom() / 6L / correctionFactor;
+                                        newMidnightState.getEquityGivenFailure() * (double)(midnightState.getSuccessDenom() / 6L / correctionFactor);
                     }
                 }
 
