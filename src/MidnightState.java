@@ -1,6 +1,7 @@
 public class MidnightState {
     public static final int LOW_QUALIFIER = 1;
     public static final int HIGH_QUALIFIER = 4;
+    public static final boolean SETTLES = false;
     public static final double[] EQUITIES = {0.0,
             1.0-0.95672706359889976662, 1.0-0.95672706359889976662, 1.0-0.95672706359889976662, //indices 1, 2, 3 same
             1.0-0.95672706358836411817, 1.0-0.95672706297209642347, 1.0-0.95672704552161571283,
@@ -423,13 +424,14 @@ public class MidnightState {
 
                 break;
             case 53:
+                double[] equityNaive = SETTLES ? EQUITIES_NAIVE_ENHANCED_TIES_SETTLES : EQUITIES_NAIVE_ENHANCED_TIES;
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
                 if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
-                    equityGivenSuccess = EQUITIES_NAIVE_ENHANCED_TIES[calculateScoreIfKeptAllDice()];
+                    equityGivenSuccess = equityNaive[calculateScoreIfKeptAllDice()];
                 } else {  // == 0
                     successNum = 0;
-                    equityGivenFailure = EQUITIES_NAIVE_ENHANCED_TIES[3];
+                    equityGivenFailure = equityNaive[3];
                 }
                 equityOverall = equityGivenSuccess * successNum / successDenom +
                         equityGivenFailure * (successDenom - successNum) / successDenom;
@@ -462,13 +464,14 @@ public class MidnightState {
 
                 break;
             case 56:
+                double[] equityGreedy = SETTLES ? EQUITIES_GREEDY_ENHANCED_TIES_SETTLES : EQUITIES_GREEDY_ENHANCED_TIES;
                 successDenom = (long)(Math.pow(6, (numLiveDice - 1)*(numLiveDice)/2.0));
                 if (calculateScoreIfKeptAllDice() > 0) {
                     successNum = successDenom;
-                    equityGivenSuccess = EQUITIES_GREEDY_ENHANCED_TIES[calculateScoreIfKeptAllDice()];
+                    equityGivenSuccess = equityGreedy[calculateScoreIfKeptAllDice()];
                 } else {  // == 0
                     successNum = 0;
-                    equityGivenFailure = EQUITIES_GREEDY_ENHANCED_TIES[3];
+                    equityGivenFailure = equityGreedy[3];
                 }
                 equityOverall = equityGivenSuccess * successNum / successDenom +
                         equityGivenFailure * (successDenom - successNum) / successDenom;

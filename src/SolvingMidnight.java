@@ -76,11 +76,11 @@ public class SolvingMidnight {
 
         calculateInitialRunThrough();
 
-        calculateAllStateEquitiesRecursively();
+        calculateAllStateEquitiesRecursively(56);
 
-        writeToFile();
+        writeToFile(56);
 
-        for (int condition = 0; condition < CAPACITY; condition++) {
+        for (int condition = 56; condition < 57; condition++) {
             BigDecimal runningTotal = BigDecimal.ZERO;
             BigDecimal runningEquityGivenSuccess = BigDecimal.ZERO;
             BigDecimal runningEquityGivenFailure = BigDecimal.ZERO;
@@ -125,7 +125,7 @@ public class SolvingMidnight {
 
         populateDistributions();
         calculateDistributions();
-        writeDistributionsToFile();
+        writeDistributionsToFile(56);
         /*for (int i = 0; i < 10; i++) {
             System.out.println();
         }
@@ -3351,6 +3351,10 @@ public class SolvingMidnight {
     }
 
     private double equityFromDistScore(int condition, int score) {
+        double[] equityNaiveEnhancedTies = MidnightState.SETTLES ?
+                MidnightState.EQUITIES_NAIVE_ENHANCED_TIES_SETTLES : MidnightState.EQUITIES_NAIVE_ENHANCED_TIES;
+        double[] equityGreedyEnhancedTies = MidnightState.SETTLES ?
+                MidnightState.EQUITIES_GREEDY_ENHANCED_TIES_SETTLES : MidnightState.EQUITIES_GREEDY_ENHANCED_TIES;
         return switch (condition) {
             case 0 -> score == 0 ? MidnightState.EQUITIES_SAFEST[0] : MidnightState.EQUITIES_SAFEST[score-1];
             case 1 -> score == 0 ? MidnightState.EQUITIES_SAFEST[3]/2 : // + EQUITIES_SAFEST[0]/2 which is 0.0
@@ -3372,14 +3376,14 @@ public class SolvingMidnight {
             case 51 -> score == 0 ? MidnightState.EQUITIES_GREEDY[3] : MidnightState.EQUITIES_GREEDY[score];
             case 52 -> score == 0 ? MidnightState.EQUITIES_NAIVE_ENHANCED[0] :
                                     MidnightState.EQUITIES_NAIVE_ENHANCED[score-1];
-            case 53 -> score == 0 ? MidnightState.EQUITIES_NAIVE_ENHANCED_TIES[3] :
-                                    MidnightState.EQUITIES_NAIVE_ENHANCED_TIES[score];
+            case 53 -> score == 0 ? equityNaiveEnhancedTies[3] :
+                                    equityNaiveEnhancedTies[score];
             case 54 -> score == 0 ? MidnightState.EQUITIES_NAIVE_ENHANCED[3] :
                                     MidnightState.EQUITIES_NAIVE_ENHANCED[score];
             case 55 -> score == 0 ? MidnightState.EQUITIES_GREEDY_ENHANCED[0] :
                                     MidnightState.EQUITIES_GREEDY_ENHANCED[score-1];
-            case 56 -> score == 0 ? MidnightState.EQUITIES_GREEDY_ENHANCED_TIES[3] :
-                                    MidnightState.EQUITIES_GREEDY_ENHANCED_TIES[score];
+            case 56 -> score == 0 ? equityGreedyEnhancedTies[3] :
+                                    equityGreedyEnhancedTies[score];
             case 57 -> score == 0 ? MidnightState.EQUITIES_GREEDY_ENHANCED[3] :
                                     MidnightState.EQUITIES_GREEDY_ENHANCED[score];
             case 78 -> score == 0 ? MidnightState.EQUITIES_WITH_TIES[3] : MidnightState.EQUITIES_WITH_TIES[score];
