@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.ArrayList;
 
-public class MidnightNaiveGreedy {
+public class MidnightNaiveSemiGreedy {
     public static final int LOW_QUALIFIER = 1;
     public static final int HIGH_QUALIFIER = 4;
     public static final int MIN_SCORE = 4;
@@ -13,6 +13,12 @@ public class MidnightNaiveGreedy {
     private final ArrayList<HashMap<String, long[]>> naiveDistributionsFor4LiveDice;
     private final ArrayList<HashMap<String, long[]>> naiveDistributionsFor5LiveDice;
     private final ArrayList<HashMap<String, long[]>> naiveDistributionsFor6LiveDice;
+    private final ArrayList<HashMap<String, long[]>> semiGreedyDistributionsFor1LiveDice;
+    private final ArrayList<HashMap<String, long[]>> semiGreedyDistributionsFor2LiveDice;
+    private final ArrayList<HashMap<String, long[]>> semiGreedyDistributionsFor3LiveDice;
+    private final ArrayList<HashMap<String, long[]>> semiGreedyDistributionsFor4LiveDice;
+    private final ArrayList<HashMap<String, long[]>> semiGreedyDistributionsFor5LiveDice;
+    private final ArrayList<HashMap<String, long[]>> semiGreedyDistributionsFor6LiveDice;
     private final ArrayList<HashMap<String, long[]>> greedyDistributionsFor1LiveDice;
     private final ArrayList<HashMap<String, long[]>> greedyDistributionsFor2LiveDice;
     private final ArrayList<HashMap<String, long[]>> greedyDistributionsFor3LiveDice;
@@ -20,13 +26,19 @@ public class MidnightNaiveGreedy {
     private final ArrayList<HashMap<String, long[]>> greedyDistributionsFor5LiveDice;
     private final ArrayList<HashMap<String, long[]>> greedyDistributionsFor6LiveDice;
 
-    public MidnightNaiveGreedy() {
+    public MidnightNaiveSemiGreedy() {
         naiveDistributionsFor1LiveDice = new ArrayList<>();
         naiveDistributionsFor2LiveDice = new ArrayList<>();
         naiveDistributionsFor3LiveDice = new ArrayList<>();
         naiveDistributionsFor4LiveDice = new ArrayList<>();
         naiveDistributionsFor5LiveDice = new ArrayList<>();
         naiveDistributionsFor6LiveDice = new ArrayList<>();
+        semiGreedyDistributionsFor1LiveDice = new ArrayList<>();
+        semiGreedyDistributionsFor2LiveDice = new ArrayList<>();
+        semiGreedyDistributionsFor3LiveDice = new ArrayList<>();
+        semiGreedyDistributionsFor4LiveDice = new ArrayList<>();
+        semiGreedyDistributionsFor5LiveDice = new ArrayList<>();
+        semiGreedyDistributionsFor6LiveDice = new ArrayList<>();
         greedyDistributionsFor1LiveDice = new ArrayList<>();
         greedyDistributionsFor2LiveDice = new ArrayList<>();
         greedyDistributionsFor3LiveDice = new ArrayList<>();
@@ -42,6 +54,12 @@ public class MidnightNaiveGreedy {
                 naiveDistributionsFor4LiveDice.add(null);
                 naiveDistributionsFor5LiveDice.add(null);
                 naiveDistributionsFor6LiveDice.add(null);
+                semiGreedyDistributionsFor1LiveDice.add(null);
+                semiGreedyDistributionsFor2LiveDice.add(null);
+                semiGreedyDistributionsFor3LiveDice.add(null);
+                semiGreedyDistributionsFor4LiveDice.add(null);
+                semiGreedyDistributionsFor5LiveDice.add(null);
+                semiGreedyDistributionsFor6LiveDice.add(null);
                 greedyDistributionsFor1LiveDice.add(null);
                 greedyDistributionsFor2LiveDice.add(null);
                 greedyDistributionsFor3LiveDice.add(null);
@@ -55,6 +73,12 @@ public class MidnightNaiveGreedy {
                 naiveDistributionsFor4LiveDice.add(new HashMap<>());
                 naiveDistributionsFor5LiveDice.add(new HashMap<>());
                 naiveDistributionsFor6LiveDice.add(new HashMap<>());
+                semiGreedyDistributionsFor1LiveDice.add(new HashMap<>());
+                semiGreedyDistributionsFor2LiveDice.add(new HashMap<>());
+                semiGreedyDistributionsFor3LiveDice.add(new HashMap<>());
+                semiGreedyDistributionsFor4LiveDice.add(new HashMap<>());
+                semiGreedyDistributionsFor5LiveDice.add(new HashMap<>());
+                semiGreedyDistributionsFor6LiveDice.add(new HashMap<>());
                 greedyDistributionsFor1LiveDice.add(new HashMap<>());
                 greedyDistributionsFor2LiveDice.add(new HashMap<>());
                 greedyDistributionsFor3LiveDice.add(new HashMap<>());
@@ -66,48 +90,73 @@ public class MidnightNaiveGreedy {
     }
 
     public static void main(String[] args) {
-        MidnightNaiveGreedy midnightNaiveGreedy = new MidnightNaiveGreedy();
-        midnightNaiveGreedy.run();
+        MidnightNaiveSemiGreedy midnightNaiveSemiGreedy = new MidnightNaiveSemiGreedy();
+        midnightNaiveSemiGreedy.run();
     }
 
     public void run() {
         populateDistributions();
         calculateNaiveDistributions();
+        calculateSemiGreedyDistributions();
         calculateGreedyDistributions();
 
         double successDenom = Math.pow(6, 21);
-        /*long runningCount = 0L;
+        long runningCount = 0L;
         long[] naiveDistribution = naiveDistributionsFor6LiveDice.get(MAX_SCORE).get("00__");
         System.out.println("NAIVE: ");
-        for (int i = 0; i < naiveDistribution.length; i++) {
-            if (i < 4) {
-                System.out.print(i + ": ");
+        for (int score = 0; score < naiveDistribution.length; score++) {
+            if (score < 4) {
+                System.out.print(score + ": ");
             }
-            runningCount += naiveDistribution[i];
+            runningCount += naiveDistribution[score];
             System.out.print(runningCount/successDenom);
-            System.out.println(",");
+            if (score < MAX_SCORE) {
+                System.out.println(",");
+            } else {
+                System.out.println();
+            }
+        }
+
+        runningCount = 0L;
+        long[] semiGreedyDistribution = semiGreedyDistributionsFor6LiveDice.get(MAX_SCORE).get("00__");
+        System.out.println("SEMI-GREEDY: ");
+        for (int score = 0; score < semiGreedyDistribution.length; score++) {
+            if (score < 4) {
+                System.out.print(score + ": ");
+            }
+            runningCount += semiGreedyDistribution[score];
+            System.out.print(runningCount/successDenom);
+            if (score < MAX_SCORE) {
+                System.out.println(",");
+            } else {
+                System.out.println();
+            }
         }
 
         runningCount = 0L;
         long[] greedyDistribution = greedyDistributionsFor6LiveDice.get(MAX_SCORE).get("00__");
         System.out.println("GREEDY: ");
-        for (int i = 0; i < greedyDistribution.length; i++) {
-            if (i < 4) {
-                System.out.print(i + ": ");
+        for (int score = 0; score < greedyDistribution.length; score++) {
+            if (score < 4) {
+                System.out.print(score + ": ");
             }
-            runningCount += greedyDistribution[i];
+            runningCount += greedyDistribution[score];
             System.out.print(runningCount/successDenom);
-            System.out.println(",");
-        }*/
+            if (score < MAX_SCORE) {
+                System.out.println(",");
+            } else {
+                System.out.println();
+            }
+        }
 
         long[][] naiveDistributions = new long[MAX_SCORE+1][];
         for (int score = MIN_SCORE; score <= MAX_SCORE; score++) {
             naiveDistributions[score] = naiveDistributionsFor6LiveDice.get(score).get("00__");
         }
         double[] naiveTableA = new double[MAX_SCORE+1];
-        System.out.println("NAIVE: ");
+        System.out.println("NAIVE ENHANCED: ");
         for (int score = MIN_SCORE - 1; score < MAX_SCORE; score++) {
-            long runningCount = 0L;
+            runningCount = 0L;
             int threshold = score + 1;
             for (int i = 0; i <= score; i++) {
                 runningCount += naiveDistributions[threshold][i];
@@ -122,14 +171,36 @@ public class MidnightNaiveGreedy {
         naiveTableA[MAX_SCORE] = 1.0;
         System.out.println("Score 24: 1.0");
 
+        long[][] semiGreedyDistributions = new long[MAX_SCORE+1][];
+        for (int score = MIN_SCORE; score <= MAX_SCORE; score++) {
+            semiGreedyDistributions[score] = semiGreedyDistributionsFor6LiveDice.get(score).get("00__");
+        }
+        double[] semiGreedyTableA = new double[MAX_SCORE+1];
+        System.out.println("SEMI-GREEDY ENHANCED: ");
+        for (int score = MIN_SCORE - 1; score < MAX_SCORE; score++) {
+            runningCount = 0L;
+            int threshold = score + 1;
+            for (int i = 0; i <= score; i++) {
+                runningCount += semiGreedyDistributions[threshold][i];
+            }
+            if (score == 3) {
+                System.out.print("Score " + score + " which is actually 0: ");
+            }
+            semiGreedyTableA[score] = runningCount/successDenom;
+            System.out.print(runningCount/successDenom);
+            System.out.println(",");
+        }
+        semiGreedyTableA[MAX_SCORE] = 1.0;
+        System.out.println("Score 24: 1.0");
+
         long[][] greedyDistributions = new long[MAX_SCORE+1][];
         for (int score = MIN_SCORE; score <= MAX_SCORE; score++) {
             greedyDistributions[score] = greedyDistributionsFor6LiveDice.get(score).get("00__");
         }
         double[] greedyTableA = new double[MAX_SCORE+1];
-        System.out.println("GREEDY: ");
+        System.out.println("GREEDY ENHANCED: ");
         for (int score = MIN_SCORE - 1; score < MAX_SCORE; score++) {
-            long runningCount = 0L;
+            runningCount = 0L;
             int threshold = score + 1;
             for (int i = 0; i <= score; i++) {
                 runningCount += greedyDistributions[threshold][i];
@@ -148,7 +219,7 @@ public class MidnightNaiveGreedy {
         System.out.println("NAIVE UNUSED: ");
         System.out.println("Score 0: 0.0");
         for (int score = MIN_SCORE; score <= MAX_SCORE; score++) {
-            long runningCount = 0L;
+            runningCount = 0L;
             int threshold = score == MAX_SCORE ? MAX_SCORE : score + 1;
             for (int i = 0; i < score; i++) {
                 runningCount += naiveDistributions[threshold][i];
@@ -163,11 +234,30 @@ public class MidnightNaiveGreedy {
             }
         }
 
+        double[] semiGreedyTableB = new double[MAX_SCORE+1];
+        System.out.println("SEMI-GREEDY UNUSED: ");
+        System.out.println("Score 0: 0.0");
+        for (int score = MIN_SCORE; score <= MAX_SCORE; score++) {
+            runningCount = 0L;
+            int threshold = score == MAX_SCORE ? MAX_SCORE : score + 1;
+            for (int i = 0; i < score; i++) {
+                runningCount += semiGreedyDistributions[threshold][i];
+            }
+            semiGreedyTableB[score] = runningCount/successDenom;
+            System.out.print("Score " + score + ": ");
+            System.out.print(runningCount/successDenom);
+            if (score < MAX_SCORE) {
+                System.out.println(",");
+            } else {
+                System.out.println();
+            }
+        }
+
         double[] greedyTableB = new double[MAX_SCORE+1];
         System.out.println("GREEDY UNUSED: ");
         System.out.println("Score 0: 0.0");
         for (int score = MIN_SCORE; score <= MAX_SCORE; score++) {
-            long runningCount = 0L;
+            runningCount = 0L;
             int threshold = score == MAX_SCORE ? MAX_SCORE : score + 1;
             for (int i = 0; i < score; i++) {
                 runningCount += greedyDistributions[threshold][i];
@@ -194,6 +284,18 @@ public class MidnightNaiveGreedy {
                 System.out.println();
             }
         }
+        System.out.println("SEMI-GREEDY AVERAGE: ");
+        for (int score = MIN_SCORE-1; score <= MAX_SCORE; score++) {
+            if (score == 3) {
+                System.out.print("Score " + score + " which is actually 0: ");
+            }
+            System.out.print(semiGreedyTableA[score]/2 + semiGreedyTableB[score]/2);
+            if (score < MAX_SCORE) {
+                System.out.println(",");
+            } else {
+                System.out.println();
+            }
+        }
         System.out.println("GREEDY AVERAGE: ");
         for (int score = MIN_SCORE-1; score <= MAX_SCORE; score++) {
             if (score == 3) {
@@ -210,7 +312,7 @@ public class MidnightNaiveGreedy {
         double[] naiveTableC = new double[MAX_SCORE+1];
         System.out.println("NAIVE CUCKOO: ");
         for (int score = MIN_SCORE; score <= MAX_SCORE; score++) {
-            long runningCount = 0L;
+            runningCount = 0L;
             for (int i = 0; i <= score; i++) {
                 runningCount += naiveDistributions[score][i];
             }
@@ -224,10 +326,27 @@ public class MidnightNaiveGreedy {
             }
         }
 
+        double[] semiGreedyTableC = new double[MAX_SCORE+1];
+        System.out.println("SEMI-GREEDY CUCKOO: ");
+        for (int score = MIN_SCORE; score <= MAX_SCORE; score++) {
+            runningCount = 0L;
+            for (int i = 0; i <= score; i++) {
+                runningCount += semiGreedyDistributions[score][i];
+            }
+            System.out.print("Score " + score + ": ");
+            semiGreedyTableC[score] = runningCount/successDenom;
+            System.out.print(runningCount/successDenom);
+            if (score < MAX_SCORE) {
+                System.out.println(",");
+            } else {
+                System.out.println();
+            }
+        }
+
         double[] greedyTableC = new double[MAX_SCORE+1];
         System.out.println("GREEDY CUCKOO: ");
         for (int score = MIN_SCORE; score <= MAX_SCORE; score++) {
-            long runningCount = 0L;
+            runningCount = 0L;
             for (int i = 0; i <= score; i++) {
                 runningCount += greedyDistributions[score][i];
             }
@@ -244,6 +363,15 @@ public class MidnightNaiveGreedy {
         System.out.println("NAIVE SETTLES: ");
         for (int score = MIN_SCORE; score <= MAX_SCORE; score++) {
             System.out.print(naiveTableA[score-1]/2 + naiveTableC[score]/2);
+            if (score < MAX_SCORE) {
+                System.out.println(",");
+            } else {
+                System.out.println();
+            }
+        }
+        System.out.println("SEMI-GREEDY SETTLES: ");
+        for (int score = MIN_SCORE; score <= MAX_SCORE; score++) {
+            System.out.print(semiGreedyTableA[score-1]/2 + semiGreedyTableC[score]/2);
             if (score < MAX_SCORE) {
                 System.out.println(",");
             } else {
@@ -270,6 +398,7 @@ public class MidnightNaiveGreedy {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
                 naiveDistributionsFor1LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor1LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor1LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
 
@@ -277,6 +406,7 @@ public class MidnightNaiveGreedy {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "_L";
                 naiveDistributionsFor1LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor1LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor1LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
 
@@ -284,6 +414,7 @@ public class MidnightNaiveGreedy {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "H_";
                 naiveDistributionsFor1LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor1LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor1LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
 
@@ -291,6 +422,7 @@ public class MidnightNaiveGreedy {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "HL";
                 naiveDistributionsFor1LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor1LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor1LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
         }
@@ -301,6 +433,7 @@ public class MidnightNaiveGreedy {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
                 naiveDistributionsFor2LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor2LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor2LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
 
@@ -308,6 +441,7 @@ public class MidnightNaiveGreedy {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "_L";
                 naiveDistributionsFor2LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor2LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor2LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
 
@@ -315,6 +449,7 @@ public class MidnightNaiveGreedy {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "H_";
                 naiveDistributionsFor2LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor2LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor2LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
 
@@ -322,6 +457,7 @@ public class MidnightNaiveGreedy {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "HL";
                 naiveDistributionsFor2LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor2LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor2LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
         }
@@ -332,6 +468,7 @@ public class MidnightNaiveGreedy {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
                 naiveDistributionsFor3LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor3LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor3LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
 
@@ -339,6 +476,7 @@ public class MidnightNaiveGreedy {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "_L";
                 naiveDistributionsFor3LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor3LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor3LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
 
@@ -346,12 +484,14 @@ public class MidnightNaiveGreedy {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "H_";
                 naiveDistributionsFor3LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor3LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor3LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 String distKey = "0" + pointsBanked + "HL";
                 naiveDistributionsFor3LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor3LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor3LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
         }
@@ -362,22 +502,26 @@ public class MidnightNaiveGreedy {
                 String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
                 String distKey = points + "__";
                 naiveDistributionsFor4LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor4LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor4LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 String distKey = "0" + pointsBanked + "_L";
                 naiveDistributionsFor4LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor4LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor4LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
 
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 String distKey = "0" + pointsBanked + "H_";
                 naiveDistributionsFor4LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor4LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor4LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
 
             naiveDistributionsFor4LiveDice.get(threshold).put("00HL", new long[MAX_SCORE+1]);
+            semiGreedyDistributionsFor4LiveDice.get(threshold).put("00HL", new long[MAX_SCORE+1]);
             greedyDistributionsFor4LiveDice.get(threshold).put("00HL", new long[MAX_SCORE+1]);
         }
 
@@ -386,19 +530,23 @@ public class MidnightNaiveGreedy {
             for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
                 String distKey = "0" + pointsBanked + "__";
                 naiveDistributionsFor5LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
+                semiGreedyDistributionsFor5LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
                 greedyDistributionsFor5LiveDice.get(threshold).put(distKey, new long[MAX_SCORE+1]);
             }
 
             naiveDistributionsFor5LiveDice.get(threshold).put("00_L", new long[MAX_SCORE+1]);
+            semiGreedyDistributionsFor5LiveDice.get(threshold).put("00_L", new long[MAX_SCORE+1]);
             greedyDistributionsFor5LiveDice.get(threshold).put("00_L", new long[MAX_SCORE+1]);
 
             naiveDistributionsFor5LiveDice.get(threshold).put("00H_", new long[MAX_SCORE+1]);
+            semiGreedyDistributionsFor5LiveDice.get(threshold).put("00H_", new long[MAX_SCORE+1]);
             greedyDistributionsFor5LiveDice.get(threshold).put("00H_", new long[MAX_SCORE+1]);
         }
 
         //6 dice
         for (int threshold = MIN_SCORE; threshold <= MAX_SCORE; threshold++) {
             naiveDistributionsFor6LiveDice.get(threshold).put("00__", new long[MAX_SCORE+1]);
+            semiGreedyDistributionsFor6LiveDice.get(threshold).put("00__", new long[MAX_SCORE+1]);
             greedyDistributionsFor6LiveDice.get(threshold).put("00__", new long[MAX_SCORE+1]);
         }
     }
@@ -1013,6 +1161,627 @@ public class MidnightNaiveGreedy {
                                         long[] lowerDist = naiveDistributionsFor5LiveDice.get(threshold).get(lowerDistKey);
                                         for (int i = 0; i < lowerDist.length; i++) {
                                             naiveDistributionsFor6LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void calculateSemiGreedyDistributions() {
+        //1 dice
+        for (int threshold = MIN_SCORE; threshold <= MAX_SCORE; threshold++) {
+            //in this case you have no qualifiers and 1 dice left, so you lost for sure
+            for (int pointsBanked = 5; pointsBanked <= 30; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                boolean hasHighQualifier = false;
+                boolean hasLowQualifier = false;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    int[] liveDice = {dice1};
+                    int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                    semiGreedyDistributionsFor1LiveDice.get(threshold).get(distKey)[score] += 1L;
+                }
+            }
+
+            for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "_L";
+                boolean hasHighQualifier = false;
+                boolean hasLowQualifier = true;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    int[] liveDice = {dice1};
+                    int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                    semiGreedyDistributionsFor1LiveDice.get(threshold).get(distKey)[score] += 1L;
+                }
+            }
+
+            for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "H_";
+                boolean hasHighQualifier = true;
+                boolean hasLowQualifier = false;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    int[] liveDice = {dice1};
+                    int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                    semiGreedyDistributionsFor1LiveDice.get(threshold).get(distKey)[score] += 1L;
+                }
+            }
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "HL";
+                boolean hasHighQualifier = true;
+                boolean hasLowQualifier = true;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    int[] liveDice = {dice1};
+                    int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                    semiGreedyDistributionsFor1LiveDice.get(threshold).get(distKey)[score] += 1L;
+                }
+            }
+        }
+
+        //2 dice
+        for (int threshold = MIN_SCORE; threshold <= MAX_SCORE; threshold++) {
+            for (int pointsBanked = 4; pointsBanked <= 24; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                boolean hasHighQualifier = false;
+                boolean hasLowQualifier = false;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        int[] liveDice = {dice1, dice2};
+                        int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                        if (numDiceToKeep == 2) {
+                            int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                            semiGreedyDistributionsFor2LiveDice.get(threshold).get(distKey)[score] += 6L;
+                        } else {    // == 1
+                            String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                            long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                            for (int i = 0; i < lowerDist.length; i++) {
+                                semiGreedyDistributionsFor2LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "_L";
+                boolean hasHighQualifier = false;
+                boolean hasLowQualifier = true;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        int[] liveDice = {dice1, dice2};
+                        int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                        if (numDiceToKeep == 2) {
+                            int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                            semiGreedyDistributionsFor2LiveDice.get(threshold).get(distKey)[score] += 6L;
+                        } else {    // == 1
+                            String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                            long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                            for (int i = 0; i < lowerDist.length; i++) {
+                                semiGreedyDistributionsFor2LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "H_";
+                boolean hasHighQualifier = true;
+                boolean hasLowQualifier = false;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        int[] liveDice = {dice1, dice2};
+                        int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                        if (numDiceToKeep == 2) {
+                            int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                            semiGreedyDistributionsFor2LiveDice.get(threshold).get(distKey)[score] += 6L;
+                        } else {    // == 1
+                            String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                            long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                            for (int i = 0; i < lowerDist.length; i++) {
+                                semiGreedyDistributionsFor2LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "HL";
+                boolean hasHighQualifier = true;
+                boolean hasLowQualifier = true;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        int[] liveDice = {dice1, dice2};
+                        int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                        if (numDiceToKeep == 2) {
+                            int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                            semiGreedyDistributionsFor2LiveDice.get(threshold).get(distKey)[score] += 6L;
+                        } else {    // == 1
+                            String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                            long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                            for (int i = 0; i < lowerDist.length; i++) {
+                                semiGreedyDistributionsFor2LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //3 dice
+        for (int threshold = MIN_SCORE; threshold <= MAX_SCORE; threshold++) {
+            for (int pointsBanked = 3; pointsBanked <= 18; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                boolean hasHighQualifier = false;
+                boolean hasLowQualifier = false;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            int[] liveDice = {dice1, dice2, dice3};
+                            int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                            if (numDiceToKeep == 3) {
+                                int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                                semiGreedyDistributionsFor3LiveDice.get(threshold).get(distKey)[score] += 216L;
+                            } else if (numDiceToKeep == 2) {
+                                String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    semiGreedyDistributionsFor3LiveDice.get(threshold).get(distKey)[i] += 36L * lowerDist[i];
+                                }
+                            } else { // == 1
+                                String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                long[] lowerDist = semiGreedyDistributionsFor2LiveDice.get(threshold).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    semiGreedyDistributionsFor3LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "_L";
+                boolean hasHighQualifier = false;
+                boolean hasLowQualifier = true;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            int[] liveDice = {dice1, dice2, dice3};
+                            int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                            if (numDiceToKeep == 3) {
+                                int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                                semiGreedyDistributionsFor3LiveDice.get(threshold).get(distKey)[score] += 216L;
+                            } else if (numDiceToKeep == 2) {
+                                String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    semiGreedyDistributionsFor3LiveDice.get(threshold).get(distKey)[i] += 36L * lowerDist[i];
+                                }
+                            } else { // == 1
+                                String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                long[] lowerDist = semiGreedyDistributionsFor2LiveDice.get(threshold).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    semiGreedyDistributionsFor3LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "H_";
+                boolean hasHighQualifier = true;
+                boolean hasLowQualifier = false;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            int[] liveDice = {dice1, dice2, dice3};
+                            int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                            if (numDiceToKeep == 3) {
+                                int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                                semiGreedyDistributionsFor3LiveDice.get(threshold).get(distKey)[score] += 216L;
+                            } else if (numDiceToKeep == 2) {
+                                String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    semiGreedyDistributionsFor3LiveDice.get(threshold).get(distKey)[i] += 36L * lowerDist[i];
+                                }
+                            } else { // == 1
+                                String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                long[] lowerDist = semiGreedyDistributionsFor2LiveDice.get(threshold).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    semiGreedyDistributionsFor3LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String distKey = "0" + pointsBanked + "HL";
+                boolean hasHighQualifier = true;
+                boolean hasLowQualifier = true;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            int[] liveDice = {dice1, dice2, dice3};
+                            int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                            if (numDiceToKeep == 3) {
+                                int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                                semiGreedyDistributionsFor3LiveDice.get(threshold).get(distKey)[score] += 216L;
+                            } else if (numDiceToKeep == 2) {
+                                String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    semiGreedyDistributionsFor3LiveDice.get(threshold).get(distKey)[i] += 36L * lowerDist[i];
+                                }
+                            } else { // == 1
+                                String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                long[] lowerDist = semiGreedyDistributionsFor2LiveDice.get(threshold).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    semiGreedyDistributionsFor3LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //4 dice
+        for (int threshold = MIN_SCORE; threshold <= MAX_SCORE; threshold++) {
+            for (int pointsBanked = 2; pointsBanked <= 12; pointsBanked++) {
+                String points = pointsBanked < 10 ? "0" + pointsBanked : "" + pointsBanked;
+                String distKey = points + "__";
+                boolean hasHighQualifier = false;
+                boolean hasLowQualifier = false;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            for (int dice4 = 1; dice4 <= 6; dice4++) {
+                                int[] liveDice = {dice1, dice2, dice3, dice4};
+                                int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                if (numDiceToKeep == 4) {
+                                    int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                                    semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[score] += 46656L;
+                                } else if (numDiceToKeep == 3) {
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[i] += 7776L * lowerDist[i];
+                                    }
+                                } else if (numDiceToKeep == 2) {
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor2LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[i] += 216L * lowerDist[i];
+                                    }
+                                } else {    // == 1
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor3LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String distKey = "0" + pointsBanked + "_L";
+                boolean hasHighQualifier = false;
+                boolean hasLowQualifier = true;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            for (int dice4 = 1; dice4 <= 6; dice4++) {
+                                int[] liveDice = {dice1, dice2, dice3, dice4};
+                                int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                if (numDiceToKeep == 4) {
+                                    int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                                    semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[score] += 46656L;
+                                } else if (numDiceToKeep == 3) {
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[i] += 7776L * lowerDist[i];
+                                    }
+                                } else if (numDiceToKeep == 2) {
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor2LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[i] += 216L * lowerDist[i];
+                                    }
+                                } else {    // == 1
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor3LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String distKey = "0" + pointsBanked + "H_";
+                boolean hasHighQualifier = true;
+                boolean hasLowQualifier = false;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            for (int dice4 = 1; dice4 <= 6; dice4++) {
+                                int[] liveDice = {dice1, dice2, dice3, dice4};
+                                int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                if (numDiceToKeep == 4) {
+                                    int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                                    semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[score] += 46656L;
+                                } else if (numDiceToKeep == 3) {
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[i] += 7776L * lowerDist[i];
+                                    }
+                                } else if (numDiceToKeep == 2) {
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor2LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[i] += 216L * lowerDist[i];
+                                    }
+                                } else {    // == 1
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor3LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            String distKey = "00HL";
+            boolean hasHighQualifier = true;
+            boolean hasLowQualifier = true;
+            for (int dice1 = 1; dice1 <= 6; dice1++) {
+                for (int dice2 = 1; dice2 <= 6; dice2++) {
+                    for (int dice3 = 1; dice3 <= 6; dice3++) {
+                        for (int dice4 = 1; dice4 <= 6; dice4++) {
+                            int[] liveDice = {dice1, dice2, dice3, dice4};
+                            int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                            if (numDiceToKeep == 4) {
+                                int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, 0);
+                                semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[score] += 46656L;
+                            } else if (numDiceToKeep == 3) {
+                                String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[i] += 7776L * lowerDist[i];
+                                }
+                            } else if (numDiceToKeep == 2) {
+                                String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                long[] lowerDist = semiGreedyDistributionsFor2LiveDice.get(threshold).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[i] += 216L * lowerDist[i];
+                                }
+                            } else {    // == 1
+                                String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                long[] lowerDist = semiGreedyDistributionsFor3LiveDice.get(threshold).get(lowerDistKey);
+                                for (int i = 0; i < lowerDist.length; i++) {
+                                    semiGreedyDistributionsFor4LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //5 dice
+        for (int threshold = MIN_SCORE; threshold <= MAX_SCORE; threshold++) {
+            for (int pointsBanked = 1; pointsBanked <= 6; pointsBanked++) {
+                String distKey = "0" + pointsBanked + "__";
+                boolean hasHighQualifier = false;
+                boolean hasLowQualifier = false;
+                for (int dice1 = 1; dice1 <= 6; dice1++) {
+                    for (int dice2 = 1; dice2 <= 6; dice2++) {
+                        for (int dice3 = 1; dice3 <= 6; dice3++) {
+                            for (int dice4 = 1; dice4 <= 6; dice4++) {
+                                for (int dice5 = 1; dice5 <= 6; dice5++) {
+                                    int[] liveDice = {dice1, dice2, dice3, dice4, dice5};
+                                    int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                    if (numDiceToKeep == 5) {
+                                        int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked);
+                                        semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[score] += 60466176L;
+                                    } else if (numDiceToKeep == 4) {
+                                        String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                        long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[i] += 10077696L * lowerDist[i];
+                                        }
+                                    } else if (numDiceToKeep == 3) {
+                                        String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                        long[] lowerDist = semiGreedyDistributionsFor2LiveDice.get(threshold).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[i] += 279936L * lowerDist[i];
+                                        }
+                                    } else if (numDiceToKeep == 2) {
+                                        String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                        long[] lowerDist = semiGreedyDistributionsFor3LiveDice.get(threshold).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[i] += 1296L * lowerDist[i];
+                                        }
+                                    } else {    // == 1
+                                        String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+                                        long[] lowerDist = semiGreedyDistributionsFor4LiveDice.get(threshold).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            String distKey = "00_L";
+            boolean hasHighQualifier = false;
+            boolean hasLowQualifier = true;
+            for (int dice1 = 1; dice1 <= 6; dice1++) {
+                for (int dice2 = 1; dice2 <= 6; dice2++) {
+                    for (int dice3 = 1; dice3 <= 6; dice3++) {
+                        for (int dice4 = 1; dice4 <= 6; dice4++) {
+                            for (int dice5 = 1; dice5 <= 6; dice5++) {
+                                int[] liveDice = {dice1, dice2, dice3, dice4, dice5};
+                                int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                if (numDiceToKeep == 5) {
+                                    int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, 0);
+                                    semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[score] += 60466176L;
+                                } else if (numDiceToKeep == 4) {
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[i] += 10077696L * lowerDist[i];
+                                    }
+                                } else if (numDiceToKeep == 3) {
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor2LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[i] += 279936L * lowerDist[i];
+                                    }
+                                } else if (numDiceToKeep == 2) {
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor3LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[i] += 1296L * lowerDist[i];
+                                    }
+                                } else {    // == 1
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor4LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            distKey = "00H_";
+            hasHighQualifier = true;
+            hasLowQualifier = false;
+            for (int dice1 = 1; dice1 <= 6; dice1++) {
+                for (int dice2 = 1; dice2 <= 6; dice2++) {
+                    for (int dice3 = 1; dice3 <= 6; dice3++) {
+                        for (int dice4 = 1; dice4 <= 6; dice4++) {
+                            for (int dice5 = 1; dice5 <= 6; dice5++) {
+                                int[] liveDice = {dice1, dice2, dice3, dice4, dice5};
+                                int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                if (numDiceToKeep == 5) {
+                                    int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, 0);
+                                    semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[score] += 60466176L;
+                                } else if (numDiceToKeep == 4) {
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[i] += 10077696L * lowerDist[i];
+                                    }
+                                } else if (numDiceToKeep == 3) {
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor2LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[i] += 279936L * lowerDist[i];
+                                    }
+                                } else if (numDiceToKeep == 2) {
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor3LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[i] += 1296L * lowerDist[i];
+                                    }
+                                } else {    // == 1
+                                    String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                    long[] lowerDist = semiGreedyDistributionsFor4LiveDice.get(threshold).get(lowerDistKey);
+                                    for (int i = 0; i < lowerDist.length; i++) {
+                                        semiGreedyDistributionsFor5LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //6 dice
+        for (int threshold = MIN_SCORE; threshold <= MAX_SCORE; threshold++) {
+            String distKey = "00__";
+            boolean hasHighQualifier = false;
+            boolean hasLowQualifier = false;
+            for (int dice1 = 1; dice1 <= 6; dice1++) {
+                for (int dice2 = 1; dice2 <= 6; dice2++) {
+                    for (int dice3 = 1; dice3 <= 6; dice3++) {
+                        for (int dice4 = 1; dice4 <= 6; dice4++) {
+                            for (int dice5 = 1; dice5 <= 6; dice5++) {
+                                for (int dice6 = 1; dice6 <= 6; dice6++) {
+                                    int[] liveDice = {dice1, dice2, dice3, dice4, dice5, dice6};
+                                    int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                    if (numDiceToKeep == 6) {
+                                        int score = calculateScoreIfKeptAllDice(liveDice, hasLowQualifier, hasHighQualifier, 0);
+                                        semiGreedyDistributionsFor6LiveDice.get(threshold).get(distKey)[score] += 470184984576L;
+                                    } else if (numDiceToKeep == 5) {
+                                        String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                        long[] lowerDist = semiGreedyDistributionsFor1LiveDice.get(threshold).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            semiGreedyDistributionsFor6LiveDice.get(threshold).get(distKey)[i] += 78364164096L * lowerDist[i];
+                                        }
+                                    } else if (numDiceToKeep == 4) {
+                                        String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                        long[] lowerDist = semiGreedyDistributionsFor2LiveDice.get(threshold).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            semiGreedyDistributionsFor6LiveDice.get(threshold).get(distKey)[i] += 2176782336L * lowerDist[i];
+                                        }
+                                    } else if (numDiceToKeep == 3) {
+                                        String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                        long[] lowerDist = semiGreedyDistributionsFor3LiveDice.get(threshold).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            semiGreedyDistributionsFor6LiveDice.get(threshold).get(distKey)[i] += 10077696L * lowerDist[i];
+                                        }
+                                    } else if (numDiceToKeep == 2) {
+                                        String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                        long[] lowerDist = semiGreedyDistributionsFor4LiveDice.get(threshold).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            semiGreedyDistributionsFor6LiveDice.get(threshold).get(distKey)[i] += 7776L * lowerDist[i];
+                                        }
+                                    } else {    // == 1
+                                        String lowerDistKey = deriveSemiGreedyLowerDistKey(liveDice, hasLowQualifier, hasHighQualifier, 0, threshold);
+                                        long[] lowerDist = semiGreedyDistributionsFor5LiveDice.get(threshold).get(lowerDistKey);
+                                        for (int i = 0; i < lowerDist.length; i++) {
+                                            semiGreedyDistributionsFor6LiveDice.get(threshold).get(distKey)[i] += lowerDist[i];
                                         }
                                     }
                                 }
@@ -1702,7 +2471,64 @@ public class MidnightNaiveGreedy {
         return points + H + L;
     }
 
-    //Given the current state, derive the key for the lower distribution after using the naive strategy on this state
+    //Given the current state, derive the key for the lower distribution after using the semi-greedy strategy on state
+    //ALSO, there's a slight blemish in not being able to distinguish e.g. 12HL with 1 live dice and 2 live dice
+    //when it comes to handling originally 3 or more live dice, so the calling method must handle that
+    public String deriveSemiGreedyLowerDistKey(int[] liveDice, boolean hasLowQualifier, boolean hasHighQualifier,
+                                           int pointsBanked, int threshold) {
+        if (liveDice == null) {
+            throw new IllegalArgumentException("liveDice is null");
+        }
+        int numLiveDice = liveDice.length;
+        if (numLiveDice < 1 || numLiveDice > 6) {
+            throw new IllegalArgumentException("Invalid numLiveDice: " + numLiveDice);
+        }
+        for (int dice : liveDice) {
+            if (dice < 1 || dice > 6) {
+                throw new IllegalArgumentException("Invalid liveDice: " + Arrays.toString(liveDice));
+            }
+        }
+        int numBankedDice = hasHighQualifier ? hasLowQualifier ? 4 - numLiveDice : 5 - numLiveDice :
+                hasLowQualifier ? 5 - numLiveDice : 6 - numLiveDice;
+        if (numBankedDice < 0) {
+            throw new IllegalArgumentException("Invalid qualifiers: " + hasLowQualifier + ", " + hasHighQualifier);
+        }
+        if (pointsBanked < numBankedDice || pointsBanked > 6 * numBankedDice) {
+            throw new IllegalArgumentException("Invalid pointsBanked: " + pointsBanked);
+        }
+        if (threshold < 4 || threshold > 24) {
+            throw new IllegalArgumentException("Invalid threshold: " + threshold);
+        }
+
+        int numDiceToKeep = semiGreedyStrategy(liveDice, hasLowQualifier, hasHighQualifier, pointsBanked, threshold);
+        //you can't derive a lower distKey if numDiceToKeep is equal to numLiveDice, or an unexpected invalid value
+        if (numDiceToKeep <= 0 || numDiceToKeep > numLiveDice) {
+            throw new IllegalStateException("unexpected value for numDiceToKeep: " + numDiceToKeep);
+        } else if (numDiceToKeep == numLiveDice) {
+            throw new IllegalStateException("cannot derive lower distKey since semi-greedy strategy says to keep " +
+                    "all dice: " + numDiceToKeep);
+        }
+        sortHighToLowWithQualifiersFirst(liveDice, !hasLowQualifier, !hasHighQualifier);
+
+        boolean canKeepLowQualifier = false;
+        boolean canKeepHighQualifier = false;
+        int newPointsBanked = pointsBanked;
+        for (int i = 0; i < numDiceToKeep; i++) {
+            if (!hasHighQualifier && liveDice[i] == HIGH_QUALIFIER) {
+                canKeepHighQualifier = true;
+            } else if (!hasLowQualifier && liveDice[i] == LOW_QUALIFIER) {
+                canKeepLowQualifier = true;
+            } else {
+                newPointsBanked += liveDice[i];
+            }
+        }
+        String points = newPointsBanked < 10 ? "0" + newPointsBanked : "" + newPointsBanked;
+        String H = hasHighQualifier || canKeepHighQualifier ? "H" : "_";
+        String L = hasLowQualifier || canKeepLowQualifier ? "L" : "_";
+        return points + H + L;
+    }
+
+    //Given the current state, derive the key for the lower distribution after using the greedy strategy on this state
     //ALSO, there's a slight blemish in not being able to distinguish e.g. 12HL with 1 live dice and 2 live dice
     //when it comes to handling originally 3 or more live dice, so the calling method must handle that
     public String deriveGreedyLowerDistKey(int[] liveDice, boolean hasLowQualifier, boolean hasHighQualifier,
@@ -1759,7 +2585,7 @@ public class MidnightNaiveGreedy {
         return points + H + L;
     }
 
-    //helper method for determining priority of dice to keep by the caller of naiveStrategy() or greedyStrategy()
+    //helper method for determining priority of dice to keep by the caller of naiveStrategy() or (semi)greedyStrategy()
     public void sortHighToLowWithQualifiersFirst(int[] liveDice, boolean needLowQualifier, boolean needHighQualifier) {
         if (liveDice == null) {
             throw new IllegalArgumentException("liveDice is null");
@@ -1870,6 +2696,83 @@ public class MidnightNaiveGreedy {
                     return containsHowMany(liveDice, 6) + 2;    //+2 for both qualifiers
                 } else {
                     return 1;   //only keep the high qualifier, else only the low qualifier, else the single highest
+                }
+            }
+        }
+    }
+
+    public int semiGreedyStrategy(int[] liveDice, boolean hasLowQualifier, boolean hasHighQualifier, int pointsBanked,
+                              int threshold) {
+        if (liveDice == null) {
+            throw new IllegalArgumentException("liveDice is null");
+        }
+        int numLiveDice = liveDice.length;
+        if (numLiveDice < 1 || numLiveDice > 6) {
+            throw new IllegalArgumentException("Invalid numLiveDice: " + numLiveDice);
+        }
+        for (int dice : liveDice) {
+            if (dice < 1 || dice > 6) {
+                throw new IllegalArgumentException("Invalid liveDice: " + Arrays.toString(liveDice));
+            }
+        }
+        int numBankedDice = hasHighQualifier ? hasLowQualifier ? 4 - numLiveDice : 5 - numLiveDice :
+                hasLowQualifier ? 5 - numLiveDice : 6 - numLiveDice;
+        if (numBankedDice < 0) {
+            throw new IllegalArgumentException("Invalid qualifiers: " + hasLowQualifier + ", " + hasHighQualifier);
+        }
+        if (pointsBanked < numBankedDice || pointsBanked > 6 * numBankedDice) {
+            throw new IllegalArgumentException("Invalid pointsBanked: " + pointsBanked);
+        }
+        if (threshold < 4 || threshold > 24) {
+            throw new IllegalArgumentException("Invalid threshold: " + threshold);
+        }
+
+        if (numLiveDice == 1) {
+            return 1;
+        }
+
+        if (hasHighQualifier) {
+            if (hasLowQualifier) {
+                if (calculateScoreIfKeptAllDice(liveDice, true, true, pointsBanked) >= threshold) {
+                    return numLiveDice;
+                } else if (contains(liveDice, 6)) {
+                    return containsHowMany(liveDice, 6);
+                } else {
+                    return 1;
+                }
+            } else {
+                if (calculateScoreIfKeptAllDice(liveDice, false, true, pointsBanked) >= threshold) {
+                    return numLiveDice;
+                } else if (contains(liveDice, LOW_QUALIFIER)) {
+                    return containsHowMany(liveDice, 6) + 1;    //+1 for the low qualifier
+                } else if (contains(liveDice, 6) && numLiveDice > 2) {  //&& numLiveDice > 2 only required on [2, 6], [3, 6], [5, 6], and [6, 6] to prevent illegally keeping 0 dice
+                    return Math.min(containsHowMany(liveDice, 6), numLiveDice - 2); //do not keep too many 6s
+                } else {
+                    return 1;
+                }
+            }
+        } else {
+            if (hasLowQualifier) {
+                if (calculateScoreIfKeptAllDice(liveDice, true, false, pointsBanked) >= threshold) {
+                    return numLiveDice;
+                } else if (contains(liveDice, HIGH_QUALIFIER)) {
+                    return containsHowMany(liveDice, 6) + 1;    //+1 for the high qualifier
+                } else if (contains(liveDice, 6) && numLiveDice > 2) {  //&& numLiveDice > 2 only required on [2, 6], [3, 6], [5, 6], and [6, 6] to prevent illegally keeping 0 dice
+                    return Math.min(containsHowMany(liveDice, 6), numLiveDice - 2); //do not keep too many 6s
+                } else {
+                    return 1;
+                }
+            } else {
+                if (calculateScoreIfKeptAllDice(liveDice, false, false, pointsBanked) >= threshold) {
+                    return numLiveDice;
+                } else if (contains(liveDice, LOW_QUALIFIER) && contains(liveDice, HIGH_QUALIFIER)) {
+                    return containsHowMany(liveDice, 6) + 2;    //+2 for both qualifiers
+                } else if ((contains(liveDice, LOW_QUALIFIER) || contains(liveDice, HIGH_QUALIFIER)) && numLiveDice > 2) {  //&& numLiveDice > 2 required to prevent illegally keeping 0 dice
+                    return Math.min(containsHowMany(liveDice, 6) + 1, numLiveDice - 2); //+1 for the qualifier, and do not keep too many 6s
+                } else if (contains(liveDice, 6) && numLiveDice > 4) {  //&& numLiveDice > 4 required to prevent illegally keeping 0 dice
+                    return Math.min(containsHowMany(liveDice, 6), numLiveDice - 4); //do not keep too many 6s
+                } else {
+                    return 1;
                 }
             }
         }

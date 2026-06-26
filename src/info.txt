@@ -20,7 +20,8 @@
 //50: highest average equity for P1 vs a greedy (but not condition 24, so keep 1 and 4 and 6s) P2 and ties are ties
 //51: highest average equity for P1 vs a greedy (but not condition 24, so keep 1 and 4 and 6s) P2 and P1 wins ties
 //although the last 3 don't quite work since the Midnight APP's AI will keep all if it has already won by doing so
-//thus
+//and actually, the AI doesn't keep all 6s possible, but rather it will save 2 free slots for each missing qualifier
+//thus, the GREEDY conditions are redefined from 1 free slot per (fully greedy) to 2 free slots per (SEMI-GREEDY)
 //52: highest average equity for P1 vs an enhanced naive (naive but bank all if 100+% to win) P2 but P1 loses ties
 //53: highest average equity for P1 vs an enhanced naive (naive but bank all if 100% to win) P2 and ties are ties
 //54: highest average equity for P1 vs an enhanced naive (naive but bank all if 100% to win) P2 and P1 wins ties

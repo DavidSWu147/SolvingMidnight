@@ -75,12 +75,9 @@ public class SolvingMidnight {
         populateWithStates();
 
         calculateInitialRunThrough();
-
-        calculateAllStateEquitiesRecursively(56);
-
-        writeToFile(56);
-
-        for (int condition = 56; condition < 57; condition++) {
+        calculateAllStateEquitiesRecursively();
+        writeToFile();
+        for (int condition = 0; condition < CAPACITY; condition++) {
             BigDecimal runningTotal = BigDecimal.ZERO;
             BigDecimal runningEquityGivenSuccess = BigDecimal.ZERO;
             BigDecimal runningEquityGivenFailure = BigDecimal.ZERO;
@@ -125,7 +122,7 @@ public class SolvingMidnight {
 
         populateDistributions();
         calculateDistributions();
-        writeDistributionsToFile(56);
+        writeDistributionsToFile();
         /*for (int i = 0; i < 10; i++) {
             System.out.println();
         }
@@ -3351,9 +3348,15 @@ public class SolvingMidnight {
     }
 
     private double equityFromDistScore(int condition, int score) {
-        double[] equityNaiveEnhancedTies = MidnightState.SETTLES ?
+        double[] equitiesGreedy = MidnightState.SEMI_GREEDY ?
+                MidnightState.EQUITIES_SEMI_GREEDY : MidnightState.EQUITIES_GREEDY;
+        double[] equitiesGreedyEnhanced = MidnightState.SEMI_GREEDY ?
+                MidnightState.EQUITIES_SEMI_GREEDY_ENHANCED : MidnightState.EQUITIES_GREEDY_ENHANCED;
+        double[] equitiesNaiveEnhancedTies = MidnightState.SETTLES ?
                 MidnightState.EQUITIES_NAIVE_ENHANCED_TIES_SETTLES : MidnightState.EQUITIES_NAIVE_ENHANCED_TIES;
-        double[] equityGreedyEnhancedTies = MidnightState.SETTLES ?
+        double[] equitiesGreedyEnhancedTies = MidnightState.SEMI_GREEDY ? MidnightState.SETTLES ?
+                MidnightState.EQUITIES_SEMI_GREEDY_ENHANCED_TIES_SETTLES : MidnightState.EQUITIES_SEMI_GREEDY_ENHANCED_TIES :
+                MidnightState.SETTLES ?
                 MidnightState.EQUITIES_GREEDY_ENHANCED_TIES_SETTLES : MidnightState.EQUITIES_GREEDY_ENHANCED_TIES;
         return switch (condition) {
             case 0 -> score == 0 ? MidnightState.EQUITIES_SAFEST[0] : MidnightState.EQUITIES_SAFEST[score-1];
@@ -3370,22 +3373,22 @@ public class SolvingMidnight {
             case 47 -> score == 0 ? MidnightState.EQUITIES_NAIVE[3]/2 : // + EQUITIES_NAIVE[0]/2 which is 0.0
                     MidnightState.EQUITIES_NAIVE[score-1]/2 + MidnightState.EQUITIES_NAIVE[score]/2;
             case 48 -> score == 0 ? MidnightState.EQUITIES_NAIVE[3] : MidnightState.EQUITIES_NAIVE[score];
-            case 49 -> score == 0 ? MidnightState.EQUITIES_GREEDY[0] : MidnightState.EQUITIES_GREEDY[score-1];
-            case 50 -> score == 0 ? MidnightState.EQUITIES_GREEDY[3]/2 : // + EQUITIES_GREEDY[0]/2 which is 0.0
-                    MidnightState.EQUITIES_GREEDY[score-1]/2 + MidnightState.EQUITIES_GREEDY[score]/2;
-            case 51 -> score == 0 ? MidnightState.EQUITIES_GREEDY[3] : MidnightState.EQUITIES_GREEDY[score];
+            case 49 -> score == 0 ? equitiesGreedy[0] : equitiesGreedy[score-1];
+            case 50 -> score == 0 ? equitiesGreedy[3]/2 : // + EQUITIES_GREEDY[0]/2 which is 0.0
+                    equitiesGreedy[score-1]/2 + equitiesGreedy[score]/2;
+            case 51 -> score == 0 ? equitiesGreedy[3] : equitiesGreedy[score];
             case 52 -> score == 0 ? MidnightState.EQUITIES_NAIVE_ENHANCED[0] :
                                     MidnightState.EQUITIES_NAIVE_ENHANCED[score-1];
-            case 53 -> score == 0 ? equityNaiveEnhancedTies[3] :
-                                    equityNaiveEnhancedTies[score];
+            case 53 -> score == 0 ? equitiesNaiveEnhancedTies[3] :
+                                    equitiesNaiveEnhancedTies[score];
             case 54 -> score == 0 ? MidnightState.EQUITIES_NAIVE_ENHANCED[3] :
                                     MidnightState.EQUITIES_NAIVE_ENHANCED[score];
-            case 55 -> score == 0 ? MidnightState.EQUITIES_GREEDY_ENHANCED[0] :
-                                    MidnightState.EQUITIES_GREEDY_ENHANCED[score-1];
-            case 56 -> score == 0 ? equityGreedyEnhancedTies[3] :
-                                    equityGreedyEnhancedTies[score];
-            case 57 -> score == 0 ? MidnightState.EQUITIES_GREEDY_ENHANCED[3] :
-                                    MidnightState.EQUITIES_GREEDY_ENHANCED[score];
+            case 55 -> score == 0 ? equitiesGreedyEnhanced[0] :
+                                    equitiesGreedyEnhanced[score-1];
+            case 56 -> score == 0 ? equitiesGreedyEnhancedTies[3] :
+                                    equitiesGreedyEnhancedTies[score];
+            case 57 -> score == 0 ? equitiesGreedyEnhanced[3] :
+                                    equitiesGreedyEnhanced[score];
             case 78 -> score == 0 ? MidnightState.EQUITIES_WITH_TIES[3] : MidnightState.EQUITIES_WITH_TIES[score];
             case 79 -> score == 0 ? MidnightState.EQUITIES[0] : MidnightState.EQUITIES[score-1];
             default -> throw new IllegalArgumentException("Invalid condition: " + condition);
