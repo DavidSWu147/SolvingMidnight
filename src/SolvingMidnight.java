@@ -73,12 +73,17 @@ public class SolvingMidnight {
 
     public void run() {
         populateWithStates();
-
         calculateInitialRunThrough();
         calculateAllStateEquitiesRecursively();
         writeToFile();
+        populateDistributions();
+        calculateDistributions();
+        writeDistributionsToFile();
+
         for (int condition = 0; condition < CAPACITY; condition++) {
             BigDecimal runningTotal = BigDecimal.ZERO;
+            BigDecimal numWins = BigDecimal.ZERO;
+            BigDecimal numTies = BigDecimal.ZERO;
             BigDecimal runningEquityGivenSuccess = BigDecimal.ZERO;
             BigDecimal runningEquityGivenFailure = BigDecimal.ZERO;
             BigDecimal runningEquityOverall = BigDecimal.ZERO;
@@ -93,6 +98,16 @@ public class SolvingMidnight {
                 runningEquityGivenFailure = runningEquityGivenFailure.add(tempFailure);
                 runningEquityOverall = runningEquityOverall.add(BigDecimal.valueOf(midnightState.getEquityOverall()));
             }
+            if (58 <= condition && condition <= 77) {
+                long[] distribution = distributionsFor6LiveDice.get(condition).get("00__");
+                for (int score = 0; score <= MAX_SCORE; score++) {
+                    if (score > condition - 54) {
+                        numWins = numWins.add(BigDecimal.valueOf(distribution[score]));
+                    } else if (score == condition - 54) {
+                        numTies = numTies.add(BigDecimal.valueOf(distribution[score]));
+                    }
+                }
+            }
             BigDecimal denominator = 58 <= condition && condition <= 77 ?
                     BigDecimal.valueOf(6).pow(21).multiply(BigDecimal.valueOf(2)) : BigDecimal.valueOf(6).pow(21);
             BigDecimal overallRatio = runningTotal.divide(denominator, 20, RoundingMode.HALF_UP);
@@ -103,8 +118,18 @@ public class SolvingMidnight {
             } else {
                 System.out.println("Condition: " + condition);
             }
-            System.out.println("RunningTotal: " + runningTotal);
-            System.out.println("SuccessPercentage: " + successPercentage);
+            System.out.println("SuccessDenom: " + denominator);
+            System.out.println("SuccessNum: " + runningTotal);
+            System.out.println("SuccessPercentage: " + successPercentage + "%");
+            if (58 <= condition && condition <= 77) {
+                System.out.println("NumWins: " + numWins);
+                BigDecimal winPercentage = numWins.divide(BigDecimal.valueOf(6).pow(21), 20, RoundingMode.HALF_UP);
+                System.out.println("WinPercentage: " + winPercentage + "%");
+
+                System.out.println("NumTies: " + numTies);
+                BigDecimal tiePercentage = numTies.divide(BigDecimal.valueOf(6).pow(21), 20, RoundingMode.HALF_UP);
+                System.out.println("TiePercentage: " + tiePercentage + "%");
+            }
             BigDecimal equityGivenSuccess = runningEquityGivenSuccess.divide(overallRatio, 10, RoundingMode.HALF_UP)
                     .divide(BigDecimal.valueOf(46656.0), 10, RoundingMode.HALF_UP);
             System.out.println("EquityGivenSuccess: " + equityGivenSuccess);
@@ -119,70 +144,6 @@ public class SolvingMidnight {
             System.out.println("EquityOverall: " + equityOverall);
             System.out.println();
         }
-
-        populateDistributions();
-        calculateDistributions();
-        writeDistributionsToFile();
-        /*for (int i = 0; i < 10; i++) {
-            System.out.println();
-        }
-        long[] arr = distributionsFor6LiveDice.get(0).get("00__");
-        for (int i = 0; i < arr.length; i++) {
-            if (i < 10) {
-                System.out.println(" " + i + ": " + arr[i] + " ");
-            } else {
-                System.out.println(i + ": " + arr[i] + " ");
-            }
-        }
-        System.out.println();
-        for (int i = 0; i < arr.length; i++) {
-            if (i < 10) {
-                System.out.println(" " + i + ": " + arr[i] / Math.pow(6, 21) + " ");
-            } else {
-                System.out.println(i + ": " + arr[i] / Math.pow(6, 21) + " ");
-            }
-        }*/
-
-        /*System.out.println(); //ONLY FOR CONDITION_45!!!
-        double[] P2Equities = {0.49179084403, 0.0, 0.0, 0.0,
-                0.49179084396, 0.49179084229, 0.49179082398,
-                0.49179070096, 0.49179009534, 0.49178749584,
-                0.49177718453, 0.49174559950, 0.49166215844,
-                0.49146575229, 0.49097871400, 0.48969102594,
-                0.48643883445, 0.47904091723, 0.46041268552,
-                0.42884948643, 0.37705571428, 0.29659671788,
-                0.20408843175, 0.09998965917946808615, 0.0};
-        double P2CumulativeEquity = 0.0;
-        for (int i = 0; i < arr.length; i++) {
-            if (i < 10) {
-                System.out.println(" " + i + ": " + arr[i] * P2Equities[i] / Math.pow(6, 21));
-            } else {
-                System.out.println(i + ": " + arr[i] * P2Equities[i] / Math.pow(6, 21));
-            }
-            P2CumulativeEquity += arr[i] * P2Equities[i] / Math.pow(6, 21);
-        }
-        System.out.println("The ANSWER: " + P2CumulativeEquity);*/
-        /*System.out.println();
-        double cumSum = 0.0;
-        for (int i = 0; i < arr.length; i++) {
-            cumSum += arr[i];
-            if (i < 10) {
-                System.out.println(" " + i + ": " + cumSum / Math.pow(6, 21));
-            } else {
-                System.out.println(i + ": " + cumSum / Math.pow(6, 21));
-            }
-        }
-        System.out.println();
-        double cumSum1 = 0.0;
-        for (int i = 0; i < arr.length; i++) {
-            cumSum1 += arr[i] / 2.0;
-            if (i < 10) {
-                System.out.println(" " + i + ": " + cumSum1 / Math.pow(6, 21));
-            } else {
-                System.out.println(i + ": " + cumSum1 / Math.pow(6, 21));
-            }
-            cumSum1 += arr[i] / 2.0;
-        }*/
     }
 
     //don't care about unreachable states, since they could be reachable under different qualifiers (such as 2-4-24)
@@ -505,7 +466,7 @@ public class SolvingMidnight {
 
     private void calculateInitialRunThrough() {
         for (int condition = 0; condition < CAPACITY; condition++) {
-            
+
             for (MidnightState midnightState : mapsFor1LiveDice.get(condition).values()) {
                 midnightState.calculateEquityIfKeptAllDice();
             }
@@ -2090,7 +2051,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("1's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 1)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 1)) :
                                                                          (long)(Math.pow(6, 1));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2153,7 +2114,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("1's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 1)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 1)) :
                                                                          (long)(Math.pow(6, 1));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2216,7 +2177,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("1's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 1)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 1)) :
                                                                          (long)(Math.pow(6, 1));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2279,7 +2240,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor1LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("1's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 1)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 1)) :
                                                                          (long)(Math.pow(6, 1));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2342,7 +2303,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("2's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 3)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 3)) :
                                                                          (long)(Math.pow(6, 3));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2405,7 +2366,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("2's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 3)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 3)) :
                                                                          (long)(Math.pow(6, 3));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2468,7 +2429,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("2's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 3)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 3)) :
                                                                          (long)(Math.pow(6, 3));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2531,7 +2492,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor2LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("2's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 3)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 3)) :
                                                                          (long)(Math.pow(6, 3));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2594,7 +2555,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("3's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 6)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 6)) :
                                                                          (long)(Math.pow(6, 6));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2657,7 +2618,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("3's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 6)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 6)) :
                                                                          (long)(Math.pow(6, 6));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2720,7 +2681,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("3's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 6)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 6)) :
                                                                          (long)(Math.pow(6, 6));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2783,7 +2744,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor3LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("3's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 6)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 6)) :
                                                                          (long)(Math.pow(6, 6));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2846,7 +2807,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("4's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 10)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 10)) :
                                                                          (long)(Math.pow(6, 10));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2909,7 +2870,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("4's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 10)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 10)) :
                                                                          (long)(Math.pow(6, 10));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -2972,7 +2933,7 @@ public class SolvingMidnight {
                 long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("4's Key: " + distKey);
-                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 10)) : 
+                long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 10)) :
                                                                          (long)(Math.pow(6, 10));
                 pw.println("successDenom: " + successDenom);
                 long successNum = 0L;
@@ -3033,7 +2994,7 @@ public class SolvingMidnight {
             long[] dist = distributionsFor4LiveDice.get(condition).get(distKey);
             pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
             pw.println("4's Key: " + distKey);
-            long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 10)) : 
+            long successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 10)) :
                                                                      (long)(Math.pow(6, 10));
             pw.println("successDenom: " + successDenom);
             long successNum = 0L;
@@ -3094,7 +3055,7 @@ public class SolvingMidnight {
                 dist = distributionsFor5LiveDice.get(condition).get(distKey);
                 pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
                 pw.println("5's Key: " + distKey);
-                successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 15)) : 
+                successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 15)) :
                                                                     (long)(Math.pow(6, 15));
                 pw.println("successDenom: " + successDenom);
                 successNum = 0L;
@@ -3155,7 +3116,7 @@ public class SolvingMidnight {
             dist = distributionsFor5LiveDice.get(condition).get(distKey);
             pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
             pw.println("5's Key: " + distKey);
-            successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 15)) : 
+            successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 15)) :
                                                                 (long)(Math.pow(6, 15));
             pw.println("successDenom: " + successDenom);
             successNum = 0L;
@@ -3214,7 +3175,7 @@ public class SolvingMidnight {
             dist = distributionsFor5LiveDice.get(condition).get(distKey);
             pw.println((condition < 10 ? "Condition: 0" : "Condition: ") + condition);
             pw.println("5's Key: " + distKey);
-            successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 15)) : 
+            successDenom = 58 <= condition && condition <= 77 ? (long)(2.0 * Math.pow(6, 15)) :
                                                                 (long)(Math.pow(6, 15));
             pw.println("successDenom: " + successDenom);
             successNum = 0L;
