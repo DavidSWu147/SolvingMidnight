@@ -13,17 +13,25 @@ The second number tells you how many high dice (i.e. non-qualifiers) you should 
 Therefore, for a key of 00\_\_|146666, optimalPolicyQual is 2 and optimalPolicyHigh is 4.
 
 Now to explain the more important conditions you could be playing:
+
 Condition 3: you are the first player in a 2 player game, and your opponent is a perfect player, but you win if the score is tied
-Conditions 4~24: you are the last player, and you need to score at least N to win, no ties. N is the condition number
+
+Conditions 4\~24: you are the last player, and you need to score at least N to win, no ties. N is the condition number
+
 Condition 25: you are the second player in a 3 player game, the first player did not qualify (scored 0), and your remaining opponent is a perfect player
-Conditions 26~44: you are the second player in a 3 player game, the first player scored N-22, and your remaining opponent is a perfect player. N is the condition number
+
+Conditions 26\~44: you are the second player in a 3 player game, the first player scored N-22, and your remaining opponent is a perfect player. N is the condition number
+
 Condition 45: you are the first player in a 3 player game, and your opponents are perfect players
 
 Note that for the 3 player game, assume that ties in score are broken in favor of the player earlier in turn order. So P1 wins ties over P2 and P3, and P2 wins ties over P3.
 
 Condition 56: you are the first player in a 2 player game, and your opponent is using the enhanced semi-greedy strategy, and ties are not broken
+
 Condition 57: you are the first player in a 2 player game, and your opponent is using the enhanced semi-greedy strategy, but you win if the score is tied
-Conditions 58~77: you are the last player, and you need to score exactly N-54 to tie, or more than N-54 to win. N is the condition number
+
+Conditions 58\~77: you are the last player, and you need to score exactly N-54 to tie, or more than N-54 to win. N is the condition number
+
 Condition 78: you are the first player in a 2 player game, and your opponent is a perfect player, and ties are not broken
 
 There are a total of 80 distinct conditions, labeled from 0 to 79.
