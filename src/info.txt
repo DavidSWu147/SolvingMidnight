@@ -1,5 +1,3 @@
-//TODO update info for conditions 49, 50, 51, 55, 56, 57, and also 53Settles and 56Settles
-
 //OLD 0 means highest average score, with failure to qualify counting as 0 (but everything considered "pass" here)
 //btw it seems that OLD condition 0 is equivalent to condition 4, so has been changed to
 //0 means highest average equity for P1 vs a most conservative P2 (condition 4+) but P1 loses ties
