@@ -3,7 +3,8 @@
 This repository contains files that describe how to play Midnight (AKA 1-4-24) **perfectly**, as well as the code that generated the files.
 
 How to use: open the Strat.txt file for the condition you are playing. Within the file, search for the key that corresponds to the current game state you are in.
-The key is composed of three parts: 1. the score you have banked so far, as a two digit number with a leading zero if less than 10,
+The key is composed of three parts: 
+1. the score you have banked so far, as a two digit number with a leading zero if less than 10,
 2. the qualifiers you have banked so far, either HL for both, H\_ for the high qualifier (4) only, \_L for the low qualifier (1) only, or \_\_ for neither, and
 3. | followed by the dice you have rolled this round, in ascending order.
 For example, the key for the best possible way to start the game is 00\_\_|146666. I'm assuming you know how to play that roll.
