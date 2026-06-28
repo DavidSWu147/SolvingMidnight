@@ -1,4 +1,4 @@
-#SolvingMidnight
+# SolvingMidnight
 
 This repository contains files that describe how to play Midnight (AKA 1-4-24) **perfectly**, as well as the code that generated the files.
 
