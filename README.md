@@ -41,4 +41,5 @@ There are a total of 80 distinct conditions, labeled from 0 to 79.
 The semi-greedy strategy is defined as follows: 
 First, keep any missing qualifiers you still need. Then, if you have both qualifiers, keep all the 6s you rolled. Otherwise, keep as many 6s as you can, 
 without going over 3 non-qualifier dice if you have kept one qualifier so far, or 2 non-qualifier dice if you have not kept any qualifiers yet. 
-Finally, failing all else, default to keeping the single highest dice number.
+Finally, failing all else, default to keeping the single highest dice number. The enhanced semi-greedy strategy is defined as the same as the semi-greedy strategy,
+but with the additional caveat that if you can beat the other player's score by keeping all dice you rolled, simply keep all dice and immediately end the game.
