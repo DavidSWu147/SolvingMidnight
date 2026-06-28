@@ -7,6 +7,7 @@ The key is composed of three parts:
 1. the score you have banked so far, as a two digit number with a leading zero if less than 10,
 2. the qualifiers you have banked so far, either HL for both, H\_ for the high qualifier (4) only, \_L for the low qualifier (1) only, or \_\_ for neither, and
 3. | followed by the dice you have rolled this round, in ascending order.
+
 For example, the key for the best possible way to start the game is 00\_\_|146666. I'm assuming you know how to play that roll.
 You will see two numbers, optimalPolicyQual and optimalPolicyHigh. The first number tells you how many (still needed) qualifiers you should keep.
 If you rolled both qualifiers (4 and 1), but optimalPolicyQual is 1, you should **always** keep the 4, never the 1.
