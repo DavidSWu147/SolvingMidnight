@@ -123,11 +123,11 @@ public class SolvingMidnight {
             System.out.println("SuccessPercentage: " + successPercentage + "%");
             if (58 <= condition && condition <= 77) {
                 System.out.println("NumWins: " + numWins);
-                BigDecimal winPercentage = numWins.divide(BigDecimal.valueOf(6).pow(21), 20, RoundingMode.HALF_UP);
+                BigDecimal winPercentage = numWins.divide(BigDecimal.valueOf(6).pow(21), 20, RoundingMode.HALF_UP).multiply(BigDecimal.valueOf(100));
                 System.out.println("WinPercentage: " + winPercentage + "%");
 
                 System.out.println("NumTies: " + numTies);
-                BigDecimal tiePercentage = numTies.divide(BigDecimal.valueOf(6).pow(21), 20, RoundingMode.HALF_UP);
+                BigDecimal tiePercentage = numTies.divide(BigDecimal.valueOf(6).pow(21), 20, RoundingMode.HALF_UP).multiply(BigDecimal.valueOf(100));
                 System.out.println("TiePercentage: " + tiePercentage + "%");
             }
             BigDecimal equityGivenSuccess = runningEquityGivenSuccess.divide(overallRatio, 10, RoundingMode.HALF_UP)
