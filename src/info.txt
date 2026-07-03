@@ -44,7 +44,7 @@ EquityGivenFailure: N/A
 
 Condition: 0
 SuccessNum: 20987674370482710
-SuccessPercentage: 95.672706359889976662% //This is the percentage P1 does not score 0%
+SuccessPercentage: 95.672706359889976662% //This is the percentage P1 does not score 0
 EquityGivenSuccess: 19.5210712714 //Proves that this is exactly the same as Condition 04
 EquityGivenFailure: 0.0
 
@@ -79,7 +79,7 @@ EquityGivenFailure: N/A
 
 Condition: 03
 SuccessNum: 18924718036509069
-SuccessPercentage: 86.268681307399329643% //This is the percentage P1 does not score 0%
+SuccessPercentage: 86.268681307399329643% //This is the percentage P1 does not score 0
 EquityGivenSuccess: 0.5700687407
 EquityGivenFailure: 0.0432729364
 EquityOverall: 0.4977327299
@@ -239,7 +239,7 @@ EquityGivenFailure: N/A
 
 Condition: 25
 SuccessNum: 18924751800249521
-SuccessPercentage: 86.268835220042000468% //This is the percentage P1/P2 does not score 0%
+SuccessPercentage: 86.268835220042000468% //This is the percentage P1/P2 does not score 0
 EquityGivenSuccess: 0.5700677919
 EquityGivenFailure: 0.0
 EquityOverall: 0.4917908441
@@ -385,7 +385,7 @@ EquityGivenFailure: N/A
 
 Condition: 45
 SuccessNum: 17955606997143091
-SuccessPercentage: 81.850970499488766671% //This is the percentage P1 does not score 0%
+SuccessPercentage: 81.850970499488766671% //This is the percentage P1 does not score 0
 EquityGivenSuccess: 0.4251052591
 EquityGivenFailure: 0.0059418782
 EquityOverall: 0.3490311735
